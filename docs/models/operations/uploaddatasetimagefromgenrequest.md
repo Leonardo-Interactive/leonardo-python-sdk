@@ -1,0 +1,9 @@
+# UploadDatasetImageFromGenRequest
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request_body`                                                                                          | [UploadDatasetImageFromGenRequestBody](../../models/operations/uploaddatasetimagefromgenrequestbody.md) | :heavy_check_mark:                                                                                      | Query parameters to be provided in the request body as a JSON object                                    |
+| `dataset_id`                                                                                            | *str*                                                                                                   | :heavy_check_mark:                                                                                      | The ID of the dataset to upload the image to.                                                           |
