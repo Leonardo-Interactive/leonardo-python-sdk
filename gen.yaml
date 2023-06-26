@@ -1,0 +1,15 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  sdkClassName: LeonardoAiSDK
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+python:
+  version: 0.0.1
+  author: Leonardo-Ai
+  description: Leonardo Ai Python Client SDK
+  maxMethodParams: 0
+  packageName: Leonardo-Ai-SDK
