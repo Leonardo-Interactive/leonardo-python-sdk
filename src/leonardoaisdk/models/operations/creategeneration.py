@@ -35,7 +35,7 @@ class CreateGenerationRequestBody:
     r"""How strongly the generated images should reflect the original image in image2image. Must be a float between 0.1 and 0.9."""
     model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId'), 'exclude': lambda f: f is None }})
     r"""The model ID used for the image generation. If not provided uses sd_version to determine the version of Stable Diffusion to use.
-    
+
     _Leonardo Creative_: 6bef9f1b-29cb-40c7-b9df-32b51c1f67d3
     _Leonardo Select_: cd2b2a15-9760-4174-a5ff-4d2925057376
     _Leonardo Signature_: 291be633-cb24-434f-898f-e662799936ad
