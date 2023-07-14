@@ -60,7 +60,7 @@ This endpoint will delete a specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -98,7 +98,7 @@ This endpoint gets the specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(

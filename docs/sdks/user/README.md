@@ -12,7 +12,7 @@ This endpoint will return your user such as your user id, username, token renewa
 
 ```python
 import leonardoaisdk
-
+from leonardoaisdk.models import shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(

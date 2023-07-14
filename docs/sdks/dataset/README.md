@@ -16,7 +16,7 @@ This endpoint creates a new dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -55,7 +55,7 @@ This endpoint deletes the specific dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -93,7 +93,7 @@ This endpoint gets the specific dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -131,7 +131,7 @@ This endpoint returns presigned details to upload a dataset image to S3
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -172,7 +172,7 @@ This endpoint will upload a previously generated image to the dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(

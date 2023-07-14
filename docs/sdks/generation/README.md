@@ -71,7 +71,7 @@ This endpoint deletes a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -109,7 +109,7 @@ This endpoint will provide information about a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -147,7 +147,7 @@ This endpoint returns all generations by a specific user
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(

@@ -13,7 +13,7 @@ This endpoint will create an upscale for the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
@@ -51,7 +51,7 @@ This endpoint will get the variation by ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(

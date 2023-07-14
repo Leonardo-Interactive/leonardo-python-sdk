@@ -1,7 +1,9 @@
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     security=shared.Security(
