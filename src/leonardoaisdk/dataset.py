@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from leonardoaisdk import utils
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import errors, operations
 from typing import Optional
 
 class Dataset:
@@ -39,6 +39,8 @@ class Dataset:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDataset200ApplicationJSON])
                 res.create_dataset_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -65,6 +67,8 @@ class Dataset:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDatasetByID200ApplicationJSON])
                 res.delete_dataset_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -91,6 +95,8 @@ class Dataset:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetDatasetByID200ApplicationJSON])
                 res.get_dataset_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -122,6 +128,8 @@ class Dataset:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UploadDatasetImage200ApplicationJSON])
                 res.upload_dataset_image_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -153,6 +161,8 @@ class Dataset:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UploadDatasetImageFromGen200ApplicationJSON])
                 res.upload_dataset_image_from_gen_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

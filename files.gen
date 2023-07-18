@@ -10,6 +10,7 @@ pylintrc
 setup.py
 src/leonardoaisdk/__init__.py
 src/leonardoaisdk/models/__init__.py
+src/leonardoaisdk/models/errors/sdkerror.py
 src/leonardoaisdk/utils/__init__.py
 src/leonardoaisdk/utils/retries.py
 src/leonardoaisdk/utils/utils.py
@@ -42,6 +43,7 @@ src/leonardoaisdk/models/shared/strength.py
 src/leonardoaisdk/models/shared/custom_model_type.py
 src/leonardoaisdk/models/shared/security.py
 src/leonardoaisdk/models/shared/__init__.py
+src/leonardoaisdk/models/errors/__init__.py
 docs/sdks/leonardoaisdk/README.md
 docs/sdks/dataset/README.md
 docs/sdks/generation/README.md

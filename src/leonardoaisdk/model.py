@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from leonardoaisdk import utils
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import errors, operations
 from typing import Optional
 
 class Model:
@@ -39,6 +39,8 @@ class Model:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateModel200ApplicationJSON])
                 res.create_model_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -65,6 +67,8 @@ class Model:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelByID200ApplicationJSON])
                 res.delete_model_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -91,6 +95,8 @@ class Model:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetModelByID200ApplicationJSON])
                 res.get_model_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

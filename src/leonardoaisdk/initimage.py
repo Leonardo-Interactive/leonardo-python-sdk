@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from leonardoaisdk import utils
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import errors, operations
 from typing import Optional
 
 class InitImage:
@@ -34,6 +34,8 @@ class InitImage:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteInitImageByID200ApplicationJSON])
                 res.delete_init_image_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -60,6 +62,8 @@ class InitImage:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetInitImageByID200ApplicationJSON])
                 res.get_init_image_by_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -91,6 +95,8 @@ class InitImage:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UploadInitImage200ApplicationJSON])
                 res.upload_init_image_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
