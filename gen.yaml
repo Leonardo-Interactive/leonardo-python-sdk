@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: ee5746ae530f529b5feacbf9ea18824a
   docVersion: v1.0.0
-  speakeasyVersion: 1.74.3
-  generationVersion: 2.86.6
+  speakeasyVersion: 1.74.11
+  generationVersion: 2.87.1
 generation:
   comments:
     disableComments: false
@@ -14,11 +14,11 @@ generation:
   tagNamespacingDisabled: false
 features:
   python:
-    core: 2.82.1
+    core: 2.82.2
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 python:
-  version: 1.16.1
+  version: 1.16.2
   author: Leonardo-Ai
   description: Leonardo Ai Python Client SDK
   maxMethodParams: 0
