@@ -19,14 +19,26 @@ class CreateGenerationRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
     prompt: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt') }})
     r"""The prompt used to generate images"""
+    alchemy: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alchemy'), 'exclude': lambda f: f is None }})
+    r"""Enable to use Alchemy."""
+    contrast_ratio: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contrastRatio'), 'exclude': lambda f: f is None }})
+    r"""Contrast Ratio to use with Alchemy."""
     control_net: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNet'), 'exclude': lambda f: f is None }})
     r"""Enable to use ControlNet. Requires an init image to be provided. Requires a model based on SD v1.5"""
     control_net_type: Optional[shared_controlnet_type.ControlnetType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNetType'), 'exclude': lambda f: f is None }})
     r"""The type of ControlNet to use."""
+    expanded_domain: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandedDomain'), 'exclude': lambda f: f is None }})
+    r"""Enable to use the Expanded Domain feature of Alchemy."""
     guidance_scale: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidance_scale'), 'exclude': lambda f: f is None }})
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
     height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('height'), 'exclude': lambda f: f is None }})
     r"""The height of the images. Must be between 32 and 1024 and be a multiple of 8."""
+    high_contrast: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highContrast'), 'exclude': lambda f: f is None }})
+    r"""Enable to use the High Contrast feature of Prompt Magic."""
+    high_resolution: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highResolution'), 'exclude': lambda f: f is None }})
+    r"""Enable to use the High Resolution feature of Prompt Magic."""
+    image_prompts: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePrompts'), 'exclude': lambda f: f is None }})
+    image_prompt_weight: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePromptWeight'), 'exclude': lambda f: f is None }})
     init_generation_image_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_generation_image_id'), 'exclude': lambda f: f is None }})
     r"""The ID of an existing image to use in image2image."""
     init_image_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_image_id'), 'exclude': lambda f: f is None }})
@@ -42,6 +54,8 @@ class CreateGenerationRequestBody:
     """
     negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt'), 'exclude': lambda f: f is None }})
     r"""The negative prompt used for the image generation"""
+    nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
+    r"""Not Safe For Work Flag."""
     num_images: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('num_images'), 'exclude': lambda f: f is None }})
     r"""The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."""
     num_inference_steps: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('num_inference_steps'), 'exclude': lambda f: f is None }})
@@ -50,14 +64,25 @@ class CreateGenerationRequestBody:
     r"""The style to generate images with."""
     prompt_magic: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagic'), 'exclude': lambda f: f is None }})
     r"""Enable to use Prompt Magic."""
+    prompt_magic_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagicVersion'), 'exclude': lambda f: f is None }})
+    r"""Prompt magic version v2 or v3, for use when promptMagic: true"""
     public: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public'), 'exclude': lambda f: f is None }})
     r"""Whether the generated images should show in the community feed."""
     scheduler: Optional[shared_sd_generation_schedulers.SdGenerationSchedulers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheduler'), 'exclude': lambda f: f is None }})
     r"""The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified."""
     sd_version: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_version'), 'exclude': lambda f: f is None }})
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
+    seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed'), 'exclude': lambda f: f is None }})
     tiling: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tiling'), 'exclude': lambda f: f is None }})
     r"""Whether the generated images should tile on all axis."""
+    unzoom: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoom'), 'exclude': lambda f: f is None }})
+    r"""Whether the generated images should be unzoomed."""
+    unzoom_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoomAmount'), 'exclude': lambda f: f is None }})
+    r"""How much the image should be unzoomed."""
+    upscale_ratio: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscaleRatio'), 'exclude': lambda f: f is None }})
+    r"""How much the image should be upscaled. (Enterprise Only)"""
+    weighting: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting'), 'exclude': lambda f: f is None }})
+    r"""How much weighting to use for generation."""
     width: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is None }})
     r"""The width of the images. Must be between 32 and 1024 and be a multiple of 8."""
     

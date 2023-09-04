@@ -12,10 +12,14 @@ class InitImage:
         self.sdk_configuration = sdk_config
         
     
-    def delete_init_image_by_id(self, request: operations.DeleteInitImageByIDRequest) -> operations.DeleteInitImageByIDResponse:
+    def delete_init_image_by_id(self, id: str) -> operations.DeleteInitImageByIDResponse:
         r"""Delete init image
         This endpoint deletes an init image
         """
+        request = operations.DeleteInitImageByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.DeleteInitImageByIDRequest, base_url, '/init-image/{id}', request)
@@ -40,10 +44,14 @@ class InitImage:
         return res
 
     
-    def get_init_image_by_id(self, request: operations.GetInitImageByIDRequest) -> operations.GetInitImageByIDResponse:
+    def get_init_image_by_id(self, id: str) -> operations.GetInitImageByIDResponse:
         r"""Get single init image
         This endpoint will return a single init image
         """
+        request = operations.GetInitImageByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetInitImageByIDRequest, base_url, '/init-image/{id}', request)

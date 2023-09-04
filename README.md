@@ -50,8 +50,12 @@ if res.create_dataset_200_application_json_object is not None:
 
 * [create_generation](docs/sdks/generation/README.md#create_generation) - Create a Generation of Images
 * [delete_generation_by_id](docs/sdks/generation/README.md#delete_generation_by_id) - Delete a Single Generation
+* [delete_generations_texture_id_](docs/sdks/generation/README.md#delete_generations_texture_id_) - Delete Texture Generation by ID
 * [get_generation_by_id](docs/sdks/generation/README.md#get_generation_by_id) - Get a Single Generation
 * [get_generations_by_user_id](docs/sdks/generation/README.md#get_generations_by_user_id) - Get generations by user ID
+* [get_generations_texture_model_model_id_](docs/sdks/generation/README.md#get_generations_texture_model_model_id_) - Get texture generations by 3D Model ID
+* [get_generations_texture_id_](docs/sdks/generation/README.md#get_generations_texture_id_) - Get Texture Generation by ID
+* [post_generations_texture](docs/sdks/generation/README.md#post_generations_texture) - Create Texture Generation
 
 ### [init_image](docs/sdks/initimage/README.md)
 
@@ -63,7 +67,12 @@ if res.create_dataset_200_application_json_object is not None:
 
 * [create_model](docs/sdks/model/README.md#create_model) - Train a Custom Model
 * [delete_model_by_id](docs/sdks/model/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
+* [delete_models_3d_id_](docs/sdks/model/README.md#delete_models_3d_id_) - Delete 3D Model by ID
 * [get_model_by_id](docs/sdks/model/README.md#get_model_by_id) - Get a Single Custom Model by ID
+* [get_models_3d_user_user_id_](docs/sdks/model/README.md#get_models_3d_user_user_id_) - Get 3D models by user ID
+* [get_models_3d_id_](docs/sdks/model/README.md#get_models_3d_id_) - Get 3D Model by ID
+* [get_platform_models](docs/sdks/model/README.md#get_platform_models) - List Platform Models
+* [post_models_3d_upload](docs/sdks/model/README.md#post_models_3d_upload) - Upload 3D Model
 
 ### [user](docs/sdks/user/README.md)
 
@@ -73,6 +82,7 @@ if res.create_dataset_200_application_json_object is not None:
 
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
 * [get_variation_by_id](docs/sdks/variation/README.md#get_variation_by_id) - Get variation by ID
+* [post_variations_unzoom](docs/sdks/variation/README.md#post_variations_unzoom) - Create unzoom
 <!-- End SDK Available Operations -->
 
 ### Maturity

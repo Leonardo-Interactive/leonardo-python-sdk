@@ -1,0 +1,11 @@
+# GetModels3dIDRequest
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `id`                                                                                      | *str*                                                                                     | :heavy_check_mark:                                                                        | _"id" is required (enter it either in parameters or request body)_                        |
+| `request_body`                                                                            | [Optional[GetModels3dIDRequestBody]](../../models/operations/getmodels3didrequestbody.md) | :heavy_minus_sign:                                                                        | Query parameters can also be provided in the request body as a JSON object                |
+| `limit`                                                                                   | *Optional[int]*                                                                           | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `offset`                                                                                  | *Optional[int]*                                                                           | :heavy_minus_sign:                                                                        | N/A                                                                                       |

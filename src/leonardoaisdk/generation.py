@@ -45,10 +45,14 @@ class Generation:
         return res
 
     
-    def delete_generation_by_id(self, request: operations.DeleteGenerationByIDRequest) -> operations.DeleteGenerationByIDResponse:
+    def delete_generation_by_id(self, id: str) -> operations.DeleteGenerationByIDResponse:
         r"""Delete a Single Generation
         This endpoint deletes a specific generation
         """
+        request = operations.DeleteGenerationByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.DeleteGenerationByIDRequest, base_url, '/generations/{id}', request)
@@ -73,10 +77,50 @@ class Generation:
         return res
 
     
-    def get_generation_by_id(self, request: operations.GetGenerationByIDRequest) -> operations.GetGenerationByIDResponse:
+    def delete_generations_texture_id_(self, id: str, request_body: Optional[operations.DeleteGenerationsTextureIDRequestBody] = None) -> operations.DeleteGenerationsTextureIDResponse:
+        r"""Delete Texture Generation by ID
+        This endpoint deletes the specific texture generation.
+        """
+        request = operations.DeleteGenerationsTextureIDRequest(
+            id=id,
+            request_body=request_body,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.DeleteGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.DeleteGenerationsTextureIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteGenerationsTextureID200ApplicationJSON])
+                res.delete_generations_texture_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def get_generation_by_id(self, id: str) -> operations.GetGenerationByIDResponse:
         r"""Get a Single Generation
         This endpoint will provide information about a specific generation
         """
+        request = operations.GetGenerationByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetGenerationByIDRequest, base_url, '/generations/{id}', request)
@@ -101,10 +145,16 @@ class Generation:
         return res
 
     
-    def get_generations_by_user_id(self, request: operations.GetGenerationsByUserIDRequest) -> operations.GetGenerationsByUserIDResponse:
+    def get_generations_by_user_id(self, user_id: str, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsByUserIDResponse:
         r"""Get generations by user ID
         This endpoint returns all generations by a specific user
         """
+        request = operations.GetGenerationsByUserIDRequest(
+            user_id=user_id,
+            limit=limit,
+            offset=offset,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetGenerationsByUserIDRequest, base_url, '/generations/user/{userId}', request)
@@ -124,6 +174,115 @@ class Generation:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsByUserID200ApplicationJSON])
                 res.get_generations_by_user_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def get_generations_texture_model_model_id_(self, model_id: str, request_body: Optional[operations.GetGenerationsTextureModelModelIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureModelModelIDResponse:
+        r"""Get texture generations by 3D Model ID
+        This endpoint gets the specific texture generations by the 3d model id.
+        """
+        request = operations.GetGenerationsTextureModelModelIDRequest(
+            model_id=model_id,
+            request_body=request_body,
+            limit=limit,
+            offset=offset,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetGenerationsTextureModelModelIDRequest, base_url, '/generations-texture/model/{modelId}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        query_params = utils.get_query_params(operations.GetGenerationsTextureModelModelIDRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetGenerationsTextureModelModelIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsTextureModelModelID200ApplicationJSON])
+                res.get_generations_texture_model_model_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def get_generations_texture_id_(self, id: str, request_body: Optional[operations.GetGenerationsTextureIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureIDResponse:
+        r"""Get Texture Generation by ID
+        This endpoint gets the specific texture generation.
+        """
+        request = operations.GetGenerationsTextureIDRequest(
+            id=id,
+            request_body=request_body,
+            limit=limit,
+            offset=offset,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        query_params = utils.get_query_params(operations.GetGenerationsTextureIDRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetGenerationsTextureIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsTextureID200ApplicationJSON])
+                res.get_generations_texture_id_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def post_generations_texture(self, request: operations.PostGenerationsTextureRequestBody) -> operations.PostGenerationsTextureResponse:
+        r"""Create Texture Generation
+        This endpoint will generate a texture generation.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/generations-texture'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.PostGenerationsTextureResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.PostGenerationsTexture200ApplicationJSON])
+                res.post_generations_texture_200_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

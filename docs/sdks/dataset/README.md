@@ -63,11 +63,8 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.DeleteDatasetByIDRequest(
-    id='74e0f467-cc87-496e-9151-a05dfc2ddf7c',
-)
 
-res = s.dataset.delete_dataset_by_id(req)
+res = s.dataset.delete_dataset_by_id(id='iure')
 
 if res.delete_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -75,9 +72,9 @@ if res.delete_dataset_by_id_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.DeleteDatasetByIDRequest](../../models/operations/deletedatasetbyidrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to delete. |
 
 
 ### Response
@@ -101,11 +98,8 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.GetDatasetByIDRequest(
-    id='c78ca1ba-928f-4c81-a742-cb7392059293',
-)
 
-res = s.dataset.get_dataset_by_id(req)
+res = s.dataset.get_dataset_by_id(id='magnam')
 
 if res.get_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -113,9 +107,9 @@ if res.get_dataset_by_id_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetDatasetByIDRequest](../../models/operations/getdatasetbyidrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to return. |
 
 
 ### Response
@@ -139,14 +133,10 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.UploadDatasetImageRequest(
-    request_body=operations.UploadDatasetImageRequestBody(
-        extension='natus',
-    ),
-    dataset_id='laboriosam',
-)
 
-res = s.dataset.upload_dataset_image(req)
+res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
+    extension='debitis',
+), dataset_id='ipsa')
 
 if res.upload_dataset_image_200_application_json_object is not None:
     # handle response
@@ -154,9 +144,10 @@ if res.upload_dataset_image_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.UploadDatasetImageRequest](../../models/operations/uploaddatasetimagerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request_body`                                                                                       | [operations.UploadDatasetImageRequestBody](../../models/operations/uploaddatasetimagerequestbody.md) | :heavy_check_mark:                                                                                   | Query parameters provided in the request body as a JSON object                                       |
+| `dataset_id`                                                                                         | *str*                                                                                                | :heavy_check_mark:                                                                                   | _"datasetId" is required                                                                             |
 
 
 ### Response
@@ -180,14 +171,10 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.UploadDatasetImageFromGenRequest(
-    request_body=operations.UploadDatasetImageFromGenRequestBody(
-        generated_image_id='hic',
-    ),
-    dataset_id='saepe',
-)
 
-res = s.dataset.upload_dataset_image_from_gen(req)
+res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
+    generated_image_id='delectus',
+), dataset_id='tempora')
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response
@@ -195,9 +182,10 @@ if res.upload_dataset_image_from_gen_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.UploadDatasetImageFromGenRequest](../../models/operations/uploaddatasetimagefromgenrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request_body`                                                                                                     | [operations.UploadDatasetImageFromGenRequestBody](../../models/operations/uploaddatasetimagefromgenrequestbody.md) | :heavy_check_mark:                                                                                                 | Query parameters to be provided in the request body as a JSON object                                               |
+| `dataset_id`                                                                                                       | *str*                                                                                                              | :heavy_check_mark:                                                                                                 | The ID of the dataset to upload the image to.                                                                      |
 
 
 ### Response

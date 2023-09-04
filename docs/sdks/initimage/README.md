@@ -22,11 +22,8 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.DeleteInitImageByIDRequest(
-    id='1b5e6e13-b99d-4488-a1e9-1e450ad2abd4',
-)
 
-res = s.init_image.delete_init_image_by_id(req)
+res = s.init_image.delete_init_image_by_id(id='quo')
 
 if res.delete_init_image_by_id_200_application_json_object is not None:
     # handle response
@@ -34,9 +31,9 @@ if res.delete_init_image_by_id_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.DeleteInitImageByIDRequest](../../models/operations/deleteinitimagebyidrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
 
 
 ### Response
@@ -60,11 +57,8 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.GetInitImageByIDRequest(
-    id='4269802d-502a-494b-b4f6-3c969e9a3efa',
-)
 
-res = s.init_image.get_init_image_by_id(req)
+res = s.init_image.get_init_image_by_id(id='sequi')
 
 if res.get_init_image_by_id_200_application_json_object is not None:
     # handle response
@@ -72,9 +66,9 @@ if res.get_init_image_by_id_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetInitImageByIDRequest](../../models/operations/getinitimagebyidrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
 
 
 ### Response
@@ -99,7 +93,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.UploadInitImageRequestBody(
-    extension='in',
+    extension='tenetur',
 )
 
 res = s.init_image.upload_init_image(req)

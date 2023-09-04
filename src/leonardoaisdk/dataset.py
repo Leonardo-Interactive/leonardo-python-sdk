@@ -45,10 +45,14 @@ class Dataset:
         return res
 
     
-    def delete_dataset_by_id(self, request: operations.DeleteDatasetByIDRequest) -> operations.DeleteDatasetByIDResponse:
+    def delete_dataset_by_id(self, id: str) -> operations.DeleteDatasetByIDResponse:
         r"""Delete a Single Dataset by ID
         This endpoint deletes the specific dataset
         """
+        request = operations.DeleteDatasetByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.DeleteDatasetByIDRequest, base_url, '/datasets/{id}', request)
@@ -73,10 +77,14 @@ class Dataset:
         return res
 
     
-    def get_dataset_by_id(self, request: operations.GetDatasetByIDRequest) -> operations.GetDatasetByIDResponse:
+    def get_dataset_by_id(self, id: str) -> operations.GetDatasetByIDResponse:
         r"""Get a Single Dataset by ID
         This endpoint gets the specific dataset
         """
+        request = operations.GetDatasetByIDRequest(
+            id=id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetDatasetByIDRequest, base_url, '/datasets/{id}', request)
@@ -101,10 +109,15 @@ class Dataset:
         return res
 
     
-    def upload_dataset_image(self, request: operations.UploadDatasetImageRequest) -> operations.UploadDatasetImageResponse:
+    def upload_dataset_image(self, request_body: operations.UploadDatasetImageRequestBody, dataset_id: str) -> operations.UploadDatasetImageResponse:
         r"""Upload dataset image
         This endpoint returns presigned details to upload a dataset image to S3
         """
+        request = operations.UploadDatasetImageRequest(
+            request_body=request_body,
+            dataset_id=dataset_id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UploadDatasetImageRequest, base_url, '/datasets/{datasetId}/upload', request)
@@ -134,10 +147,15 @@ class Dataset:
         return res
 
     
-    def upload_dataset_image_from_gen(self, request: operations.UploadDatasetImageFromGenRequest) -> operations.UploadDatasetImageFromGenResponse:
+    def upload_dataset_image_from_gen(self, request_body: operations.UploadDatasetImageFromGenRequestBody, dataset_id: str) -> operations.UploadDatasetImageFromGenResponse:
         r"""Upload a Single Generated Image to a Dataset
         This endpoint will upload a previously generated image to the dataset
         """
+        request = operations.UploadDatasetImageFromGenRequest(
+            request_body=request_body,
+            dataset_id=dataset_id,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UploadDatasetImageFromGenRequest, base_url, '/datasets/{datasetId}/upload/gen', request)
