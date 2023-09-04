@@ -20,6 +20,6 @@ features:
 python:
   version: 1.19.1
   author: Leonardo-Ai
-  description: Leonardo Ai Python Client SDK
-  maxMethodParams: 0
+  description: Leonardo AI Python Client SDK
+  maxMethodParams: 4
   packageName: Leonardo-Ai-SDK
