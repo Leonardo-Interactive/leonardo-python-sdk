@@ -39,31 +39,30 @@ req = operations.CreateGenerationRequestBody(
     high_resolution=False,
     image_prompt_weight=5288.95,
     image_prompts=[
-        'excepturi',
-        'nisi',
+        'iusto',
     ],
-    init_generation_image_id='recusandae',
-    init_image_id='temporibus',
-    init_strength=710.36,
-    model_id='quis',
-    negative_prompt='veritatis',
+    init_generation_image_id='excepturi',
+    init_image_id='nisi',
+    init_strength=9255.97,
+    model_id='temporibus',
+    negative_prompt='ab',
     nsfw=False,
-    num_images=648172,
-    num_inference_steps=20218,
-    preset_style=shared.SdGenerationStyle.LEONARDO,
-    prompt='repellendus',
+    num_images=337396,
+    num_inference_steps=87129,
+    preset_style=shared.SdGenerationStyle.NONE,
+    prompt='perferendis',
     prompt_magic=False,
-    prompt_magic_version='sapiente',
+    prompt_magic_version='ipsam',
     public=False,
     scheduler=shared.SdGenerationSchedulers.DPM_SOLVER,
-    sd_version=shared.SdVersions.V1_5,
-    seed=870013,
+    sd_version=shared.SdVersions.V2,
+    seed=778157,
     tiling=False,
     unzoom=False,
-    unzoom_amount=8700.88,
-    upscale_ratio=9786.19,
-    weighting=4736.08,
-    width=799159,
+    unzoom_amount=1403.5,
+    upscale_ratio=8700.13,
+    weighting=8700.88,
+    width=978619,
 )
 
 res = s.generation.create_generation(req)
@@ -101,7 +100,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generation_by_id(id='quod')
+res = s.generation.delete_generation_by_id(id='molestiae')
 
 if res.delete_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -136,8 +135,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generations_texture_id_(id='esse', request_body=operations.DeleteGenerationsTextureIDRequestBody(
-    id='8ca1ba92-8fc8-4167-82cb-739205929396',
+res = s.generation.delete_generations_texture_id_(id='quod', request_body=operations.DeleteGenerationsTextureIDRequestBody(
+    id='c78ca1ba-928f-4c81-a742-cb7392059293',
 ))
 
 if res.delete_generations_texture_id_200_application_json_object is not None:
@@ -174,7 +173,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generation_by_id(id='hic')
+res = s.generation.get_generation_by_id(id='natus')
 
 if res.get_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -209,7 +208,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_by_user_id(user_id='saepe', limit=681820, offset=449950)
+res = s.generation.get_generations_by_user_id(user_id='laboriosam', limit=943749, offset=902599)
 
 if res.get_generations_by_user_id_200_application_json_object is not None:
     # handle response
@@ -246,11 +245,11 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_model_model_id_(model_id='corporis', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(
-    limit=613064,
-    model_id='iure',
-    offset=902349,
-), limit=697631, offset=99280)
+res = s.generation.get_generations_texture_model_model_id_(model_id='fuga', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(
+    limit=449950,
+    model_id='corporis',
+    offset=613064,
+), limit=437032, offset=902349)
 
 if res.get_generations_texture_model_model_id_200_application_json_object is not None:
     # handle response
@@ -288,9 +287,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_id_(id='ipsa', request_body=operations.GetGenerationsTextureIDRequestBody(
-    id='faaa2352-c595-4590-baff-1a3a2fa94677',
-), limit=244425, offset=623510)
+res = s.generation.get_generations_texture_id_(id='quidem', request_body=operations.GetGenerationsTextureIDRequestBody(
+    id='10faaa23-52c5-4955-907a-ff1a3a2fa946',
+), limit=466311, offset=474697)
 
 if res.get_generations_texture_id_200_application_json_object is not None:
     # handle response
@@ -328,14 +327,14 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.PostGenerationsTextureRequestBody(
-    front_rotation_offset=158969,
-    model_asset_id='quis',
-    negative_prompt='vitae',
+    front_rotation_offset=244425,
+    model_asset_id='error',
+    negative_prompt='quia',
     preview=False,
-    preview_direction='laborum',
-    prompt='animi',
-    sd_version='enim',
-    seed=138183,
+    preview_direction='quis',
+    prompt='vitae',
+    sd_version='laborum',
+    seed=656330,
 )
 
 res = s.generation.post_generations_texture(req)
