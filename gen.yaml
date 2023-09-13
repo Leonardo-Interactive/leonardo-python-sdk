@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: f8a7472539f9e24e5428b91993e3e13b
+  docChecksum: cda9d251429324050f2eeb530d3369ff
   docVersion: v1.0.0
-  speakeasyVersion: 1.82.5
-  generationVersion: 2.108.3
+  speakeasyVersion: 1.83.2
+  generationVersion: 2.109.3
 generation:
   comments:
     disableComments: false
@@ -20,7 +20,7 @@ features:
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 python:
-  version: 1.19.4
+  version: 1.19.5
   author: Leonardo-Ai
   description: Leonardo AI Python Client SDK
   maxMethodParams: 4

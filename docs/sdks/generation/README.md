@@ -49,6 +49,7 @@ req = operations.CreateGenerationRequestBody(
     nsfw=False,
     num_images=337396,
     num_inference_steps=87129,
+    photo_real=False,
     preset_style=shared.SdGenerationStyle.NONE,
     prompt='perferendis',
     prompt_magic=False,
