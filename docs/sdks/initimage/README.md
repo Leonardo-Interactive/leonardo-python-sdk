@@ -1,4 +1,4 @@
-# init_image
+# InitImage
 
 ### Available Operations
 
