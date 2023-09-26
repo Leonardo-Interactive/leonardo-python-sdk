@@ -45,8 +45,11 @@ class UploadInitImage200ApplicationJSON:
 @dataclasses.dataclass
 class UploadInitImageResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     upload_init_image_200_application_json_object: Optional[UploadInitImage200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /init-image"""
     

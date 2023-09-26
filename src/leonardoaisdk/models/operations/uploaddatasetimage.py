@@ -56,8 +56,11 @@ class UploadDatasetImage200ApplicationJSON:
 @dataclasses.dataclass
 class UploadDatasetImageResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     upload_dataset_image_200_application_json_object: Optional[UploadDatasetImage200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /datasets/{datasetId}/upload"""
     

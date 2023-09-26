@@ -25,8 +25,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    description='corrupti',
-    name='Ben Mueller',
+    description='iure',
+    name='Raquel Bednar',
 )
 
 res = s.dataset.create_dataset(req)
@@ -64,7 +64,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.delete_dataset_by_id(id='iure')
+res = s.dataset.delete_dataset_by_id(id='suscipit')
 
 if res.delete_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -99,7 +99,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.get_dataset_by_id(id='magnam')
+res = s.dataset.get_dataset_by_id(id='molestiae')
 
 if res.get_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -135,8 +135,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
-    extension='debitis',
-), dataset_id='ipsa')
+    extension='minus',
+), dataset_id='placeat')
 
 if res.upload_dataset_image_200_application_json_object is not None:
     # handle response
@@ -173,8 +173,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
-    generated_image_id='delectus',
-), dataset_id='tempora')
+    generated_image_id='voluptatum',
+), dataset_id='iusto')
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response

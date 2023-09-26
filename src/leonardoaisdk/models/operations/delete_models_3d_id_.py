@@ -54,9 +54,12 @@ class DeleteModels3dID200ApplicationJSON:
 @dataclasses.dataclass
 class DeleteModels3dIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_models_3d_id_200_application_json_object: Optional[DeleteModels3dID200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for DELETE /api/rest/v1/models-3d/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

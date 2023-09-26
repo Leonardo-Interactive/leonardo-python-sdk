@@ -59,9 +59,12 @@ class GetModels3dUserUserID200ApplicationJSON:
 @dataclasses.dataclass
 class GetModels3dUserUserIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_models_3d_user_user_id_200_application_json_object: Optional[GetModels3dUserUserID200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/models-3d/user/{userId}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

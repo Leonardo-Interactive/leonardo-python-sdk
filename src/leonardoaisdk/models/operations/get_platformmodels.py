@@ -58,9 +58,12 @@ class GetPlatformModels200ApplicationJSON:
 @dataclasses.dataclass
 class GetPlatformModelsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_platform_models_200_application_json_object: Optional[GetPlatformModels200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/platformModels"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

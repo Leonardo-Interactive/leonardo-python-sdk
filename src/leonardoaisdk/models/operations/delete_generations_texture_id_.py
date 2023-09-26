@@ -54,9 +54,12 @@ class DeleteGenerationsTextureID200ApplicationJSON:
 @dataclasses.dataclass
 class DeleteGenerationsTextureIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_generations_texture_id_200_application_json_object: Optional[DeleteGenerationsTextureID200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

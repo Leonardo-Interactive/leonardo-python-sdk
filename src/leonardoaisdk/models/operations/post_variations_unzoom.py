@@ -42,9 +42,12 @@ class PostVariationsUnzoom200ApplicationJSON:
 @dataclasses.dataclass
 class PostVariationsUnzoomResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     post_variations_unzoom_200_application_json_object: Optional[PostVariationsUnzoom200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/variations/unzoom"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

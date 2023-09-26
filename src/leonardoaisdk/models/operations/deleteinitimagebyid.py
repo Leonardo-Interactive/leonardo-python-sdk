@@ -42,9 +42,12 @@ class DeleteInitImageByID200ApplicationJSON:
 @dataclasses.dataclass
 class DeleteInitImageByIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_init_image_by_id_200_application_json_object: Optional[DeleteInitImageByID200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for DELETE /init-image/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

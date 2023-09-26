@@ -45,9 +45,12 @@ class GetUserSelf200ApplicationJSON:
 @dataclasses.dataclass
 class GetUserSelfResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_user_self_200_application_json_object: Optional[GetUserSelf200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for GET /me"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -59,9 +59,12 @@ class GetDatasetByID200ApplicationJSON:
 @dataclasses.dataclass
 class GetDatasetByIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_dataset_by_id_200_application_json_object: Optional[GetDatasetByID200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for GET /datasets/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

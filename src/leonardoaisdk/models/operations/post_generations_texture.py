@@ -48,9 +48,12 @@ class PostGenerationsTexture200ApplicationJSON:
 @dataclasses.dataclass
 class PostGenerationsTextureResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     post_generations_texture_200_application_json_object: Optional[PostGenerationsTexture200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/generations-texture"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

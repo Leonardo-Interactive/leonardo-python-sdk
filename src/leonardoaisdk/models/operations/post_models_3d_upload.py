@@ -45,9 +45,12 @@ class PostModels3dUpload200ApplicationJSON:
 @dataclasses.dataclass
 class PostModels3dUploadResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     post_models_3d_upload_200_application_json_object: Optional[PostModels3dUpload200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/models-3d/upload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

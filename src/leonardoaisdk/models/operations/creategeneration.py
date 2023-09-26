@@ -114,9 +114,12 @@ class CreateGeneration200ApplicationJSON:
 @dataclasses.dataclass
 class CreateGenerationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_generation_200_application_json_object: Optional[CreateGeneration200ApplicationJSON] = dataclasses.field(default=None)
     r"""Responses for POST /generations"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

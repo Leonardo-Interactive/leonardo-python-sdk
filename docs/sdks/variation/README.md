@@ -23,7 +23,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateVariationUpscaleRequestBody(
-    id='77dfb14c-d66a-4e39-9efb-9ba88f3a6699',
+    id='cd66ae39-5efb-49ba-88f3-a66997074ba4',
 )
 
 res = s.variation.create_variation_upscale(req)
@@ -61,7 +61,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.variation.get_variation_by_id(id='molestiae')
+res = s.variation.get_variation_by_id(id='labore')
 
 if res.get_variation_by_id_200_application_json_object is not None:
     # handle response
@@ -96,7 +96,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.PostVariationsUnzoomRequestBody(
-    id='074ba446-9b6e-4214-9959-890afa563e25',
+    id='69b6e214-1959-4890-afa5-63e2516fe4c8',
     is_variation=False,
 )
 
