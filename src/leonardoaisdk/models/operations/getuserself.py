@@ -13,8 +13,8 @@ from typing import Optional
 @dataclasses.dataclass
 class GetUserSelf200ApplicationJSONUserDetailsUsers:
     r"""columns and relationships of \\"users\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username') }})
     
 
 
@@ -25,7 +25,7 @@ class GetUserSelf200ApplicationJSONUserDetailsUsers:
 class GetUserSelf200ApplicationJSONUserDetails:
     r"""columns and relationships of \\"user_details\\" """
     show_nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('showNsfw'), 'exclude': lambda f: f is None }})
-    user: Optional[GetUserSelf200ApplicationJSONUserDetailsUsers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
+    user: Optional[GetUserSelf200ApplicationJSONUserDetailsUsers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
     r"""columns and relationships of \\"users\\" """
     
 

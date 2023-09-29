@@ -14,7 +14,7 @@ from typing import Optional
 class PostModels3dUploadRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
     model_extension: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelExtension'), 'exclude': lambda f: f is None }})
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     
 
 
@@ -23,10 +23,10 @@ class PostModels3dUploadRequestBody:
 
 @dataclasses.dataclass
 class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
-    model_fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelFields'), 'exclude': lambda f: f is None }})
-    model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId'), 'exclude': lambda f: f is None }})
-    model_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelKey'), 'exclude': lambda f: f is None }})
-    model_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelUrl'), 'exclude': lambda f: f is None }})
+    model_fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelFields') }})
+    model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId') }})
+    model_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelKey') }})
+    model_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelUrl') }})
     
 
 
@@ -36,7 +36,7 @@ class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
 @dataclasses.dataclass
 class PostModels3dUpload200ApplicationJSON:
     r"""Responses for POST /api/rest/v1/models-3d/upload"""
-    upload_model_asset: Optional[PostModels3dUpload200ApplicationJSONModelAssetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadModelAsset'), 'exclude': lambda f: f is None }})
+    upload_model_asset: Optional[PostModels3dUpload200ApplicationJSONModelAssetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadModelAsset') }})
     
 
 

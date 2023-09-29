@@ -30,41 +30,41 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 req = operations.CreateGenerationRequestBody(
     alchemy=False,
-    contrast_ratio=5680.45,
+    contrast_ratio=4444.14,
     control_net=False,
     control_net_type=shared.ControlnetType.CANNY,
     expanded_domain=False,
-    guidance_scale=925597,
-    height=836079,
+    guidance_scale=784343,
+    height=244808,
     high_contrast=False,
     high_resolution=False,
-    image_prompt_weight=710.36,
+    image_prompt_weight=2793,
     image_prompts=[
-        'quis',
+        'Product',
     ],
-    init_generation_image_id='veritatis',
-    init_image_id='deserunt',
-    init_strength=202.18,
-    model_id='ipsam',
-    negative_prompt='repellendus',
+    init_generation_image_id='actuating DNS',
+    init_image_id='salmon wireless rarely',
+    init_strength=1502.38,
+    model_id='emulation Country',
+    negative_prompt='Kentucky MTF',
     nsfw=False,
-    num_images=957156,
-    num_inference_steps=778157,
+    num_images=649224,
+    num_inference_steps=895539,
     photo_real=False,
     preset_style=shared.SdGenerationStyle.LEONARDO,
-    prompt='at',
+    prompt='aggregate',
     prompt_magic=False,
-    prompt_magic_version='at',
+    prompt_magic_version='visionary which',
     public=False,
-    scheduler=shared.SdGenerationSchedulers.PNDM,
-    sd_version=shared.SdVersions.V1_5,
-    seed=799159,
+    scheduler=shared.SdGenerationSchedulers.DDIM,
+    sd_version=shared.SdVersions.V2,
+    seed=262328,
     tiling=False,
     unzoom=False,
-    unzoom_amount=8009.11,
-    upscale_ratio=4614.79,
-    weighting=5204.78,
-    width=780529,
+    unzoom_amount=371.25,
+    upscale_ratio=485.82,
+    weighting=9968.92,
+    width=152007,
 )
 
 res = s.generation.create_generation(req)
@@ -102,7 +102,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generation_by_id(id='dolorum')
+res = s.generation.delete_generation_by_id(id='Sports')
 
 if res.delete_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -137,8 +137,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generations_texture_id_(id='dicta', request_body=operations.DeleteGenerationsTextureIDRequestBody(
-    id='ba928fc8-1674-42cb-b392-05929396fea7',
+res = s.generation.delete_generations_texture_id_(id='Lodge', request_body=operations.DeleteGenerationsTextureIDRequestBody(
+    id='<ID>',
 ))
 
 if res.delete_generations_texture_id_200_application_json_object is not None:
@@ -175,7 +175,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generation_by_id(id='corporis')
+res = s.generation.get_generation_by_id(id='male')
 
 if res.get_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -210,7 +210,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_by_user_id(user_id='iste', limit=437032, offset=902349)
+res = s.generation.get_generations_by_user_id(user_id='Oriental', limit=135536, offset=934375)
 
 if res.get_generations_by_user_id_200_application_json_object is not None:
     # handle response
@@ -247,11 +247,11 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_model_model_id_(model_id='quidem', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(
-    limit=99280,
-    model_id='ipsa',
-    offset=969810,
-), limit=666767, offset=653140)
+res = s.generation.get_generations_texture_model_model_id_(model_id='Bacon', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(
+    limit=556694,
+    model_id='Diesel',
+    offset=607383,
+), limit=964860, offset=205602)
 
 if res.get_generations_texture_model_model_id_200_application_json_object is not None:
     # handle response
@@ -289,9 +289,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_id_(id='laborum', request_body=operations.GetGenerationsTextureIDRequestBody(
-    id='2352c595-5907-4aff-9a3a-2fa946773925',
-), limit=110375, offset=674752)
+res = s.generation.get_generations_texture_id_(id='Cisgender', request_body=operations.GetGenerationsTextureIDRequestBody(
+    id='<ID>',
+), limit=783489, offset=654442)
 
 if res.get_generations_texture_id_200_application_json_object is not None:
     # handle response
@@ -329,14 +329,14 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.PostGenerationsTextureRequestBody(
-    front_rotation_offset=656330,
-    model_asset_id='enim',
-    negative_prompt='odit',
+    front_rotation_offset=854632,
+    model_asset_id='West',
+    negative_prompt='quantifying pink ah',
     preview=False,
-    preview_direction='quo',
-    prompt='sequi',
-    sd_version='tenetur',
-    seed=368725,
+    preview_direction='Auto',
+    prompt='Coupe North Steel',
+    sd_version='Market parsing inasmuch',
+    seed=895868,
 )
 
 res = s.generation.post_generations_texture(req)

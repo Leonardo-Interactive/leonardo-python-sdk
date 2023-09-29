@@ -23,7 +23,7 @@ class GetInitImageByIDRequest:
 class GetInitImageByID200ApplicationJSONInitImages:
     r"""columns and relationships of \\"init_images\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     
 
@@ -34,7 +34,7 @@ class GetInitImageByID200ApplicationJSONInitImages:
 @dataclasses.dataclass
 class GetInitImageByID200ApplicationJSON:
     r"""Responses for GET /init-image/{id}"""
-    init_images_by_pk: Optional[GetInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk'), 'exclude': lambda f: f is None }})
+    init_images_by_pk: Optional[GetInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk') }})
     r"""columns and relationships of \\"init_images\\" """
     
 

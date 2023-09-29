@@ -23,10 +23,10 @@ class UploadInitImageRequestBody:
 
 @dataclasses.dataclass
 class UploadInitImage200ApplicationJSONInitImageUploadOutput:
-    fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is None }})
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
+    fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
+    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     
 
 
@@ -36,7 +36,7 @@ class UploadInitImage200ApplicationJSONInitImageUploadOutput:
 @dataclasses.dataclass
 class UploadInitImage200ApplicationJSON:
     r"""Responses for POST /init-image"""
-    upload_init_image: Optional[UploadInitImage200ApplicationJSONInitImageUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadInitImage'), 'exclude': lambda f: f is None }})
+    upload_init_image: Optional[UploadInitImage200ApplicationJSONInitImageUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadInitImage') }})
     
 
 

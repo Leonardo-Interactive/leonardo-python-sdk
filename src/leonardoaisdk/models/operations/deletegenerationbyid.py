@@ -22,7 +22,7 @@ class DeleteGenerationByIDRequest:
 @dataclasses.dataclass
 class DeleteGenerationByID200ApplicationJSONGenerations:
     r"""columns and relationships of \\"generations\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -32,7 +32,7 @@ class DeleteGenerationByID200ApplicationJSONGenerations:
 @dataclasses.dataclass
 class DeleteGenerationByID200ApplicationJSON:
     r"""Responses for DELETE /generations/{id}"""
-    delete_generations_by_pk: Optional[DeleteGenerationByID200ApplicationJSONGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_generations_by_pk'), 'exclude': lambda f: f is None }})
+    delete_generations_by_pk: Optional[DeleteGenerationByID200ApplicationJSONGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_generations_by_pk') }})
     r"""columns and relationships of \\"generations\\" """
     
 
