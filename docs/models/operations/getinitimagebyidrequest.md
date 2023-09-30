@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
+| `id`               | *Optional[str]*    | :heavy_check_mark: | _"id" is required_ |

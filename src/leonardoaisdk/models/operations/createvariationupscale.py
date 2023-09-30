@@ -32,7 +32,7 @@ class CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput:
 @dataclasses.dataclass
 class CreateVariationUpscale200ApplicationJSON:
     r"""Responses for POST /variations/upscale"""
-    sd_upscale_job: Optional[CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob'), 'exclude': lambda f: f is None }})
+    sd_upscale_job: Optional[CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob') }})
     
 
 

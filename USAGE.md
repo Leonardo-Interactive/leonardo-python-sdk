@@ -12,8 +12,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    description='corrupti',
-    name='Kelvin Sporer',
+    description='Synchronised multi-tasking projection',
+    name='Quetzal South',
 )
 
 res = s.dataset.create_dataset(req)

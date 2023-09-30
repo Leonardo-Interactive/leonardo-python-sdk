@@ -24,7 +24,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.delete_init_image_by_id(id='id')
+res = s.init_image.delete_init_image_by_id(id='Woman')
 
 if res.delete_init_image_by_id_200_application_json_object is not None:
     # handle response
@@ -59,7 +59,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.get_init_image_by_id(id='possimus')
+res = s.init_image.get_init_image_by_id(id='Namibia')
 
 if res.get_init_image_by_id_200_application_json_object is not None:
     # handle response
@@ -94,7 +94,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.UploadInitImageRequestBody(
-    extension='aut',
+    extension='png',
 )
 
 res = s.init_image.upload_init_image(req)

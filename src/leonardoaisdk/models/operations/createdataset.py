@@ -15,7 +15,7 @@ class CreateDatasetRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the dataset."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""A description for the dataset."""
     
 
@@ -26,7 +26,7 @@ class CreateDatasetRequestBody:
 @dataclasses.dataclass
 class CreateDataset200ApplicationJSONDatasets:
     r"""columns and relationships of \\"datasets\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -36,7 +36,7 @@ class CreateDataset200ApplicationJSONDatasets:
 @dataclasses.dataclass
 class CreateDataset200ApplicationJSON:
     r"""Responses for POST /datasets"""
-    insert_datasets_one: Optional[CreateDataset200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one'), 'exclude': lambda f: f is None }})
+    insert_datasets_one: Optional[CreateDataset200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one') }})
     r"""columns and relationships of \\"datasets\\" """
     
 

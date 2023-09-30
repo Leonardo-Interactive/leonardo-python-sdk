@@ -26,8 +26,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    description='iure',
-    name='Raquel Bednar',
+    description='Synchronised multi-tasking projection',
+    name='Quetzal South',
 )
 
 res = s.dataset.create_dataset(req)
@@ -65,7 +65,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.delete_dataset_by_id(id='suscipit')
+res = s.dataset.delete_dataset_by_id(id='Lucia')
 
 if res.delete_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -100,7 +100,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.get_dataset_by_id(id='molestiae')
+res = s.dataset.get_dataset_by_id(id='red')
 
 if res.get_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -136,8 +136,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
-    extension='minus',
-), dataset_id='placeat')
+    extension='mpg4',
+), dataset_id='deposit')
 
 if res.upload_dataset_image_200_application_json_object is not None:
     # handle response
@@ -174,8 +174,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
-    generated_image_id='voluptatum',
-), dataset_id='iusto')
+    generated_image_id='navigate programming evolve',
+), dataset_id='finally')
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response

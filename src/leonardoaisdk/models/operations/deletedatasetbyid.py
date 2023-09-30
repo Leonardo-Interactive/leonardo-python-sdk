@@ -22,7 +22,7 @@ class DeleteDatasetByIDRequest:
 @dataclasses.dataclass
 class DeleteDatasetByID200ApplicationJSONDatasets:
     r"""columns and relationships of \\"datasets\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -32,7 +32,7 @@ class DeleteDatasetByID200ApplicationJSONDatasets:
 @dataclasses.dataclass
 class DeleteDatasetByID200ApplicationJSON:
     r"""Responses for DELETE /datasets/{id}"""
-    delete_datasets_by_pk: Optional[DeleteDatasetByID200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_datasets_by_pk'), 'exclude': lambda f: f is None }})
+    delete_datasets_by_pk: Optional[DeleteDatasetByID200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_datasets_by_pk') }})
     r"""columns and relationships of \\"datasets\\" """
     
 

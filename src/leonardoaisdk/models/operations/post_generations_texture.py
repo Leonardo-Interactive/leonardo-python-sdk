@@ -13,14 +13,14 @@ from typing import Optional
 @dataclasses.dataclass
 class PostGenerationsTextureRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    front_rotation_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('front_rotation_offset'), 'exclude': lambda f: f is None }})
+    front_rotation_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('front_rotation_offset') }})
     model_asset_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelAssetId'), 'exclude': lambda f: f is None }})
-    negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt'), 'exclude': lambda f: f is None }})
-    preview: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview'), 'exclude': lambda f: f is None }})
-    preview_direction: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_direction'), 'exclude': lambda f: f is None }})
+    negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt') }})
+    preview: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview') }})
+    preview_direction: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_direction') }})
     prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
-    sd_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_version'), 'exclude': lambda f: f is None }})
-    seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed'), 'exclude': lambda f: f is None }})
+    sd_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_version') }})
+    seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed') }})
     
 
 
@@ -39,7 +39,7 @@ class PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput:
 @dataclasses.dataclass
 class PostGenerationsTexture200ApplicationJSON:
     r"""Responses for POST /api/rest/v1/generations-texture"""
-    texture_generation_job: Optional[PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob'), 'exclude': lambda f: f is None }})
+    texture_generation_job: Optional[PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob') }})
     
 
 

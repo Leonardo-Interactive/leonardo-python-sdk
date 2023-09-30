@@ -27,8 +27,8 @@ class GetModelByID200ApplicationJSONCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    instance_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instancePrompt'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    instance_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instancePrompt') }})
     model_height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelHeight'), 'exclude': lambda f: f is None }})
     model_width: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelWidth'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
@@ -37,7 +37,7 @@ class GetModelByID200ApplicationJSONCustomModels:
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
     status: Optional[shared_job_status.JobStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of the current task."""
-    type: Optional[shared_custom_model_type.CustomModelType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[shared_custom_model_type.CustomModelType] = dataclasses.field(default=shared_custom_model_type.CustomModelType.GENERAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The category the most accurately reflects the model."""
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'exclude': lambda f: f is None }})
     
@@ -49,7 +49,7 @@ class GetModelByID200ApplicationJSONCustomModels:
 @dataclasses.dataclass
 class GetModelByID200ApplicationJSON:
     r"""Responses for GET /models/{id}"""
-    custom_models_by_pk: Optional[GetModelByID200ApplicationJSONCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk'), 'exclude': lambda f: f is None }})
+    custom_models_by_pk: Optional[GetModelByID200ApplicationJSONCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk') }})
     r"""columns and relationships of \\"custom_models\\" """
     
 

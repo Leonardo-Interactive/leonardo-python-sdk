@@ -13,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class DeleteGenerationsTextureIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -34,7 +34,7 @@ class DeleteGenerationsTextureIDRequest:
 @dataclasses.dataclass
 class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -44,7 +44,7 @@ class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
 @dataclasses.dataclass
 class DeleteGenerationsTextureID200ApplicationJSON:
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
-    delete_model_asset_texture_generations_by_pk: Optional[DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk'), 'exclude': lambda f: f is None }})
+    delete_model_asset_texture_generations_by_pk: Optional[DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk') }})
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     
 

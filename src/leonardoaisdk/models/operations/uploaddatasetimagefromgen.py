@@ -34,7 +34,7 @@ class UploadDatasetImageFromGenRequest:
 
 @dataclasses.dataclass
 class UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput:
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
 
@@ -44,7 +44,7 @@ class UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput:
 @dataclasses.dataclass
 class UploadDatasetImageFromGen200ApplicationJSON:
     r"""Responses for POST /datasets/{datasetId}/upload/gen"""
-    upload_dataset_image_from_gen: Optional[UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen'), 'exclude': lambda f: f is None }})
+    upload_dataset_image_from_gen: Optional[UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen') }})
     
 
 

@@ -29,15 +29,15 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateModelRequestBody(
-    dataset_id='quasi',
-    description='error',
-    instance_prompt='temporibus',
+    dataset_id='24/7',
+    description='Proactive transitional function',
+    instance_prompt='Des',
     model_type=shared.CustomModelType.PIXEL_ART,
-    name='Johanna Wolf',
+    name='Officer female',
     nsfw=False,
-    resolution=509624,
+    resolution=451662,
     sd_version=shared.SdVersions.V2,
-    strength=shared.Strength.VERY_LOW,
+    strength=shared.Strength.HIGH,
 )
 
 res = s.model.create_model(req)
@@ -75,7 +75,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_model_by_id(id='omnis')
+res = s.model.delete_model_by_id(id='Mills')
 
 if res.delete_model_by_id_200_application_json_object is not None:
     # handle response
@@ -110,8 +110,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_models_3d_id_(id='voluptate', request_body=operations.DeleteModels3dIDRequestBody(
-    id='b0074f15-471b-45e6-a13b-99d488e1e91e',
+res = s.model.delete_models_3d_id_(id='Electronics', request_body=operations.DeleteModels3dIDRequestBody(
+    id='<ID>',
 ))
 
 if res.delete_models_3d_id_200_application_json_object is not None:
@@ -148,7 +148,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_model_by_id(id='incidunt')
+res = s.model.get_model_by_id(id='protocol')
 
 if res.get_model_by_id_200_application_json_object is not None:
     # handle response
@@ -183,9 +183,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_user_user_id_(user_id='enim', request_body=operations.GetModels3dUserUserIDRequestBody(
-    user_id='consequatur',
-), limit=667411, offset=842342)
+res = s.model.get_models_3d_user_user_id_(user_id='Hyundai', request_body=operations.GetModels3dUserUserIDRequestBody(
+    user_id='extend deposit Account',
+), limit=613679, offset=636742)
 
 if res.get_models_3d_user_user_id_200_application_json_object is not None:
     # handle response
@@ -223,9 +223,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_id_(id='explicabo', request_body=operations.GetModels3dIDRequestBody(
-    id='abd44269-802d-4502-a94b-b4f63c969e9a',
-), limit=223081, offset=891555)
+res = s.model.get_models_3d_id_(id='West', request_body=operations.GetModels3dIDRequestBody(
+    id='<ID>',
+), limit=446044, offset=445980)
 
 if res.get_models_3d_id_200_application_json_object is not None:
     # handle response
@@ -263,7 +263,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_platform_models(limit=952749, offset=680056)
+res = s.model.get_platform_models(limit=419487, offset=472174)
 
 if res.get_platform_models_200_application_json_object is not None:
     # handle response
@@ -299,8 +299,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.PostModels3dUploadRequestBody(
-    model_extension='in',
-    name='Angel Wolff II',
+    model_extension='Bromine',
+    name='Electric Berkshire',
 )
 
 res = s.model.post_models_3d_upload(req)

@@ -22,17 +22,17 @@ class CreateModelRequestBody:
     r"""The instance prompt to use during training."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the model."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    description: Optional[str] = dataclasses.field(default='', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""The description of the model."""
-    model_type: Optional[shared_custom_model_type.CustomModelType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelType'), 'exclude': lambda f: f is None }})
+    model_type: Optional[shared_custom_model_type.CustomModelType] = dataclasses.field(default=shared_custom_model_type.CustomModelType.GENERAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelType'), 'exclude': lambda f: f is None }})
     r"""The category the most accurately reflects the model."""
-    nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
+    nsfw: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw') }})
     r"""Whether or not the model is NSFW."""
-    resolution: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resolution'), 'exclude': lambda f: f is None }})
+    resolution: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resolution') }})
     r"""The resolution for training. Must be 512 or 768."""
     sd_version: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_Version'), 'exclude': lambda f: f is None }})
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
-    strength: Optional[shared_strength.Strength] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is None }})
+    strength: Optional[shared_strength.Strength] = dataclasses.field(default=shared_strength.Strength.MEDIUM, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is None }})
     r"""When training using the PIXEL_ART model type, this influences the training strength."""
     
 
@@ -52,7 +52,7 @@ class CreateModel200ApplicationJSONSDTrainingOutput:
 @dataclasses.dataclass
 class CreateModel200ApplicationJSON:
     r"""Responses for POST /models"""
-    sd_training_job: Optional[CreateModel200ApplicationJSONSDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob'), 'exclude': lambda f: f is None }})
+    sd_training_job: Optional[CreateModel200ApplicationJSONSDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob') }})
     
 
 

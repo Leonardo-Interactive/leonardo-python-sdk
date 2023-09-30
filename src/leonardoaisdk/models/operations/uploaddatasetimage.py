@@ -34,10 +34,10 @@ class UploadDatasetImageRequest:
 
 @dataclasses.dataclass
 class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
-    fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is None }})
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
+    fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
+    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     
 
 
@@ -47,7 +47,7 @@ class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
 @dataclasses.dataclass
 class UploadDatasetImage200ApplicationJSON:
     r"""Responses for POST /datasets/{datasetId}/upload"""
-    upload_dataset_image: Optional[UploadDatasetImage200ApplicationJSONDatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage'), 'exclude': lambda f: f is None }})
+    upload_dataset_image: Optional[UploadDatasetImage200ApplicationJSONDatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage') }})
     
 
 
