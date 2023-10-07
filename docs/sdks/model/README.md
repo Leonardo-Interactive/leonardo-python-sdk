@@ -30,14 +30,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 req = operations.CreateModelRequestBody(
     dataset_id='24/7',
-    description='Proactive transitional function',
-    instance_prompt='Des',
-    model_type=shared.CustomModelType.PIXEL_ART,
-    name='Officer female',
-    nsfw=False,
-    resolution=451662,
-    sd_version=shared.SdVersions.V2,
-    strength=shared.Strength.HIGH,
+    instance_prompt='instead Anchorage',
+    name='Ohio',
 )
 
 res = s.model.create_model(req)
@@ -110,9 +104,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_models_3d_id_(id='Electronics', request_body=operations.DeleteModels3dIDRequestBody(
-    id='<ID>',
-))
+res = s.model.delete_models_3d_id_(id='Electronics', request_body=operations.DeleteModels3dIDRequestBody())
 
 if res.delete_models_3d_id_200_application_json_object is not None:
     # handle response
@@ -183,9 +175,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_user_user_id_(user_id='Hyundai', request_body=operations.GetModels3dUserUserIDRequestBody(
-    user_id='extend deposit Account',
-), limit=613679, offset=636742)
+res = s.model.get_models_3d_user_user_id_(user_id='Hyundai', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=689562, offset=317821)
 
 if res.get_models_3d_user_user_id_200_application_json_object is not None:
     # handle response
@@ -223,9 +213,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_id_(id='West', request_body=operations.GetModels3dIDRequestBody(
-    id='<ID>',
-), limit=446044, offset=445980)
+res = s.model.get_models_3d_id_(id='West', request_body=operations.GetModels3dIDRequestBody(), limit=446044, offset=445980)
 
 if res.get_models_3d_id_200_application_json_object is not None:
     # handle response
@@ -298,10 +286,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.PostModels3dUploadRequestBody(
-    model_extension='Bromine',
-    name='Electric Berkshire',
-)
+req = operations.PostModels3dUploadRequestBody()
 
 res = s.model.post_models_3d_upload(req)
 
