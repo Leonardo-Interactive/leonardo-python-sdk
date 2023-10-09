@@ -24,7 +24,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 1.23.0
+  version: 1.24.0
   author: Leonardo-Ai
   description: Leonardo AI Python Client SDK
   flattenGlobalSecurity: true

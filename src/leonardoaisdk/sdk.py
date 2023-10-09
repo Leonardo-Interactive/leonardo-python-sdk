@@ -23,7 +23,7 @@ class LeonardoAiSDK:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 security: shared.Security = None,
+                 bearer_auth: str,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -32,8 +32,8 @@ class LeonardoAiSDK:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param security: The security details required for authentication
-        :type security: shared.Security
+        :param bearer_auth: The bearer_auth required for authentication
+        :type bearer_auth: str
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -49,7 +49,7 @@ class LeonardoAiSDK:
             client = requests_http.Session()
         
         
-        security_client = utils.configure_security_client(client, security)
+        security_client = utils.configure_security_client(client, shared.Security(bearer_auth = bearer_auth))
         
         
         if server_url is not None:

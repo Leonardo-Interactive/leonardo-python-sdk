@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="Leonardo-Ai-SDK",
-    version="1.23.0",
+    version="1.24.0",
     author="Leonardo-Ai",
     description="Leonardo AI Python Client SDK",
     long_description=long_description,
