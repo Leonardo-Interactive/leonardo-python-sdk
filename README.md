@@ -21,8 +21,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    description='Synchronised multi-tasking projection',
-    name='Quetzal South',
+    name='Forward South uselessly',
 )
 
 res = s.dataset.create_dataset(req)
@@ -86,7 +85,15 @@ if res.create_dataset_200_application_json_object is not None:
 
 
 <!-- Start Dev Containers -->
+# Dev Containers
+<div align="left">
+    <a href="https://codespaces.new/Leonardo-Interactive/leonardo-python-sdk.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
+    
+</div>
 
+Experience our SDK in an enhanced sandbox environment. Try it now in **GitHub Codespaces**!
+
+* [Explore Dev Containers](.devcontainer/README.md)
 <!-- End Dev Containers -->
 
 

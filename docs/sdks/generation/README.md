@@ -29,42 +29,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateGenerationRequestBody(
-    alchemy=False,
-    contrast_ratio=4444.14,
-    control_net=False,
-    control_net_type=shared.ControlnetType.CANNY,
-    expanded_domain=False,
-    guidance_scale=784343,
-    height=244808,
-    high_contrast=False,
-    high_resolution=False,
-    image_prompt_weight=2793,
     image_prompts=[
-        'Product',
+        'payment',
     ],
-    init_generation_image_id='actuating DNS',
-    init_image_id='salmon wireless rarely',
-    init_strength=1502.38,
-    model_id='emulation Country',
-    negative_prompt='Kentucky MTF',
-    nsfw=False,
-    num_images=649224,
-    num_inference_steps=895539,
-    photo_real=False,
-    preset_style=shared.SdGenerationStyle.LEONARDO,
-    prompt='aggregate',
-    prompt_magic=False,
-    prompt_magic_version='visionary which',
-    public=False,
-    scheduler=shared.SdGenerationSchedulers.DDIM,
-    sd_version=shared.SdVersions.V2,
-    seed=262328,
-    tiling=False,
-    unzoom=False,
-    unzoom_amount=371.25,
-    upscale_ratio=485.82,
-    weighting=9968.92,
-    width=152007,
 )
 
 res = s.generation.create_generation(req)
@@ -137,9 +104,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generations_texture_id_(id='Lodge', request_body=operations.DeleteGenerationsTextureIDRequestBody(
-    id='<ID>',
-))
+res = s.generation.delete_generations_texture_id_(id='Lodge', request_body=operations.DeleteGenerationsTextureIDRequestBody())
 
 if res.delete_generations_texture_id_200_application_json_object is not None:
     # handle response
@@ -247,11 +212,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_model_model_id_(model_id='Bacon', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(
-    limit=556694,
-    model_id='Diesel',
-    offset=607383,
-), limit=964860, offset=205602)
+res = s.generation.get_generations_texture_model_model_id_(model_id='Bacon', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=556694, offset=245169)
 
 if res.get_generations_texture_model_model_id_200_application_json_object is not None:
     # handle response
@@ -289,9 +250,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_id_(id='Cisgender', request_body=operations.GetGenerationsTextureIDRequestBody(
-    id='<ID>',
-), limit=783489, offset=654442)
+res = s.generation.get_generations_texture_id_(id='Cisgender', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=783489, offset=654442)
 
 if res.get_generations_texture_id_200_application_json_object is not None:
     # handle response
@@ -328,16 +287,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.PostGenerationsTextureRequestBody(
-    front_rotation_offset=854632,
-    model_asset_id='West',
-    negative_prompt='quantifying pink ah',
-    preview=False,
-    preview_direction='Auto',
-    prompt='Coupe North Steel',
-    sd_version='Market parsing inasmuch',
-    seed=895868,
-)
+req = operations.PostGenerationsTextureRequestBody()
 
 res = s.generation.post_generations_texture(req)
 

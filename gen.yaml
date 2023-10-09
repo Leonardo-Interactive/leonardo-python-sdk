@@ -2,30 +2,32 @@ configVersion: 1.0.0
 management:
   docChecksum: cda9d251429324050f2eeb530d3369ff
   docVersion: v1.0.0
-  speakeasyVersion: 1.94.0
-  generationVersion: 2.147.0
+  speakeasyVersion: 1.96.2
+  generationVersion: 2.150.1
 generation:
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
-  sdkClassName: LeonardoAiSDK
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
-  flattenGlobalSecurity: true
   devContainers:
     enabled: true
     schemaPath: https://api-docs-nine-delta.vercel.app/cloud/openapi.json
+  flattenGlobalSecurity: true
+  sdkClassName: LeonardoAiSDK
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
 features:
   python:
-    core: 2.88.2
+    core: 2.88.4
+    devContainers: 2.85.4
     flattening: 2.81.1
     getRequestBodies: 2.81.1
-    globalSecurity: 2.81.1
+    globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 1.22.2
+  version: 1.23.0
   author: Leonardo-Ai
   description: Leonardo AI Python Client SDK
+  flattenGlobalSecurity: false
   maxMethodParams: 4
   packageName: Leonardo-Ai-SDK

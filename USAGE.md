@@ -12,8 +12,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    description='Synchronised multi-tasking projection',
-    name='Quetzal South',
+    name='Forward South uselessly',
 )
 
 res = s.dataset.create_dataset(req)
