@@ -96,10 +96,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     ),
 )
 
-req = operations.PostVariationsUnzoomRequestBody(
-    id='<ID>',
-    is_variation=False,
-)
+req = operations.PostVariationsUnzoomRequestBody()
 
 res = s.variation.post_variations_unzoom(req)
 
