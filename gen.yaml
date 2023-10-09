@@ -12,7 +12,6 @@ generation:
   devContainers:
     enabled: true
     schemaPath: https://api-docs-nine-delta.vercel.app/cloud/openapi.json
-  flattenGlobalSecurity: true
   sdkClassName: LeonardoAiSDK
   singleTagPerOp: false
   tagNamespacingDisabled: false
@@ -28,6 +27,6 @@ python:
   version: 1.23.0
   author: Leonardo-Ai
   description: Leonardo AI Python Client SDK
-  flattenGlobalSecurity: false
+  flattenGlobalSecurity: true
   maxMethodParams: 4
   packageName: Leonardo-Ai-SDK
