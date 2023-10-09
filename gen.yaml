@@ -12,6 +12,10 @@ generation:
   sdkClassName: LeonardoAiSDK
   singleTagPerOp: false
   tagNamespacingDisabled: false
+  flattenGlobalSecurity: true
+  devContainers:
+    enabled: true
+    schemaPath: https://api-docs-nine-delta.vercel.app/cloud/openapi.json
 features:
   python:
     core: 2.88.2
