@@ -19,7 +19,7 @@ jobs:
       force: ${{ github.event.inputs.force }}
       languages: |
         - python
-      mode: pr
+      mode: direct
       openapi_docs: |
         - https://api-docs-nine-delta.vercel.app/cloud/openapi.json
       publish_python: true
