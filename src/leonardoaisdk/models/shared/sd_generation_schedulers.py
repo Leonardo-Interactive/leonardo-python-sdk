@@ -11,3 +11,4 @@ class SdGenerationSchedulers(str, Enum):
     DDIM = 'DDIM'
     DPM_SOLVER = 'DPM_SOLVER'
     PNDM = 'PNDM'
+    LEONARDO = 'LEONARDO'

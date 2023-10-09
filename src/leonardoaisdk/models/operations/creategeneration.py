@@ -44,12 +44,7 @@ class CreateGenerationRequestBody:
     init_strength: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_strength') }})
     r"""How strongly the generated images should reflect the original image in image2image. Must be a float between 0.1 and 0.9."""
     model_id: Optional[str] = dataclasses.field(default='6bef9f1b-29cb-40c7-b9df-32b51c1f67d3', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId') }})
-    r"""The model ID used for the image generation. If not provided uses sd_version to determine the version of Stable Diffusion to use.
-
-    _Leonardo Creative_: 6bef9f1b-29cb-40c7-b9df-32b51c1f67d3
-    _Leonardo Select_: cd2b2a15-9760-4174-a5ff-4d2925057376
-    _Leonardo Signature_: 291be633-cb24-434f-898f-e662799936ad
-    """
+    r"""The model ID used for image generation. If not provided, uses sd_version to determine the version of Stable Diffusion to use. In-app, model IDs are under the Finetune Models menu. Click on the platform model or your custom model, then click View More. For platform models, you can also use the List Platform Models API."""
     negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt') }})
     r"""The negative prompt used for the image generation"""
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw') }})
@@ -59,9 +54,9 @@ class CreateGenerationRequestBody:
     num_inference_steps: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('num_inference_steps') }})
     r"""The number of inference steps to use for the generation. Must be between 30 and 60."""
     photo_real: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoReal') }})
-    r"""Enable the photoReal feature"""
+    r"""Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId."""
     preset_style: Optional[shared_sd_generation_style.SdGenerationStyle] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('presetStyle'), 'exclude': lambda f: f is None }})
-    r"""The style to generate images with."""
+    r"""The style to generate images with. When photoReal is enabled, use CINEMATIC, CREATIVE, VIBRANT, or NONE. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE."""
     prompt: Optional[str] = dataclasses.field(default='An oil painting of a cat', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
     r"""The prompt used to generate images"""
     prompt_magic: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagic') }})
@@ -78,9 +73,9 @@ class CreateGenerationRequestBody:
     tiling: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tiling') }})
     r"""Whether the generated images should tile on all axis."""
     unzoom: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoom') }})
-    r"""Whether the generated images should be unzoomed."""
+    r"""Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set)."""
     unzoom_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoomAmount') }})
-    r"""How much the image should be unzoomed."""
+    r"""How much the image should be unzoomed (requires an init_image_id and unzoom to be set to true)."""
     upscale_ratio: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscaleRatio') }})
     r"""How much the image should be upscaled. (Enterprise Only)"""
     weighting: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting') }})

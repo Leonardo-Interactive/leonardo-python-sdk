@@ -4,6 +4,19 @@ from __future__ import annotations
 from enum import Enum
 
 class SdGenerationStyle(str, Enum):
-    r"""The style to generate images with."""
+    r"""The style to generate images with. When photoReal is enabled, use CINEMATIC, CREATIVE, VIBRANT, or NONE. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE."""
+    ANIME = 'ANIME'
+    CINEMATIC = 'CINEMATIC'
+    CREATIVE = 'CREATIVE'
+    DYNAMIC = 'DYNAMIC'
+    ENVIRONMENT = 'ENVIRONMENT'
+    GENERAL = 'GENERAL'
+    ILLUSTRATION = 'ILLUSTRATION'
     LEONARDO = 'LEONARDO'
     NONE = 'NONE'
+    PHOTOGRAPHY = 'PHOTOGRAPHY'
+    RAYTRACED = 'RAYTRACED'
+    RENDER_3_D = 'RENDER_3D'
+    SKETCH_BW = 'SKETCH_BW'
+    SKETCH_COLOR = 'SKETCH_COLOR'
+    VIBRANT = 'VIBRANT'

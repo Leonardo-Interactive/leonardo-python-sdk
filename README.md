@@ -16,7 +16,11 @@ pip install Leonardo-Ai-SDK
 import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
-s = leonardoaisdk.LeonardoAiSDK(bearer_auth="my-token")
+s = leonardoaisdk.LeonardoAiSDK(
+    security=shared.Security(
+        bearer_auth="",
+    ),
+)
 
 req = operations.CreateDatasetRequestBody(
     name='Forward South uselessly',
