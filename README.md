@@ -1,5 +1,7 @@
 # Leonardo-Ai-SDK
 
+<a href="https://codespaces.new/Leonardo-Interactive/leonardo-python-sdk.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
+
 <!-- Start SDK Installation -->
 ## SDK Installation
 
