@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import controlnet_type as shared_controlnet_type
-from ..shared import element_input as shared_element_input
 from ..shared import sd_generation_schedulers as shared_sd_generation_schedulers
 from ..shared import sd_generation_style as shared_sd_generation_style
 from ..shared import sd_versions as shared_sd_versions
@@ -26,7 +25,6 @@ class CreateGenerationRequestBody:
     r"""Enable to use ControlNet. Requires an init image to be provided. Requires a model based on SD v1.5"""
     control_net_type: Optional[shared_controlnet_type.ControlnetType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNetType'), 'exclude': lambda f: f is None }})
     r"""The type of ControlNet to use."""
-    elements: Optional[list[shared_element_input.ElementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('elements') }})
     expanded_domain: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandedDomain') }})
     r"""Enable to use the Expanded Domain feature of Alchemy."""
     guidance_scale: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidance_scale') }})

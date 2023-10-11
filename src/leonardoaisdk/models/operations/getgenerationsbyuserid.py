@@ -55,49 +55,10 @@ class GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImages:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElementsElements:
-    r"""Element used for the generation."""
-    ak_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID') }})
-    r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
-    base_model: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseModel'), 'exclude': lambda f: f is None }})
-    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
-    r"""Description for the element"""
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Name of the element"""
-    url_image: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('urlImage') }})
-    r"""URL of the element image"""
-    weight_default: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightDefault') }})
-    r"""Default weight for the element"""
-    weight_max: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMax') }})
-    r"""Maximum weight for the element"""
-    weight_min: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMin') }})
-    r"""Minimum weight for the element"""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElements:
-    r"""This table captures the elements that are applied to a Generations, also the order and weightings used when applied."""
-    id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    lora: Optional[GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElementsElements] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lora') }})
-    r"""Element used for the generation."""
-    weight_applied: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightApplied') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
 class GetGenerationsByUserID200ApplicationJSONGenerations:
     r"""columns and relationships of \\"generations\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     generated_images: Optional[list[GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_images'), 'exclude': lambda f: f is None }})
-    generation_elements: Optional[list[GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElements]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generation_elements'), 'exclude': lambda f: f is None }})
     guidance_scale: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidanceScale') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     image_height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageHeight'), 'exclude': lambda f: f is None }})

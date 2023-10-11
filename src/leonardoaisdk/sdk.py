@@ -2,7 +2,6 @@
 
 import requests as requests_http
 from .dataset import Dataset
-from .element import Element
 from .generation import Generation
 from .initimage import InitImage
 from .model import Model
@@ -15,7 +14,6 @@ from leonardoaisdk.models import shared
 class LeonardoAiSDK:
     r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
     dataset: Dataset
-    element: Element
     generation: Generation
     init_image: InitImage
     model: Model
@@ -64,7 +62,6 @@ class LeonardoAiSDK:
     
     def _init_sdks(self):
         self.dataset = Dataset(self.sdk_configuration)
-        self.element = Element(self.sdk_configuration)
         self.generation = Generation(self.sdk_configuration)
         self.init_image = InitImage(self.sdk_configuration)
         self.model = Model(self.sdk_configuration)

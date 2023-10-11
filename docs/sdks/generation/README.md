@@ -27,9 +27,6 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateGenerationRequestBody(
-    elements=[
-        shared.ElementInput(),
-    ],
     image_prompts=[
         'payment',
     ],
