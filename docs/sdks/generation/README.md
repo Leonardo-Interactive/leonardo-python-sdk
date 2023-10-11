@@ -23,12 +23,13 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = operations.CreateGenerationRequestBody(
+    elements=[
+        shared.ElementInput(),
+    ],
     image_prompts=[
         'payment',
     ],
@@ -63,9 +64,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -98,9 +97,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -134,9 +131,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -169,9 +164,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -206,9 +199,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -244,9 +235,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -282,9 +271,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = operations.PostGenerationsTextureRequestBody()

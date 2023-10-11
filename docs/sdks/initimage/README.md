@@ -18,9 +18,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -53,9 +51,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -88,9 +84,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = operations.UploadInitImageRequestBody(

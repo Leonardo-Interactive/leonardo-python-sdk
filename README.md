@@ -17,9 +17,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = operations.CreateDatasetRequestBody(
@@ -44,6 +42,10 @@ if res.create_dataset_200_application_json_object is not None:
 * [get_dataset_by_id](docs/sdks/dataset/README.md#get_dataset_by_id) - Get a Single Dataset by ID
 * [upload_dataset_image](docs/sdks/dataset/README.md#upload_dataset_image) - Upload dataset image
 * [upload_dataset_image_from_gen](docs/sdks/dataset/README.md#upload_dataset_image_from_gen) - Upload a Single Generated Image to a Dataset
+
+### [element](docs/sdks/element/README.md)
+
+* [get_elements](docs/sdks/element/README.md#get_elements) - List Elements
 
 ### [generation](docs/sdks/generation/README.md)
 

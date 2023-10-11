@@ -16,9 +16,7 @@ import leonardoaisdk
 from leonardoaisdk.models import shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
