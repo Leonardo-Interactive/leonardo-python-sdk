@@ -43,6 +43,10 @@ if res.create_dataset_200_application_json_object is not None:
 * [upload_dataset_image](docs/sdks/dataset/README.md#upload_dataset_image) - Upload dataset image
 * [upload_dataset_image_from_gen](docs/sdks/dataset/README.md#upload_dataset_image_from_gen) - Upload a Single Generated Image to a Dataset
 
+### [element](docs/sdks/element/README.md)
+
+* [get_elements](docs/sdks/element/README.md#get_elements) - List Elements
+
 ### [generation](docs/sdks/generation/README.md)
 
 * [create_generation](docs/sdks/generation/README.md#create_generation) - Create a Generation of Images
