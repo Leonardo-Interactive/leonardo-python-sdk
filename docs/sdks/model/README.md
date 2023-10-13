@@ -36,6 +36,7 @@ res = s.model.create_model(req)
 
 if res.create_model_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.model.delete_model_by_id(id='Mills')
 
 if res.delete_model_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -102,6 +104,7 @@ res = s.model.delete_models_3d_id_(id='Electronics', request_body=operations.Del
 
 if res.delete_models_3d_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -136,6 +139,7 @@ res = s.model.get_model_by_id(id='protocol')
 
 if res.get_model_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -169,6 +173,7 @@ res = s.model.get_models_3d_user_user_id_(user_id='Hyundai', request_body=operat
 
 if res.get_models_3d_user_user_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -205,6 +210,7 @@ res = s.model.get_models_3d_id_(id='West', request_body=operations.GetModels3dID
 
 if res.get_models_3d_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -241,6 +247,7 @@ res = s.model.get_platform_models(limit=419487, offset=472174)
 
 if res.get_platform_models_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -276,6 +283,7 @@ res = s.model.post_models_3d_upload(req)
 
 if res.post_models_3d_upload_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -26,6 +26,7 @@ res = s.init_image.delete_init_image_by_id(id='Woman')
 
 if res.delete_init_image_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -59,6 +60,7 @@ res = s.init_image.get_init_image_by_id(id='Namibia')
 
 if res.get_init_image_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -95,6 +97,7 @@ res = s.init_image.upload_init_image(req)
 
 if res.upload_init_image_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

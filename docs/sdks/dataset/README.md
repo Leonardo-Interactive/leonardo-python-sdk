@@ -31,6 +31,7 @@ res = s.dataset.create_dataset(req)
 
 if res.create_dataset_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -64,6 +65,7 @@ res = s.dataset.delete_dataset_by_id(id='Lucia')
 
 if res.delete_dataset_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -97,6 +99,7 @@ res = s.dataset.get_dataset_by_id(id='red')
 
 if res.get_dataset_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -132,6 +135,7 @@ res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageR
 
 if res.upload_dataset_image_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -168,6 +172,7 @@ res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadData
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

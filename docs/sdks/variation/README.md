@@ -29,6 +29,7 @@ res = s.variation.create_variation_upscale(req)
 
 if res.create_variation_upscale_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -62,6 +63,7 @@ res = s.variation.get_variation_by_id(id='walker')
 
 if res.get_variation_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -96,6 +98,7 @@ res = s.variation.post_variations_unzoom(req)
 
 if res.post_variations_unzoom_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

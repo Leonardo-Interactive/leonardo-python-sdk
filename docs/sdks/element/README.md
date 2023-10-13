@@ -24,6 +24,7 @@ res = s.element.get_elements()
 
 if res.get_elements_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

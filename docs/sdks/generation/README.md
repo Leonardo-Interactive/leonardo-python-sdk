@@ -39,6 +39,7 @@ res = s.generation.create_generation(req)
 
 if res.create_generation_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -72,6 +73,7 @@ res = s.generation.delete_generation_by_id(id='Sports')
 
 if res.delete_generation_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -105,6 +107,7 @@ res = s.generation.delete_generations_texture_id_(id='Lodge', request_body=opera
 
 if res.delete_generations_texture_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -139,6 +142,7 @@ res = s.generation.get_generation_by_id(id='male')
 
 if res.get_generation_by_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -172,6 +176,7 @@ res = s.generation.get_generations_by_user_id(user_id='Oriental', limit=135536, 
 
 if res.get_generations_by_user_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -207,6 +212,7 @@ res = s.generation.get_generations_texture_model_model_id_(model_id='Bacon', req
 
 if res.get_generations_texture_model_model_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -243,6 +249,7 @@ res = s.generation.get_generations_texture_id_(id='Cisgender', request_body=oper
 
 if res.get_generations_texture_id_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -280,6 +287,7 @@ res = s.generation.post_generations_texture(req)
 
 if res.post_generations_texture_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
