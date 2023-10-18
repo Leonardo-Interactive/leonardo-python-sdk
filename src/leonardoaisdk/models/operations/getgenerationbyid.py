@@ -10,8 +10,7 @@ from ..shared import sd_versions as shared_sd_versions
 from ..shared import variation_type as shared_variation_type
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -23,7 +22,6 @@ class GetGenerationByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSONGenerationsGeneratedImagesGeneratedImageVariationGeneric:
     r"""columns and relationships of \\"generated_image_variation_generic\\" """
@@ -38,11 +36,10 @@ class GetGenerationByID200ApplicationJSONGenerationsGeneratedImagesGeneratedImag
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSONGenerationsGeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
-    generated_image_variation_generics: Optional[list[GetGenerationByID200ApplicationJSONGenerationsGeneratedImagesGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
+    generated_image_variation_generics: Optional[List[GetGenerationByID200ApplicationJSONGenerationsGeneratedImagesGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     like_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('likeCount'), 'exclude': lambda f: f is None }})
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
@@ -52,7 +49,6 @@ class GetGenerationByID200ApplicationJSONGenerationsGeneratedImages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSONGenerationsGenerationElementsLoras:
     r"""Element used for the generation."""
@@ -77,7 +73,6 @@ class GetGenerationByID200ApplicationJSONGenerationsGenerationElementsLoras:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSONGenerationsGenerationElements:
     r"""This table captures the elements that are applied to Generations."""
@@ -90,13 +85,12 @@ class GetGenerationByID200ApplicationJSONGenerationsGenerationElements:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSONGenerations:
     r"""columns and relationships of \\"generations\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    generated_images: Optional[list[GetGenerationByID200ApplicationJSONGenerationsGeneratedImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_images'), 'exclude': lambda f: f is None }})
-    generation_elements: Optional[list[GetGenerationByID200ApplicationJSONGenerationsGenerationElements]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generation_elements'), 'exclude': lambda f: f is None }})
+    generated_images: Optional[List[GetGenerationByID200ApplicationJSONGenerationsGeneratedImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_images'), 'exclude': lambda f: f is None }})
+    generation_elements: Optional[List[GetGenerationByID200ApplicationJSONGenerationsGenerationElements]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generation_elements'), 'exclude': lambda f: f is None }})
     guidance_scale: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidanceScale') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     image_height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageHeight'), 'exclude': lambda f: f is None }})
@@ -121,14 +115,12 @@ class GetGenerationByID200ApplicationJSONGenerations:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationByID200ApplicationJSON:
     r"""Responses for GET /generations/{id}"""
     generations_by_pk: Optional[GetGenerationByID200ApplicationJSONGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generations_by_pk') }})
     r"""columns and relationships of \\"generations\\" """
     
-
 
 
 

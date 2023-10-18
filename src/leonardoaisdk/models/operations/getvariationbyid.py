@@ -7,8 +7,7 @@ from ..shared import job_status as shared_job_status
 from ..shared import variation_type as shared_variation_type
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -20,7 +19,6 @@ class GetVariationByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric:
     r"""columns and relationships of \\"generated_image_variation_generic\\" """
@@ -36,13 +34,11 @@ class GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetVariationByID200ApplicationJSON:
     r"""Responses for GET /variations/{id}"""
-    generated_image_variation_generic: Optional[list[GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generic'), 'exclude': lambda f: f is None }})
+    generated_image_variation_generic: Optional[List[GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generic'), 'exclude': lambda f: f is None }})
     
-
 
 
 

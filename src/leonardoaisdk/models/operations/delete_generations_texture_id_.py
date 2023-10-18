@@ -9,13 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteGenerationsTextureIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
-
 
 
 
@@ -30,7 +28,6 @@ class DeleteGenerationsTextureIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
@@ -40,14 +37,12 @@ class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteGenerationsTextureID200ApplicationJSON:
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
     delete_model_asset_texture_generations_by_pk: Optional[DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk') }})
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     
-
 
 
 

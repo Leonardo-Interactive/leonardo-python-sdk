@@ -8,7 +8,6 @@ from leonardoaisdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteGenerationByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -18,7 +17,6 @@ class DeleteGenerationByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteGenerationByID200ApplicationJSONGenerations:
     r"""columns and relationships of \\"generations\\" """
@@ -28,14 +26,12 @@ class DeleteGenerationByID200ApplicationJSONGenerations:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteGenerationByID200ApplicationJSON:
     r"""Responses for DELETE /generations/{id}"""
     delete_generations_by_pk: Optional[DeleteGenerationByID200ApplicationJSONGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_generations_by_pk') }})
     r"""columns and relationships of \\"generations\\" """
     
-
 
 
 

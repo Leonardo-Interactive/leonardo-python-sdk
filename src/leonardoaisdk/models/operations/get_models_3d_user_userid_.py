@@ -5,17 +5,15 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetModels3dUserUserIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
     
-
 
 
 
@@ -31,7 +29,6 @@ class GetModels3dUserUserIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetModels3dUserUserID200ApplicationJSONModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
@@ -46,13 +43,11 @@ class GetModels3dUserUserID200ApplicationJSONModelAssets:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetModels3dUserUserID200ApplicationJSON:
     r"""Responses for GET /api/rest/v1/models-3d/user/{userId}"""
-    model_assets: Optional[list[GetModels3dUserUserID200ApplicationJSONModelAssets]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets'), 'exclude': lambda f: f is None }})
+    model_assets: Optional[List[GetModels3dUserUserID200ApplicationJSONModelAssets]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets'), 'exclude': lambda f: f is None }})
     
-
 
 
 

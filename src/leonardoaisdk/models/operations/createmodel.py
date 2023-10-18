@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateModelRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
@@ -39,7 +38,6 @@ class CreateModelRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateModel200ApplicationJSONSDTrainingOutput:
     custom_model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customModelId'), 'exclude': lambda f: f is None }})
@@ -48,13 +46,11 @@ class CreateModel200ApplicationJSONSDTrainingOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateModel200ApplicationJSON:
     r"""Responses for POST /models"""
     sd_training_job: Optional[CreateModel200ApplicationJSONSDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob') }})
     
-
 
 
 

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadInitImageRequestBody:
     r"""Query parameters provided in the request body as a JSON object"""
@@ -20,7 +19,6 @@ class UploadInitImageRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadInitImage200ApplicationJSONInitImageUploadOutput:
     fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
@@ -32,13 +30,11 @@ class UploadInitImage200ApplicationJSONInitImageUploadOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadInitImage200ApplicationJSON:
     r"""Responses for POST /init-image"""
     upload_init_image: Optional[UploadInitImage200ApplicationJSONInitImageUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadInitImage') }})
     
-
 
 
 

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateDatasetRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
@@ -22,7 +21,6 @@ class CreateDatasetRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateDataset200ApplicationJSONDatasets:
     r"""columns and relationships of \\"datasets\\" """
@@ -32,14 +30,12 @@ class CreateDataset200ApplicationJSONDatasets:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateDataset200ApplicationJSON:
     r"""Responses for POST /datasets"""
     insert_datasets_one: Optional[CreateDataset200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one') }})
     r"""columns and relationships of \\"datasets\\" """
     
-
 
 
 

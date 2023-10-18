@@ -9,14 +9,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadDatasetImageRequestBody:
     r"""Query parameters provided in the request body as a JSON object"""
     extension: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Has to be png, jpg, jpeg, or webp."""
     
-
 
 
 
@@ -31,7 +29,6 @@ class UploadDatasetImageRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
     fields_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
@@ -43,13 +40,11 @@ class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadDatasetImage200ApplicationJSON:
     r"""Responses for POST /datasets/{datasetId}/upload"""
     upload_dataset_image: Optional[UploadDatasetImage200ApplicationJSONDatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage') }})
     
-
 
 
 

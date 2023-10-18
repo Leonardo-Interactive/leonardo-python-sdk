@@ -27,9 +27,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateModelRequestBody(
-    dataset_id='24/7',
-    instance_prompt='instead Anchorage',
-    name='Ohio',
+    dataset_id='Northwest',
+    instance_prompt='Generic',
+    name='instead',
 )
 
 res = s.model.create_model(req)

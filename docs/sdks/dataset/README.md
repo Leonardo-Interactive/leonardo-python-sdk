@@ -24,7 +24,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    name='Forward South uselessly',
+    name='Van',
 )
 
 res = s.dataset.create_dataset(req)
@@ -167,8 +167,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
-    generated_image_id='navigate programming evolve',
-), dataset_id='finally')
+    generated_image_id='Gasoline',
+), dataset_id='convergence')
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response

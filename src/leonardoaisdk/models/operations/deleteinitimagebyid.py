@@ -8,7 +8,6 @@ from leonardoaisdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteInitImageByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -18,7 +17,6 @@ class DeleteInitImageByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteInitImageByID200ApplicationJSONInitImages:
     r"""columns and relationships of \\"init_images\\" """
@@ -28,14 +26,12 @@ class DeleteInitImageByID200ApplicationJSONInitImages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteInitImageByID200ApplicationJSON:
     r"""Responses for DELETE /init-image/{id}"""
     delete_init_images_by_pk: Optional[DeleteInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_init_images_by_pk') }})
     r"""columns and relationships of \\"init_images\\" """
     
-
 
 
 

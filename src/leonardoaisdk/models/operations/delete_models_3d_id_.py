@@ -9,13 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteModels3dIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
-
 
 
 
@@ -30,7 +28,6 @@ class DeleteModels3dIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteModels3dID200ApplicationJSONModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
@@ -40,14 +37,12 @@ class DeleteModels3dID200ApplicationJSONModelAssets:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteModels3dID200ApplicationJSON:
     r"""Responses for DELETE /api/rest/v1/models-3d/{id}"""
     delete_model_assets_by_pk: Optional[DeleteModels3dID200ApplicationJSONModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_assets_by_pk') }})
     r"""columns and relationships of \\"model_assets\\" """
     
-
 
 
 

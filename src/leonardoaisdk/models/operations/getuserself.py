@@ -5,11 +5,10 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetUserSelf200ApplicationJSONUserDetailsUsers:
     r"""columns and relationships of \\"users\\" """
@@ -20,7 +19,6 @@ class GetUserSelf200ApplicationJSONUserDetailsUsers:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetUserSelf200ApplicationJSONUserDetails:
     r"""columns and relationships of \\"user_details\\" """
@@ -32,13 +30,11 @@ class GetUserSelf200ApplicationJSONUserDetails:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetUserSelf200ApplicationJSON:
     r"""Responses for GET /me"""
-    user_details: Optional[list[GetUserSelf200ApplicationJSONUserDetails]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_details'), 'exclude': lambda f: f is None }})
+    user_details: Optional[List[GetUserSelf200ApplicationJSONUserDetails]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_details'), 'exclude': lambda f: f is None }})
     
-
 
 
 

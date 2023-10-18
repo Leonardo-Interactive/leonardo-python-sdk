@@ -11,7 +11,6 @@ from leonardoaisdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetModelByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class GetModelByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetModelByID200ApplicationJSONCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
@@ -45,14 +43,12 @@ class GetModelByID200ApplicationJSONCustomModels:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetModelByID200ApplicationJSON:
     r"""Responses for GET /models/{id}"""
     custom_models_by_pk: Optional[GetModelByID200ApplicationJSONCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk') }})
     r"""columns and relationships of \\"custom_models\\" """
     
-
 
 
 

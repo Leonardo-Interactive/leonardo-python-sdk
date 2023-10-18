@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateVariationUpscaleRequestBody:
     r"""Query parameters are provided in the request body as a JSON object"""
@@ -19,7 +18,6 @@ class CreateVariationUpscaleRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -28,13 +26,11 @@ class CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateVariationUpscale200ApplicationJSON:
     r"""Responses for POST /variations/upscale"""
     sd_upscale_job: Optional[CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob') }})
     
-
 
 
 

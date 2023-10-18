@@ -7,17 +7,15 @@ from ..shared import job_status as shared_job_status
 from ..shared import model_asset_texture_types as shared_model_asset_texture_types
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationsTextureIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
-
 
 
 
@@ -34,7 +32,6 @@ class GetGenerationsTextureIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerationsModelAssetTextureImages:
     r"""columns and relationships of \\"model_asset_texture_images\\" """
@@ -47,13 +44,12 @@ class GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerationsModel
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    model_asset_texture_images: Optional[list[GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerationsModelAssetTextureImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_images'), 'exclude': lambda f: f is None }})
+    model_asset_texture_images: Optional[List[GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerationsModelAssetTextureImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_images'), 'exclude': lambda f: f is None }})
     negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negativePrompt') }})
     prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
     seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed') }})
@@ -64,14 +60,12 @@ class GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetGenerationsTextureID200ApplicationJSON:
     r"""Responses for GET /api/rest/v1/generations-texture/{id}"""
     model_asset_texture_generations_by_pk: Optional[GetGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_generations_by_pk') }})
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     
-
 
 
 

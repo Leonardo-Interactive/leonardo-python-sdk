@@ -21,7 +21,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    name='Forward South uselessly',
+    name='Van',
 )
 
 res = s.dataset.create_dataset(req)

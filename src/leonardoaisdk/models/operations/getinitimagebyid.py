@@ -8,7 +8,6 @@ from leonardoaisdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetInitImageByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -18,7 +17,6 @@ class GetInitImageByIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetInitImageByID200ApplicationJSONInitImages:
     r"""columns and relationships of \\"init_images\\" """
@@ -30,14 +28,12 @@ class GetInitImageByID200ApplicationJSONInitImages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetInitImageByID200ApplicationJSON:
     r"""Responses for GET /init-image/{id}"""
     init_images_by_pk: Optional[GetInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk') }})
     r"""columns and relationships of \\"init_images\\" """
     
-
 
 
 

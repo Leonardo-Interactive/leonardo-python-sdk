@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostModels3dUploadRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
@@ -20,7 +19,6 @@ class PostModels3dUploadRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
     model_fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelFields') }})
@@ -32,13 +30,11 @@ class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostModels3dUpload200ApplicationJSON:
     r"""Responses for POST /api/rest/v1/models-3d/upload"""
     upload_model_asset: Optional[PostModels3dUpload200ApplicationJSONModelAssetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadModelAsset') }})
     
-
 
 
 

@@ -6,11 +6,10 @@ import requests as requests_http
 from ..shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetElements200ApplicationJSONLoras:
     r"""columns and relationships of \\"elements\\" """
@@ -37,13 +36,11 @@ class GetElements200ApplicationJSONLoras:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetElements200ApplicationJSON:
     r"""Responses for GET /api/rest/v1/elements"""
-    loras: Optional[list[GetElements200ApplicationJSONLoras]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loras'), 'exclude': lambda f: f is None }})
+    loras: Optional[List[GetElements200ApplicationJSONLoras]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loras'), 'exclude': lambda f: f is None }})
     
-
 
 
 

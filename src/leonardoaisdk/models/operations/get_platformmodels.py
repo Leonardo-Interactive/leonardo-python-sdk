@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,7 +17,6 @@ class GetPlatformModelsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetPlatformModels200ApplicationJSONCustomModelsGeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
@@ -29,7 +27,6 @@ class GetPlatformModels200ApplicationJSONCustomModelsGeneratedImages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetPlatformModels200ApplicationJSONCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
@@ -45,13 +42,11 @@ class GetPlatformModels200ApplicationJSONCustomModels:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetPlatformModels200ApplicationJSON:
     r"""Responses for GET /api/rest/v1/platformModels"""
-    custom_models: Optional[list[GetPlatformModels200ApplicationJSONCustomModels]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models'), 'exclude': lambda f: f is None }})
+    custom_models: Optional[List[GetPlatformModels200ApplicationJSONCustomModels]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -10,11 +10,10 @@ from ..shared import sd_generation_style as shared_sd_generation_style
 from ..shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateGenerationRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
@@ -26,7 +25,7 @@ class CreateGenerationRequestBody:
     r"""Enable to use ControlNet. Requires an init image to be provided. Requires a model based on SD v1.5"""
     control_net_type: Optional[shared_controlnet_type.ControlnetType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNetType'), 'exclude': lambda f: f is None }})
     r"""The type of ControlNet to use."""
-    elements: Optional[list[shared_element_input.ElementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('elements') }})
+    elements: Optional[List[shared_element_input.ElementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('elements') }})
     expanded_domain: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandedDomain') }})
     r"""Enable to use the Expanded Domain feature of Alchemy."""
     guidance_scale: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidance_scale') }})
@@ -37,7 +36,7 @@ class CreateGenerationRequestBody:
     r"""Enable to use the High Contrast feature of Prompt Magic."""
     high_resolution: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highResolution') }})
     r"""Enable to use the High Resolution feature of Prompt Magic."""
-    image_prompts: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePrompts') }})
+    image_prompts: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePrompts') }})
     image_prompt_weight: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePromptWeight') }})
     init_generation_image_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_generation_image_id') }})
     r"""The ID of an existing image to use in image2image."""
@@ -89,7 +88,6 @@ class CreateGenerationRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateGeneration200ApplicationJSONSDGenerationOutput:
     generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generationId'), 'exclude': lambda f: f is None }})
@@ -98,13 +96,11 @@ class CreateGeneration200ApplicationJSONSDGenerationOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateGeneration200ApplicationJSON:
     r"""Responses for POST /generations"""
     sd_generation_job: Optional[CreateGeneration200ApplicationJSONSDGenerationOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdGenerationJob') }})
     
-
 
 
 
