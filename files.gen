@@ -41,6 +41,7 @@ src/leonardoaisdk/models/operations/get_models_3d_id_.py
 src/leonardoaisdk/models/operations/get_platformmodels.py
 src/leonardoaisdk/models/operations/post_models_3d_upload.py
 src/leonardoaisdk/models/operations/getuserself.py
+src/leonardoaisdk/models/operations/createvariationnobg.py
 src/leonardoaisdk/models/operations/createvariationupscale.py
 src/leonardoaisdk/models/operations/getvariationbyid.py
 src/leonardoaisdk/models/operations/post_variations_unzoom.py
@@ -182,6 +183,10 @@ docs/models/operations/getuserself200applicationjsonuserdetailsusers.md
 docs/models/operations/getuserself200applicationjsonuserdetails.md
 docs/models/operations/getuserself200applicationjson.md
 docs/models/operations/getuserselfresponse.md
+docs/models/operations/createvariationnobgrequestbody.md
+docs/models/operations/createvariationnobg200applicationjsonsdupscalejoboutput.md
+docs/models/operations/createvariationnobg200applicationjson.md
+docs/models/operations/createvariationnobgresponse.md
 docs/models/operations/createvariationupscalerequestbody.md
 docs/models/operations/createvariationupscale200applicationjsonsdupscalejoboutput.md
 docs/models/operations/createvariationupscale200applicationjson.md

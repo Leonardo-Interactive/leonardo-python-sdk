@@ -3,9 +3,47 @@
 
 ### Available Operations
 
+* [create_variation_no_bg](#create_variation_no_bg) - Create no background
 * [create_variation_upscale](#create_variation_upscale) - Create upscale
 * [get_variation_by_id](#get_variation_by_id) - Get variation by ID
 * [post_variations_unzoom](#post_variations_unzoom) - Create unzoom
+
+## create_variation_no_bg
+
+This endpoint will create a no background variation of the provided image ID
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations, shared
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="",
+)
+
+req = operations.CreateVariationNoBGRequestBody(
+    id='<ID>',
+)
+
+res = s.variation.create_variation_no_bg(req)
+
+if res.create_variation_no_bg_200_application_json_object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.CreateVariationNoBGRequestBody](../../models/operations/createvariationnobgrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+
+### Response
+
+**[operations.CreateVariationNoBGResponse](../../models/operations/createvariationnobgresponse.md)**
+
 
 ## create_variation_upscale
 

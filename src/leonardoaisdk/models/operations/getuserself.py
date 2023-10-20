@@ -22,7 +22,11 @@ class GetUserSelf200ApplicationJSONUserDetailsUsers:
 @dataclasses.dataclass
 class GetUserSelf200ApplicationJSONUserDetails:
     r"""columns and relationships of \\"user_details\\" """
-    show_nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('showNsfw'), 'exclude': lambda f: f is None }})
+    api_concurrency_slots: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiConcurrencySlots'), 'exclude': lambda f: f is None }})
+    subscription_gpt_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionGptTokens'), 'exclude': lambda f: f is None }})
+    subscription_model_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionModelTokens'), 'exclude': lambda f: f is None }})
+    subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTokens'), 'exclude': lambda f: f is None }})
+    token_renewal_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tokenRenewalDate') }})
     user: Optional[GetUserSelf200ApplicationJSONUserDetailsUsers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
     r"""columns and relationships of \\"users\\" """
     

@@ -82,6 +82,7 @@ if res.create_dataset_200_application_json_object is not None:
 
 ### [variation](docs/sdks/variation/README.md)
 
+* [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
 * [get_variation_by_id](docs/sdks/variation/README.md#get_variation_by_id) - Get variation by ID
 * [post_variations_unzoom](docs/sdks/variation/README.md#post_variations_unzoom) - Create unzoom
