@@ -24,7 +24,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    name='Van',
+    name='string',
 )
 
 res = s.dataset.create_dataset(req)
@@ -61,7 +61,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.delete_dataset_by_id(id='Lucia')
+res = s.dataset.delete_dataset_by_id(id='string')
 
 if res.delete_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -95,7 +95,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.get_dataset_by_id(id='red')
+res = s.dataset.get_dataset_by_id(id='string')
 
 if res.get_dataset_by_id_200_application_json_object is not None:
     # handle response
@@ -131,7 +131,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
     extension='mpg4',
-), dataset_id='deposit')
+), dataset_id='string')
 
 if res.upload_dataset_image_200_application_json_object is not None:
     # handle response
@@ -167,8 +167,8 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 
 res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
-    generated_image_id='Gasoline',
-), dataset_id='convergence')
+    generated_image_id='string',
+), dataset_id='string')
 
 if res.upload_dataset_image_from_gen_200_application_json_object is not None:
     # handle response

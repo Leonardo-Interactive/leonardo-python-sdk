@@ -31,7 +31,7 @@ req = operations.CreateGenerationRequestBody(
         shared.ElementInput(),
     ],
     image_prompts=[
-        'payment',
+        'string',
     ],
 )
 
@@ -69,7 +69,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generation_by_id(id='Sports')
+res = s.generation.delete_generation_by_id(id='string')
 
 if res.delete_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -103,7 +103,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.delete_generations_texture_id_(id='Lodge', request_body=operations.DeleteGenerationsTextureIDRequestBody())
+res = s.generation.delete_generations_texture_id_(id='string', request_body=operations.DeleteGenerationsTextureIDRequestBody())
 
 if res.delete_generations_texture_id_200_application_json_object is not None:
     # handle response
@@ -138,7 +138,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generation_by_id(id='male')
+res = s.generation.get_generation_by_id(id='string')
 
 if res.get_generation_by_id_200_application_json_object is not None:
     # handle response
@@ -172,7 +172,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_by_user_id(user_id='Oriental', limit=135536, offset=934375)
+res = s.generation.get_generations_by_user_id(user_id='string', limit=270501, offset=770121)
 
 if res.get_generations_by_user_id_200_application_json_object is not None:
     # handle response
@@ -208,7 +208,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_model_model_id_(model_id='Bacon', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=556694, offset=245169)
+res = s.generation.get_generations_texture_model_model_id_(model_id='string', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=216504, offset=808783)
 
 if res.get_generations_texture_model_model_id_200_application_json_object is not None:
     # handle response
@@ -245,7 +245,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_id_(id='Cisgender', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=783489, offset=654442)
+res = s.generation.get_generations_texture_id_(id='string', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=608876, offset=119347)
 
 if res.get_generations_texture_id_200_application_json_object is not None:
     # handle response

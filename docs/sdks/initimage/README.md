@@ -22,7 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.delete_init_image_by_id(id='Woman')
+res = s.init_image.delete_init_image_by_id(id='string')
 
 if res.delete_init_image_by_id_200_application_json_object is not None:
     # handle response
@@ -56,7 +56,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.get_init_image_by_id(id='Namibia')
+res = s.init_image.get_init_image_by_id(id='string')
 
 if res.get_init_image_by_id_200_application_json_object is not None:
     # handle response

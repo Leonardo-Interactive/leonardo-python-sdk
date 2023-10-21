@@ -10,7 +10,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    name='Van',
+    name='string',
 )
 
 res = s.dataset.create_dataset(req)

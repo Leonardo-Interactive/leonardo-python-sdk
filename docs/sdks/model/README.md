@@ -27,9 +27,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateModelRequestBody(
-    dataset_id='Northwest',
-    instance_prompt='Generic',
-    name='instead',
+    dataset_id='string',
+    instance_prompt='string',
+    name='string',
 )
 
 res = s.model.create_model(req)
@@ -66,7 +66,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_model_by_id(id='Mills')
+res = s.model.delete_model_by_id(id='string')
 
 if res.delete_model_by_id_200_application_json_object is not None:
     # handle response
@@ -100,7 +100,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_models_3d_id_(id='Electronics', request_body=operations.DeleteModels3dIDRequestBody())
+res = s.model.delete_models_3d_id_(id='string', request_body=operations.DeleteModels3dIDRequestBody())
 
 if res.delete_models_3d_id_200_application_json_object is not None:
     # handle response
@@ -135,7 +135,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_model_by_id(id='protocol')
+res = s.model.get_model_by_id(id='string')
 
 if res.get_model_by_id_200_application_json_object is not None:
     # handle response
@@ -169,7 +169,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_user_user_id_(user_id='Hyundai', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=689562, offset=317821)
+res = s.model.get_models_3d_user_user_id_(user_id='string', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=828696, offset=429076)
 
 if res.get_models_3d_user_user_id_200_application_json_object is not None:
     # handle response
@@ -206,7 +206,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_id_(id='West', request_body=operations.GetModels3dIDRequestBody(), limit=446044, offset=445980)
+res = s.model.get_models_3d_id_(id='string', request_body=operations.GetModels3dIDRequestBody(), limit=85400, offset=488783)
 
 if res.get_models_3d_id_200_application_json_object is not None:
     # handle response

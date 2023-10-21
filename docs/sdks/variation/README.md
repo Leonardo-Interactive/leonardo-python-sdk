@@ -97,7 +97,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.variation.get_variation_by_id(id='walker')
+res = s.variation.get_variation_by_id(id='string')
 
 if res.get_variation_by_id_200_application_json_object is not None:
     # handle response
