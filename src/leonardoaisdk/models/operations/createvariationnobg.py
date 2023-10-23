@@ -21,6 +21,8 @@ class CreateVariationNoBGRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateVariationNoBG200ApplicationJSONSDUpscaleJobOutput:
+    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    r"""API Credits Cost for No Background Variation. Available for Production API Users"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 

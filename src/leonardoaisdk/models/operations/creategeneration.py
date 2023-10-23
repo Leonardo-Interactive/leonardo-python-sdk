@@ -94,6 +94,8 @@ class CreateGenerationRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateGeneration200ApplicationJSONSDGenerationOutput:
+    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    r"""API Credits Cost for Image Generation. Available for Production API Users"""
     generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generationId'), 'exclude': lambda f: f is None }})
     
 

@@ -40,6 +40,8 @@ class CreateModelRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateModel200ApplicationJSONSDTrainingOutput:
+    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    r"""API Credits Cost for Model Training. Available for Production API Users."""
     custom_model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customModelId'), 'exclude': lambda f: f is None }})
     
 
