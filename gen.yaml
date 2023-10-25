@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: ec33389aeb56368c29f17d4da4125bbd
+  docChecksum: 780bceeb2c9dd9b8c24cbd3d20827789
   docVersion: v1.0.0
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.107.0
+  generationVersion: 2.171.0
 generation:
   comments:
     disableComments: false
@@ -25,7 +25,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 2.1.1
+  version: 2.1.2
   author: Leonardo-Ai
   description: Leonardo AI Python Client SDK
   flattenGlobalSecurity: true

@@ -33,7 +33,7 @@ class CreateGenerationRequestBody:
     height: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('height') }})
     r"""The height of the images. Must be between 32 and 1024 and be a multiple of 8."""
     high_contrast: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highContrast') }})
-    r"""Enable to use the High Contrast feature of Prompt Magic."""
+    r"""Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode."""
     high_resolution: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highResolution') }})
     r"""Enable to use the High Resolution feature of Prompt Magic."""
     image_prompts: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imagePrompts') }})
@@ -57,7 +57,7 @@ class CreateGenerationRequestBody:
     photo_real: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoReal') }})
     r"""Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId."""
     photo_real_strength: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoRealStrength') }})
-    r"""Strength of photoReal. Must be a float between 0.1 and 1.0."""
+    r"""Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high."""
     preset_style: Optional[shared_sd_generation_style.SdGenerationStyle] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('presetStyle'), 'exclude': lambda f: f is None }})
     r"""The style to generate images with. When photoReal is enabled, use CINEMATIC, CREATIVE, VIBRANT, or NONE. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE."""
     prompt: Optional[str] = dataclasses.field(default='An oil painting of a cat', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
