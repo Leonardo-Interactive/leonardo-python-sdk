@@ -22,7 +22,7 @@ class PostVariationsUnzoomRequestBody:
 @dataclasses.dataclass
 class PostVariationsUnzoom200ApplicationJSONSDUnzoomOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
-    r"""API Credits Cost for Unzoom Variation. Available for Production API Users"""
+    r"""API Credits Cost for Unzoom Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
 
