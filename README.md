@@ -120,8 +120,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -142,9 +140,70 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = leonardoaisdk.LeonardoAiSDK(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://cloud.leonardo.ai/api/rest/v1` | None |
+
+For example:
+
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations, shared
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="",
+    server_idx=0
+)
+
+req = operations.CreateDatasetRequestBody(
+    name='string',
+)
+
+res = s.dataset.create_dataset(req)
+
+if res.create_dataset_200_application_json_object is not None:
+    # handle response
+    pass
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations, shared
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="",
+    server_url="https://cloud.leonardo.ai/api/rest/v1"
+)
+
+req = operations.CreateDatasetRequestBody(
+    name='string',
+)
+
+res = s.dataset.create_dataset(req)
+
+if res.create_dataset_200_application_json_object is not None:
+    # handle response
+    pass
+```
+<!-- End Server Selection -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

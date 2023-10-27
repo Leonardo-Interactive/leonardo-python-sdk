@@ -31,7 +31,7 @@ class CreateGenerationRequestBody:
     guidance_scale: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidance_scale') }})
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
     height: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('height') }})
-    r"""The height of the images. Must be between 32 and 1024 and be a multiple of 8."""
+    r"""The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output reolution due to upscaling from other features."""
     high_contrast: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highContrast') }})
     r"""Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode."""
     high_resolution: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highResolution') }})
@@ -57,7 +57,7 @@ class CreateGenerationRequestBody:
     photo_real: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoReal') }})
     r"""Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId."""
     photo_real_strength: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoRealStrength') }})
-    r"""Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high."""
+    r"""Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified."""
     preset_style: Optional[shared_sd_generation_style.SdGenerationStyle] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('presetStyle'), 'exclude': lambda f: f is None }})
     r"""The style to generate images with. When photoReal is enabled, use CINEMATIC, CREATIVE, VIBRANT, or NONE. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE."""
     prompt: Optional[str] = dataclasses.field(default='An oil painting of a cat', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
@@ -86,7 +86,7 @@ class CreateGenerationRequestBody:
     weighting: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting') }})
     r"""How much weighting to use for generation."""
     width: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width') }})
-    r"""The width of the images. Must be between 32 and 1024 and be a multiple of 8."""
+    r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output reolution due to upscaling from other features."""
     
 
 
