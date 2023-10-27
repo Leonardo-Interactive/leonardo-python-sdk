@@ -31,7 +31,7 @@ class CreateGenerationRequestBody:
     guidance_scale: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidance_scale') }})
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
     height: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('height') }})
-    r"""The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output reolution due to upscaling from other features."""
+    r"""The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
     high_contrast: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highContrast') }})
     r"""Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode."""
     high_resolution: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('highResolution') }})
@@ -86,7 +86,7 @@ class CreateGenerationRequestBody:
     weighting: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting') }})
     r"""How much weighting to use for generation."""
     width: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width') }})
-    r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output reolution due to upscaling from other features."""
+    r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
     
 
 
