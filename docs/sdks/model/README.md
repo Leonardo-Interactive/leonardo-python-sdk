@@ -1,5 +1,5 @@
 # Model
-(*model*)
+(*.model*)
 
 ### Available Operations
 
@@ -34,7 +34,7 @@ req = operations.CreateModelRequestBody(
 
 res = s.model.create_model(req)
 
-if res.create_model_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -59,7 +59,7 @@ This endpoint will delete a specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -68,7 +68,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.delete_model_by_id(id='string')
 
-if res.delete_model_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -93,7 +93,7 @@ This endpoint deletes the specific 3D Model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -102,7 +102,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.delete_models_3d_id_(id='string', request_body=operations.DeleteModels3dIDRequestBody())
 
-if res.delete_models_3d_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -128,7 +128,7 @@ This endpoint gets the specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -137,7 +137,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.get_model_by_id(id='string')
 
-if res.get_model_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -162,7 +162,7 @@ This endpoint returns all 3D models by a specific user
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -171,7 +171,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.get_models_3d_user_user_id_(user_id='string', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=828696, offset=429076)
 
-if res.get_models_3d_user_user_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -199,7 +199,7 @@ This endpoint gets the specific 3D model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -208,7 +208,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.get_models_3d_id_(id='string', request_body=operations.GetModels3dIDRequestBody(), limit=85400, offset=488783)
 
-if res.get_models_3d_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -236,7 +236,7 @@ Get a list of public Platform Models available for use with generations.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -245,7 +245,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.model.get_platform_models(limit=419487, offset=472174)
 
-if res.get_platform_models_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -271,7 +271,7 @@ This endpoint returns presigned details to upload a 3D model to S3
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -281,7 +281,7 @@ req = operations.PostModels3dUploadRequestBody()
 
 res = s.model.post_models_3d_upload(req)
 
-if res.post_models_3d_upload_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

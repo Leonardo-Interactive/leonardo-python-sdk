@@ -1,5 +1,5 @@
 # Variation
-(*variation*)
+(*.variation*)
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ This endpoint will create a no background variation of the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -28,7 +28,7 @@ req = operations.CreateVariationNoBGRequestBody(
 
 res = s.variation.create_variation_no_bg(req)
 
-if res.create_variation_no_bg_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -53,7 +53,7 @@ This endpoint will create an upscale for the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -65,7 +65,7 @@ req = operations.CreateVariationUpscaleRequestBody(
 
 res = s.variation.create_variation_upscale(req)
 
-if res.create_variation_upscale_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -90,7 +90,7 @@ This endpoint will get the variation by ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -99,7 +99,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.variation.get_variation_by_id(id='string')
 
-if res.get_variation_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -124,7 +124,7 @@ This endpoint will create an unzoom variation for the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -134,7 +134,7 @@ req = operations.PostVariationsUnzoomRequestBody()
 
 res = s.variation.post_variations_unzoom(req)
 
-if res.post_variations_unzoom_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

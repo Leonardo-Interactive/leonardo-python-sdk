@@ -1,0 +1,15 @@
+# UserDetails
+
+columns and relationships of "user_details"
+
+
+## Fields
+
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `api_concurrency_slots`                                        | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `subscription_gpt_tokens`                                      | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `subscription_model_tokens`                                    | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `subscription_tokens`                                          | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `token_renewal_date`                                           | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `user`                                                         | [Optional[operations.Users]](../../models/operations/users.md) | :heavy_minus_sign:                                             | columns and relationships of "users"                           |

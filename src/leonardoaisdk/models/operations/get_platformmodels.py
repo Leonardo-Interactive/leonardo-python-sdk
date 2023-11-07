@@ -18,7 +18,7 @@ class GetPlatformModelsRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetPlatformModels200ApplicationJSONCustomModelsGeneratedImages:
+class GetPlatformModelsGeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
@@ -28,11 +28,11 @@ class GetPlatformModels200ApplicationJSONCustomModelsGeneratedImages:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetPlatformModels200ApplicationJSONCustomModels:
+class GetPlatformModelsCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     featured: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('featured'), 'exclude': lambda f: f is None }})
-    generated_image: Optional[GetPlatformModels200ApplicationJSONCustomModelsGeneratedImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image') }})
+    generated_image: Optional[GetPlatformModelsGeneratedImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image') }})
     r"""columns and relationships of \\"generated_images\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
@@ -43,9 +43,9 @@ class GetPlatformModels200ApplicationJSONCustomModels:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetPlatformModels200ApplicationJSON:
+class GetPlatformModelsResponseBody:
     r"""Responses for GET /api/rest/v1/platformModels"""
-    custom_models: Optional[List[GetPlatformModels200ApplicationJSONCustomModels]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models'), 'exclude': lambda f: f is None }})
+    custom_models: Optional[List[GetPlatformModelsCustomModels]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models'), 'exclude': lambda f: f is None }})
     
 
 
@@ -56,7 +56,7 @@ class GetPlatformModelsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_platform_models_200_application_json_object: Optional[GetPlatformModels200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetPlatformModelsResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/platformModels"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

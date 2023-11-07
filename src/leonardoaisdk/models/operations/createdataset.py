@@ -22,7 +22,7 @@ class CreateDatasetRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateDataset200ApplicationJSONDatasets:
+class Datasets:
     r"""columns and relationships of \\"datasets\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
@@ -31,9 +31,9 @@ class CreateDataset200ApplicationJSONDatasets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateDataset200ApplicationJSON:
+class CreateDatasetResponseBody:
     r"""Responses for POST /datasets"""
-    insert_datasets_one: Optional[CreateDataset200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one') }})
+    insert_datasets_one: Optional[Datasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one') }})
     r"""columns and relationships of \\"datasets\\" """
     
 
@@ -45,7 +45,7 @@ class CreateDatasetResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_dataset_200_application_json_object: Optional[CreateDataset200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateDatasetResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /datasets"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

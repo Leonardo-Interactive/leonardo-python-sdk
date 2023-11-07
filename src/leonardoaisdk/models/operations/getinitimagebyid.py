@@ -18,7 +18,7 @@ class GetInitImageByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetInitImageByID200ApplicationJSONInitImages:
+class GetInitImageByIDInitImages:
     r"""columns and relationships of \\"init_images\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -29,9 +29,9 @@ class GetInitImageByID200ApplicationJSONInitImages:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetInitImageByID200ApplicationJSON:
+class GetInitImageByIDResponseBody:
     r"""Responses for GET /init-image/{id}"""
-    init_images_by_pk: Optional[GetInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk') }})
+    init_images_by_pk: Optional[GetInitImageByIDInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk') }})
     r"""columns and relationships of \\"init_images\\" """
     
 
@@ -43,7 +43,7 @@ class GetInitImageByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_init_image_by_id_200_application_json_object: Optional[GetInitImageByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetInitImageByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /init-image/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

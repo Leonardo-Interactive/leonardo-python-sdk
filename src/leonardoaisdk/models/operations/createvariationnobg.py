@@ -20,7 +20,7 @@ class CreateVariationNoBGRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateVariationNoBG200ApplicationJSONSDUpscaleJobOutput:
+class SDUpscaleJobOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for No Background Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -30,9 +30,9 @@ class CreateVariationNoBG200ApplicationJSONSDUpscaleJobOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateVariationNoBG200ApplicationJSON:
+class CreateVariationNoBGResponseBody:
     r"""Responses for POST /variations/nobg"""
-    sd_nobg_job: Optional[CreateVariationNoBG200ApplicationJSONSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdNobgJob'), 'exclude': lambda f: f is None }})
+    sd_nobg_job: Optional[SDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdNobgJob'), 'exclude': lambda f: f is None }})
     
 
 
@@ -43,7 +43,7 @@ class CreateVariationNoBGResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_variation_no_bg_200_application_json_object: Optional[CreateVariationNoBG200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateVariationNoBGResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /variations/nobg"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

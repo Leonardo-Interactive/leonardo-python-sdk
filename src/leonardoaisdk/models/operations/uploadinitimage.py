@@ -20,7 +20,7 @@ class UploadInitImageRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadInitImage200ApplicationJSONInitImageUploadOutput:
+class InitImageUploadOutput:
     fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
@@ -31,9 +31,9 @@ class UploadInitImage200ApplicationJSONInitImageUploadOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadInitImage200ApplicationJSON:
+class UploadInitImageResponseBody:
     r"""Responses for POST /init-image"""
-    upload_init_image: Optional[UploadInitImage200ApplicationJSONInitImageUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadInitImage') }})
+    upload_init_image: Optional[InitImageUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadInitImage') }})
     
 
 
@@ -44,9 +44,9 @@ class UploadInitImageResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[UploadInitImageResponseBody] = dataclasses.field(default=None)
+    r"""Responses for POST /init-image"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    upload_init_image_200_application_json_object: Optional[UploadInitImage200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Responses for POST /init-image"""
     
 

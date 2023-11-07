@@ -29,7 +29,7 @@ class DeleteGenerationsTextureIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
+class ModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
@@ -38,9 +38,9 @@ class DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteGenerationsTextureID200ApplicationJSON:
+class DeleteGenerationsTextureIDResponseBody:
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
-    delete_model_asset_texture_generations_by_pk: Optional[DeleteGenerationsTextureID200ApplicationJSONModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk') }})
+    delete_model_asset_texture_generations_by_pk: Optional[ModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk') }})
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     
 
@@ -52,7 +52,7 @@ class DeleteGenerationsTextureIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_generations_texture_id_200_application_json_object: Optional[DeleteGenerationsTextureID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DeleteGenerationsTextureIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

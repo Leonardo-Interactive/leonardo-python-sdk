@@ -1,5 +1,5 @@
 # Generation
-(*generation*)
+(*.generation*)
 
 ### Available Operations
 
@@ -37,7 +37,7 @@ req = operations.CreateGenerationRequestBody(
 
 res = s.generation.create_generation(req)
 
-if res.create_generation_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -62,7 +62,7 @@ This endpoint deletes a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -71,7 +71,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.delete_generation_by_id(id='string')
 
-if res.delete_generation_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -96,7 +96,7 @@ This endpoint deletes the specific texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -105,7 +105,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.delete_generations_texture_id_(id='string', request_body=operations.DeleteGenerationsTextureIDRequestBody())
 
-if res.delete_generations_texture_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -131,7 +131,7 @@ This endpoint will provide information about a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -140,7 +140,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.get_generation_by_id(id='string')
 
-if res.get_generation_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -165,7 +165,7 @@ This endpoint returns all generations by a specific user
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -174,7 +174,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.get_generations_by_user_id(user_id='string', limit=270501, offset=770121)
 
-if res.get_generations_by_user_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -201,7 +201,7 @@ This endpoint gets the specific texture generations by the 3d model id.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -210,7 +210,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.get_generations_texture_model_model_id_(model_id='string', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=216504, offset=808783)
 
-if res.get_generations_texture_model_model_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -238,7 +238,7 @@ This endpoint gets the specific texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -247,7 +247,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.generation.get_generations_texture_id_(id='string', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=608876, offset=119347)
 
-if res.get_generations_texture_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -275,7 +275,7 @@ This endpoint will generate a texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -285,7 +285,7 @@ req = operations.PostGenerationsTextureRequestBody()
 
 res = s.generation.post_generations_texture(req)
 
-if res.post_generations_texture_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

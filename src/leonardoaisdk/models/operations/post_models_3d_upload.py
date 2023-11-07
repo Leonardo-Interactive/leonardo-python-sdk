@@ -20,7 +20,7 @@ class PostModels3dUploadRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
+class ModelAssetUploadOutput:
     model_fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelFields') }})
     model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId') }})
     model_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelKey') }})
@@ -31,9 +31,9 @@ class PostModels3dUpload200ApplicationJSONModelAssetUploadOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostModels3dUpload200ApplicationJSON:
+class PostModels3dUploadResponseBody:
     r"""Responses for POST /api/rest/v1/models-3d/upload"""
-    upload_model_asset: Optional[PostModels3dUpload200ApplicationJSONModelAssetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadModelAsset') }})
+    upload_model_asset: Optional[ModelAssetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadModelAsset') }})
     
 
 
@@ -44,7 +44,7 @@ class PostModels3dUploadResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_models_3d_upload_200_application_json_object: Optional[PostModels3dUpload200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[PostModels3dUploadResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/models-3d/upload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

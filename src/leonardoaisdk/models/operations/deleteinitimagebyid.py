@@ -18,7 +18,7 @@ class DeleteInitImageByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteInitImageByID200ApplicationJSONInitImages:
+class InitImages:
     r"""columns and relationships of \\"init_images\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
@@ -27,9 +27,9 @@ class DeleteInitImageByID200ApplicationJSONInitImages:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteInitImageByID200ApplicationJSON:
+class DeleteInitImageByIDResponseBody:
     r"""Responses for DELETE /init-image/{id}"""
-    delete_init_images_by_pk: Optional[DeleteInitImageByID200ApplicationJSONInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_init_images_by_pk') }})
+    delete_init_images_by_pk: Optional[InitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_init_images_by_pk') }})
     r"""columns and relationships of \\"init_images\\" """
     
 
@@ -41,7 +41,7 @@ class DeleteInitImageByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_init_image_by_id_200_application_json_object: Optional[DeleteInitImageByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DeleteInitImageByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for DELETE /init-image/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

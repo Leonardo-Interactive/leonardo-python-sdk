@@ -1,5 +1,5 @@
 # Element
-(*element*)
+(*.element*)
 
 ### Available Operations
 
@@ -13,7 +13,6 @@ Get a list of public Elements available for use with generations.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -22,7 +21,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.element.get_elements()
 
-if res.get_elements_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

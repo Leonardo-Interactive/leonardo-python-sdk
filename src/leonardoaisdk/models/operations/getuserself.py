@@ -10,7 +10,7 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetUserSelf200ApplicationJSONUserDetailsUsers:
+class Users:
     r"""columns and relationships of \\"users\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username') }})
@@ -20,14 +20,14 @@ class GetUserSelf200ApplicationJSONUserDetailsUsers:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetUserSelf200ApplicationJSONUserDetails:
+class UserDetails:
     r"""columns and relationships of \\"user_details\\" """
     api_concurrency_slots: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiConcurrencySlots'), 'exclude': lambda f: f is None }})
     subscription_gpt_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionGptTokens'), 'exclude': lambda f: f is None }})
     subscription_model_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionModelTokens'), 'exclude': lambda f: f is None }})
     subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTokens'), 'exclude': lambda f: f is None }})
     token_renewal_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tokenRenewalDate') }})
-    user: Optional[GetUserSelf200ApplicationJSONUserDetailsUsers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    user: Optional[Users] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
     r"""columns and relationships of \\"users\\" """
     
 
@@ -35,9 +35,9 @@ class GetUserSelf200ApplicationJSONUserDetails:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetUserSelf200ApplicationJSON:
+class GetUserSelfResponseBody:
     r"""Responses for GET /me"""
-    user_details: Optional[List[GetUserSelf200ApplicationJSONUserDetails]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_details'), 'exclude': lambda f: f is None }})
+    user_details: Optional[List[UserDetails]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_details'), 'exclude': lambda f: f is None }})
     
 
 
@@ -48,7 +48,7 @@ class GetUserSelfResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_user_self_200_application_json_object: Optional[GetUserSelf200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetUserSelfResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /me"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

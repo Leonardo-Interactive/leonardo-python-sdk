@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import job_status as shared_job_status
-from ..shared import sd_generation_schedulers as shared_sd_generation_schedulers
-from ..shared import sd_generation_style as shared_sd_generation_style
-from ..shared import sd_versions as shared_sd_versions
-from ..shared import variation_type as shared_variation_type
+from ...models.shared import job_status as shared_job_status
+from ...models.shared import sd_generation_schedulers as shared_sd_generation_schedulers
+from ...models.shared import sd_generation_style as shared_sd_generation_style
+from ...models.shared import sd_versions as shared_sd_versions
+from ...models.shared import variation_type as shared_variation_type
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import List, Optional
@@ -24,7 +24,7 @@ class GetGenerationsByUserIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImagesGeneratedImageVariationGeneric:
+class GetGenerationsByUserIDGeneratedImageVariationGeneric:
     r"""columns and relationships of \\"generated_image_variation_generic\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     status: Optional[shared_job_status.JobStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -38,9 +38,9 @@ class GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImagesGenerate
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImages:
+class GetGenerationsByUserIDGeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
-    generated_image_variation_generics: Optional[List[GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImagesGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
+    generated_image_variation_generics: Optional[List[GetGenerationsByUserIDGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     like_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('likeCount'), 'exclude': lambda f: f is None }})
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
@@ -51,7 +51,7 @@ class GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImages:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElementsElements:
+class Elements:
     r"""Element used for the generation."""
     ak_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID') }})
     r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
@@ -75,10 +75,10 @@ class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElementsEleme
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElements:
+class GetGenerationsByUserIDGenerationElements:
     r"""This table captures the elements that are applied to a Generations, also the order and weightings used when applied."""
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    lora: Optional[GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElementsElements] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lora') }})
+    lora: Optional[Elements] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lora') }})
     r"""Element used for the generation."""
     weight_applied: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightApplied') }})
     
@@ -87,11 +87,11 @@ class GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElements:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSONGenerations:
+class GetGenerationsByUserIDGenerations:
     r"""columns and relationships of \\"generations\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    generated_images: Optional[List[GetGenerationsByUserID200ApplicationJSONGenerationsGeneratedImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_images'), 'exclude': lambda f: f is None }})
-    generation_elements: Optional[List[GetGenerationsByUserID200ApplicationJSONGenerationsGenerationElements]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generation_elements'), 'exclude': lambda f: f is None }})
+    generated_images: Optional[List[GetGenerationsByUserIDGeneratedImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_images'), 'exclude': lambda f: f is None }})
+    generation_elements: Optional[List[GetGenerationsByUserIDGenerationElements]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generation_elements'), 'exclude': lambda f: f is None }})
     guidance_scale: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guidanceScale') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     image_height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageHeight'), 'exclude': lambda f: f is None }})
@@ -127,9 +127,9 @@ class GetGenerationsByUserID200ApplicationJSONGenerations:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsByUserID200ApplicationJSON:
+class GetGenerationsByUserIDResponseBody:
     r"""Responses for GET /generations/user/{userId}"""
-    generations: Optional[List[GetGenerationsByUserID200ApplicationJSONGenerations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generations'), 'exclude': lambda f: f is None }})
+    generations: Optional[List[GetGenerationsByUserIDGenerations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generations'), 'exclude': lambda f: f is None }})
     
 
 
@@ -140,7 +140,7 @@ class GetGenerationsByUserIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_generations_by_user_id_200_application_json_object: Optional[GetGenerationsByUserID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetGenerationsByUserIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /generations/user/{userId}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

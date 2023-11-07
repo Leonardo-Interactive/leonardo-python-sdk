@@ -30,7 +30,7 @@ class UploadDatasetImageFromGenRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput:
+class DatasetGenUploadOutput:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 
@@ -38,9 +38,9 @@ class UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadDatasetImageFromGen200ApplicationJSON:
+class UploadDatasetImageFromGenResponseBody:
     r"""Responses for POST /datasets/{datasetId}/upload/gen"""
-    upload_dataset_image_from_gen: Optional[UploadDatasetImageFromGen200ApplicationJSONDatasetGenUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen') }})
+    upload_dataset_image_from_gen: Optional[DatasetGenUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen') }})
     
 
 
@@ -51,9 +51,9 @@ class UploadDatasetImageFromGenResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[UploadDatasetImageFromGenResponseBody] = dataclasses.field(default=None)
+    r"""Responses for POST /datasets/{datasetId}/upload/gen"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    upload_dataset_image_from_gen_200_application_json_object: Optional[UploadDatasetImageFromGen200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Responses for POST /datasets/{datasetId}/upload/gen"""
     
 

@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import custom_model_type as shared_custom_model_type
-from ..shared import job_status as shared_job_status
-from ..shared import sd_versions as shared_sd_versions
+from ...models.shared import custom_model_type as shared_custom_model_type
+from ...models.shared import job_status as shared_job_status
+from ...models.shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import Optional
@@ -21,7 +21,7 @@ class GetModelByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModelByID200ApplicationJSONCustomModels:
+class GetModelByIDCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
@@ -44,9 +44,9 @@ class GetModelByID200ApplicationJSONCustomModels:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModelByID200ApplicationJSON:
+class GetModelByIDResponseBody:
     r"""Responses for GET /models/{id}"""
-    custom_models_by_pk: Optional[GetModelByID200ApplicationJSONCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk') }})
+    custom_models_by_pk: Optional[GetModelByIDCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk') }})
     r"""columns and relationships of \\"custom_models\\" """
     
 
@@ -58,7 +58,7 @@ class GetModelByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_model_by_id_200_application_json_object: Optional[GetModelByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetModelByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /models/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

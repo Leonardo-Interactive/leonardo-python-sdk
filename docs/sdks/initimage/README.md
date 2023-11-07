@@ -1,5 +1,5 @@
 # InitImage
-(*init_image*)
+(*.init_image*)
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ This endpoint deletes an init image
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -24,7 +24,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.init_image.delete_init_image_by_id(id='string')
 
-if res.delete_init_image_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -49,7 +49,7 @@ This endpoint will return a single init image
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -58,7 +58,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.init_image.get_init_image_by_id(id='string')
 
-if res.get_init_image_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -83,7 +83,7 @@ This endpoint returns presigned details to upload an init image to S3
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -95,7 +95,7 @@ req = operations.UploadInitImageRequestBody(
 
 res = s.init_image.upload_init_image(req)
 
-if res.upload_init_image_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

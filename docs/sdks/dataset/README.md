@@ -1,5 +1,5 @@
 # Dataset
-(*dataset*)
+(*.dataset*)
 
 ### Available Operations
 
@@ -17,7 +17,7 @@ This endpoint creates a new dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -29,7 +29,7 @@ req = operations.CreateDatasetRequestBody(
 
 res = s.dataset.create_dataset(req)
 
-if res.create_dataset_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -54,7 +54,7 @@ This endpoint deletes the specific dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -63,7 +63,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.dataset.delete_dataset_by_id(id='string')
 
-if res.delete_dataset_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -88,7 +88,7 @@ This endpoint gets the specific dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -97,7 +97,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.dataset.get_dataset_by_id(id='string')
 
-if res.get_dataset_by_id_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -122,7 +122,7 @@ This endpoint returns presigned details to upload a dataset image to S3
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -133,7 +133,7 @@ res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageR
     extension='mpg4',
 ), dataset_id='string')
 
-if res.upload_dataset_image_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -159,7 +159,7 @@ This endpoint will upload a previously generated image to the dataset
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -170,7 +170,7 @@ res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadData
     generated_image_id='string',
 ), dataset_id='string')
 
-if res.upload_dataset_image_from_gen_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

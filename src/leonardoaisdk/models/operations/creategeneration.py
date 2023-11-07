@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import controlnet_type as shared_controlnet_type
-from ..shared import element_input as shared_element_input
-from ..shared import sd_generation_schedulers as shared_sd_generation_schedulers
-from ..shared import sd_generation_style as shared_sd_generation_style
-from ..shared import sd_versions as shared_sd_versions
+from ...models.shared import controlnet_type as shared_controlnet_type
+from ...models.shared import element_input as shared_element_input
+from ...models.shared import sd_generation_schedulers as shared_sd_generation_schedulers
+from ...models.shared import sd_generation_style as shared_sd_generation_style
+from ...models.shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import List, Optional
@@ -93,7 +93,7 @@ class CreateGenerationRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateGeneration200ApplicationJSONSDGenerationOutput:
+class SDGenerationOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for Image Generation. Available for Production API Users."""
     generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generationId'), 'exclude': lambda f: f is None }})
@@ -103,9 +103,9 @@ class CreateGeneration200ApplicationJSONSDGenerationOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateGeneration200ApplicationJSON:
+class CreateGenerationResponseBody:
     r"""Responses for POST /generations"""
-    sd_generation_job: Optional[CreateGeneration200ApplicationJSONSDGenerationOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdGenerationJob') }})
+    sd_generation_job: Optional[SDGenerationOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdGenerationJob') }})
     
 
 
@@ -116,7 +116,7 @@ class CreateGenerationResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_generation_200_application_json_object: Optional[CreateGeneration200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateGenerationResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /generations"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

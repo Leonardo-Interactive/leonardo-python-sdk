@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import custom_model_type as shared_custom_model_type
-from ..shared import sd_versions as shared_sd_versions
-from ..shared import strength as shared_strength
+from ...models.shared import custom_model_type as shared_custom_model_type
+from ...models.shared import sd_versions as shared_sd_versions
+from ...models.shared import strength as shared_strength
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import Optional
@@ -39,7 +39,7 @@ class CreateModelRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateModel200ApplicationJSONSDTrainingOutput:
+class SDTrainingOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for Model Training. Available for Production API Users."""
     custom_model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customModelId'), 'exclude': lambda f: f is None }})
@@ -49,9 +49,9 @@ class CreateModel200ApplicationJSONSDTrainingOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateModel200ApplicationJSON:
+class CreateModelResponseBody:
     r"""Responses for POST /models"""
-    sd_training_job: Optional[CreateModel200ApplicationJSONSDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob') }})
+    sd_training_job: Optional[SDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob') }})
     
 
 
@@ -62,7 +62,7 @@ class CreateModelResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_model_200_application_json_object: Optional[CreateModel200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateModelResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /models"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

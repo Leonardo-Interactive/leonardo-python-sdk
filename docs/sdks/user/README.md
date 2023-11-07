@@ -1,5 +1,5 @@
 # User
-(*user*)
+(*.user*)
 
 ### Available Operations
 
@@ -13,7 +13,6 @@ This endpoint will return your user information such as your user id, username, 
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import shared
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="",
@@ -22,7 +21,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = s.user.get_user_self()
 
-if res.get_user_self_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

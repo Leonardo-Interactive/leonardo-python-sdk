@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import job_status as shared_job_status
-from ..shared import model_asset_texture_types as shared_model_asset_texture_types
+from ...models.shared import job_status as shared_job_status
+from ...models.shared import model_asset_texture_types as shared_model_asset_texture_types
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import List, Optional
@@ -35,7 +35,7 @@ class GetGenerationsTextureModelModelIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenerationsModelAssetTextureImages:
+class ModelAssetTextureImages:
     r"""columns and relationships of \\"model_asset_texture_images\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     type: Optional[shared_model_asset_texture_types.ModelAssetTextureTypes] = dataclasses.field(default=shared_model_asset_texture_types.ModelAssetTextureTypes.NORMAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
@@ -47,11 +47,11 @@ class GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenera
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenerations:
+class GetGenerationsTextureModelModelIDModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    model_asset_texture_images: Optional[List[GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenerationsModelAssetTextureImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_images'), 'exclude': lambda f: f is None }})
+    model_asset_texture_images: Optional[List[ModelAssetTextureImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_images'), 'exclude': lambda f: f is None }})
     negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negativePrompt') }})
     prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
     seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed') }})
@@ -63,9 +63,9 @@ class GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenera
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetGenerationsTextureModelModelID200ApplicationJSON:
+class GetGenerationsTextureModelModelIDResponseBody:
     r"""Responses for GET /api/rest/v1/generations-texture/model/{modelId}"""
-    model_asset_texture_generations: Optional[List[GetGenerationsTextureModelModelID200ApplicationJSONModelAssetTextureGenerations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_generations'), 'exclude': lambda f: f is None }})
+    model_asset_texture_generations: Optional[List[GetGenerationsTextureModelModelIDModelAssetTextureGenerations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_generations'), 'exclude': lambda f: f is None }})
     
 
 
@@ -76,7 +76,7 @@ class GetGenerationsTextureModelModelIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_generations_texture_model_model_id_200_application_json_object: Optional[GetGenerationsTextureModelModelID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetGenerationsTextureModelModelIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/generations-texture/model/{modelId}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

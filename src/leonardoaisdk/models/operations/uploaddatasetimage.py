@@ -30,7 +30,7 @@ class UploadDatasetImageRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
+class DatasetUploadOutput:
     fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
@@ -41,9 +41,9 @@ class UploadDatasetImage200ApplicationJSONDatasetUploadOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadDatasetImage200ApplicationJSON:
+class UploadDatasetImageResponseBody:
     r"""Responses for POST /datasets/{datasetId}/upload"""
-    upload_dataset_image: Optional[UploadDatasetImage200ApplicationJSONDatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage') }})
+    upload_dataset_image: Optional[DatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage') }})
     
 
 
@@ -54,9 +54,9 @@ class UploadDatasetImageResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[UploadDatasetImageResponseBody] = dataclasses.field(default=None)
+    r"""Responses for POST /datasets/{datasetId}/upload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    upload_dataset_image_200_application_json_object: Optional[UploadDatasetImage200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Responses for POST /datasets/{datasetId}/upload"""
     
 

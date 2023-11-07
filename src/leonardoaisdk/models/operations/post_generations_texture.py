@@ -26,7 +26,7 @@ class PostGenerationsTextureRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput:
+class TextureGenerationJobOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for Texture Generation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -36,9 +36,9 @@ class PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostGenerationsTexture200ApplicationJSON:
+class PostGenerationsTextureResponseBody:
     r"""Responses for POST /api/rest/v1/generations-texture"""
-    texture_generation_job: Optional[PostGenerationsTexture200ApplicationJSONTextureGenerationJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob') }})
+    texture_generation_job: Optional[TextureGenerationJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob') }})
     
 
 
@@ -49,7 +49,7 @@ class PostGenerationsTextureResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_generations_texture_200_application_json_object: Optional[PostGenerationsTexture200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[PostGenerationsTextureResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/generations-texture"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

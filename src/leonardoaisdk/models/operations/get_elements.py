@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import sd_versions as shared_sd_versions
+from ...models.shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import List, Optional
@@ -11,7 +11,7 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetElements200ApplicationJSONLoras:
+class Loras:
     r"""columns and relationships of \\"elements\\" """
     ak_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID') }})
     r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
@@ -37,9 +37,9 @@ class GetElements200ApplicationJSONLoras:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetElements200ApplicationJSON:
+class GetElementsResponseBody:
     r"""Responses for GET /api/rest/v1/elements"""
-    loras: Optional[List[GetElements200ApplicationJSONLoras]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loras'), 'exclude': lambda f: f is None }})
+    loras: Optional[List[Loras]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loras'), 'exclude': lambda f: f is None }})
     
 
 
@@ -50,7 +50,7 @@ class GetElementsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_elements_200_application_json_object: Optional[GetElements200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetElementsResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/elements"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

@@ -19,8 +19,8 @@ class LeonardoAiSDK:
     element: Element
     generation: Generation
     init_image: InitImage
-    model: Model
     user: User
+    model: Model
     variation: Variation
 
     sdk_configuration: SDKConfiguration
@@ -68,7 +68,7 @@ class LeonardoAiSDK:
         self.element = Element(self.sdk_configuration)
         self.generation = Generation(self.sdk_configuration)
         self.init_image = InitImage(self.sdk_configuration)
-        self.model = Model(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
+        self.model = Model(self.sdk_configuration)
         self.variation = Variation(self.sdk_configuration)
     

@@ -19,7 +19,7 @@ class CreateVariationUpscaleRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput:
+class CreateVariationUpscaleSDUpscaleJobOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for Upscale Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -29,9 +29,9 @@ class CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateVariationUpscale200ApplicationJSON:
+class CreateVariationUpscaleResponseBody:
     r"""Responses for POST /variations/upscale"""
-    sd_upscale_job: Optional[CreateVariationUpscale200ApplicationJSONSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob') }})
+    sd_upscale_job: Optional[CreateVariationUpscaleSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob') }})
     
 
 
@@ -42,7 +42,7 @@ class CreateVariationUpscaleResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_variation_upscale_200_application_json_object: Optional[CreateVariationUpscale200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateVariationUpscaleResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /variations/upscale"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

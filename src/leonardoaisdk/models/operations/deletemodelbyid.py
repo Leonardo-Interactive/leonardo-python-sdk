@@ -18,7 +18,7 @@ class DeleteModelByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteModelByID200ApplicationJSONCustomModels:
+class CustomModels:
     r"""columns and relationships of \\"custom_models\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
@@ -27,9 +27,9 @@ class DeleteModelByID200ApplicationJSONCustomModels:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteModelByID200ApplicationJSON:
+class DeleteModelByIDResponseBody:
     r"""Responses for DELETE /models/{id}"""
-    delete_custom_models_by_pk: Optional[DeleteModelByID200ApplicationJSONCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_custom_models_by_pk') }})
+    delete_custom_models_by_pk: Optional[CustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_custom_models_by_pk') }})
     r"""columns and relationships of \\"custom_models\\" """
     
 
@@ -41,7 +41,7 @@ class DeleteModelByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_model_by_id_200_application_json_object: Optional[DeleteModelByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DeleteModelByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for DELETE /models/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

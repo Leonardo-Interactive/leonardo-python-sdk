@@ -18,7 +18,7 @@ class GetDatasetByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetDatasetByID200ApplicationJSONDatasetsDatasetImages:
+class DatasetImages:
     r"""columns and relationships of \\"dataset_images\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -29,10 +29,10 @@ class GetDatasetByID200ApplicationJSONDatasetsDatasetImages:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetDatasetByID200ApplicationJSONDatasets:
+class GetDatasetByIDDatasets:
     r"""columns and relationships of \\"datasets\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    dataset_images: Optional[List[GetDatasetByID200ApplicationJSONDatasetsDatasetImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataset_images'), 'exclude': lambda f: f is None }})
+    dataset_images: Optional[List[DatasetImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataset_images'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
@@ -43,9 +43,9 @@ class GetDatasetByID200ApplicationJSONDatasets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetDatasetByID200ApplicationJSON:
+class GetDatasetByIDResponseBody:
     r"""Responses for GET /datasets/{id}"""
-    datasets_by_pk: Optional[GetDatasetByID200ApplicationJSONDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets_by_pk') }})
+    datasets_by_pk: Optional[GetDatasetByIDDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets_by_pk') }})
     r"""columns and relationships of \\"datasets\\" """
     
 
@@ -57,7 +57,7 @@ class GetDatasetByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_dataset_by_id_200_application_json_object: Optional[GetDatasetByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetDatasetByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /datasets/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

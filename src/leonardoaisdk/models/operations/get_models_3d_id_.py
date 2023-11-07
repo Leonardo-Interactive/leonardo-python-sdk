@@ -31,7 +31,7 @@ class GetModels3dIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModels3dID200ApplicationJSONModelAssets:
+class GetModels3dIDModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -45,9 +45,9 @@ class GetModels3dID200ApplicationJSONModelAssets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModels3dID200ApplicationJSON:
+class GetModels3dIDResponseBody:
     r"""Responses for GET /api/rest/v1/models-3d/{id}"""
-    model_assets_by_pk: Optional[GetModels3dID200ApplicationJSONModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets_by_pk') }})
+    model_assets_by_pk: Optional[GetModels3dIDModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets_by_pk') }})
     r"""columns and relationships of \\"model_assets\\" """
     
 
@@ -59,7 +59,7 @@ class GetModels3dIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_models_3d_id_200_application_json_object: Optional[GetModels3dID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetModels3dIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/models-3d/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

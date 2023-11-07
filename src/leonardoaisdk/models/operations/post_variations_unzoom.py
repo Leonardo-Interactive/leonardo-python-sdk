@@ -20,7 +20,7 @@ class PostVariationsUnzoomRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostVariationsUnzoom200ApplicationJSONSDUnzoomOutput:
+class SDUnzoomOutput:
     api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
     r"""API Credits Cost for Unzoom Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -30,9 +30,9 @@ class PostVariationsUnzoom200ApplicationJSONSDUnzoomOutput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostVariationsUnzoom200ApplicationJSON:
+class PostVariationsUnzoomResponseBody:
     r"""Responses for POST /api/rest/v1/variations/unzoom"""
-    sd_unzoom_job: Optional[PostVariationsUnzoom200ApplicationJSONSDUnzoomOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUnzoomJob') }})
+    sd_unzoom_job: Optional[SDUnzoomOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUnzoomJob') }})
     
 
 
@@ -43,7 +43,7 @@ class PostVariationsUnzoomResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_variations_unzoom_200_application_json_object: Optional[PostVariationsUnzoom200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[PostVariationsUnzoomResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /api/rest/v1/variations/unzoom"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

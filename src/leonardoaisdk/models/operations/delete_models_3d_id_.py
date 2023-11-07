@@ -29,7 +29,7 @@ class DeleteModels3dIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteModels3dID200ApplicationJSONModelAssets:
+class ModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
@@ -38,9 +38,9 @@ class DeleteModels3dID200ApplicationJSONModelAssets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteModels3dID200ApplicationJSON:
+class DeleteModels3dIDResponseBody:
     r"""Responses for DELETE /api/rest/v1/models-3d/{id}"""
-    delete_model_assets_by_pk: Optional[DeleteModels3dID200ApplicationJSONModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_assets_by_pk') }})
+    delete_model_assets_by_pk: Optional[ModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_assets_by_pk') }})
     r"""columns and relationships of \\"model_assets\\" """
     
 
@@ -52,7 +52,7 @@ class DeleteModels3dIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_models_3d_id_200_application_json_object: Optional[DeleteModels3dID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DeleteModels3dIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for DELETE /api/rest/v1/models-3d/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

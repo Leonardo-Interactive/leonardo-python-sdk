@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import job_status as shared_job_status
-from ..shared import variation_type as shared_variation_type
+from ...models.shared import job_status as shared_job_status
+from ...models.shared import variation_type as shared_variation_type
 from dataclasses_json import Undefined, dataclass_json
 from leonardoaisdk import utils
 from typing import List, Optional
@@ -20,7 +20,7 @@ class GetVariationByIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric:
+class GeneratedImageVariationGeneric:
     r"""columns and relationships of \\"generated_image_variation_generic\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -35,9 +35,9 @@ class GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetVariationByID200ApplicationJSON:
+class GetVariationByIDResponseBody:
     r"""Responses for GET /variations/{id}"""
-    generated_image_variation_generic: Optional[List[GetVariationByID200ApplicationJSONGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generic'), 'exclude': lambda f: f is None }})
+    generated_image_variation_generic: Optional[List[GeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generic'), 'exclude': lambda f: f is None }})
     
 
 
@@ -48,7 +48,7 @@ class GetVariationByIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_variation_by_id_200_application_json_object: Optional[GetVariationByID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetVariationByIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /variations/{id}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

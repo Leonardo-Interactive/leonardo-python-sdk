@@ -30,7 +30,7 @@ class GetModels3dUserUserIDRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModels3dUserUserID200ApplicationJSONModelAssets:
+class GetModels3dUserUserIDModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -44,9 +44,9 @@ class GetModels3dUserUserID200ApplicationJSONModelAssets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetModels3dUserUserID200ApplicationJSON:
+class GetModels3dUserUserIDResponseBody:
     r"""Responses for GET /api/rest/v1/models-3d/user/{userId}"""
-    model_assets: Optional[List[GetModels3dUserUserID200ApplicationJSONModelAssets]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets'), 'exclude': lambda f: f is None }})
+    model_assets: Optional[List[GetModels3dUserUserIDModelAssets]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets'), 'exclude': lambda f: f is None }})
     
 
 
@@ -57,7 +57,7 @@ class GetModels3dUserUserIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_models_3d_user_user_id_200_application_json_object: Optional[GetModels3dUserUserID200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetModels3dUserUserIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /api/rest/v1/models-3d/user/{userId}"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
