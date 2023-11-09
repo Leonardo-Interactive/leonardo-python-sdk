@@ -1,5 +1,5 @@
 # Model
-(*.model*)
+(*model*)
 
 ### Available Operations
 
@@ -49,7 +49,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateModelResponse](../../models/operations/createmodelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_model_by_id
 
@@ -83,7 +87,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteModelByIDResponse](../../models/operations/deletemodelbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_models_3d_id_
 
@@ -118,7 +126,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteModels3dIDResponse](../../models/operations/deletemodels3didresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_model_by_id
 
@@ -152,7 +164,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetModelByIDResponse](../../models/operations/getmodelbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_models_3d_user_user_id_
 
@@ -189,7 +205,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetModels3dUserUserIDResponse](../../models/operations/getmodels3duseruseridresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_models_3d_id_
 
@@ -226,7 +246,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetModels3dIDResponse](../../models/operations/getmodels3didresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_platform_models
 
@@ -261,7 +285,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetPlatformModelsResponse](../../models/operations/getplatformmodelsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## post_models_3d_upload
 
@@ -296,4 +324,8 @@ if res.object is not None:
 ### Response
 
 **[operations.PostModels3dUploadResponse](../../models/operations/postmodels3duploadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

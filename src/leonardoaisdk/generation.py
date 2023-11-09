@@ -12,6 +12,7 @@ class Generation:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_generation(self, request: operations.CreateGenerationRequestBody) -> operations.CreateGenerationResponse:
         r"""Create a Generation of Images
         This endpoint will generate images
@@ -28,7 +29,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Generation:
         return res
 
     
+    
     def delete_generation_by_id(self, id: str) -> operations.DeleteGenerationByIDResponse:
         r"""Delete a Single Generation
         This endpoint deletes a specific generation
@@ -62,7 +67,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -80,6 +88,7 @@ class Generation:
 
         return res
 
+    
     
     def delete_generations_texture_id_(self, id: str, request_body: Optional[operations.DeleteGenerationsTextureIDRequestBody] = None) -> operations.DeleteGenerationsTextureIDResponse:
         r"""Delete Texture Generation by ID
@@ -100,7 +109,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -119,6 +131,7 @@ class Generation:
         return res
 
     
+    
     def get_generation_by_id(self, id: str) -> operations.GetGenerationByIDResponse:
         r"""Get a Single Generation
         This endpoint will provide information about a specific generation
@@ -134,7 +147,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -152,6 +168,7 @@ class Generation:
 
         return res
 
+    
     
     def get_generations_by_user_id(self, user_id: str, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsByUserIDResponse:
         r"""Get generations by user ID
@@ -171,7 +188,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -189,6 +209,7 @@ class Generation:
 
         return res
 
+    
     
     def get_generations_texture_model_model_id_(self, model_id: str, request_body: Optional[operations.GetGenerationsTextureModelModelIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureModelModelIDResponse:
         r"""Get texture generations by 3D Model ID
@@ -212,7 +233,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -230,6 +254,7 @@ class Generation:
 
         return res
 
+    
     
     def get_generations_texture_id_(self, id: str, request_body: Optional[operations.GetGenerationsTextureIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureIDResponse:
         r"""Get Texture Generation by ID
@@ -253,7 +278,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -272,6 +300,7 @@ class Generation:
         return res
 
     
+    
     def post_generations_texture(self, request: operations.PostGenerationsTextureRequestBody) -> operations.PostGenerationsTextureResponse:
         r"""Create Texture Generation
         This endpoint will generate a texture generation.
@@ -286,7 +315,10 @@ class Generation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -1,5 +1,5 @@
 # Dataset
-(*.dataset*)
+(*dataset*)
 
 ### Available Operations
 
@@ -44,7 +44,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateDatasetResponse](../../models/operations/createdatasetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_dataset_by_id
 
@@ -78,7 +82,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteDatasetByIDResponse](../../models/operations/deletedatasetbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_dataset_by_id
 
@@ -112,7 +120,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetDatasetByIDResponse](../../models/operations/getdatasetbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_dataset_image
 
@@ -149,7 +161,11 @@ if res.object is not None:
 ### Response
 
 **[operations.UploadDatasetImageResponse](../../models/operations/uploaddatasetimageresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_dataset_image_from_gen
 
@@ -186,4 +202,8 @@ if res.object is not None:
 ### Response
 
 **[operations.UploadDatasetImageFromGenResponse](../../models/operations/uploaddatasetimagefromgenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

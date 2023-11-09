@@ -1,5 +1,5 @@
 # Element
-(*.element*)
+(*element*)
 
 ### Available Operations
 
@@ -30,4 +30,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetElementsResponse](../../models/operations/getelementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

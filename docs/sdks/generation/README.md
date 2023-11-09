@@ -1,5 +1,5 @@
 # Generation
-(*.generation*)
+(*generation*)
 
 ### Available Operations
 
@@ -52,7 +52,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateGenerationResponse](../../models/operations/creategenerationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_generation_by_id
 
@@ -86,7 +90,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteGenerationByIDResponse](../../models/operations/deletegenerationbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_generations_texture_id_
 
@@ -121,7 +129,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteGenerationsTextureIDResponse](../../models/operations/deletegenerationstextureidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_generation_by_id
 
@@ -155,7 +167,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetGenerationByIDResponse](../../models/operations/getgenerationbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_generations_by_user_id
 
@@ -191,7 +207,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetGenerationsByUserIDResponse](../../models/operations/getgenerationsbyuseridresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_generations_texture_model_model_id_
 
@@ -228,7 +248,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetGenerationsTextureModelModelIDResponse](../../models/operations/getgenerationstexturemodelmodelidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_generations_texture_id_
 
@@ -265,7 +289,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetGenerationsTextureIDResponse](../../models/operations/getgenerationstextureidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## post_generations_texture
 
@@ -300,4 +328,8 @@ if res.object is not None:
 ### Response
 
 **[operations.PostGenerationsTextureResponse](../../models/operations/postgenerationstextureresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -12,6 +12,7 @@ class Variation:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_variation_no_bg(self, request: operations.CreateVariationNoBGRequestBody) -> operations.CreateVariationNoBGResponse:
         r"""Create no background
         This endpoint will create a no background variation of the provided image ID
@@ -28,7 +29,10 @@ class Variation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Variation:
         return res
 
     
+    
     def create_variation_upscale(self, request: operations.CreateVariationUpscaleRequestBody) -> operations.CreateVariationUpscaleResponse:
         r"""Create upscale
         This endpoint will create an upscale for the provided image ID
@@ -61,7 +66,10 @@ class Variation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -80,6 +88,7 @@ class Variation:
         return res
 
     
+    
     def get_variation_by_id(self, id: str) -> operations.GetVariationByIDResponse:
         r"""Get variation by ID
         This endpoint will get the variation by ID
@@ -95,7 +104,10 @@ class Variation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -114,6 +126,7 @@ class Variation:
         return res
 
     
+    
     def post_variations_unzoom(self, request: operations.PostVariationsUnzoomRequestBody) -> operations.PostVariationsUnzoomResponse:
         r"""Create unzoom
         This endpoint will create an unzoom variation for the provided image ID
@@ -128,7 +141,10 @@ class Variation:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

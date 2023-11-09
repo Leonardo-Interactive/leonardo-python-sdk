@@ -12,6 +12,7 @@ class Dataset:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_dataset(self, request: operations.CreateDatasetRequestBody) -> operations.CreateDatasetResponse:
         r"""Create a Dataset
         This endpoint creates a new dataset
@@ -28,7 +29,10 @@ class Dataset:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Dataset:
         return res
 
     
+    
     def delete_dataset_by_id(self, id: str) -> operations.DeleteDatasetByIDResponse:
         r"""Delete a Single Dataset by ID
         This endpoint deletes the specific dataset
@@ -62,7 +67,10 @@ class Dataset:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -81,6 +89,7 @@ class Dataset:
         return res
 
     
+    
     def get_dataset_by_id(self, id: str) -> operations.GetDatasetByIDResponse:
         r"""Get a Single Dataset by ID
         This endpoint gets the specific dataset
@@ -96,7 +105,10 @@ class Dataset:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -114,6 +126,7 @@ class Dataset:
 
         return res
 
+    
     
     def upload_dataset_image(self, request_body: operations.UploadDatasetImageRequestBody, dataset_id: str) -> operations.UploadDatasetImageResponse:
         r"""Upload dataset image
@@ -136,7 +149,10 @@ class Dataset:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -154,6 +170,7 @@ class Dataset:
 
         return res
 
+    
     
     def upload_dataset_image_from_gen(self, request_body: operations.UploadDatasetImageFromGenRequestBody, dataset_id: str) -> operations.UploadDatasetImageFromGenResponse:
         r"""Upload a Single Generated Image to a Dataset
@@ -176,7 +193,10 @@ class Dataset:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

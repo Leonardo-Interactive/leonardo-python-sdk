@@ -36,7 +36,7 @@ if res.object is not None:
 ## Available Resources and Operations
 
 
-### [.dataset](docs/sdks/dataset/README.md)
+### [dataset](docs/sdks/dataset/README.md)
 
 * [create_dataset](docs/sdks/dataset/README.md#create_dataset) - Create a Dataset
 * [delete_dataset_by_id](docs/sdks/dataset/README.md#delete_dataset_by_id) - Delete a Single Dataset by ID
@@ -44,11 +44,11 @@ if res.object is not None:
 * [upload_dataset_image](docs/sdks/dataset/README.md#upload_dataset_image) - Upload dataset image
 * [upload_dataset_image_from_gen](docs/sdks/dataset/README.md#upload_dataset_image_from_gen) - Upload a Single Generated Image to a Dataset
 
-### [.element](docs/sdks/element/README.md)
+### [element](docs/sdks/element/README.md)
 
 * [get_elements](docs/sdks/element/README.md#get_elements) - List Elements
 
-### [.generation](docs/sdks/generation/README.md)
+### [generation](docs/sdks/generation/README.md)
 
 * [create_generation](docs/sdks/generation/README.md#create_generation) - Create a Generation of Images
 * [delete_generation_by_id](docs/sdks/generation/README.md#delete_generation_by_id) - Delete a Single Generation
@@ -59,17 +59,17 @@ if res.object is not None:
 * [get_generations_texture_id_](docs/sdks/generation/README.md#get_generations_texture_id_) - Get Texture Generation by ID
 * [post_generations_texture](docs/sdks/generation/README.md#post_generations_texture) - Create Texture Generation
 
-### [.init_image](docs/sdks/initimage/README.md)
+### [init_image](docs/sdks/initimage/README.md)
 
 * [delete_init_image_by_id](docs/sdks/initimage/README.md#delete_init_image_by_id) - Delete init image
 * [get_init_image_by_id](docs/sdks/initimage/README.md#get_init_image_by_id) - Get single init image
 * [upload_init_image](docs/sdks/initimage/README.md#upload_init_image) - Upload init image
 
-### [.user](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [get_user_self](docs/sdks/user/README.md#get_user_self) - Get user information
 
-### [.model](docs/sdks/model/README.md)
+### [model](docs/sdks/model/README.md)
 
 * [create_model](docs/sdks/model/README.md#create_model) - Train a Custom Model
 * [delete_model_by_id](docs/sdks/model/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
@@ -80,7 +80,7 @@ if res.object is not None:
 * [get_platform_models](docs/sdks/model/README.md#get_platform_models) - List Platform Models
 * [post_models_3d_upload](docs/sdks/model/README.md#post_models_3d_upload) - Upload 3D Model
 
-### [.variation](docs/sdks/variation/README.md)
+### [variation](docs/sdks/variation/README.md)
 
 * [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
@@ -119,7 +119,39 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="",
+)
+
+req = operations.CreateDatasetRequestBody(
+    name='string',
+)
+
+res = None
+try:
+    res = s.dataset.create_dataset(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.object is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -130,7 +162,7 @@ Handling errors in your SDK should largely match your expectations.  All operati
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import leonardoaisdk
@@ -206,12 +238,11 @@ if res.object is not None:
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |

@@ -1,5 +1,5 @@
 # Variation
-(*.variation*)
+(*variation*)
 
 ### Available Operations
 
@@ -43,7 +43,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateVariationNoBGResponse](../../models/operations/createvariationnobgresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_variation_upscale
 
@@ -80,7 +84,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateVariationUpscaleResponse](../../models/operations/createvariationupscaleresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_variation_by_id
 
@@ -114,7 +122,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetVariationByIDResponse](../../models/operations/getvariationbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## post_variations_unzoom
 
@@ -149,4 +161,8 @@ if res.object is not None:
 ### Response
 
 **[operations.PostVariationsUnzoomResponse](../../models/operations/postvariationsunzoomresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

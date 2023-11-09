@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ### Available Operations
 
@@ -30,4 +30,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetUserSelfResponse](../../models/operations/getuserselfresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

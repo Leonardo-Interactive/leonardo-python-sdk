@@ -12,6 +12,7 @@ class Model:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_model(self, request: operations.CreateModelRequestBody) -> operations.CreateModelResponse:
         r"""Train a Custom Model
         This endpoint will train a new custom model
@@ -28,7 +29,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Model:
         return res
 
     
+    
     def delete_model_by_id(self, id: str) -> operations.DeleteModelByIDResponse:
         r"""Delete a Single Custom Model by ID
         This endpoint will delete a specific custom model
@@ -62,7 +67,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -80,6 +88,7 @@ class Model:
 
         return res
 
+    
     
     def delete_models_3d_id_(self, id: str, request_body: Optional[operations.DeleteModels3dIDRequestBody] = None) -> operations.DeleteModels3dIDResponse:
         r"""Delete 3D Model by ID
@@ -100,7 +109,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -119,6 +131,7 @@ class Model:
         return res
 
     
+    
     def get_model_by_id(self, id: str) -> operations.GetModelByIDResponse:
         r"""Get a Single Custom Model by ID
         This endpoint gets the specific custom model
@@ -134,7 +147,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -152,6 +168,7 @@ class Model:
 
         return res
 
+    
     
     def get_models_3d_user_user_id_(self, user_id: str, request_body: Optional[operations.GetModels3dUserUserIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetModels3dUserUserIDResponse:
         r"""Get 3D models by user ID
@@ -175,7 +192,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -193,6 +213,7 @@ class Model:
 
         return res
 
+    
     
     def get_models_3d_id_(self, id: str, request_body: Optional[operations.GetModels3dIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetModels3dIDResponse:
         r"""Get 3D Model by ID
@@ -216,7 +237,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -235,6 +259,7 @@ class Model:
         return res
 
     
+    
     def get_platform_models(self, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetPlatformModelsResponse:
         r"""List Platform Models
         Get a list of public Platform Models available for use with generations.
@@ -252,7 +277,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -271,6 +299,7 @@ class Model:
         return res
 
     
+    
     def post_models_3d_upload(self, request: operations.PostModels3dUploadRequestBody) -> operations.PostModels3dUploadResponse:
         r"""Upload 3D Model
         This endpoint returns presigned details to upload a 3D model to S3
@@ -285,7 +314,10 @@ class Model:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

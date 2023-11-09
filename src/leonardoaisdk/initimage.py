@@ -12,6 +12,7 @@ class InitImage:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_init_image_by_id(self, id: str) -> operations.DeleteInitImageByIDResponse:
         r"""Delete init image
         This endpoint deletes an init image
@@ -27,7 +28,10 @@ class InitImage:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -46,6 +50,7 @@ class InitImage:
         return res
 
     
+    
     def get_init_image_by_id(self, id: str) -> operations.GetInitImageByIDResponse:
         r"""Get single init image
         This endpoint will return a single init image
@@ -61,7 +66,10 @@ class InitImage:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -80,6 +88,7 @@ class InitImage:
         return res
 
     
+    
     def upload_init_image(self, request: operations.UploadInitImageRequestBody) -> operations.UploadInitImageResponse:
         r"""Upload init image
         This endpoint returns presigned details to upload an init image to S3
@@ -96,7 +105,10 @@ class InitImage:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

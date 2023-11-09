@@ -12,6 +12,7 @@ class Element:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_elements(self) -> operations.GetElementsResponse:
         r"""List Elements
         Get a list of public Elements available for use with generations.
@@ -23,7 +24,10 @@ class Element:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -1,5 +1,5 @@
 # InitImage
-(*.init_image*)
+(*init_image*)
 
 ### Available Operations
 
@@ -39,7 +39,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DeleteInitImageByIDResponse](../../models/operations/deleteinitimagebyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_init_image_by_id
 
@@ -73,7 +77,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetInitImageByIDResponse](../../models/operations/getinitimagebyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_init_image
 
@@ -110,4 +118,8 @@ if res.object is not None:
 ### Response
 
 **[operations.UploadInitImageResponse](../../models/operations/uploadinitimageresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
