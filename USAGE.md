@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import leonardoaisdk
 from leonardoaisdk.models import operations

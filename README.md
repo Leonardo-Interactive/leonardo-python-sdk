@@ -12,6 +12,8 @@ pip install Leonardo-Ai-SDK
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```python
 import leonardoaisdk
 from leonardoaisdk.models import operations
@@ -117,7 +119,7 @@ Here's an example of one such pagination call:
 
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
@@ -125,8 +127,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-
-## Example
+### Example
 
 ```python
 import leonardoaisdk
@@ -157,13 +158,11 @@ if res.object is not None:
 
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
-
 For example, you could specify a header for every request that this sdk makes as follows:
-
 ```python
 import leonardoaisdk
 import requests
@@ -177,9 +176,9 @@ s = leonardoaisdk.LeonardoAiSDK(client: http_client)
 
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -187,7 +186,7 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://cloud.leonardo.ai/api/rest/v1` | None |
 
-For example:
+#### Example
 
 ```python
 import leonardoaisdk
@@ -210,10 +209,9 @@ if res.object is not None:
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
-
 ```python
 import leonardoaisdk
 from leonardoaisdk.models import operations
@@ -238,9 +236,9 @@ if res.object is not None:
 
 
 <!-- Start Authentication -->
-# Authentication
+## Authentication
 
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security scheme globally:
 
@@ -249,7 +247,6 @@ This SDK supports the following security scheme globally:
 | `bearer_auth` | http          | HTTP Bearer   |
 
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
-
 ```python
 import leonardoaisdk
 from leonardoaisdk.models import operations
