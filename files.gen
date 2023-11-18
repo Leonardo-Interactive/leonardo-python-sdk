@@ -14,6 +14,7 @@ src/leonardoaisdk/utils/__init__.py
 src/leonardoaisdk/utils/retries.py
 src/leonardoaisdk/utils/utils.py
 src/leonardoaisdk/models/errors/sdkerror.py
+tests/helpers.py
 src/leonardoaisdk/models/operations/createdataset.py
 src/leonardoaisdk/models/operations/deletedatasetbyid.py
 src/leonardoaisdk/models/operations/getdatasetbyid.py
