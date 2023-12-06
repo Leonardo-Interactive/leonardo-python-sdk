@@ -60,7 +60,6 @@ src/leonardoaisdk/models/__init__.py
 src/leonardoaisdk/models/errors/__init__.py
 src/leonardoaisdk/models/operations/__init__.py
 src/leonardoaisdk/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createdatasetrequestbody.md
 docs/models/operations/datasets.md
 docs/models/operations/createdatasetresponsebody.md
@@ -219,6 +218,7 @@ docs/sdks/initimage/README.md
 docs/sdks/user/README.md
 docs/sdks/model/README.md
 docs/sdks/variation/README.md
+USAGE.md
 .gitattributes
 .devcontainer/README.md
 .devcontainer/devcontainer.json
