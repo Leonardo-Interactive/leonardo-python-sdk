@@ -15,7 +15,7 @@ Get a list of public Elements available for use with generations.
 import leonardoaisdk
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

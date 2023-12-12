@@ -20,7 +20,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateDatasetRequestBody(
@@ -112,7 +112,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateDatasetRequestBody(
@@ -171,7 +171,7 @@ from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     server_idx=0,
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateDatasetRequestBody(
@@ -195,7 +195,7 @@ from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateDatasetRequestBody(
@@ -229,7 +229,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateDatasetRequestBody(

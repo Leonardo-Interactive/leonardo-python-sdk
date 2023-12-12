@@ -21,7 +21,7 @@ class Generation:
         
         url = base_url + '/generations'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateGenerationRequestBody, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -103,7 +103,7 @@ class Generation:
         
         url = utils.generate_url(operations.DeleteGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteGenerationsTextureIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -226,7 +226,7 @@ class Generation:
         
         url = utils.generate_url(operations.GetGenerationsTextureModelModelIDRequest, base_url, '/generations-texture/model/{modelId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetGenerationsTextureModelModelIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.GetGenerationsTextureModelModelIDRequest, request)
@@ -271,7 +271,7 @@ class Generation:
         
         url = utils.generate_url(operations.GetGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetGenerationsTextureIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.GetGenerationsTextureIDRequest, request)
@@ -301,7 +301,7 @@ class Generation:
 
     
     
-    def post_generations_texture(self, request: operations.PostGenerationsTextureRequestBody) -> operations.PostGenerationsTextureResponse:
+    def post_generations_texture(self, request: Optional[operations.PostGenerationsTextureRequestBody]) -> operations.PostGenerationsTextureResponse:
         r"""Create Texture Generation
         This endpoint will generate a texture generation.
         """
@@ -309,7 +309,7 @@ class Generation:
         
         url = base_url + '/generations-texture'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostGenerationsTextureRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

@@ -23,7 +23,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations, shared
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateModelRequestBody(
@@ -66,7 +66,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -104,7 +104,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -143,7 +143,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -181,7 +181,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -222,7 +222,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -263,7 +263,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -302,7 +302,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.PostModels3dUploadRequestBody()

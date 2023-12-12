@@ -11,7 +11,7 @@ from .user import User
 from .variation import Variation
 from leonardoaisdk import utils
 from leonardoaisdk.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class LeonardoAiSDK:
     r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
@@ -26,7 +26,7 @@ class LeonardoAiSDK:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 bearer_auth: Union[str,Callable[[], str]],
+                 bearer_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,

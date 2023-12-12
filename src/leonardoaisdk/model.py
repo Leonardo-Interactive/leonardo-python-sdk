@@ -21,7 +21,7 @@ class Model:
         
         url = base_url + '/models'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateModelRequestBody, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -103,7 +103,7 @@ class Model:
         
         url = utils.generate_url(operations.DeleteModels3dIDRequest, base_url, '/models-3d/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteModels3dIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -185,7 +185,7 @@ class Model:
         
         url = utils.generate_url(operations.GetModels3dUserUserIDRequest, base_url, '/models-3d/user/{userId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetModels3dUserUserIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.GetModels3dUserUserIDRequest, request)
@@ -230,7 +230,7 @@ class Model:
         
         url = utils.generate_url(operations.GetModels3dIDRequest, base_url, '/models-3d/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetModels3dIDRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.GetModels3dIDRequest, request)
@@ -300,7 +300,7 @@ class Model:
 
     
     
-    def post_models_3d_upload(self, request: operations.PostModels3dUploadRequestBody) -> operations.PostModels3dUploadResponse:
+    def post_models_3d_upload(self, request: Optional[operations.PostModels3dUploadRequestBody]) -> operations.PostModels3dUploadResponse:
         r"""Upload 3D Model
         This endpoint returns presigned details to upload a 3D model to S3
         """
@@ -308,7 +308,7 @@ class Model:
         
         url = base_url + '/models-3d/upload'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostModels3dUploadRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

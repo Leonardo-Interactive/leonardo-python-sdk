@@ -19,7 +19,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateVariationNoBGRequestBody(
@@ -60,7 +60,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.CreateVariationUpscaleRequestBody(
@@ -101,7 +101,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -139,7 +139,7 @@ import leonardoaisdk
 from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.PostVariationsUnzoomRequestBody()
