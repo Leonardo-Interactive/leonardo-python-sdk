@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 5c46d09a773b28588fedd4bb31a1647c
   docVersion: v1.0.0
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+  speakeasyVersion: 1.127.0
+  generationVersion: 2.220.0
 generation:
   comments: {}
   devContainers:
@@ -13,16 +13,18 @@ generation:
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   python:
-    core: 4.3.0
+    core: 4.3.1
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
 python:
-  version: 3.2.0
+  version: 3.2.1
   author: Leonardo-Ai
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK
