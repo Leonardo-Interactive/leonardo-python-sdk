@@ -41,7 +41,17 @@ class GeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
     generated_image_variation_generics: Optional[List[GetGenerationByIDGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    image_to_video: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageToVideo') }})
+    r"""If it is an image to video generation."""
     like_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('likeCount'), 'exclude': lambda f: f is None }})
+    motion: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motion') }})
+    r"""If generation is of motion type."""
+    motion_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionModel') }})
+    r"""The name of the motion model."""
+    motion_mp4_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionMP4URL') }})
+    r"""The URL of the motion MP4."""
+    motion_strength: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionStrength') }})
+    r"""The motion strength."""
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     

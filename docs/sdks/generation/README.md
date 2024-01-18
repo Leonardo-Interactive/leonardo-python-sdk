@@ -10,6 +10,7 @@
 * [get_generations_by_user_id](#get_generations_by_user_id) - Get generations by user ID
 * [get_generations_texture_model_model_id_](#get_generations_texture_model_model_id_) - Get texture generations by 3D Model ID
 * [get_generations_texture_id_](#get_generations_texture_id_) - Get Texture Generation by ID
+* [post_generations_motion_svd](#post_generations_motion_svd) - Create SVD Motion Generation
 * [post_generations_texture](#post_generations_texture) - Create Texture Generation
 
 ## create_generation
@@ -289,6 +290,47 @@ if res.object is not None:
 ### Response
 
 **[operations.GetGenerationsTextureIDResponse](../../models/operations/getgenerationstextureidresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_generations_motion_svd
+
+This endpoint will generate a SVD motion generation.
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.PostGenerationsMotionSvdRequestBody(
+    image_id='string',
+)
+
+res = s.generation.post_generations_motion_svd(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.PostGenerationsMotionSvdRequestBody](../../models/operations/postgenerationsmotionsvdrequestbody.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+
+### Response
+
+**[operations.PostGenerationsMotionSvdResponse](../../models/operations/postgenerationsmotionsvdresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

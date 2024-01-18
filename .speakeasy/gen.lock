@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: ef1b7f6b00f3613a8a63803379a00ca6
+  docChecksum: ccf63003295d901d0e6d3cfdbb7481cf
   docVersion: v1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 3.2.4
-  configChecksum: bc9509c0b82fc9f2c039924ea31d817f
+  generationVersion: 2.237.2
+  releaseVersion: 3.2.5
+  configChecksum: d2d1ea941ec505d0d3866bc2a01c0e4b
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -18,7 +18,7 @@ features:
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/leonardoaisdk/sdkconfiguration.py
@@ -51,6 +51,7 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/getgenerationsbyuserid.py
   - src/leonardoaisdk/models/operations/get_generations_texture_model_modelid_.py
   - src/leonardoaisdk/models/operations/get_generations_texture_id_.py
+  - src/leonardoaisdk/models/operations/post_generations_motion_svd.py
   - src/leonardoaisdk/models/operations/post_generations_texture.py
   - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
   - src/leonardoaisdk/models/operations/getinitimagebyid.py
@@ -150,6 +151,10 @@ generatedFiles:
   - docs/models/operations/getgenerationstextureidmodelassettexturegenerations.md
   - docs/models/operations/getgenerationstextureidresponsebody.md
   - docs/models/operations/getgenerationstextureidresponse.md
+  - docs/models/operations/postgenerationsmotionsvdrequestbody.md
+  - docs/models/operations/motionsvdgenerationoutput.md
+  - docs/models/operations/postgenerationsmotionsvdresponsebody.md
+  - docs/models/operations/postgenerationsmotionsvdresponse.md
   - docs/models/operations/postgenerationstexturerequestbody.md
   - docs/models/operations/texturegenerationjoboutput.md
   - docs/models/operations/postgenerationstextureresponsebody.md

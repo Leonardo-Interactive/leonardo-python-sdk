@@ -59,6 +59,7 @@ if res.object is not None:
 * [get_generations_by_user_id](docs/sdks/generation/README.md#get_generations_by_user_id) - Get generations by user ID
 * [get_generations_texture_model_model_id_](docs/sdks/generation/README.md#get_generations_texture_model_model_id_) - Get texture generations by 3D Model ID
 * [get_generations_texture_id_](docs/sdks/generation/README.md#get_generations_texture_id_) - Get Texture Generation by ID
+* [post_generations_motion_svd](docs/sdks/generation/README.md#post_generations_motion_svd) - Create SVD Motion Generation
 * [post_generations_texture](docs/sdks/generation/README.md#post_generations_texture) - Create Texture Generation
 
 ### [init_image](docs/sdks/initimage/README.md)
