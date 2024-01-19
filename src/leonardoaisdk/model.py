@@ -260,20 +260,14 @@ class Model:
 
     
     
-    def get_platform_models(self, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetPlatformModelsResponse:
+    def get_platform_models(self) -> operations.GetPlatformModelsResponse:
         r"""List Platform Models
         Get a list of public Platform Models available for use with generations.
         """
-        request = operations.GetPlatformModelsRequest(
-            limit=limit,
-            offset=offset,
-        )
-        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/platformModels'
         headers = {}
-        query_params = utils.get_query_params(operations.GetPlatformModelsRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -282,7 +276,7 @@ class Model:
         else:
             client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
-        http_res = client.request('GET', url, params=query_params, headers=headers)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.GetPlatformModelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

@@ -260,26 +260,18 @@ Get a list of public Platform Models available for use with generations.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.model.get_platform_models(limit=419487, offset=472174)
+res = s.model.get_platform_models()
 
 if res.object is not None:
     # handle response
     pass
 ```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
-| `offset`           | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
 
 ### Response

@@ -8,14 +8,6 @@ from leonardoaisdk import utils
 from typing import List, Optional
 
 
-@dataclasses.dataclass
-class GetPlatformModelsRequest:
-    limit: Optional[int] = dataclasses.field(default=10, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
-    offset: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
-    
-
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetPlatformModelsGeneratedImages:

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: ccf63003295d901d0e6d3cfdbb7481cf
+  docChecksum: 7f33fc37623e7e9d47df96f184796554
   docVersion: v1.0.0
   speakeasyVersion: internal
   generationVersion: 2.237.2
-  releaseVersion: 3.2.5
-  configChecksum: d2d1ea941ec505d0d3866bc2a01c0e4b
+  releaseVersion: 3.2.6
+  configChecksum: f23b86f3772417ae3be05151c5b6b40a
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -202,7 +202,6 @@ generatedFiles:
   - docs/models/operations/getmodels3didmodelassets.md
   - docs/models/operations/getmodels3didresponsebody.md
   - docs/models/operations/getmodels3didresponse.md
-  - docs/models/operations/getplatformmodelsrequest.md
   - docs/models/operations/getplatformmodelsgeneratedimages.md
   - docs/models/operations/getplatformmodelscustommodels.md
   - docs/models/operations/getplatformmodelsresponsebody.md
