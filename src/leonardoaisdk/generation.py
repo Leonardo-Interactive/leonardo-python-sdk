@@ -15,7 +15,7 @@ class Generation:
     
     def create_generation(self, request: operations.CreateGenerationRequestBody) -> operations.CreateGenerationResponse:
         r"""Create a Generation of Images
-        This endpoint will generate images
+        This endpoint will generate images.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         

@@ -15,7 +15,7 @@
 
 ## create_generation
 
-This endpoint will generate images
+This endpoint will generate images.
 
 ### Example Usage
 
