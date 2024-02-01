@@ -727,3 +727,13 @@ Based on:
 - [python v3.2.9] .
 ### Releases
 - [PyPI v3.2.9] https://pypi.org/project/Leonardo-Ai-SDK/3.2.9 - .
+
+## 2024-02-01 00:01:15
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0 
+- Speakeasy CLI 1.161.0 (2.245.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v3.2.10] .
+### Releases
+- [PyPI v3.2.10] https://pypi.org/project/Leonardo-Ai-SDK/3.2.10 - .

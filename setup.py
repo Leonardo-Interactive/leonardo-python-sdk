@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="Leonardo-Ai-SDK",
-    version="3.2.9",
+    version="3.2.10",
     author="Leonardo-Ai",
     description="Leonardo AI Python Client SDK",
     long_description=long_description,
@@ -19,7 +19,7 @@ setuptools.setup(
     install_requires=[
         "certifi>=2023.7.22",
         "charset-normalizer>=3.2.0",
-        "dataclasses-json>=0.6.1",
+        "dataclasses-json @ git+https://github.com/speakeasy-api/dataclasses-json@fix-union-deserialization",
         "idna>=3.4",
         "jsonpath-python>=1.0.6 ",
         "marshmallow>=3.19.0",
@@ -36,5 +36,6 @@ setuptools.setup(
         "dev":["pylint==2.16.2"]
     },
     package_dir={'': 'src'},
-    python_requires='>=3.8'
+    python_requires='>=3.8',
+    package_data={"Leonardo-Ai-SDK": ["py.typed"]},
 )
