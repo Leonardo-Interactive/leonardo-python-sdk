@@ -8,8 +8,9 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
 python:
-  version: 3.2.10
+  version: 4.0.0
   author: Leonardo-Ai
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK
