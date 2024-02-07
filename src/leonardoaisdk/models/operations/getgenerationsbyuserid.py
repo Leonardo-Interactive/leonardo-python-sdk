@@ -47,10 +47,10 @@ class GetGenerationsByUserIDGeneratedImages:
     like_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('likeCount'), 'exclude': lambda f: f is None }})
     motion: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motion') }})
     r"""If generation is of motion type."""
-    motion_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionModel') }})
-    r"""The name of the motion model."""
     motion_mp4_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionMP4URL') }})
     r"""The URL of the motion MP4."""
+    motion_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionModel') }})
+    r"""The name of the motion model."""
     motion_strength: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionStrength') }})
     r"""The motion strength."""
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
@@ -148,10 +148,10 @@ class GetGenerationsByUserIDResponseBody:
 class GetGenerationsByUserIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[GetGenerationsByUserIDResponseBody] = dataclasses.field(default=None)
     r"""Responses for GET /generations/user/{userId}"""
     

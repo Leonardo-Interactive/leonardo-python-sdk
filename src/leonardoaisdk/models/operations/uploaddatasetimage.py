@@ -20,10 +20,10 @@ class UploadDatasetImageRequestBody:
 
 @dataclasses.dataclass
 class UploadDatasetImageRequest:
-    dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'datasetId', 'style': 'simple', 'explode': False }})
-    r"""_\\"datasetId\\" is required"""
     request_body: UploadDatasetImageRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Query parameters provided in the request body as a JSON object"""
+    dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'datasetId', 'style': 'simple', 'explode': False }})
+    r"""_\\"datasetId\\" is required"""
     
 
 
@@ -52,10 +52,10 @@ class UploadDatasetImageResponseBody:
 class UploadDatasetImageResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[UploadDatasetImageResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /datasets/{datasetId}/upload"""
     

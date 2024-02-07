@@ -9,8 +9,9 @@ generation:
   fixes:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 python:
-  version: 4.0.0
+  version: 5.0.0
   author: Leonardo-Ai
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK

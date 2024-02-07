@@ -20,10 +20,10 @@ class UploadDatasetImageFromGenRequestBody:
 
 @dataclasses.dataclass
 class UploadDatasetImageFromGenRequest:
-    dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'datasetId', 'style': 'simple', 'explode': False }})
-    r"""The ID of the dataset to upload the image to."""
     request_body: UploadDatasetImageFromGenRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Query parameters to be provided in the request body as a JSON object"""
+    dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'datasetId', 'style': 'simple', 'explode': False }})
+    r"""The ID of the dataset to upload the image to."""
     
 
 
@@ -49,10 +49,10 @@ class UploadDatasetImageFromGenResponseBody:
 class UploadDatasetImageFromGenResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[UploadDatasetImageFromGenResponseBody] = dataclasses.field(default=None)
     r"""Responses for POST /datasets/{datasetId}/upload/gen"""
     
