@@ -4,7 +4,7 @@ management:
   docChecksum: f44cbfdd8643f7b10165cb4138d184e0
   docVersion: v1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 5.0.0
   configChecksum: f7c43c3297b6eba68e432ab11d01bd0c
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git

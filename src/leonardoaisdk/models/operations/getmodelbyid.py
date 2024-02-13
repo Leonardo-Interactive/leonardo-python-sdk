@@ -23,10 +23,11 @@ class GetModelByIDRequest:
 @dataclasses.dataclass
 class GetModelByIDCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    instance_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instancePrompt') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetModelByIDCustomModels.UNSET }})
+    instance_prompt: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instancePrompt'), 'exclude': lambda f: f is GetModelByIDCustomModels.UNSET }})
     model_height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelHeight'), 'exclude': lambda f: f is None }})
     model_width: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelWidth'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
@@ -46,7 +47,8 @@ class GetModelByIDCustomModels:
 @dataclasses.dataclass
 class GetModelByIDResponseBody:
     r"""Responses for GET /models/{id}"""
-    custom_models_by_pk: Optional[GetModelByIDCustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    custom_models_by_pk: Optional[GetModelByIDCustomModels] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_models_by_pk'), 'exclude': lambda f: f is GetModelByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"custom_models\\" """
     
 

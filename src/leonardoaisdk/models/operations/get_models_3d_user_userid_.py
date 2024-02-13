@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class GetModels3dUserUserIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    user_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is GetModels3dUserUserIDRequestBody.UNSET }})
     
 
 
@@ -32,12 +33,13 @@ class GetModels3dUserUserIDRequest:
 @dataclasses.dataclass
 class GetModels3dUserUserIDModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetModels3dUserUserIDModelAssets.UNSET }})
     mesh_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meshUrl'), 'exclude': lambda f: f is None }})
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is GetModels3dUserUserIDModelAssets.UNSET }})
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'exclude': lambda f: f is None }})
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
+    user_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is GetModels3dUserUserIDModelAssets.UNSET }})
     
 
 

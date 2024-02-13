@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class GetPlatformModelsGeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetPlatformModelsGeneratedImages.UNSET }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     
 
@@ -22,11 +23,12 @@ class GetPlatformModelsGeneratedImages:
 @dataclasses.dataclass
 class GetPlatformModelsCustomModels:
     r"""columns and relationships of \\"custom_models\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     featured: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('featured'), 'exclude': lambda f: f is None }})
-    generated_image: Optional[GetPlatformModelsGeneratedImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image') }})
+    generated_image: Optional[GetPlatformModelsGeneratedImages] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image'), 'exclude': lambda f: f is GetPlatformModelsCustomModels.UNSET }})
     r"""columns and relationships of \\"generated_images\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetPlatformModelsCustomModels.UNSET }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     nsfw: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is None }})
     

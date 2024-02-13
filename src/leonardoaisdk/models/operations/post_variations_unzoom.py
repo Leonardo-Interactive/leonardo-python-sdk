@@ -12,8 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class PostVariationsUnzoomRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
+    UNSET='__SPEAKEASY_UNSET__'
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    is_variation: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isVariation') }})
+    is_variation: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isVariation'), 'exclude': lambda f: f is PostVariationsUnzoomRequestBody.UNSET }})
     
 
 
@@ -21,7 +22,8 @@ class PostVariationsUnzoomRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SDUnzoomOutput:
-    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    api_credit_cost: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost'), 'exclude': lambda f: f is SDUnzoomOutput.UNSET }})
     r"""API Credits Cost for Unzoom Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
@@ -32,7 +34,8 @@ class SDUnzoomOutput:
 @dataclasses.dataclass
 class PostVariationsUnzoomResponseBody:
     r"""Responses for POST /api/rest/v1/variations/unzoom"""
-    sd_unzoom_job: Optional[SDUnzoomOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUnzoomJob') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    sd_unzoom_job: Optional[SDUnzoomOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUnzoomJob'), 'exclude': lambda f: f is PostVariationsUnzoomResponseBody.UNSET }})
     
 
 

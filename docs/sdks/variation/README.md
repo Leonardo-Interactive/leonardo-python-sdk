@@ -98,7 +98,6 @@ This endpoint will get the variation by ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

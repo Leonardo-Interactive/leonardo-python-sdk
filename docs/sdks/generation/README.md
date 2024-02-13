@@ -21,20 +21,13 @@ This endpoint will generate images
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateGenerationRequestBody(
-    elements=[
-        shared.ElementInput(),
-    ],
-    image_prompts=[
-        'string',
-    ],
-)
+req = operations.CreateGenerationRequestBody()
 
 res = s.generation.create_generation(req)
 
@@ -67,7 +60,6 @@ This endpoint deletes a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -144,7 +136,6 @@ This endpoint will provide information about a specific generation
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -182,7 +173,6 @@ This endpoint returns all generations by a specific user
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

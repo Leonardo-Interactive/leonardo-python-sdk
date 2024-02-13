@@ -14,9 +14,10 @@ from typing import List, Optional
 @dataclasses.dataclass
 class GetGenerationsTextureModelModelIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    limit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit') }})
-    model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId') }})
-    offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    limit: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDRequestBody.UNSET }})
+    model_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDRequestBody.UNSET }})
+    offset: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDRequestBody.UNSET }})
     
 
 
@@ -37,7 +38,8 @@ class GetGenerationsTextureModelModelIDRequest:
 @dataclasses.dataclass
 class ModelAssetTextureImages:
     r"""columns and relationships of \\"model_asset_texture_images\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is ModelAssetTextureImages.UNSET }})
     type: Optional[shared_model_asset_texture_types.ModelAssetTextureTypes] = dataclasses.field(default=shared_model_asset_texture_types.ModelAssetTextureTypes.NORMAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""When training model assets these are the texture types available to use."""
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
@@ -49,12 +51,13 @@ class ModelAssetTextureImages:
 @dataclasses.dataclass
 class GetGenerationsTextureModelModelIDModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDModelAssetTextureGenerations.UNSET }})
     model_asset_texture_images: Optional[List[ModelAssetTextureImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_asset_texture_images'), 'exclude': lambda f: f is None }})
-    negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negativePrompt') }})
+    negative_prompt: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negativePrompt'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDModelAssetTextureGenerations.UNSET }})
     prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
-    seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed') }})
+    seed: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed'), 'exclude': lambda f: f is GetGenerationsTextureModelModelIDModelAssetTextureGenerations.UNSET }})
     status: Optional[shared_job_status.JobStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of the current task."""
     

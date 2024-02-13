@@ -12,7 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class DeleteGenerationsTextureIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is DeleteGenerationsTextureIDRequestBody.UNSET }})
     
 
 
@@ -31,7 +32,8 @@ class DeleteGenerationsTextureIDRequest:
 @dataclasses.dataclass
 class ModelAssetTextureGenerations:
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is ModelAssetTextureGenerations.UNSET }})
     
 
 
@@ -40,7 +42,8 @@ class ModelAssetTextureGenerations:
 @dataclasses.dataclass
 class DeleteGenerationsTextureIDResponseBody:
     r"""Responses for DELETE /api/rest/v1/generations-texture/{id}"""
-    delete_model_asset_texture_generations_by_pk: Optional[ModelAssetTextureGenerations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    delete_model_asset_texture_generations_by_pk: Optional[ModelAssetTextureGenerations] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_asset_texture_generations_by_pk'), 'exclude': lambda f: f is DeleteGenerationsTextureIDResponseBody.UNSET }})
     r"""columns and relationships of \\"model_asset_texture_generations\\" """
     
 

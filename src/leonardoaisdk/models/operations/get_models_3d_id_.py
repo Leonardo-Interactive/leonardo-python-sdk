@@ -12,7 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class GetModels3dIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetModels3dIDRequestBody.UNSET }})
     
 
 
@@ -33,12 +34,13 @@ class GetModels3dIDRequest:
 @dataclasses.dataclass
 class GetModels3dIDModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetModels3dIDModelAssets.UNSET }})
     mesh_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meshUrl'), 'exclude': lambda f: f is None }})
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is GetModels3dIDModelAssets.UNSET }})
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'exclude': lambda f: f is None }})
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
+    user_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is GetModels3dIDModelAssets.UNSET }})
     
 
 
@@ -47,7 +49,8 @@ class GetModels3dIDModelAssets:
 @dataclasses.dataclass
 class GetModels3dIDResponseBody:
     r"""Responses for GET /api/rest/v1/models-3d/{id}"""
-    model_assets_by_pk: Optional[GetModels3dIDModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    model_assets_by_pk: Optional[GetModels3dIDModelAssets] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model_assets_by_pk'), 'exclude': lambda f: f is GetModels3dIDResponseBody.UNSET }})
     r"""columns and relationships of \\"model_assets\\" """
     
 

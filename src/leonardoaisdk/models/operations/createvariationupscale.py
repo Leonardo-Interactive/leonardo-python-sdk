@@ -20,7 +20,8 @@ class CreateVariationUpscaleRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateVariationUpscaleSDUpscaleJobOutput:
-    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    api_credit_cost: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost'), 'exclude': lambda f: f is CreateVariationUpscaleSDUpscaleJobOutput.UNSET }})
     r"""API Credits Cost for Upscale Variation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
@@ -31,7 +32,8 @@ class CreateVariationUpscaleSDUpscaleJobOutput:
 @dataclasses.dataclass
 class CreateVariationUpscaleResponseBody:
     r"""Responses for POST /variations/upscale"""
-    sd_upscale_job: Optional[CreateVariationUpscaleSDUpscaleJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    sd_upscale_job: Optional[CreateVariationUpscaleSDUpscaleJobOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdUpscaleJob'), 'exclude': lambda f: f is CreateVariationUpscaleResponseBody.UNSET }})
     
 
 

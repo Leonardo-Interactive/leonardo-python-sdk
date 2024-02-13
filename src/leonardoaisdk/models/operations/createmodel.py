@@ -15,19 +15,20 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateModelRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
+    UNSET='__SPEAKEASY_UNSET__'
     dataset_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetId') }})
     r"""The ID of the dataset to train the model on."""
     instance_prompt: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instance_prompt') }})
     r"""The instance prompt to use during training."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the model."""
-    description: Optional[str] = dataclasses.field(default='', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    description: Optional[str] = dataclasses.field(default='', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is CreateModelRequestBody.UNSET }})
     r"""The description of the model."""
     model_type: Optional[shared_custom_model_type.CustomModelType] = dataclasses.field(default=shared_custom_model_type.CustomModelType.GENERAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelType'), 'exclude': lambda f: f is None }})
     r"""The category the most accurately reflects the model."""
-    nsfw: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw') }})
+    nsfw: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nsfw'), 'exclude': lambda f: f is CreateModelRequestBody.UNSET }})
     r"""Whether or not the model is NSFW."""
-    resolution: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resolution') }})
+    resolution: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resolution'), 'exclude': lambda f: f is CreateModelRequestBody.UNSET }})
     r"""The resolution for training. Must be 512 or 768."""
     sd_version: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_Version'), 'exclude': lambda f: f is None }})
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
@@ -40,7 +41,8 @@ class CreateModelRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SDTrainingOutput:
-    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    api_credit_cost: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost'), 'exclude': lambda f: f is SDTrainingOutput.UNSET }})
     r"""API Credits Cost for Model Training. Available for Production API Users."""
     custom_model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customModelId'), 'exclude': lambda f: f is None }})
     
@@ -51,7 +53,8 @@ class SDTrainingOutput:
 @dataclasses.dataclass
 class CreateModelResponseBody:
     r"""Responses for POST /models"""
-    sd_training_job: Optional[SDTrainingOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    sd_training_job: Optional[SDTrainingOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdTrainingJob'), 'exclude': lambda f: f is CreateModelResponseBody.UNSET }})
     
 
 

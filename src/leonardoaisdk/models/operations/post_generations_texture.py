@@ -12,14 +12,15 @@ from typing import Optional
 @dataclasses.dataclass
 class PostGenerationsTextureRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    front_rotation_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('front_rotation_offset') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    front_rotation_offset: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('front_rotation_offset'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
     model_asset_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelAssetId'), 'exclude': lambda f: f is None }})
-    negative_prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt') }})
-    preview: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview') }})
-    preview_direction: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_direction') }})
+    negative_prompt: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('negative_prompt'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
+    preview: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
+    preview_direction: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_direction'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
     prompt: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prompt'), 'exclude': lambda f: f is None }})
-    sd_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_version') }})
-    seed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed') }})
+    sd_version: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_version'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
+    seed: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed'), 'exclude': lambda f: f is PostGenerationsTextureRequestBody.UNSET }})
     
 
 
@@ -27,7 +28,8 @@ class PostGenerationsTextureRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TextureGenerationJobOutput:
-    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    api_credit_cost: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost'), 'exclude': lambda f: f is TextureGenerationJobOutput.UNSET }})
     r"""API Credits Cost for Texture Generation. Available for Production API Users."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
@@ -38,7 +40,8 @@ class TextureGenerationJobOutput:
 @dataclasses.dataclass
 class PostGenerationsTextureResponseBody:
     r"""Responses for POST /api/rest/v1/generations-texture"""
-    texture_generation_job: Optional[TextureGenerationJobOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    texture_generation_job: Optional[TextureGenerationJobOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textureGenerationJob'), 'exclude': lambda f: f is PostGenerationsTextureResponseBody.UNSET }})
     
 
 

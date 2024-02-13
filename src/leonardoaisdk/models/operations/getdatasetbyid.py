@@ -20,8 +20,9 @@ class GetDatasetByIDRequest:
 @dataclasses.dataclass
 class DatasetImages:
     r"""columns and relationships of \\"dataset_images\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is DatasetImages.UNSET }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     
 
@@ -31,10 +32,11 @@ class DatasetImages:
 @dataclasses.dataclass
 class GetDatasetByIDDatasets:
     r"""columns and relationships of \\"datasets\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
     dataset_images: Optional[List[DatasetImages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataset_images'), 'exclude': lambda f: f is None }})
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is GetDatasetByIDDatasets.UNSET }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetDatasetByIDDatasets.UNSET }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'exclude': lambda f: f is None }})
     
@@ -45,7 +47,8 @@ class GetDatasetByIDDatasets:
 @dataclasses.dataclass
 class GetDatasetByIDResponseBody:
     r"""Responses for GET /datasets/{id}"""
-    datasets_by_pk: Optional[GetDatasetByIDDatasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    datasets_by_pk: Optional[GetDatasetByIDDatasets] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets_by_pk'), 'exclude': lambda f: f is GetDatasetByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"datasets\\" """
     
 

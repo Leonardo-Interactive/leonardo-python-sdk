@@ -31,10 +31,11 @@ class UploadDatasetImageRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DatasetUploadOutput:
-    fields: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    fields: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is DatasetUploadOutput.UNSET }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is DatasetUploadOutput.UNSET }})
+    key: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is DatasetUploadOutput.UNSET }})
+    url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is DatasetUploadOutput.UNSET }})
     
 
 
@@ -43,7 +44,8 @@ class DatasetUploadOutput:
 @dataclasses.dataclass
 class UploadDatasetImageResponseBody:
     r"""Responses for POST /datasets/{datasetId}/upload"""
-    upload_dataset_image: Optional[DatasetUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    upload_dataset_image: Optional[DatasetUploadOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImage'), 'exclude': lambda f: f is UploadDatasetImageResponseBody.UNSET }})
     
 
 

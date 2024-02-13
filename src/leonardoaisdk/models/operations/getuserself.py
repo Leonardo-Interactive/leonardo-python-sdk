@@ -12,8 +12,9 @@ from typing import List, Optional
 @dataclasses.dataclass
 class Users:
     r"""columns and relationships of \\"users\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is Users.UNSET }})
+    username: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is Users.UNSET }})
     
 
 
@@ -22,12 +23,13 @@ class Users:
 @dataclasses.dataclass
 class UserDetails:
     r"""columns and relationships of \\"user_details\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     api_concurrency_slots: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiConcurrencySlots'), 'exclude': lambda f: f is None }})
     subscription_gpt_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionGptTokens'), 'exclude': lambda f: f is None }})
     subscription_model_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionModelTokens'), 'exclude': lambda f: f is None }})
     subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTokens'), 'exclude': lambda f: f is None }})
-    token_renewal_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tokenRenewalDate') }})
-    user: Optional[Users] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    token_renewal_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tokenRenewalDate'), 'exclude': lambda f: f is UserDetails.UNSET }})
+    user: Optional[Users] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is UserDetails.UNSET }})
     r"""columns and relationships of \\"users\\" """
     
 

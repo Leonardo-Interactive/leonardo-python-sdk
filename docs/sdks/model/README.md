@@ -20,7 +20,7 @@ This endpoint will train a new custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations, shared
+from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -63,7 +63,6 @@ This endpoint will delete a specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -140,7 +139,6 @@ This endpoint gets the specific custom model
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

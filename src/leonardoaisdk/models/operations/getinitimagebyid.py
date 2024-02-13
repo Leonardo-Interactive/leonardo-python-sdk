@@ -20,8 +20,9 @@ class GetInitImageByIDRequest:
 @dataclasses.dataclass
 class GetInitImageByIDInitImages:
     r"""columns and relationships of \\"init_images\\" """
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'exclude': lambda f: f is None }})
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GetInitImageByIDInitImages.UNSET }})
     url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     
 
@@ -31,7 +32,8 @@ class GetInitImageByIDInitImages:
 @dataclasses.dataclass
 class GetInitImageByIDResponseBody:
     r"""Responses for GET /init-image/{id}"""
-    init_images_by_pk: Optional[GetInitImageByIDInitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    init_images_by_pk: Optional[GetInitImageByIDInitImages] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('init_images_by_pk'), 'exclude': lambda f: f is GetInitImageByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"init_images\\" """
     
 

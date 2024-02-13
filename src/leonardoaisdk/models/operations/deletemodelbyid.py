@@ -20,7 +20,8 @@ class DeleteModelByIDRequest:
 @dataclasses.dataclass
 class CustomModels:
     r"""columns and relationships of \\"custom_models\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is CustomModels.UNSET }})
     
 
 
@@ -29,7 +30,8 @@ class CustomModels:
 @dataclasses.dataclass
 class DeleteModelByIDResponseBody:
     r"""Responses for DELETE /models/{id}"""
-    delete_custom_models_by_pk: Optional[CustomModels] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_custom_models_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    delete_custom_models_by_pk: Optional[CustomModels] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_custom_models_by_pk'), 'exclude': lambda f: f is DeleteModelByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"custom_models\\" """
     
 

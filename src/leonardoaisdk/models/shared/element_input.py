@@ -10,9 +10,10 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ElementInput:
-    ak_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    ak_uuid: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID'), 'exclude': lambda f: f is ElementInput.UNSET }})
     r"""Unique identifier for element. Elements can be found from the List Elements endpoint."""
-    weight: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weight') }})
+    weight: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weight'), 'exclude': lambda f: f is ElementInput.UNSET }})
     r"""Weight for the element"""
     
 

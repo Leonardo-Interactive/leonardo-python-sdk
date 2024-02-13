@@ -12,7 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class DeleteModels3dIDRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is DeleteModels3dIDRequestBody.UNSET }})
     
 
 
@@ -31,7 +32,8 @@ class DeleteModels3dIDRequest:
 @dataclasses.dataclass
 class ModelAssets:
     r"""columns and relationships of \\"model_assets\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is ModelAssets.UNSET }})
     
 
 
@@ -40,7 +42,8 @@ class ModelAssets:
 @dataclasses.dataclass
 class DeleteModels3dIDResponseBody:
     r"""Responses for DELETE /api/rest/v1/models-3d/{id}"""
-    delete_model_assets_by_pk: Optional[ModelAssets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_assets_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    delete_model_assets_by_pk: Optional[ModelAssets] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_model_assets_by_pk'), 'exclude': lambda f: f is DeleteModels3dIDResponseBody.UNSET }})
     r"""columns and relationships of \\"model_assets\\" """
     
 

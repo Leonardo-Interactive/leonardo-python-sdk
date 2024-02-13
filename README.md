@@ -110,7 +110,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk.models import errors, operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -124,7 +124,7 @@ res = None
 try:
     res = s.dataset.create_dataset(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.object is not None:

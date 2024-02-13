@@ -20,7 +20,8 @@ class DeleteInitImageByIDRequest:
 @dataclasses.dataclass
 class InitImages:
     r"""columns and relationships of \\"init_images\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is InitImages.UNSET }})
     
 
 
@@ -29,7 +30,8 @@ class InitImages:
 @dataclasses.dataclass
 class DeleteInitImageByIDResponseBody:
     r"""Responses for DELETE /init-image/{id}"""
-    delete_init_images_by_pk: Optional[InitImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_init_images_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    delete_init_images_by_pk: Optional[InitImages] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_init_images_by_pk'), 'exclude': lambda f: f is DeleteInitImageByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"init_images\\" """
     
 

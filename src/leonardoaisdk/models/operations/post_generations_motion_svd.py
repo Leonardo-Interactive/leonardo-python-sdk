@@ -12,15 +12,16 @@ from typing import Optional
 @dataclasses.dataclass
 class PostGenerationsMotionSvdRequestBody:
     r"""Query parameters can also be provided in the request body as a JSON object"""
+    UNSET='__SPEAKEASY_UNSET__'
     image_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageId') }})
     r"""The ID of the image, supports generated images, variation images, and init images."""
-    is_init_image: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isInitImage') }})
+    is_init_image: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isInitImage'), 'exclude': lambda f: f is PostGenerationsMotionSvdRequestBody.UNSET }})
     r"""If it is an init image uploaded by the user. This image is uploaded from endpoint: Upload init image."""
-    is_public: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isPublic') }})
+    is_public: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isPublic'), 'exclude': lambda f: f is PostGenerationsMotionSvdRequestBody.UNSET }})
     r"""Whether the generation is public or not"""
-    is_variation: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isVariation') }})
+    is_variation: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isVariation'), 'exclude': lambda f: f is PostGenerationsMotionSvdRequestBody.UNSET }})
     r"""If it is a variation image."""
-    motion_strength: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionStrength') }})
+    motion_strength: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('motionStrength'), 'exclude': lambda f: f is PostGenerationsMotionSvdRequestBody.UNSET }})
     r"""The motion strength."""
     
 
@@ -29,7 +30,8 @@ class PostGenerationsMotionSvdRequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class MotionSvdGenerationOutput:
-    api_credit_cost: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    api_credit_cost: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiCreditCost'), 'exclude': lambda f: f is MotionSvdGenerationOutput.UNSET }})
     r"""API credits cost, available for Production API users."""
     generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generationId'), 'exclude': lambda f: f is None }})
     
@@ -40,7 +42,8 @@ class MotionSvdGenerationOutput:
 @dataclasses.dataclass
 class PostGenerationsMotionSvdResponseBody:
     r"""Responses for POST /generations-motion-svd"""
-    sd_generation_job: Optional[MotionSvdGenerationOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdGenerationJob') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    sd_generation_job: Optional[MotionSvdGenerationOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sdGenerationJob'), 'exclude': lambda f: f is PostGenerationsMotionSvdResponseBody.UNSET }})
     
 
 

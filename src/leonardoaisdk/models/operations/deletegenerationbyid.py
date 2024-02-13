@@ -20,7 +20,8 @@ class DeleteGenerationByIDRequest:
 @dataclasses.dataclass
 class Generations:
     r"""columns and relationships of \\"generations\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is Generations.UNSET }})
     
 
 
@@ -29,7 +30,8 @@ class Generations:
 @dataclasses.dataclass
 class DeleteGenerationByIDResponseBody:
     r"""Responses for DELETE /generations/{id}"""
-    delete_generations_by_pk: Optional[Generations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_generations_by_pk') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    delete_generations_by_pk: Optional[Generations] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delete_generations_by_pk'), 'exclude': lambda f: f is DeleteGenerationByIDResponseBody.UNSET }})
     r"""columns and relationships of \\"generations\\" """
     
 

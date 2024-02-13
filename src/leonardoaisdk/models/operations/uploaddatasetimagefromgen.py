@@ -31,7 +31,8 @@ class UploadDatasetImageFromGenRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DatasetGenUploadOutput:
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is DatasetGenUploadOutput.UNSET }})
     
 
 
@@ -40,7 +41,8 @@ class DatasetGenUploadOutput:
 @dataclasses.dataclass
 class UploadDatasetImageFromGenResponseBody:
     r"""Responses for POST /datasets/{datasetId}/upload/gen"""
-    upload_dataset_image_from_gen: Optional[DatasetGenUploadOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    upload_dataset_image_from_gen: Optional[DatasetGenUploadOutput] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uploadDatasetImageFromGen'), 'exclude': lambda f: f is UploadDatasetImageFromGenResponseBody.UNSET }})
     
 
 

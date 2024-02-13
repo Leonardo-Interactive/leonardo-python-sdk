@@ -12,9 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateDatasetRequestBody:
     r"""Query parameters to be provided in the request body as a JSON object"""
+    UNSET='__SPEAKEASY_UNSET__'
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the dataset."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is CreateDatasetRequestBody.UNSET }})
     r"""A description for the dataset."""
     
 
@@ -24,7 +25,8 @@ class CreateDatasetRequestBody:
 @dataclasses.dataclass
 class Datasets:
     r"""columns and relationships of \\"datasets\\" """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is Datasets.UNSET }})
     
 
 
@@ -33,7 +35,8 @@ class Datasets:
 @dataclasses.dataclass
 class CreateDatasetResponseBody:
     r"""Responses for POST /datasets"""
-    insert_datasets_one: Optional[Datasets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    insert_datasets_one: Optional[Datasets] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert_datasets_one'), 'exclude': lambda f: f is CreateDatasetResponseBody.UNSET }})
     r"""columns and relationships of \\"datasets\\" """
     
 

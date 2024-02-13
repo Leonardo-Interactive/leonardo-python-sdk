@@ -13,23 +13,24 @@ from typing import List, Optional
 @dataclasses.dataclass
 class Loras:
     r"""columns and relationships of \\"elements\\" """
-    ak_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    ak_uuid: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('akUUID'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
     base_model: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseModel'), 'exclude': lambda f: f is None }})
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
-    creator_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creatorName') }})
+    creator_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creatorName'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Name of the creator of the element"""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Description for the element"""
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Name of the element"""
-    url_image: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('urlImage') }})
+    url_image: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('urlImage'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""URL of the element image"""
-    weight_default: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightDefault') }})
+    weight_default: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightDefault'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Default weight for the element"""
-    weight_max: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMax') }})
+    weight_max: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMax'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Maximum weight for the element"""
-    weight_min: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMin') }})
+    weight_min: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weightMin'), 'exclude': lambda f: f is Loras.UNSET }})
     r"""Minimum weight for the element"""
     
 
