@@ -8,7 +8,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateDatasetRequestBody(
-    name='string',
+    name='<value>',
 )
 
 res = s.dataset.create_dataset(req)

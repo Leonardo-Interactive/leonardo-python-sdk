@@ -23,7 +23,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateVariationNoBGRequestBody(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.variation.create_variation_no_bg(req)
@@ -64,7 +64,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateVariationUpscaleRequestBody(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.variation.create_variation_upscale(req)
@@ -104,7 +104,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.variation.get_variation_by_id(id='string')
+res = s.variation.get_variation_by_id(id='<value>')
 
 if res.object is not None:
     # handle response

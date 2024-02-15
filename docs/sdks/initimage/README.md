@@ -21,7 +21,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.delete_init_image_by_id(id='string')
+res = s.init_image.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -58,7 +58,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_image.get_init_image_by_id(id='string')
+res = s.init_image.get_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response

@@ -27,9 +27,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 req = operations.CreateModelRequestBody(
-    dataset_id='string',
-    instance_prompt='string',
-    name='string',
+    dataset_id='<value>',
+    instance_prompt='<value>',
+    name='<value>',
 )
 
 res = s.model.create_model(req)
@@ -69,7 +69,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_model_by_id(id='string')
+res = s.model.delete_model_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -107,7 +107,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.delete_models_3d_id_(id='string', request_body=operations.DeleteModels3dIDRequestBody())
+res = s.model.delete_models_3d_id_(id='<value>', request_body=operations.DeleteModels3dIDRequestBody())
 
 if res.object is not None:
     # handle response
@@ -145,7 +145,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_model_by_id(id='string')
+res = s.model.get_model_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -183,7 +183,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_user_user_id_(user_id='string', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=828696, offset=429076)
+res = s.model.get_models_3d_user_user_id_(user_id='<value>', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=828696, offset=429076)
 
 if res.object is not None:
     # handle response
@@ -224,7 +224,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_id_(id='string', request_body=operations.GetModels3dIDRequestBody(), limit=85400, offset=488783)
+res = s.model.get_models_3d_id_(id='<value>', request_body=operations.GetModels3dIDRequestBody(), limit=85400, offset=488783)
 
 if res.object is not None:
     # handle response
