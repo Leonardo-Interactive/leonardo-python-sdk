@@ -10,8 +10,10 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
 python:
-  version: 5.0.1
+  version: 5.0.2
   author: Leonardo-Ai
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK

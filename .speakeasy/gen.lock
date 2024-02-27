@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: f44cbfdd8643f7b10165cb4138d184e0
+  docChecksum: 8571286cd4dd1d9d09ba99677375f886
   docVersion: v1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 5.0.1
-  configChecksum: 47926d00bb1539320eb55002add28c9a
+  generationVersion: 2.272.7
+  releaseVersion: 5.0.2
+  configChecksum: dd8a14dcf18b88d6209f2ad6c19a6b7d
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,11 +14,11 @@ management:
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.6
+    core: 4.4.7
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
-    globalSecurity: 2.83.2
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/leonardoaisdk/sdkconfiguration.py
@@ -51,8 +51,12 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/getgenerationsbyuserid.py
   - src/leonardoaisdk/models/operations/get_generations_texture_model_modelid_.py
   - src/leonardoaisdk/models/operations/get_generations_texture_id_.py
+  - src/leonardoaisdk/models/operations/post_generations_lcm.py
   - src/leonardoaisdk/models/operations/post_generations_motion_svd.py
   - src/leonardoaisdk/models/operations/post_generations_texture.py
+  - src/leonardoaisdk/models/operations/post_lcm_inpainting.py
+  - src/leonardoaisdk/models/operations/post_lcm_instant_refine.py
+  - src/leonardoaisdk/models/operations/post_lcm_upscale.py
   - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
   - src/leonardoaisdk/models/operations/getinitimagebyid.py
   - src/leonardoaisdk/models/operations/uploadinitimage.py
@@ -77,6 +81,7 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/job_status.py
   - src/leonardoaisdk/models/shared/variation_type.py
   - src/leonardoaisdk/models/shared/model_asset_texture_types.py
+  - src/leonardoaisdk/models/shared/lcm_generation_style.py
   - src/leonardoaisdk/models/shared/strength.py
   - src/leonardoaisdk/models/shared/custom_model_type.py
   - src/leonardoaisdk/models/shared/security.py
@@ -151,6 +156,10 @@ generatedFiles:
   - docs/models/operations/getgenerationstextureidmodelassettexturegenerations.md
   - docs/models/operations/getgenerationstextureidresponsebody.md
   - docs/models/operations/getgenerationstextureidresponse.md
+  - docs/models/operations/postgenerationslcmrequestbody.md
+  - docs/models/operations/lcmgenerationoutput.md
+  - docs/models/operations/postgenerationslcmresponsebody.md
+  - docs/models/operations/postgenerationslcmresponse.md
   - docs/models/operations/postgenerationsmotionsvdrequestbody.md
   - docs/models/operations/motionsvdgenerationoutput.md
   - docs/models/operations/postgenerationsmotionsvdresponsebody.md
@@ -159,6 +168,18 @@ generatedFiles:
   - docs/models/operations/texturegenerationjoboutput.md
   - docs/models/operations/postgenerationstextureresponsebody.md
   - docs/models/operations/postgenerationstextureresponse.md
+  - docs/models/operations/postlcminpaintingrequestbody.md
+  - docs/models/operations/postlcminpaintinglcmgenerationoutput.md
+  - docs/models/operations/postlcminpaintingresponsebody.md
+  - docs/models/operations/postlcminpaintingresponse.md
+  - docs/models/operations/postlcminstantrefinerequestbody.md
+  - docs/models/operations/postlcminstantrefinelcmgenerationoutput.md
+  - docs/models/operations/postlcminstantrefineresponsebody.md
+  - docs/models/operations/postlcminstantrefineresponse.md
+  - docs/models/operations/postlcmupscalerequestbody.md
+  - docs/models/operations/postlcmupscalelcmgenerationoutput.md
+  - docs/models/operations/postlcmupscaleresponsebody.md
+  - docs/models/operations/postlcmupscaleresponse.md
   - docs/models/operations/deleteinitimagebyidrequest.md
   - docs/models/operations/initimages.md
   - docs/models/operations/deleteinitimagebyidresponsebody.md
@@ -234,6 +255,7 @@ generatedFiles:
   - docs/models/shared/jobstatus.md
   - docs/models/shared/variationtype.md
   - docs/models/shared/modelassettexturetypes.md
+  - docs/models/shared/lcmgenerationstyle.md
   - docs/models/shared/strength.md
   - docs/models/shared/custommodeltype.md
   - docs/models/shared/security.md

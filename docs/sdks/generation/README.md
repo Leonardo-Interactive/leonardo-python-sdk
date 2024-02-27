@@ -10,8 +10,12 @@
 * [get_generations_by_user_id](#get_generations_by_user_id) - Get generations by user ID
 * [get_generations_texture_model_model_id_](#get_generations_texture_model_model_id_) - Get texture generations by 3D Model ID
 * [get_generations_texture_id_](#get_generations_texture_id_) - Get Texture Generation by ID
+* [post_generations_lcm](#post_generations_lcm) - Create LCM Generation
 * [post_generations_motion_svd](#post_generations_motion_svd) - Create SVD Motion Generation
 * [post_generations_texture](#post_generations_texture) - Create Texture Generation
+* [post_lcm_inpainting](#post_lcm_inpainting) - Perform inpainting on a LCM image
+* [post_lcm_instant_refine](#post_lcm_instant_refine) - Perform instant refine on a LCM image
+* [post_lcm_upscale](#post_lcm_upscale) - Perform Alchemy Upscale on a LCM image
 
 ## create_generation
 
@@ -286,6 +290,48 @@ if res.object is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
+## post_generations_lcm
+
+This endpoint will generate a LCM image generation.
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.PostGenerationsLcmRequestBody(
+    image_data_url='<value>',
+    prompt='<value>',
+)
+
+res = s.generation.post_generations_lcm(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.PostGenerationsLcmRequestBody](../../models/operations/postgenerationslcmrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+
+### Response
+
+**[operations.PostGenerationsLcmResponse](../../models/operations/postgenerationslcmresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
 ## post_generations_motion_svd
 
 This endpoint will generate a SVD motion generation.
@@ -360,6 +406,133 @@ if res.object is not None:
 ### Response
 
 **[operations.PostGenerationsTextureResponse](../../models/operations/postgenerationstextureresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_lcm_inpainting
+
+This endpoint will perform a inpainting on a LCM image
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.PostLcmInpaintingRequestBody(
+    image_data_url='<value>',
+    mask_data_url='<value>',
+    prompt='<value>',
+)
+
+res = s.generation.post_lcm_inpainting(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PostLcmInpaintingRequestBody](../../models/operations/postlcminpaintingrequestbody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+
+### Response
+
+**[operations.PostLcmInpaintingResponse](../../models/operations/postlcminpaintingresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_lcm_instant_refine
+
+This endpoint will perform instant refine on a LCM image
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.PostLcmInstantRefineRequestBody(
+    image_data_url='<value>',
+    prompt='<value>',
+)
+
+res = s.generation.post_lcm_instant_refine(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PostLcmInstantRefineRequestBody](../../models/operations/postlcminstantrefinerequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+
+### Response
+
+**[operations.PostLcmInstantRefineResponse](../../models/operations/postlcminstantrefineresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## post_lcm_upscale
+
+This endpoint will perform Alchemy Upscale on a LCM image
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.PostLcmUpscaleRequestBody(
+    image_data_url='<value>',
+    prompt='<value>',
+)
+
+res = s.generation.post_lcm_upscale(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.PostLcmUpscaleRequestBody](../../models/operations/postlcmupscalerequestbody.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+
+### Response
+
+**[operations.PostLcmUpscaleResponse](../../models/operations/postlcmupscaleresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
