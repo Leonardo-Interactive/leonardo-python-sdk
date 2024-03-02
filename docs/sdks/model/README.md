@@ -183,7 +183,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_user_user_id_(user_id='<value>', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=828696, offset=429076)
+res = s.model.get_models_3d_user_user_id_(user_id='<value>', request_body=operations.GetModels3dUserUserIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response
@@ -224,7 +224,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.model.get_models_3d_id_(id='<value>', request_body=operations.GetModels3dIDRequestBody(), limit=85400, offset=488783)
+res = s.model.get_models_3d_id_(id='<value>', request_body=operations.GetModels3dIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response

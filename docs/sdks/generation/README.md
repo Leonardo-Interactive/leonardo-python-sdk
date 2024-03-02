@@ -183,7 +183,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_by_user_id(user_id='<value>', limit=270501, offset=770121)
+res = s.generation.get_generations_by_user_id(user_id='<value>', limit=10, offset=0)
 
 if res.object is not None:
     # handle response
@@ -223,7 +223,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_model_model_id_(model_id='<value>', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=216504, offset=808783)
+res = s.generation.get_generations_texture_model_model_id_(model_id='<value>', request_body=operations.GetGenerationsTextureModelModelIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response
@@ -264,7 +264,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.generation.get_generations_texture_id_(id='<value>', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=608876, offset=119347)
+res = s.generation.get_generations_texture_id_(id='<value>', request_body=operations.GetGenerationsTextureIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response
