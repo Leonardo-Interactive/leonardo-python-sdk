@@ -31,6 +31,7 @@ res = s.variation.create_variation_no_bg(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -72,6 +73,7 @@ res = s.variation.create_variation_upscale(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -109,6 +111,7 @@ res = s.variation.get_variation_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -148,6 +151,7 @@ res = s.variation.post_variations_unzoom(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

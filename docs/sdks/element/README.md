@@ -24,6 +24,7 @@ res = s.element.get_elements()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

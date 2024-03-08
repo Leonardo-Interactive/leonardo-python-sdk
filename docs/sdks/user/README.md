@@ -24,6 +24,7 @@ res = s.user.get_user_self()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

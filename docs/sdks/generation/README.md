@@ -38,6 +38,7 @@ res = s.generation.create_generation(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.generation.delete_generation_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -113,6 +115,7 @@ res = s.generation.delete_generations_texture_id_(id='<value>', request_body=ope
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -151,6 +154,7 @@ res = s.generation.get_generation_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -188,6 +192,7 @@ res = s.generation.get_generations_by_user_id(user_id='<value>', limit=10, offse
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -228,6 +233,7 @@ res = s.generation.get_generations_texture_model_model_id_(model_id='<value>', r
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -269,6 +275,7 @@ res = s.generation.get_generations_texture_id_(id='<value>', request_body=operat
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -314,6 +321,7 @@ res = s.generation.post_generations_lcm(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -355,6 +363,7 @@ res = s.generation.post_generations_motion_svd(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -394,6 +403,7 @@ res = s.generation.post_generations_texture(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -437,6 +447,7 @@ res = s.generation.post_lcm_inpainting(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -479,6 +490,7 @@ res = s.generation.post_lcm_instant_refine(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -521,6 +533,7 @@ res = s.generation.post_lcm_upscale(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

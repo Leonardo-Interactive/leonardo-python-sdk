@@ -37,6 +37,7 @@ res = s.model.create_model(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.model.delete_model_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -112,6 +114,7 @@ res = s.model.delete_models_3d_id_(id='<value>', request_body=operations.DeleteM
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -150,6 +153,7 @@ res = s.model.get_model_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -188,6 +192,7 @@ res = s.model.get_models_3d_user_user_id_(user_id='<value>', request_body=operat
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -229,6 +234,7 @@ res = s.model.get_models_3d_id_(id='<value>', request_body=operations.GetModels3
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -269,6 +275,7 @@ res = s.model.get_platform_models()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -302,6 +309,7 @@ res = s.model.post_models_3d_upload(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

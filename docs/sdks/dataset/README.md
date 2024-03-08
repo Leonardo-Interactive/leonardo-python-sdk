@@ -32,6 +32,7 @@ res = s.dataset.create_dataset(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.dataset.delete_dataset_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -106,6 +108,7 @@ res = s.dataset.get_dataset_by_id(id='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -146,6 +149,7 @@ res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageR
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -187,6 +191,7 @@ res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadData
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
