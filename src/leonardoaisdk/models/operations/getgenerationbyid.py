@@ -41,6 +41,8 @@ class GetGenerationByIDGeneratedImageVariationGeneric:
 class GeneratedImages:
     r"""columns and relationships of \\"generated_images\\" """
     UNSET='__SPEAKEASY_UNSET__'
+    fantasy_avatar: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fantasyAvatar'), 'exclude': lambda f: f is GeneratedImages.UNSET }})
+    r"""If fantasyAvatar feature was used."""
     generated_image_variation_generics: Optional[List[GetGenerationByIDGeneratedImageVariationGeneric]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('generated_image_variation_generics'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is GeneratedImages.UNSET }})
     image_to_video: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageToVideo'), 'exclude': lambda f: f is GeneratedImages.UNSET }})
