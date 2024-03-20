@@ -9,8 +9,14 @@ from ...models.shared import sd_generation_schedulers as shared_sd_generation_sc
 from ...models.shared import sd_generation_style as shared_sd_generation_style
 from ...models.shared import sd_versions as shared_sd_versions
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from leonardoaisdk import utils
 from typing import List, Optional
+
+class TransparencyType(str, Enum):
+    r"""Which type of transparency this image should use"""
+    DISABLED = 'disabled'
+    FOREGROUND_ONLY = 'foreground_only'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -80,6 +86,8 @@ class CreateGenerationRequestBody:
     seed: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('seed'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     tiling: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tiling'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Whether the generated images should tile on all axis."""
+    transparency: Optional[TransparencyType] = dataclasses.field(default=TransparencyType.DISABLED, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transparency'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""Which type of transparency this image should use"""
     unzoom: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoom'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set)."""
     unzoom_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unzoomAmount'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})

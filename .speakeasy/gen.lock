@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: cdcc022e9c8f497fdb1b5a8f0a516c6c
+  docChecksum: c6e01eef340658dd735b895efcca8c2d
   docVersion: v1.0.0
-  speakeasyVersion: 1.210.0
-  generationVersion: 2.281.2
-  releaseVersion: 5.2.2
-  configChecksum: 29c0460dc334f293ee023ec276f8c625
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 5.2.3
+  configChecksum: a4c95383a1d60bedefd914d1bad93afc
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -18,7 +18,7 @@ features:
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
@@ -117,6 +117,7 @@ generatedFiles:
   - docs/models/operations/loras.md
   - docs/models/operations/getelementsresponsebody.md
   - docs/models/operations/getelementsresponse.md
+  - docs/models/operations/transparencytype.md
   - docs/models/operations/creategenerationrequestbody.md
   - docs/models/operations/sdgenerationoutput.md
   - docs/models/operations/creategenerationresponsebody.md
