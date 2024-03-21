@@ -15,6 +15,7 @@ class Users:
     UNSET='__SPEAKEASY_UNSET__'
     id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is Users.UNSET }})
     username: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is Users.UNSET }})
+    r"""Username of the user."""
     
 
 
@@ -25,10 +26,23 @@ class UserDetails:
     r"""columns and relationships of \\"user_details\\" """
     UNSET='__SPEAKEASY_UNSET__'
     api_concurrency_slots: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiConcurrencySlots'), 'exclude': lambda f: f is None }})
+    r"""API Concurrency Slots."""
+    api_paid_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPaidTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of API paid tokens the user has."""
+    api_plan_token_renewal_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPlanTokenRenewalDate'), 'exclude': lambda f: f is UserDetails.UNSET }})
+    r"""API Plan Token Renewal Date."""
+    api_subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiSubscriptionTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of Enterprise API subscriptions tokens the user has."""
+    paid_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paidTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of paid tokens the user has."""
     subscription_gpt_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionGptTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of user plan GPT tokens the user has."""
     subscription_model_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionModelTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of model training tokens the user has."""
     subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTokens'), 'exclude': lambda f: f is None }})
+    r"""Current balance of user plan subscription tokens the user has."""
     token_renewal_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tokenRenewalDate'), 'exclude': lambda f: f is UserDetails.UNSET }})
+    r"""User Plan Token Renewal Date."""
     user: Optional[Users] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is UserDetails.UNSET }})
     r"""columns and relationships of \\"users\\" """
     
