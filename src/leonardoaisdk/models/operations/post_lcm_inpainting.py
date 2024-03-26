@@ -30,7 +30,7 @@ class PostLcmInpaintingRequestBody:
     r"""The number of steps to use for the generation. Must be between 4 and 16."""
     strength: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is PostLcmInpaintingRequestBody.UNSET }})
     r"""How strongly the generated images should reflect the original image supplied in imageDataUrl. Must be a float between 0.1 and 1."""
-    style: Optional[shared_lcm_generation_style.LcmGenerationStyle] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('style'), 'exclude': lambda f: f is None }})
+    style: Optional[shared_lcm_generation_style.LcmGenerationStyle] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('style'), 'exclude': lambda f: f is PostLcmInpaintingRequestBody.UNSET }})
     r"""The style to generate LCM images with."""
     width: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is PostLcmInpaintingRequestBody.UNSET }})
     r"""The output width of the image. Must be 512, 640 or 1024."""

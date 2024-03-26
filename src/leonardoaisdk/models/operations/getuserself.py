@@ -27,13 +27,13 @@ class UserDetails:
     UNSET='__SPEAKEASY_UNSET__'
     api_concurrency_slots: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiConcurrencySlots'), 'exclude': lambda f: f is None }})
     r"""API Concurrency Slots."""
-    api_paid_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPaidTokens'), 'exclude': lambda f: f is None }})
+    api_paid_tokens: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPaidTokens'), 'exclude': lambda f: f is UserDetails.UNSET }})
     r"""Current balance of API paid tokens the user has."""
     api_plan_token_renewal_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPlanTokenRenewalDate'), 'exclude': lambda f: f is UserDetails.UNSET }})
     r"""API Plan Token Renewal Date."""
     api_subscription_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiSubscriptionTokens'), 'exclude': lambda f: f is None }})
     r"""Current balance of Enterprise API subscriptions tokens the user has."""
-    paid_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paidTokens'), 'exclude': lambda f: f is None }})
+    paid_tokens: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paidTokens'), 'exclude': lambda f: f is UserDetails.UNSET }})
     r"""Current balance of paid tokens the user has."""
     subscription_gpt_tokens: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionGptTokens'), 'exclude': lambda f: f is None }})
     r"""Current balance of user plan GPT tokens the user has."""
