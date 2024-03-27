@@ -4,9 +4,9 @@
 ### Available Operations
 
 * [create_variation_no_bg](#create_variation_no_bg) - Create no background
+* [create_variation_unzoom](#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](#create_variation_upscale) - Create upscale
 * [get_variation_by_id](#get_variation_by_id) - Get variation by ID
-* [post_variations_unzoom](#post_variations_unzoom) - Create unzoom
 
 ## create_variation_no_bg
 
@@ -44,6 +44,46 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateVariationNoBGResponse](../../models/operations/createvariationnobgresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## create_variation_unzoom
+
+This endpoint will create an unzoom variation for the provided image ID
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.CreateVariationUnzoomRequestBody()
+
+res = s.variation.create_variation_unzoom(req)
+
+if res.object is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateVariationUnzoomRequestBody](../../models/operations/createvariationunzoomrequestbody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+
+### Response
+
+**[operations.CreateVariationUnzoomResponse](../../models/operations/createvariationunzoomresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -124,46 +164,6 @@ if res.object is not None:
 ### Response
 
 **[operations.GetVariationByIDResponse](../../models/operations/getvariationbyidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
-
-## post_variations_unzoom
-
-This endpoint will create an unzoom variation for the provided image ID
-
-### Example Usage
-
-```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
-
-s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-req = operations.PostVariationsUnzoomRequestBody()
-
-res = s.variation.post_variations_unzoom(req)
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PostVariationsUnzoomRequestBody](../../models/operations/postvariationsunzoomrequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-
-
-### Response
-
-**[operations.PostVariationsUnzoomResponse](../../models/operations/postvariationsunzoomresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

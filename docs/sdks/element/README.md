@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [get_elements](#get_elements) - List Elements
+* [list_elements](#list_elements) - List Elements
 
-## get_elements
+## list_elements
 
 Get a list of public Elements available for use with generations.
 
@@ -19,7 +19,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.element.get_elements()
+res = s.element.list_elements()
 
 if res.object is not None:
     # handle response
@@ -30,7 +30,7 @@ if res.object is not None:
 
 ### Response
 
-**[operations.GetElementsResponse](../../models/operations/getelementsresponse.md)**
+**[operations.ListElementsResponse](../../models/operations/listelementsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

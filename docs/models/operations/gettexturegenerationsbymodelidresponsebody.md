@@ -1,0 +1,10 @@
+# GetTextureGenerationsByModelIDResponseBody
+
+Responses for GET /api/rest/v1/generations-texture/model/{modelId}
+
+
+## Fields
+
+| Field                                                                                                                                                                | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model_asset_texture_generations`                                                                                                                                    | List[[operations.GetTextureGenerationsByModelIDModelAssetTextureGenerations](../../models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md)] | :heavy_minus_sign:                                                                                                                                                   | N/A                                                                                                                                                                  |

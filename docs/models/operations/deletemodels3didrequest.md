@@ -1,9 +1,0 @@
-# DeleteModels3dIDRequest
-
-
-## Fields
-
-| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                       | *str*                                                                                                      | :heavy_check_mark:                                                                                         | _"id" is required (enter it either in parameters or request body)_                                         |
-| `request_body`                                                                                             | [Optional[operations.DeleteModels3dIDRequestBody]](../../models/operations/deletemodels3didrequestbody.md) | :heavy_minus_sign:                                                                                         | Query parameters can also be provided in the request body as a JSON object                                 |

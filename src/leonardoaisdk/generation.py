@@ -77,6 +77,186 @@ class Generation:
 
     
     
+    def create_lcm_generation(self, request: Optional[operations.CreateLCMGenerationRequestBody]) -> operations.CreateLCMGenerationResponse:
+        r"""Create LCM Generation
+        This endpoint will generate a LCM image generation.
+        """
+        hook_ctx = HookContext(operation_id='createLCMGeneration', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/generations-lcm'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.CreateLCMGenerationRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.CreateLCMGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateLCMGenerationResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def create_svd_motion_generation(self, request: Optional[operations.CreateSVDMotionGenerationRequestBody]) -> operations.CreateSVDMotionGenerationResponse:
+        r"""Create SVD Motion Generation
+        This endpoint will generate a SVD motion generation.
+        """
+        hook_ctx = HookContext(operation_id='createSVDMotionGeneration', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/generations-motion-svd'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.CreateSVDMotionGenerationRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.CreateSVDMotionGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSVDMotionGenerationResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def create_texture_generation(self, request: Optional[operations.CreateTextureGenerationRequestBody]) -> operations.CreateTextureGenerationResponse:
+        r"""Create Texture Generation
+        This endpoint will generate a texture generation.
+        """
+        hook_ctx = HookContext(operation_id='createTextureGeneration', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/generations-texture'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.CreateTextureGenerationRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.CreateTextureGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateTextureGenerationResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
     def delete_generation_by_id(self, id: str) -> operations.DeleteGenerationByIDResponse:
         r"""Delete a Single Generation
         This endpoint deletes a specific generation
@@ -138,26 +318,26 @@ class Generation:
 
     
     
-    def delete_generations_texture_id_(self, id: str, request_body: Optional[operations.DeleteGenerationsTextureIDRequestBody] = None) -> operations.DeleteGenerationsTextureIDResponse:
+    def delete_texture_generation_by_id(self, id: str, request_body: Optional[operations.DeleteTextureGenerationByIDRequestBody] = None) -> operations.DeleteTextureGenerationByIDResponse:
         r"""Delete Texture Generation by ID
         This endpoint deletes the specific texture generation.
         """
-        hook_ctx = HookContext(operation_id='delete_/generations-texture/{id}', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        request = operations.DeleteGenerationsTextureIDRequest(
+        hook_ctx = HookContext(operation_id='deleteTextureGenerationById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        request = operations.DeleteTextureGenerationByIDRequest(
             id=id,
             request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
+        url = utils.generate_url(operations.DeleteTextureGenerationByIDRequest, base_url, '/generations-texture/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteGenerationsTextureIDRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteTextureGenerationByIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -185,11 +365,11 @@ class Generation:
             http_res = result
         
         
-        res = operations.DeleteGenerationsTextureIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.DeleteTextureGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteGenerationsTextureIDResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteTextureGenerationByIDResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')
@@ -328,80 +508,12 @@ class Generation:
 
     
     
-    def get_generations_texture_model_model_id_(self, model_id: str, request_body: Optional[operations.GetGenerationsTextureModelModelIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureModelModelIDResponse:
-        r"""Get texture generations by 3D Model ID
-        This endpoint gets the specific texture generations by the 3d model id.
-        """
-        hook_ctx = HookContext(operation_id='get_/generations-texture/model/{modelId}', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        request = operations.GetGenerationsTextureModelModelIDRequest(
-            model_id=model_id,
-            request_body=request_body,
-            limit=limit,
-            offset=offset,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.GetGenerationsTextureModelModelIDRequest, base_url, '/generations-texture/model/{modelId}', request)
-        
-        if callable(self.sdk_configuration.security):
-            headers, query_params = utils.get_security(self.sdk_configuration.security())
-        else:
-            headers, query_params = utils.get_security(self.sdk_configuration.security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, operations.GetGenerationsTextureModelModelIDRequest, "request_body", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.GetGenerationsTextureModelModelIDRequest, request), **query_params }
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('GET', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.GetGenerationsTextureModelModelIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsTextureModelModelIDResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def get_generations_texture_id_(self, id: str, request_body: Optional[operations.GetGenerationsTextureIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetGenerationsTextureIDResponse:
+    def get_texture_generation_by_id(self, id: str, request_body: Optional[operations.GetTextureGenerationByIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetTextureGenerationByIDResponse:
         r"""Get Texture Generation by ID
         This endpoint gets the specific texture generation.
         """
-        hook_ctx = HookContext(operation_id='get_/generations-texture/{id}', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        request = operations.GetGenerationsTextureIDRequest(
+        hook_ctx = HookContext(operation_id='getTextureGenerationById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        request = operations.GetTextureGenerationByIDRequest(
             id=id,
             request_body=request_body,
             limit=limit,
@@ -410,17 +522,17 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGenerationsTextureIDRequest, base_url, '/generations-texture/{id}', request)
+        url = utils.generate_url(operations.GetTextureGenerationByIDRequest, base_url, '/generations-texture/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        req_content_type, data, form = utils.serialize_request_body(request, operations.GetGenerationsTextureIDRequest, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetTextureGenerationByIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.GetGenerationsTextureIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(operations.GetTextureGenerationByIDRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -446,11 +558,11 @@ class Generation:
             http_res = result
         
         
-        res = operations.GetGenerationsTextureIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.GetTextureGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsTextureIDResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetTextureGenerationByIDResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')
@@ -464,23 +576,31 @@ class Generation:
 
     
     
-    def post_generations_lcm(self, request: Optional[operations.PostGenerationsLcmRequestBody]) -> operations.PostGenerationsLcmResponse:
-        r"""Create LCM Generation
-        This endpoint will generate a LCM image generation.
+    def get_texture_generations_by_model_id(self, model_id: str, request_body: Optional[operations.GetTextureGenerationsByModelIDRequestBody] = None, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetTextureGenerationsByModelIDResponse:
+        r"""Get texture generations by 3D Model ID
+        This endpoint gets the specific texture generations by the 3d model id.
         """
-        hook_ctx = HookContext(operation_id='post_/generations-lcm', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='getTextureGenerationsByModelId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        request = operations.GetTextureGenerationsByModelIDRequest(
+            model_id=model_id,
+            request_body=request_body,
+            limit=limit,
+            offset=offset,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/generations-lcm'
+        url = utils.generate_url(operations.GetTextureGenerationsByModelIDRequest, base_url, '/generations-texture/model/{modelId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostGenerationsLcmRequestBody], "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetTextureGenerationsByModelIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        query_params = { **utils.get_query_params(operations.GetTextureGenerationsByModelIDRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -488,7 +608,7 @@ class Generation:
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -506,11 +626,11 @@ class Generation:
             http_res = result
         
         
-        res = operations.PostGenerationsLcmResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.GetTextureGenerationsByModelIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostGenerationsLcmResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetTextureGenerationsByModelIDResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')
@@ -524,251 +644,11 @@ class Generation:
 
     
     
-    def post_generations_motion_svd(self, request: Optional[operations.PostGenerationsMotionSvdRequestBody]) -> operations.PostGenerationsMotionSvdResponse:
-        r"""Create SVD Motion Generation
-        This endpoint will generate a SVD motion generation.
-        """
-        hook_ctx = HookContext(operation_id='post_/generations-motion-svd', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/generations-motion-svd'
-        
-        if callable(self.sdk_configuration.security):
-            headers, query_params = utils.get_security(self.sdk_configuration.security())
-        else:
-            headers, query_params = utils.get_security(self.sdk_configuration.security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostGenerationsMotionSvdRequestBody], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.PostGenerationsMotionSvdResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostGenerationsMotionSvdResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def post_generations_texture(self, request: Optional[operations.PostGenerationsTextureRequestBody]) -> operations.PostGenerationsTextureResponse:
-        r"""Create Texture Generation
-        This endpoint will generate a texture generation.
-        """
-        hook_ctx = HookContext(operation_id='post_/generations-texture', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/generations-texture'
-        
-        if callable(self.sdk_configuration.security):
-            headers, query_params = utils.get_security(self.sdk_configuration.security())
-        else:
-            headers, query_params = utils.get_security(self.sdk_configuration.security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostGenerationsTextureRequestBody], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.PostGenerationsTextureResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostGenerationsTextureResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def post_lcm_inpainting(self, request: Optional[operations.PostLcmInpaintingRequestBody]) -> operations.PostLcmInpaintingResponse:
-        r"""Perform inpainting on a LCM image
-        This endpoint will perform a inpainting on a LCM image
-        """
-        hook_ctx = HookContext(operation_id='post_/lcm-inpainting', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/lcm-inpainting'
-        
-        if callable(self.sdk_configuration.security):
-            headers, query_params = utils.get_security(self.sdk_configuration.security())
-        else:
-            headers, query_params = utils.get_security(self.sdk_configuration.security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostLcmInpaintingRequestBody], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.PostLcmInpaintingResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostLcmInpaintingResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def post_lcm_instant_refine(self, request: Optional[operations.PostLcmInstantRefineRequestBody]) -> operations.PostLcmInstantRefineResponse:
-        r"""Perform instant refine on a LCM image
-        This endpoint will perform instant refine on a LCM image
-        """
-        hook_ctx = HookContext(operation_id='post_/lcm-instant-refine', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/lcm-instant-refine'
-        
-        if callable(self.sdk_configuration.security):
-            headers, query_params = utils.get_security(self.sdk_configuration.security())
-        else:
-            headers, query_params = utils.get_security(self.sdk_configuration.security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostLcmInstantRefineRequestBody], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.PostLcmInstantRefineResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostLcmInstantRefineResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def post_lcm_upscale(self, request: Optional[operations.PostLcmUpscaleRequestBody]) -> operations.PostLcmUpscaleResponse:
+    def perform_alchemy_upscale_lcm(self, request: Optional[operations.PerformAlchemyUpscaleLCMRequestBody]) -> operations.PerformAlchemyUpscaleLCMResponse:
         r"""Perform Alchemy Upscale on a LCM image
         This endpoint will perform Alchemy Upscale on a LCM image
         """
-        hook_ctx = HookContext(operation_id='post_/lcm-upscale', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='performAlchemyUpscaleLCM', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/lcm-upscale'
@@ -778,7 +658,7 @@ class Generation:
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostLcmUpscaleRequestBody], "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PerformAlchemyUpscaleLCMRequestBody], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -806,11 +686,131 @@ class Generation:
             http_res = result
         
         
-        res = operations.PostLcmUpscaleResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.PerformAlchemyUpscaleLCMResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostLcmUpscaleResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.PerformAlchemyUpscaleLCMResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def perform_inpainting_lcm(self, request: Optional[operations.PerformInpaintingLCMRequestBody]) -> operations.PerformInpaintingLCMResponse:
+        r"""Perform inpainting on a LCM image
+        This endpoint will perform a inpainting on a LCM image
+        """
+        hook_ctx = HookContext(operation_id='performInpaintingLCM', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/lcm-inpainting'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PerformInpaintingLCMRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.PerformInpaintingLCMResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.PerformInpaintingLCMResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def perform_instant_refine(self, request: Optional[operations.PerformInstantRefineRequestBody]) -> operations.PerformInstantRefineResponse:
+        r"""Perform instant refine on a LCM image
+        This endpoint will perform instant refine on a LCM image
+        """
+        hook_ctx = HookContext(operation_id='performInstantRefine', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/lcm-instant-refine'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PerformInstantRefineRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.PerformInstantRefineResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.PerformInstantRefineResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')

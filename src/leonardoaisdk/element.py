@@ -15,11 +15,11 @@ class Element:
         
     
     
-    def get_elements(self) -> operations.GetElementsResponse:
+    def list_elements(self) -> operations.ListElementsResponse:
         r"""List Elements
         Get a list of public Elements available for use with generations.
         """
-        hook_ctx = HookContext(operation_id='get_/elements', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='listElements', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/elements'
@@ -54,11 +54,11 @@ class Element:
             http_res = result
         
         
-        res = operations.GetElementsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.ListElementsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetElementsResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.ListElementsResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')
