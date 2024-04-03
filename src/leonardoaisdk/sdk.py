@@ -8,6 +8,7 @@ from .initimage import InitImage
 from .model import Model
 from .sdkconfiguration import SDKConfiguration
 from .user import User
+from .utils.retries import RetryConfig
 from .variation import Variation
 from leonardoaisdk import utils
 from leonardoaisdk._hooks import SDKHooks
@@ -32,7 +33,7 @@ class LeonardoAiSDK:
                  server_url: Optional[str] = None,
                  url_params: Optional[Dict[str, str]] = None,
                  client: Optional[requests_http.Session] = None,
-                 retry_config: Optional[utils.RetryConfig] = None
+                 retry_config: Optional[RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
 
@@ -47,7 +48,7 @@ class LeonardoAiSDK:
         :param client: The requests.Session HTTP client to use for all operations
         :type client: requests_http.Session
         :param retry_config: The utils.RetryConfig to use globally
-        :type retry_config: utils.RetryConfig
+        :type retry_config: RetryConfig
         """
         if client is None:
             client = requests_http.Session()
