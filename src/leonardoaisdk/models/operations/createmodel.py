@@ -31,7 +31,7 @@ class CreateModelRequestBody:
     resolution: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resolution'), 'exclude': lambda f: f is CreateModelRequestBody.UNSET }})
     r"""The resolution for training. Must be 512 or 768."""
     sd_version: Optional[shared_sd_versions.SdVersions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sd_Version'), 'exclude': lambda f: f is None }})
-    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
+    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models"""
     strength: Optional[shared_strength.Strength] = dataclasses.field(default=shared_strength.Strength.MEDIUM, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is None }})
     r"""When training using the PIXEL_ART model type, this influences the training strength."""
     

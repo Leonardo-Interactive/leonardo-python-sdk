@@ -24,9 +24,9 @@ class SDKConfiguration:
     server_idx: Optional[int] = 0
     language: str = 'python'
     openapi_doc_version: str = 'v1.0.0'
-    sdk_version: str = '5.3.1'
-    gen_version: str = '2.298.0'
-    user_agent: str = 'speakeasy-sdk/python 5.3.1 2.298.0 v1.0.0 Leonardo-Ai-SDK'
+    sdk_version: str = '5.3.2'
+    gen_version: str = '2.298.2'
+    user_agent: str = 'speakeasy-sdk/python 5.3.2 2.298.2 v1.0.0 Leonardo-Ai-SDK'
     retry_config: Optional[RetryConfig] = None
     _hooks: Optional[SDKHooks] = None
 
