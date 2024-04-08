@@ -88,6 +88,11 @@ if res.object is not None:
 * [list_platform_models](docs/sdks/model/README.md#list_platform_models) - List Platform Models
 * [upload_model_asset](docs/sdks/model/README.md#upload_model_asset) - Upload 3D Model
 
+### [prompt](docs/sdks/prompt/README.md)
+
+* [prompt_improve](docs/sdks/prompt/README.md#prompt_improve) - Improve a Prompt
+* [prompt_random](docs/sdks/prompt/README.md#prompt_random) - Generate a Random prompt
+
 ### [variation](docs/sdks/variation/README.md)
 
 * [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background

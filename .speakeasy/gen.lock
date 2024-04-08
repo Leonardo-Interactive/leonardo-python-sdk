@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 339173b7deb9a3222da893656355435c
+  docChecksum: 3bbd53494ed6e7e5f86367ecb9fb6ef9
   docVersion: v1.0.0
-  speakeasyVersion: 1.237.0
-  generationVersion: 2.298.2
-  releaseVersion: 5.3.2
-  configChecksum: a4f6a2a1a26fb258f4281c1c6ca41813
+  speakeasyVersion: 1.241.0
+  generationVersion: 2.300.0
+  releaseVersion: 5.3.3
+  configChecksum: c9f24d56b84632e99fd96129fda1a47c
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,7 +14,7 @@ management:
 features:
   python:
     constsAndDefaults: 0.1.3
-    core: 4.6.2
+    core: 4.6.3
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
@@ -29,6 +29,7 @@ generatedFiles:
   - src/leonardoaisdk/initimage.py
   - src/leonardoaisdk/user.py
   - src/leonardoaisdk/model.py
+  - src/leonardoaisdk/prompt.py
   - src/leonardoaisdk/variation.py
   - src/leonardoaisdk/sdk.py
   - py.typed
@@ -71,6 +72,8 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/getmodelbyid.py
   - src/leonardoaisdk/models/operations/listplatformmodels.py
   - src/leonardoaisdk/models/operations/uploadmodelasset.py
+  - src/leonardoaisdk/models/operations/promptimprove.py
+  - src/leonardoaisdk/models/operations/promptrandom.py
   - src/leonardoaisdk/models/operations/createvariationnobg.py
   - src/leonardoaisdk/models/operations/createvariationunzoom.py
   - src/leonardoaisdk/models/operations/createvariationupscale.py
@@ -234,6 +237,13 @@ generatedFiles:
   - docs/models/operations/modelassetuploadoutput.md
   - docs/models/operations/uploadmodelassetresponsebody.md
   - docs/models/operations/uploadmodelassetresponse.md
+  - docs/models/operations/promptimproverequestbody.md
+  - docs/models/operations/promptgenerationoutput.md
+  - docs/models/operations/promptimproveresponsebody.md
+  - docs/models/operations/promptimproveresponse.md
+  - docs/models/operations/promptrandompromptgenerationoutput.md
+  - docs/models/operations/promptrandomresponsebody.md
+  - docs/models/operations/promptrandomresponse.md
   - docs/models/operations/createvariationnobgrequestbody.md
   - docs/models/operations/sdupscalejoboutput.md
   - docs/models/operations/createvariationnobgresponsebody.md
@@ -269,6 +279,7 @@ generatedFiles:
   - docs/sdks/initimage/README.md
   - docs/sdks/user/README.md
   - docs/sdks/model/README.md
+  - docs/sdks/prompt/README.md
   - docs/sdks/variation/README.md
   - USAGE.md
   - .gitattributes

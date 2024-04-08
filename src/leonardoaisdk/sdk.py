@@ -6,6 +6,7 @@ from .element import Element
 from .generation import Generation
 from .initimage import InitImage
 from .model import Model
+from .prompt import Prompt
 from .sdkconfiguration import SDKConfiguration
 from .user import User
 from .utils.retries import RetryConfig
@@ -23,6 +24,7 @@ class LeonardoAiSDK:
     init_image: InitImage
     user: User
     model: Model
+    prompt: Prompt
     variation: Variation
 
     sdk_configuration: SDKConfiguration
@@ -91,4 +93,5 @@ class LeonardoAiSDK:
         self.init_image = InitImage(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
         self.model = Model(self.sdk_configuration)
+        self.prompt = Prompt(self.sdk_configuration)
         self.variation = Variation(self.sdk_configuration)
