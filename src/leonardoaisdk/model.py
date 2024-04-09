@@ -88,7 +88,7 @@ class Model:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.Delete3DModelByIDRequest, base_url, '/models-3d/{id}', request)
+        url = utils.generate_url(base_url, '/models-3d/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -151,7 +151,7 @@ class Model:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteModelByIDRequest, base_url, '/models/{id}', request)
+        url = utils.generate_url(base_url, '/models/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -214,7 +214,7 @@ class Model:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.Get3DModelByIDRequest, base_url, '/models-3d/{id}', request)
+        url = utils.generate_url(base_url, '/models-3d/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -224,7 +224,7 @@ class Model:
         req_content_type, data, form = utils.serialize_request_body(request, operations.Get3DModelByIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.Get3DModelByIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -281,7 +281,7 @@ class Model:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.Get3DModelsByUserIDRequest, base_url, '/models-3d/user/{userId}', request)
+        url = utils.generate_url(base_url, '/models-3d/user/{userId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -291,7 +291,7 @@ class Model:
         req_content_type, data, form = utils.serialize_request_body(request, operations.Get3DModelsByUserIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.Get3DModelsByUserIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -345,7 +345,7 @@ class Model:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetModelByIDRequest, base_url, '/models/{id}', request)
+        url = utils.generate_url(base_url, '/models/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())

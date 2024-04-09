@@ -264,7 +264,7 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteGenerationByIDRequest, base_url, '/generations/{id}', request)
+        url = utils.generate_url(base_url, '/generations/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -325,7 +325,7 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteTextureGenerationByIDRequest, base_url, '/generations-texture/{id}', request)
+        url = utils.generate_url(base_url, '/generations-texture/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -388,7 +388,7 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGenerationByIDRequest, base_url, '/generations/{id}', request)
+        url = utils.generate_url(base_url, '/generations/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -450,14 +450,14 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetGenerationsByUserIDRequest, base_url, '/generations/user/{userId}', request)
+        url = utils.generate_url(base_url, '/generations/user/{userId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        query_params = { **utils.get_query_params(operations.GetGenerationsByUserIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -514,7 +514,7 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetTextureGenerationByIDRequest, base_url, '/generations-texture/{id}', request)
+        url = utils.generate_url(base_url, '/generations-texture/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -524,7 +524,7 @@ class Generation:
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetTextureGenerationByIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.GetTextureGenerationByIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
@@ -581,7 +581,7 @@ class Generation:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetTextureGenerationsByModelIDRequest, base_url, '/generations-texture/model/{modelId}', request)
+        url = utils.generate_url(base_url, '/generations-texture/model/{modelId}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -591,7 +591,7 @@ class Generation:
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetTextureGenerationsByModelIDRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = { **utils.get_query_params(operations.GetTextureGenerationsByModelIDRequest, request), **query_params }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client

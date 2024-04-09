@@ -87,7 +87,7 @@ class Dataset:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.DeleteDatasetByIDRequest, base_url, '/datasets/{id}', request)
+        url = utils.generate_url(base_url, '/datasets/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -147,7 +147,7 @@ class Dataset:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetDatasetByIDRequest, base_url, '/datasets/{id}', request)
+        url = utils.generate_url(base_url, '/datasets/{id}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -208,7 +208,7 @@ class Dataset:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UploadDatasetImageRequest, base_url, '/datasets/{datasetId}/upload', request)
+        url = utils.generate_url(base_url, '/datasets/{datasetId}/upload', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
@@ -274,7 +274,7 @@ class Dataset:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.UploadDatasetImageFromGenRequest, base_url, '/datasets/{datasetId}/upload/gen', request)
+        url = utils.generate_url(base_url, '/datasets/{datasetId}/upload/gen', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
