@@ -29,7 +29,7 @@ class PerformInpaintingLCMRequestBody:
     steps: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps'), 'exclude': lambda f: f is PerformInpaintingLCMRequestBody.UNSET }})
     r"""The number of steps to use for the generation. Must be between 4 and 16."""
     strength: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is PerformInpaintingLCMRequestBody.UNSET }})
-    r"""How strongly the generated images should reflect the original image supplied in imageDataUrl. Must be a float between 0.1 and 1."""
+    r"""Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1."""
     style: Optional[shared_lcm_generation_style.LcmGenerationStyle] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('style'), 'exclude': lambda f: f is PerformInpaintingLCMRequestBody.UNSET }})
     r"""The style to generate LCM images with."""
     width: Optional[int] = dataclasses.field(default=512, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is PerformInpaintingLCMRequestBody.UNSET }})
