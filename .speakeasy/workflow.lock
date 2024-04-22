@@ -1,0 +1,17 @@
+speakeasyVersion: 1.267.0
+sources: {}
+targets: {}
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        my-source:
+            inputs:
+                - location: https://api-docs-nine-delta.vercel.app/cloud/openapi.json
+    targets:
+        leonardo-python-sdk:
+            target: python
+            source: my-source
+            publish:
+                pypi:
+                    token: $PYPI_TOKEN
