@@ -3,10 +3,51 @@
 
 ### Available Operations
 
+* [create_universal_upscaler_job](#create_universal_upscaler_job) - Create using Universal Upscaler
 * [create_variation_no_bg](#create_variation_no_bg) - Create no background
 * [create_variation_unzoom](#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](#create_variation_upscale) - Create upscale
 * [get_variation_by_id](#get_variation_by_id) - Get variation by ID
+
+## create_universal_upscaler_job
+
+This endpoint will create a high resolution image using Universal Upscaler
+
+### Example Usage
+
+```python
+import leonardoaisdk
+from leonardoaisdk.models import operations
+
+s = leonardoaisdk.LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = operations.CreateUniversalUpscalerJobRequestBody()
+
+res = s.variation.create_universal_upscaler_job(req)
+
+if res.object is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                            | [operations.CreateUniversalUpscalerJobRequestBody](../../models/operations/createuniversalupscalerjobrequestbody.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+
+
+### Response
+
+**[operations.CreateUniversalUpscalerJobResponse](../../models/operations/createuniversalupscalerjobresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## create_variation_no_bg
 

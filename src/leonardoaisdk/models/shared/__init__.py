@@ -11,6 +11,7 @@ from .sd_generation_style import *
 from .sd_versions import *
 from .security import *
 from .strength import *
+from .universal_upscaler_style import *
 from .variation_type import *
 
-__all__ = ["ControlnetType","CustomModelType","ElementInput","JobStatus","LcmGenerationStyle","ModelAssetTextureTypes","SdGenerationSchedulers","SdGenerationStyle","SdVersions","Security","Strength","VariationType"]
+__all__ = ["ControlnetType","CustomModelType","ElementInput","JobStatus","LcmGenerationStyle","ModelAssetTextureTypes","SdGenerationSchedulers","SdGenerationStyle","SdVersions","Security","Strength","UniversalUpscalerStyle","VariationType"]

@@ -95,6 +95,7 @@ if res.object is not None:
 
 ### [variation](docs/sdks/variation/README.md)
 
+* [create_universal_upscaler_job](docs/sdks/variation/README.md#create_universal_upscaler_job) - Create using Universal Upscaler
 * [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background
 * [create_variation_unzoom](docs/sdks/variation/README.md#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale

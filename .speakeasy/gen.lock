@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: adaf474fb2cf4cd9d0dde8179b470aab
+  docChecksum: 8b4fc7d607577eee749d120b0733c057
   docVersion: v1.0.0
-  speakeasyVersion: 1.267.0
-  generationVersion: 2.312.0
-  releaseVersion: 5.3.6
-  configChecksum: d80342f2641582e2dc353c6989869755
+  speakeasyVersion: 1.271.0
+  generationVersion: 2.312.1
+  releaseVersion: 5.3.7
+  configChecksum: b0c0ef6a920faae05138402b0290199a
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -74,6 +74,7 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/uploadmodelasset.py
   - src/leonardoaisdk/models/operations/promptimprove.py
   - src/leonardoaisdk/models/operations/promptrandom.py
+  - src/leonardoaisdk/models/operations/createuniversalupscalerjob.py
   - src/leonardoaisdk/models/operations/createvariationnobg.py
   - src/leonardoaisdk/models/operations/createvariationunzoom.py
   - src/leonardoaisdk/models/operations/createvariationupscale.py
@@ -89,6 +90,7 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/model_asset_texture_types.py
   - src/leonardoaisdk/models/shared/strength.py
   - src/leonardoaisdk/models/shared/custom_model_type.py
+  - src/leonardoaisdk/models/shared/universal_upscaler_style.py
   - src/leonardoaisdk/models/shared/security.py
   - src/leonardoaisdk/models/__init__.py
   - src/leonardoaisdk/models/errors/__init__.py
@@ -244,6 +246,10 @@ generatedFiles:
   - docs/models/operations/promptrandompromptgenerationoutput.md
   - docs/models/operations/promptrandomresponsebody.md
   - docs/models/operations/promptrandomresponse.md
+  - docs/models/operations/createuniversalupscalerjobrequestbody.md
+  - docs/models/operations/universalupscaleroutput.md
+  - docs/models/operations/createuniversalupscalerjobresponsebody.md
+  - docs/models/operations/createuniversalupscalerjobresponse.md
   - docs/models/operations/createvariationnobgrequestbody.md
   - docs/models/operations/sdupscalejoboutput.md
   - docs/models/operations/createvariationnobgresponsebody.md
@@ -271,6 +277,7 @@ generatedFiles:
   - docs/models/shared/modelassettexturetypes.md
   - docs/models/shared/strength.md
   - docs/models/shared/custommodeltype.md
+  - docs/models/shared/universalupscalerstyle.md
   - docs/models/shared/security.md
   - docs/sdks/leonardoaisdk/README.md
   - docs/sdks/dataset/README.md
