@@ -24,7 +24,7 @@ class CreateUniversalUpscalerJobRequestBody:
     r"""The prompt for the universal upscaler"""
     upscale_multiplier: Optional[float] = dataclasses.field(default=1.5, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscaleMultiplier'), 'exclude': lambda f: f is CreateUniversalUpscalerJobRequestBody.UNSET }})
     r"""The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00"""
-    upscaler_style: Optional[shared_universal_upscaler_style.UniversalUpscalerStyle] = dataclasses.field(default=shared_universal_upscaler_style.UniversalUpscalerStyle.undefined, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscalerStyle'), 'exclude': lambda f: f is CreateUniversalUpscalerJobRequestBody.UNSET }})
+    upscaler_style: Optional[shared_universal_upscaler_style.UniversalUpscalerStyle] = dataclasses.field(default=shared_universal_upscaler_style.UniversalUpscalerStyle.GENERAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscalerStyle'), 'exclude': lambda f: f is CreateUniversalUpscalerJobRequestBody.UNSET }})
     r"""The style to upscale images using universal upscaler with."""
     
 
