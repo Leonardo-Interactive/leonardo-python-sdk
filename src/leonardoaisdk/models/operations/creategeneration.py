@@ -60,7 +60,7 @@ class CreateGenerationRequestBody:
     num_images: Optional[int] = dataclasses.field(default=4, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('num_images'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."""
     num_inference_steps: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('num_inference_steps'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
-    r"""The number of inference steps to use for the generation. Must be between 30 and 60."""
+    r"""The Step Count to use for the generation. Must be between 10 and 60. Default is 15."""
     photo_real: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoReal'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId (for photoRealVersion V1)."""
     photo_real_strength: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoRealStrength'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
@@ -95,7 +95,7 @@ class CreateGenerationRequestBody:
     upscale_ratio: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscaleRatio'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""How much the image should be upscaled. (Enterprise Only)"""
     weighting: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
-    r"""How much weighting to use for generation."""
+    r"""How much weighting to use for ControlNet. This parameter works with controlNet and controlNetType."""
     width: Optional[int] = dataclasses.field(default=1024, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
     
