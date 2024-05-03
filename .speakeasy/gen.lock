@@ -3,10 +3,10 @@ id: de81127b-e65c-4970-8911-8f8874953a42
 management:
   docChecksum: b01be57f74f41bf9a0336796b71a6455
   docVersion: v1.0.0
-  speakeasyVersion: 1.276.0
-  generationVersion: 2.314.0
-  releaseVersion: 5.3.9
-  configChecksum: bac91b38a2986103c40e511a294bbfa1
+  speakeasyVersion: 1.277.8
+  generationVersion: 2.319.10
+  releaseVersion: 5.3.10
+  configChecksum: a9fcefb008ba0425f3b0f475619cd897
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,7 +14,7 @@ management:
 features:
   python:
     constsAndDefaults: 0.1.3
-    core: 4.6.5
+    core: 4.6.7
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
@@ -40,7 +40,6 @@ generatedFiles:
   - src/leonardoaisdk/utils/retries.py
   - src/leonardoaisdk/utils/utils.py
   - src/leonardoaisdk/models/errors/sdkerror.py
-  - tests/helpers.py
   - src/leonardoaisdk/models/operations/createdataset.py
   - src/leonardoaisdk/models/operations/deletedatasetbyid.py
   - src/leonardoaisdk/models/operations/getdatasetbyid.py
