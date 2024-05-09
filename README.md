@@ -23,11 +23,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response
@@ -127,13 +125,11 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
-    name='<value>',
-)
-
 res = None
 try:
-    res = s.dataset.create_dataset(req)
+    res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
+    name='<value>',
+))
 except errors.SDKError as e:
     # handle exception
     raise(e)
@@ -187,11 +183,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response
@@ -212,11 +206,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response
@@ -247,11 +239,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response

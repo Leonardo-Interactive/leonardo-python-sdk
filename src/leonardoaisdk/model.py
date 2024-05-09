@@ -61,6 +61,7 @@ class Model:
         res = operations.CreateModelResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateModelResponseBody])
                 res.object = out
@@ -125,6 +126,7 @@ class Model:
         res = operations.Delete3DModelByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.Delete3DModelByIDResponseBody])
                 res.object = out
@@ -185,6 +187,7 @@ class Model:
         res = operations.DeleteModelByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteModelByIDResponseBody])
                 res.object = out
@@ -252,6 +255,7 @@ class Model:
         res = operations.Get3DModelByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.Get3DModelByIDResponseBody])
                 res.object = out
@@ -319,6 +323,7 @@ class Model:
         res = operations.Get3DModelsByUserIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.Get3DModelsByUserIDResponseBody])
                 res.object = out
@@ -379,6 +384,7 @@ class Model:
         res = operations.GetModelByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetModelByIDResponseBody])
                 res.object = out
@@ -435,6 +441,7 @@ class Model:
         res = operations.ListPlatformModelsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.ListPlatformModelsResponseBody])
                 res.object = out
@@ -450,7 +457,7 @@ class Model:
 
     
     
-    def upload_model_asset(self, request: Optional[operations.UploadModelAssetRequestBody]) -> operations.UploadModelAssetResponse:
+    def upload_model_asset(self, request: Optional[operations.UploadModelAssetRequestBody] = None) -> operations.UploadModelAssetResponse:
         r"""Upload 3D Model
         This endpoint returns presigned details to upload a 3D model to S3
         """
@@ -494,6 +501,7 @@ class Model:
         res = operations.UploadModelAssetResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UploadModelAssetResponseBody])
                 res.object = out

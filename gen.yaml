@@ -13,7 +13,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 5.3.10
+  version: 5.4.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -32,6 +32,7 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   maxMethodParams: 4
+  methodArguments: require-security-and-request
   outputModelSuffix: output
   packageName: Leonardo-Ai-SDK
   projectUrls: {}

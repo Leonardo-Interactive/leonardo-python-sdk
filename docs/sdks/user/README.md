@@ -18,7 +18,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.user.get_user_self()
 
 if res.object is not None:

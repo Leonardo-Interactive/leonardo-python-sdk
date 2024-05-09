@@ -26,13 +26,11 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateModelRequestBody(
+res = s.model.create_model(request=operations.CreateModelRequestBody(
     dataset_id='<value>',
     instance_prompt='<value>',
     name='<value>',
-)
-
-res = s.model.create_model(req)
+))
 
 if res.object is not None:
     # handle response
@@ -69,7 +67,6 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.model.delete3_d_model_by_id(id='<value>', request_body=operations.Delete3DModelByIDRequestBody())
 
@@ -109,7 +106,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.model.delete_model_by_id(id='<value>')
 
 if res.object is not None:
@@ -147,7 +143,6 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.model.get3_d_model_by_id(id='<value>', request_body=operations.Get3DModelByIDRequestBody(), limit=10, offset=0)
 
@@ -190,7 +185,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.model.get3_d_models_by_user_id(user_id='<value>', request_body=operations.Get3DModelsByUserIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
@@ -231,7 +225,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.model.get_model_by_id(id='<value>')
 
 if res.object is not None:
@@ -269,7 +262,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.model.list_platform_models()
 
 if res.object is not None:
@@ -302,9 +294,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.UploadModelAssetRequestBody()
-
-res = s.model.upload_model_asset(req)
+res = s.model.upload_model_asset(request=operations.UploadModelAssetRequestBody())
 
 if res.object is not None:
     # handle response

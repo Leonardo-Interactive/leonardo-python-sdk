@@ -20,11 +20,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.PromptImproveRequestBody(
+res = s.prompt.prompt_improve(request=operations.PromptImproveRequestBody(
     prompt='<value>',
-)
-
-res = s.prompt.prompt_improve(req)
+))
 
 if res.object is not None:
     # handle response
@@ -60,7 +58,6 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.prompt.prompt_random()
 

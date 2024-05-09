@@ -7,11 +7,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response

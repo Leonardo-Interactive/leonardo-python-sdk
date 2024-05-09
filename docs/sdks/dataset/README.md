@@ -23,11 +23,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateDatasetRequestBody(
+res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
-)
-
-res = s.dataset.create_dataset(req)
+))
 
 if res.object is not None:
     # handle response
@@ -63,7 +61,6 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.dataset.delete_dataset_by_id(id='<value>')
 
@@ -102,7 +99,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.dataset.get_dataset_by_id(id='<value>')
 
 if res.object is not None:
@@ -140,7 +136,6 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
     extension='mpg4',
@@ -182,7 +177,6 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
     generated_image_id='<value>',

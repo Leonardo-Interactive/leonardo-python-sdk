@@ -61,6 +61,7 @@ class Generation:
         res = operations.CreateGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateGenerationResponseBody])
                 res.object = out
@@ -76,7 +77,7 @@ class Generation:
 
     
     
-    def create_lcm_generation(self, request: Optional[operations.CreateLCMGenerationRequestBody]) -> operations.CreateLCMGenerationResponse:
+    def create_lcm_generation(self, request: Optional[operations.CreateLCMGenerationRequestBody] = None) -> operations.CreateLCMGenerationResponse:
         r"""Create LCM Generation
         This endpoint will generate a LCM image generation.
         """
@@ -120,6 +121,7 @@ class Generation:
         res = operations.CreateLCMGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateLCMGenerationResponseBody])
                 res.object = out
@@ -135,7 +137,7 @@ class Generation:
 
     
     
-    def create_svd_motion_generation(self, request: Optional[operations.CreateSVDMotionGenerationRequestBody]) -> operations.CreateSVDMotionGenerationResponse:
+    def create_svd_motion_generation(self, request: Optional[operations.CreateSVDMotionGenerationRequestBody] = None) -> operations.CreateSVDMotionGenerationResponse:
         r"""Create SVD Motion Generation
         This endpoint will generate a SVD motion generation.
         """
@@ -179,6 +181,7 @@ class Generation:
         res = operations.CreateSVDMotionGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSVDMotionGenerationResponseBody])
                 res.object = out
@@ -194,7 +197,7 @@ class Generation:
 
     
     
-    def create_texture_generation(self, request: Optional[operations.CreateTextureGenerationRequestBody]) -> operations.CreateTextureGenerationResponse:
+    def create_texture_generation(self, request: Optional[operations.CreateTextureGenerationRequestBody] = None) -> operations.CreateTextureGenerationResponse:
         r"""Create Texture Generation
         This endpoint will generate a texture generation.
         """
@@ -238,6 +241,7 @@ class Generation:
         res = operations.CreateTextureGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateTextureGenerationResponseBody])
                 res.object = out
@@ -298,6 +302,7 @@ class Generation:
         res = operations.DeleteGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteGenerationByIDResponseBody])
                 res.object = out
@@ -362,6 +367,7 @@ class Generation:
         res = operations.DeleteTextureGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteTextureGenerationByIDResponseBody])
                 res.object = out
@@ -422,6 +428,7 @@ class Generation:
         res = operations.GetGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationByIDResponseBody])
                 res.object = out
@@ -485,6 +492,7 @@ class Generation:
         res = operations.GetGenerationsByUserIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetGenerationsByUserIDResponseBody])
                 res.object = out
@@ -552,6 +560,7 @@ class Generation:
         res = operations.GetTextureGenerationByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetTextureGenerationByIDResponseBody])
                 res.object = out
@@ -619,6 +628,7 @@ class Generation:
         res = operations.GetTextureGenerationsByModelIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetTextureGenerationsByModelIDResponseBody])
                 res.object = out
@@ -634,7 +644,7 @@ class Generation:
 
     
     
-    def perform_alchemy_upscale_lcm(self, request: Optional[operations.PerformAlchemyUpscaleLCMRequestBody]) -> operations.PerformAlchemyUpscaleLCMResponse:
+    def perform_alchemy_upscale_lcm(self, request: Optional[operations.PerformAlchemyUpscaleLCMRequestBody] = None) -> operations.PerformAlchemyUpscaleLCMResponse:
         r"""Perform Alchemy Upscale on a LCM image
         This endpoint will perform Alchemy Upscale on a LCM image
         """
@@ -678,6 +688,7 @@ class Generation:
         res = operations.PerformAlchemyUpscaleLCMResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.PerformAlchemyUpscaleLCMResponseBody])
                 res.object = out
@@ -693,7 +704,7 @@ class Generation:
 
     
     
-    def perform_inpainting_lcm(self, request: Optional[operations.PerformInpaintingLCMRequestBody]) -> operations.PerformInpaintingLCMResponse:
+    def perform_inpainting_lcm(self, request: Optional[operations.PerformInpaintingLCMRequestBody] = None) -> operations.PerformInpaintingLCMResponse:
         r"""Perform inpainting on a LCM image
         This endpoint will perform a inpainting on a LCM image
         """
@@ -737,6 +748,7 @@ class Generation:
         res = operations.PerformInpaintingLCMResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.PerformInpaintingLCMResponseBody])
                 res.object = out
@@ -752,7 +764,7 @@ class Generation:
 
     
     
-    def perform_instant_refine(self, request: Optional[operations.PerformInstantRefineRequestBody]) -> operations.PerformInstantRefineResponse:
+    def perform_instant_refine(self, request: Optional[operations.PerformInstantRefineRequestBody] = None) -> operations.PerformInstantRefineResponse:
         r"""Perform instant refine on a LCM image
         This endpoint will perform instant refine on a LCM image
         """
@@ -796,6 +808,7 @@ class Generation:
         res = operations.PerformInstantRefineResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.PerformInstantRefineResponseBody])
                 res.object = out

@@ -31,9 +31,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateGenerationRequestBody()
-
-res = s.generation.create_generation(req)
+res = s.generation.create_generation(request=operations.CreateGenerationRequestBody())
 
 if res.object is not None:
     # handle response
@@ -71,12 +69,10 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateLCMGenerationRequestBody(
+res = s.generation.create_lcm_generation(request=operations.CreateLCMGenerationRequestBody(
     image_data_url='<value>',
     prompt='<value>',
-)
-
-res = s.generation.create_lcm_generation(req)
+))
 
 if res.object is not None:
     # handle response
@@ -114,11 +110,9 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateSVDMotionGenerationRequestBody(
+res = s.generation.create_svd_motion_generation(request=operations.CreateSVDMotionGenerationRequestBody(
     image_id='<value>',
-)
-
-res = s.generation.create_svd_motion_generation(req)
+))
 
 if res.object is not None:
     # handle response
@@ -156,9 +150,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateTextureGenerationRequestBody()
-
-res = s.generation.create_texture_generation(req)
+res = s.generation.create_texture_generation(request=operations.CreateTextureGenerationRequestBody())
 
 if res.object is not None:
     # handle response
@@ -194,7 +186,6 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.generation.delete_generation_by_id(id='<value>')
 
@@ -234,7 +225,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.generation.delete_texture_generation_by_id(id='<value>', request_body=operations.DeleteTextureGenerationByIDRequestBody())
 
 if res.object is not None:
@@ -273,7 +263,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.generation.get_generation_by_id(id='<value>')
 
 if res.object is not None:
@@ -310,7 +299,6 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.generation.get_generations_by_user_id(user_id='<value>', limit=10, offset=0)
 
@@ -351,7 +339,6 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.generation.get_texture_generation_by_id(id='<value>', request_body=operations.GetTextureGenerationByIDRequestBody(), limit=10, offset=0)
 
@@ -394,7 +381,6 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.generation.get_texture_generations_by_model_id(model_id='<value>', request_body=operations.GetTextureGenerationsByModelIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
@@ -436,12 +422,10 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.PerformAlchemyUpscaleLCMRequestBody(
+res = s.generation.perform_alchemy_upscale_lcm(request=operations.PerformAlchemyUpscaleLCMRequestBody(
     image_data_url='<value>',
     prompt='<value>',
-)
-
-res = s.generation.perform_alchemy_upscale_lcm(req)
+))
 
 if res.object is not None:
     # handle response
@@ -479,13 +463,11 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.PerformInpaintingLCMRequestBody(
+res = s.generation.perform_inpainting_lcm(request=operations.PerformInpaintingLCMRequestBody(
     image_data_url='<value>',
     mask_data_url='<value>',
     prompt='<value>',
-)
-
-res = s.generation.perform_inpainting_lcm(req)
+))
 
 if res.object is not None:
     # handle response
@@ -523,12 +505,10 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.PerformInstantRefineRequestBody(
+res = s.generation.perform_instant_refine(request=operations.PerformInstantRefineRequestBody(
     image_data_url='<value>',
     prompt='<value>',
-)
-
-res = s.generation.perform_instant_refine(req)
+))
 
 if res.object is not None:
     # handle response
