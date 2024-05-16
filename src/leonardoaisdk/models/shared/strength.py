@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class Strength(str, Enum):
     r"""When training using the PIXEL_ART model type, this influences the training strength."""
     VERY_LOW = 'VERY_LOW'

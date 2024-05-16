@@ -1,0 +1,9 @@
+# PricingCalculatorRequestBody
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `service`                                                                                      | [Optional[shared.PricingCalculatorServices]](../../models/shared/pricingcalculatorservices.md) | :heavy_minus_sign:                                                                             | The services to be chosen for calculating the API credit cost.                                 |
+| `service_params`                                                                               | [Optional[operations.Object]](../../models/operations/object.md)                               | :heavy_minus_sign:                                                                             | Parameters for the service                                                                     |

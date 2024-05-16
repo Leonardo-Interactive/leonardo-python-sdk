@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name='Leonardo-Ai-SDK',
-    version='5.4.1',
+    version='5.4.2',
     author='Leonardo-Ai',
     description='Leonardo AI Python Client SDK',
     url='https://github.com/Leonardo-Interactive/leonardo-python-sdk.git',

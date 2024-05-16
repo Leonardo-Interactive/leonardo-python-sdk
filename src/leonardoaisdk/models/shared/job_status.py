@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class JobStatus(str, Enum):
     r"""The status of the current task."""
     PENDING = 'PENDING'

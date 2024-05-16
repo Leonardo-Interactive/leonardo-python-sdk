@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 7d5f612ea48bf680a174c1f469139678
+  docChecksum: 6329760d390ebefaeaedd5096bece325
   docVersion: v1.0.0
-  speakeasyVersion: 1.285.1
-  generationVersion: 2.326.3
-  releaseVersion: 5.4.1
-  configChecksum: 255027af34b20de96395c3481b5614f1
+  speakeasyVersion: 1.291.0
+  generationVersion: 2.332.4
+  releaseVersion: 5.4.2
+  configChecksum: 4b9a73c3c9e32fd48cf659da9430d881
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -34,6 +34,7 @@ generatedFiles:
   - src/leonardoaisdk/initimage.py
   - src/leonardoaisdk/user.py
   - src/leonardoaisdk/model.py
+  - src/leonardoaisdk/pricing_calculator.py
   - src/leonardoaisdk/prompt.py
   - src/leonardoaisdk/variation.py
   - src/leonardoaisdk/sdk.py
@@ -76,6 +77,7 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/getmodelbyid.py
   - src/leonardoaisdk/models/operations/listplatformmodels.py
   - src/leonardoaisdk/models/operations/uploadmodelasset.py
+  - src/leonardoaisdk/models/operations/pricingcalculator.py
   - src/leonardoaisdk/models/operations/promptimprove.py
   - src/leonardoaisdk/models/operations/promptrandom.py
   - src/leonardoaisdk/models/operations/createuniversalupscalerjob.py
@@ -94,6 +96,7 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/model_asset_texture_types.py
   - src/leonardoaisdk/models/shared/strength.py
   - src/leonardoaisdk/models/shared/custom_model_type.py
+  - src/leonardoaisdk/models/shared/pricingcalculatorservices.py
   - src/leonardoaisdk/models/shared/universal_upscaler_style.py
   - src/leonardoaisdk/models/shared/security.py
   - src/leonardoaisdk/models/__init__.py
@@ -243,6 +246,18 @@ generatedFiles:
   - docs/models/operations/modelassetuploadoutput.md
   - docs/models/operations/uploadmodelassetresponsebody.md
   - docs/models/operations/uploadmodelassetresponse.md
+  - docs/models/operations/pricingcalculatorobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamstexturegenerationobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerobject.md
+  - docs/models/operations/object.md
+  - docs/models/operations/pricingcalculatorrequestbody.md
+  - docs/models/operations/calculateproductionapiservicecost.md
+  - docs/models/operations/pricingcalculatorresponsebody.md
+  - docs/models/operations/pricingcalculatorresponse.md
   - docs/models/operations/promptimproverequestbody.md
   - docs/models/operations/promptgenerationoutput.md
   - docs/models/operations/promptimproveresponsebody.md
@@ -281,6 +296,7 @@ generatedFiles:
   - docs/models/shared/modelassettexturetypes.md
   - docs/models/shared/strength.md
   - docs/models/shared/custommodeltype.md
+  - docs/models/shared/pricingcalculatorservices.md
   - docs/models/shared/universalupscalerstyle.md
   - docs/models/shared/security.md
   - docs/sdks/leonardoaisdk/README.md
@@ -290,6 +306,7 @@ generatedFiles:
   - docs/sdks/initimage/README.md
   - docs/sdks/user/README.md
   - docs/sdks/model/README.md
+  - docs/sdks/pricingcalculator/README.md
   - docs/sdks/prompt/README.md
   - docs/sdks/variation/README.md
   - USAGE.md

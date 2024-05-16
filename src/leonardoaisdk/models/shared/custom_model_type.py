@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class CustomModelType(str, Enum):
     r"""The category the most accurately reflects the model."""
     GENERAL = 'GENERAL'

@@ -86,6 +86,10 @@ if res.object is not None:
 * [list_platform_models](docs/sdks/model/README.md#list_platform_models) - List Platform Models
 * [upload_model_asset](docs/sdks/model/README.md#upload_model_asset) - Upload 3D Model
 
+### [pricing_calculator](docs/sdks/pricingcalculator/README.md)
+
+* [pricing_calculator](docs/sdks/pricingcalculator/README.md#pricing_calculator) - Calculating API Cost
+
 ### [prompt](docs/sdks/prompt/README.md)
 
 * [prompt_improve](docs/sdks/prompt/README.md#prompt_improve) - Improve a Prompt

@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class SdGenerationSchedulers(str, Enum):
     r"""The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified."""
     KLMS = 'KLMS'

@@ -13,6 +13,7 @@ from enum import Enum
 from leonardoaisdk import utils
 from typing import List, Optional
 
+
 class TransparencyType(str, Enum):
     r"""Which type of transparency this image should use"""
     DISABLED = 'disabled'

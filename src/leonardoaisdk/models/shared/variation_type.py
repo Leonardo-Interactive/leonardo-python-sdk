@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class VariationType(str, Enum):
     r"""The type of variation."""
     OUTPAINT = 'OUTPAINT'

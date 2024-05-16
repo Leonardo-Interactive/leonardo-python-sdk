@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class LcmGenerationStyle(str, Enum):
     r"""The style to generate LCM images with."""
     ANIME = 'ANIME'

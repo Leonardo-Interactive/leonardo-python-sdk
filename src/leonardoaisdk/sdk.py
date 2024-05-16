@@ -6,6 +6,7 @@ from .element import Element
 from .generation import Generation
 from .initimage import InitImage
 from .model import Model
+from .pricing_calculator import PricingCalculator
 from .prompt import Prompt
 from .sdkconfiguration import SDKConfiguration
 from .user import User
@@ -24,6 +25,7 @@ class LeonardoAiSDK:
     init_image: InitImage
     user: User
     model: Model
+    pricing_calculator: PricingCalculator
     prompt: Prompt
     variation: Variation
 
@@ -94,5 +96,6 @@ class LeonardoAiSDK:
         self.init_image = InitImage(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
         self.model = Model(self.sdk_configuration)
+        self.pricing_calculator = PricingCalculator(self.sdk_configuration)
         self.prompt = Prompt(self.sdk_configuration)
         self.variation = Variation(self.sdk_configuration)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class UniversalUpscalerStyle(str, Enum):
     r"""The style to upscale images using universal upscaler with."""
     GENERAL = 'GENERAL'

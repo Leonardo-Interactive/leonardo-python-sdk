@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
+
 class ModelAssetTextureTypes(str, Enum):
     r"""When training model assets these are the texture types available to use."""
     ALBEDO = 'ALBEDO'
