@@ -2,13 +2,17 @@
 
 import requests as requests_http
 from .dataset import Dataset
-from .element import Element
-from .generation import Generation
-from .initimage import InitImage
-from .model import Model
+from .elements import Elements
+from .image import Image
+from .init_images import InitImages
+from .models_ import Models
+from .motion import Motion
 from .pricing_calculator import PricingCalculator
 from .prompt import Prompt
+from .realtime_canvas import RealtimeCanvas
 from .sdkconfiguration import SDKConfiguration
+from .texture import Texture
+from .threed_model_assets import ThreeDModelAssets
 from .user import User
 from .utils.retries import RetryConfig
 from .variation import Variation
@@ -20,11 +24,15 @@ from typing import Callable, Dict, Optional, Union
 class LeonardoAiSDK:
     r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
     dataset: Dataset
-    element: Element
-    generation: Generation
-    init_image: InitImage
+    elements: Elements
+    image: Image
+    realtime_canvas: RealtimeCanvas
+    motion: Motion
+    texture: Texture
+    init_images: InitImages
     user: User
-    model: Model
+    models: Models
+    three_d_model_assets: ThreeDModelAssets
     pricing_calculator: PricingCalculator
     prompt: Prompt
     variation: Variation
@@ -91,11 +99,15 @@ class LeonardoAiSDK:
 
     def _init_sdks(self):
         self.dataset = Dataset(self.sdk_configuration)
-        self.element = Element(self.sdk_configuration)
-        self.generation = Generation(self.sdk_configuration)
-        self.init_image = InitImage(self.sdk_configuration)
+        self.elements = Elements(self.sdk_configuration)
+        self.image = Image(self.sdk_configuration)
+        self.realtime_canvas = RealtimeCanvas(self.sdk_configuration)
+        self.motion = Motion(self.sdk_configuration)
+        self.texture = Texture(self.sdk_configuration)
+        self.init_images = InitImages(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-        self.model = Model(self.sdk_configuration)
+        self.models = Models(self.sdk_configuration)
+        self.three_d_model_assets = ThreeDModelAssets(self.sdk_configuration)
         self.pricing_calculator = PricingCalculator(self.sdk_configuration)
         self.prompt = Prompt(self.sdk_configuration)
         self.variation = Variation(self.sdk_configuration)

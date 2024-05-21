@@ -45,46 +45,58 @@ if res.object is not None:
 * [upload_dataset_image](docs/sdks/dataset/README.md#upload_dataset_image) - Upload dataset image
 * [upload_dataset_image_from_gen](docs/sdks/dataset/README.md#upload_dataset_image_from_gen) - Upload a Single Generated Image to a Dataset
 
-### [element](docs/sdks/element/README.md)
+### [elements](docs/sdks/elements/README.md)
 
-* [list_elements](docs/sdks/element/README.md#list_elements) - List Elements
+* [list_elements](docs/sdks/elements/README.md#list_elements) - List Elements
 
-### [generation](docs/sdks/generation/README.md)
+### [image](docs/sdks/image/README.md)
 
-* [create_generation](docs/sdks/generation/README.md#create_generation) - Create a Generation of Images
-* [create_lcm_generation](docs/sdks/generation/README.md#create_lcm_generation) - Create LCM Generation
-* [create_svd_motion_generation](docs/sdks/generation/README.md#create_svd_motion_generation) - Create SVD Motion Generation
-* [create_texture_generation](docs/sdks/generation/README.md#create_texture_generation) - Create Texture Generation
-* [delete_generation_by_id](docs/sdks/generation/README.md#delete_generation_by_id) - Delete a Single Generation
-* [delete_texture_generation_by_id](docs/sdks/generation/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
-* [get_generation_by_id](docs/sdks/generation/README.md#get_generation_by_id) - Get a Single Generation
-* [get_generations_by_user_id](docs/sdks/generation/README.md#get_generations_by_user_id) - Get generations by user ID
-* [get_texture_generation_by_id](docs/sdks/generation/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
-* [get_texture_generations_by_model_id](docs/sdks/generation/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
-* [perform_alchemy_upscale_lcm](docs/sdks/generation/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
-* [perform_inpainting_lcm](docs/sdks/generation/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
-* [perform_instant_refine](docs/sdks/generation/README.md#perform_instant_refine) - Perform instant refine on a LCM image
+* [create_generation](docs/sdks/image/README.md#create_generation) - Create a Generation of Images
+* [delete_generation_by_id](docs/sdks/image/README.md#delete_generation_by_id) - Delete a Single Generation
+* [get_generation_by_id](docs/sdks/image/README.md#get_generation_by_id) - Get a Single Generation
+* [get_generations_by_user_id](docs/sdks/image/README.md#get_generations_by_user_id) - Get generations by user ID
 
-### [init_image](docs/sdks/initimage/README.md)
+### [realtime_canvas](docs/sdks/realtimecanvas/README.md)
 
-* [delete_init_image_by_id](docs/sdks/initimage/README.md#delete_init_image_by_id) - Delete init image
-* [get_init_image_by_id](docs/sdks/initimage/README.md#get_init_image_by_id) - Get single init image
-* [upload_init_image](docs/sdks/initimage/README.md#upload_init_image) - Upload init image
+* [create_lcm_generation](docs/sdks/realtimecanvas/README.md#create_lcm_generation) - Create LCM Generation
+* [perform_alchemy_upscale_lcm](docs/sdks/realtimecanvas/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
+* [perform_inpainting_lcm](docs/sdks/realtimecanvas/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
+* [perform_instant_refine](docs/sdks/realtimecanvas/README.md#perform_instant_refine) - Perform instant refine on a LCM image
+
+### [motion](docs/sdks/motion/README.md)
+
+* [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
+
+### [texture](docs/sdks/texture/README.md)
+
+* [create_texture_generation](docs/sdks/texture/README.md#create_texture_generation) - Create Texture Generation
+* [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
+* [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
+* [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
+
+### [init_images](docs/sdks/initimages/README.md)
+
+* [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
+* [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
+* [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
 ### [user](docs/sdks/user/README.md)
 
 * [get_user_self](docs/sdks/user/README.md#get_user_self) - Get user information
 
-### [model](docs/sdks/model/README.md)
+### [models](docs/sdks/models/README.md)
 
-* [create_model](docs/sdks/model/README.md#create_model) - Train a Custom Model
-* [delete3_d_model_by_id](docs/sdks/model/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
-* [delete_model_by_id](docs/sdks/model/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
-* [get3_d_model_by_id](docs/sdks/model/README.md#get3_d_model_by_id) - Get 3D Model by ID
-* [get3_d_models_by_user_id](docs/sdks/model/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
-* [get_model_by_id](docs/sdks/model/README.md#get_model_by_id) - Get a Single Custom Model by ID
-* [list_platform_models](docs/sdks/model/README.md#list_platform_models) - List Platform Models
-* [upload_model_asset](docs/sdks/model/README.md#upload_model_asset) - Upload 3D Model
+* [create_model](docs/sdks/models/README.md#create_model) - Train a Custom Model
+* [delete_model_by_id](docs/sdks/models/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
+* [get_model_by_id](docs/sdks/models/README.md#get_model_by_id) - Get a Single Custom Model by ID
+* [list_platform_models](docs/sdks/models/README.md#list_platform_models) - List Platform Models
+
+### [three_d_model_assets](docs/sdks/threedmodelassets/README.md)
+
+* [delete3_d_model_by_id](docs/sdks/threedmodelassets/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
+* [get3_d_model_by_id](docs/sdks/threedmodelassets/README.md#get3_d_model_by_id) - Get 3D Model by ID
+* [get3_d_models_by_user_id](docs/sdks/threedmodelassets/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
+* [upload_model_asset](docs/sdks/threedmodelassets/README.md#upload_model_asset) - Upload 3D Model
 
 ### [pricing_calculator](docs/sdks/pricingcalculator/README.md)
 

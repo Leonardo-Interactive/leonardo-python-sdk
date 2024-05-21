@@ -1,58 +1,12 @@
-# Model
-(*model*)
+# ThreeDModelAssets
+(*three_d_model_assets*)
 
 ### Available Operations
 
-* [create_model](#create_model) - Train a Custom Model
 * [delete3_d_model_by_id](#delete3_d_model_by_id) - Delete 3D Model by ID
-* [delete_model_by_id](#delete_model_by_id) - Delete a Single Custom Model by ID
 * [get3_d_model_by_id](#get3_d_model_by_id) - Get 3D Model by ID
 * [get3_d_models_by_user_id](#get3_d_models_by_user_id) - Get 3D models by user ID
-* [get_model_by_id](#get_model_by_id) - Get a Single Custom Model by ID
-* [list_platform_models](#list_platform_models) - List Platform Models
 * [upload_model_asset](#upload_model_asset) - Upload 3D Model
-
-## create_model
-
-This endpoint will train a new custom model
-
-### Example Usage
-
-```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
-
-s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.model.create_model(request=operations.CreateModelRequestBody(
-    dataset_id='<value>',
-    instance_prompt='<value>',
-    name='<value>',
-))
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.CreateModelRequestBody](../../models/operations/createmodelrequestbody.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-
-
-### Response
-
-**[operations.CreateModelResponse](../../models/operations/createmodelresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete3_d_model_by_id
 
@@ -68,7 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.model.delete3_d_model_by_id(id='<value>', request_body=operations.Delete3DModelByIDRequestBody())
+res = s.three_d_model_assets.delete3_d_model_by_id(id='<value>', request_body=operations.Delete3DModelByIDRequestBody())
 
 if res.object is not None:
     # handle response
@@ -93,43 +47,6 @@ if res.object is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## delete_model_by_id
-
-This endpoint will delete a specific custom model
-
-### Example Usage
-
-```python
-import leonardoaisdk
-
-s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.model.delete_model_by_id(id='<value>')
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                      | Type                           | Required                       | Description                    |
-| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `id`                           | *str*                          | :heavy_check_mark:             | The ID of the model to delete. |
-
-
-### Response
-
-**[operations.DeleteModelByIDResponse](../../models/operations/deletemodelbyidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## get3_d_model_by_id
 
 This endpoint gets the specific 3D model
@@ -144,7 +61,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.model.get3_d_model_by_id(id='<value>', request_body=operations.Get3DModelByIDRequestBody(), limit=10, offset=0)
+res = s.three_d_model_assets.get3_d_model_by_id(id='<value>', request_body=operations.Get3DModelByIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response
@@ -185,7 +102,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.model.get3_d_models_by_user_id(user_id='<value>', request_body=operations.Get3DModelsByUserIDRequestBody(), limit=10, offset=0)
+res = s.three_d_model_assets.get3_d_models_by_user_id(user_id='<value>', request_body=operations.Get3DModelsByUserIDRequestBody(), limit=10, offset=0)
 
 if res.object is not None:
     # handle response
@@ -212,74 +129,6 @@ if res.object is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## get_model_by_id
-
-This endpoint gets the specific custom model
-
-### Example Usage
-
-```python
-import leonardoaisdk
-
-s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.model.get_model_by_id(id='<value>')
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                             | Type                                  | Required                              | Description                           |
-| ------------------------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
-| `id`                                  | *str*                                 | :heavy_check_mark:                    | The ID of the custom model to return. |
-
-
-### Response
-
-**[operations.GetModelByIDResponse](../../models/operations/getmodelbyidresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## list_platform_models
-
-Get a list of public Platform Models available for use with generations.
-
-### Example Usage
-
-```python
-import leonardoaisdk
-
-s = leonardoaisdk.LeonardoAiSDK(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.model.list_platform_models()
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-
-### Response
-
-**[operations.ListPlatformModelsResponse](../../models/operations/listplatformmodelsresponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## upload_model_asset
 
 This endpoint returns presigned details to upload a 3D model to S3
@@ -294,7 +143,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.model.upload_model_asset(request=operations.UploadModelAssetRequestBody())
+res = s.three_d_model_assets.upload_model_asset(request=operations.UploadModelAssetRequestBody())
 
 if res.object is not None:
     # handle response

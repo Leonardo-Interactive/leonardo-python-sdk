@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 6329760d390ebefaeaedd5096bece325
+  docChecksum: 7b2ad4afc01fdd9efa952567fa3b247f
   docVersion: v1.0.0
-  speakeasyVersion: 1.291.0
-  generationVersion: 2.332.4
-  releaseVersion: 5.4.2
-  configChecksum: 4b9a73c3c9e32fd48cf659da9430d881
+  speakeasyVersion: 1.294.0
+  generationVersion: 2.333.3
+  releaseVersion: 5.4.3
+  configChecksum: 2a4d204978a8f00b9091bcdf182d4f8e
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -29,11 +29,15 @@ features:
 generatedFiles:
   - src/leonardoaisdk/sdkconfiguration.py
   - src/leonardoaisdk/dataset.py
-  - src/leonardoaisdk/element.py
-  - src/leonardoaisdk/generation.py
-  - src/leonardoaisdk/initimage.py
+  - src/leonardoaisdk/elements.py
+  - src/leonardoaisdk/image.py
+  - src/leonardoaisdk/realtime_canvas.py
+  - src/leonardoaisdk/motion.py
+  - src/leonardoaisdk/texture.py
+  - src/leonardoaisdk/init_images.py
   - src/leonardoaisdk/user.py
-  - src/leonardoaisdk/model.py
+  - src/leonardoaisdk/models_.py
+  - src/leonardoaisdk/threed_model_assets.py
   - src/leonardoaisdk/pricing_calculator.py
   - src/leonardoaisdk/prompt.py
   - src/leonardoaisdk/variation.py
@@ -53,29 +57,29 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/uploaddatasetimagefromgen.py
   - src/leonardoaisdk/models/operations/listelements.py
   - src/leonardoaisdk/models/operations/creategeneration.py
-  - src/leonardoaisdk/models/operations/createlcmgeneration.py
-  - src/leonardoaisdk/models/operations/createsvdmotiongeneration.py
-  - src/leonardoaisdk/models/operations/createtexturegeneration.py
   - src/leonardoaisdk/models/operations/deletegenerationbyid.py
-  - src/leonardoaisdk/models/operations/deletetexturegenerationbyid.py
   - src/leonardoaisdk/models/operations/getgenerationbyid.py
   - src/leonardoaisdk/models/operations/getgenerationsbyuserid.py
-  - src/leonardoaisdk/models/operations/gettexturegenerationbyid.py
-  - src/leonardoaisdk/models/operations/gettexturegenerationsbymodelid.py
+  - src/leonardoaisdk/models/operations/createlcmgeneration.py
   - src/leonardoaisdk/models/operations/performalchemyupscalelcm.py
   - src/leonardoaisdk/models/operations/performinpaintinglcm.py
   - src/leonardoaisdk/models/operations/performinstantrefine.py
+  - src/leonardoaisdk/models/operations/createsvdmotiongeneration.py
+  - src/leonardoaisdk/models/operations/createtexturegeneration.py
+  - src/leonardoaisdk/models/operations/deletetexturegenerationbyid.py
+  - src/leonardoaisdk/models/operations/gettexturegenerationbyid.py
+  - src/leonardoaisdk/models/operations/gettexturegenerationsbymodelid.py
   - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
   - src/leonardoaisdk/models/operations/getinitimagebyid.py
   - src/leonardoaisdk/models/operations/uploadinitimage.py
   - src/leonardoaisdk/models/operations/getuserself.py
   - src/leonardoaisdk/models/operations/createmodel.py
-  - src/leonardoaisdk/models/operations/delete3dmodelbyid.py
   - src/leonardoaisdk/models/operations/deletemodelbyid.py
-  - src/leonardoaisdk/models/operations/get3dmodelbyid.py
-  - src/leonardoaisdk/models/operations/get3dmodelsbyuserid.py
   - src/leonardoaisdk/models/operations/getmodelbyid.py
   - src/leonardoaisdk/models/operations/listplatformmodels.py
+  - src/leonardoaisdk/models/operations/delete3dmodelbyid.py
+  - src/leonardoaisdk/models/operations/get3dmodelbyid.py
+  - src/leonardoaisdk/models/operations/get3dmodelsbyuserid.py
   - src/leonardoaisdk/models/operations/uploadmodelasset.py
   - src/leonardoaisdk/models/operations/pricingcalculator.py
   - src/leonardoaisdk/models/operations/promptimprove.py
@@ -90,9 +94,9 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/sd_generation_style.py
   - src/leonardoaisdk/models/shared/element_input.py
   - src/leonardoaisdk/models/shared/controlnet_type.py
-  - src/leonardoaisdk/models/shared/lcm_generation_style.py
   - src/leonardoaisdk/models/shared/job_status.py
   - src/leonardoaisdk/models/shared/variation_type.py
+  - src/leonardoaisdk/models/shared/lcm_generation_style.py
   - src/leonardoaisdk/models/shared/model_asset_texture_types.py
   - src/leonardoaisdk/models/shared/strength.py
   - src/leonardoaisdk/models/shared/custom_model_type.py
@@ -134,27 +138,10 @@ generatedFiles:
   - docs/models/operations/sdgenerationoutput.md
   - docs/models/operations/creategenerationresponsebody.md
   - docs/models/operations/creategenerationresponse.md
-  - docs/models/operations/createlcmgenerationrequestbody.md
-  - docs/models/operations/lcmgenerationoutput.md
-  - docs/models/operations/createlcmgenerationresponsebody.md
-  - docs/models/operations/createlcmgenerationresponse.md
-  - docs/models/operations/createsvdmotiongenerationrequestbody.md
-  - docs/models/operations/motionsvdgenerationoutput.md
-  - docs/models/operations/createsvdmotiongenerationresponsebody.md
-  - docs/models/operations/createsvdmotiongenerationresponse.md
-  - docs/models/operations/createtexturegenerationrequestbody.md
-  - docs/models/operations/texturegenerationjoboutput.md
-  - docs/models/operations/createtexturegenerationresponsebody.md
-  - docs/models/operations/createtexturegenerationresponse.md
   - docs/models/operations/deletegenerationbyidrequest.md
   - docs/models/operations/generations.md
   - docs/models/operations/deletegenerationbyidresponsebody.md
   - docs/models/operations/deletegenerationbyidresponse.md
-  - docs/models/operations/deletetexturegenerationbyidrequestbody.md
-  - docs/models/operations/deletetexturegenerationbyidrequest.md
-  - docs/models/operations/modelassettexturegenerations.md
-  - docs/models/operations/deletetexturegenerationbyidresponsebody.md
-  - docs/models/operations/deletetexturegenerationbyidresponse.md
   - docs/models/operations/getgenerationbyidrequest.md
   - docs/models/operations/getgenerationbyidgeneratedimagevariationgeneric.md
   - docs/models/operations/generatedimages.md
@@ -171,18 +158,10 @@ generatedFiles:
   - docs/models/operations/getgenerationsbyuseridgenerations.md
   - docs/models/operations/getgenerationsbyuseridresponsebody.md
   - docs/models/operations/getgenerationsbyuseridresponse.md
-  - docs/models/operations/gettexturegenerationbyidrequestbody.md
-  - docs/models/operations/gettexturegenerationbyidrequest.md
-  - docs/models/operations/modelassettextureimages.md
-  - docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md
-  - docs/models/operations/gettexturegenerationbyidresponsebody.md
-  - docs/models/operations/gettexturegenerationbyidresponse.md
-  - docs/models/operations/gettexturegenerationsbymodelidrequestbody.md
-  - docs/models/operations/gettexturegenerationsbymodelidrequest.md
-  - docs/models/operations/gettexturegenerationsbymodelidmodelassettextureimages.md
-  - docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md
-  - docs/models/operations/gettexturegenerationsbymodelidresponsebody.md
-  - docs/models/operations/gettexturegenerationsbymodelidresponse.md
+  - docs/models/operations/createlcmgenerationrequestbody.md
+  - docs/models/operations/lcmgenerationoutput.md
+  - docs/models/operations/createlcmgenerationresponsebody.md
+  - docs/models/operations/createlcmgenerationresponse.md
   - docs/models/operations/performalchemyupscalelcmrequestbody.md
   - docs/models/operations/performalchemyupscalelcmlcmgenerationoutput.md
   - docs/models/operations/performalchemyupscalelcmresponsebody.md
@@ -195,6 +174,31 @@ generatedFiles:
   - docs/models/operations/performinstantrefinelcmgenerationoutput.md
   - docs/models/operations/performinstantrefineresponsebody.md
   - docs/models/operations/performinstantrefineresponse.md
+  - docs/models/operations/createsvdmotiongenerationrequestbody.md
+  - docs/models/operations/motionsvdgenerationoutput.md
+  - docs/models/operations/createsvdmotiongenerationresponsebody.md
+  - docs/models/operations/createsvdmotiongenerationresponse.md
+  - docs/models/operations/createtexturegenerationrequestbody.md
+  - docs/models/operations/texturegenerationjoboutput.md
+  - docs/models/operations/createtexturegenerationresponsebody.md
+  - docs/models/operations/createtexturegenerationresponse.md
+  - docs/models/operations/deletetexturegenerationbyidrequestbody.md
+  - docs/models/operations/deletetexturegenerationbyidrequest.md
+  - docs/models/operations/modelassettexturegenerations.md
+  - docs/models/operations/deletetexturegenerationbyidresponsebody.md
+  - docs/models/operations/deletetexturegenerationbyidresponse.md
+  - docs/models/operations/gettexturegenerationbyidrequestbody.md
+  - docs/models/operations/gettexturegenerationbyidrequest.md
+  - docs/models/operations/modelassettextureimages.md
+  - docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md
+  - docs/models/operations/gettexturegenerationbyidresponsebody.md
+  - docs/models/operations/gettexturegenerationbyidresponse.md
+  - docs/models/operations/gettexturegenerationsbymodelidrequestbody.md
+  - docs/models/operations/gettexturegenerationsbymodelidrequest.md
+  - docs/models/operations/gettexturegenerationsbymodelidmodelassettextureimages.md
+  - docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md
+  - docs/models/operations/gettexturegenerationsbymodelidresponsebody.md
+  - docs/models/operations/gettexturegenerationsbymodelidresponse.md
   - docs/models/operations/deleteinitimagebyidrequest.md
   - docs/models/operations/initimages.md
   - docs/models/operations/deleteinitimagebyidresponsebody.md
@@ -215,15 +219,23 @@ generatedFiles:
   - docs/models/operations/sdtrainingoutput.md
   - docs/models/operations/createmodelresponsebody.md
   - docs/models/operations/createmodelresponse.md
+  - docs/models/operations/deletemodelbyidrequest.md
+  - docs/models/operations/custommodels.md
+  - docs/models/operations/deletemodelbyidresponsebody.md
+  - docs/models/operations/deletemodelbyidresponse.md
+  - docs/models/operations/getmodelbyidrequest.md
+  - docs/models/operations/getmodelbyidcustommodels.md
+  - docs/models/operations/getmodelbyidresponsebody.md
+  - docs/models/operations/getmodelbyidresponse.md
+  - docs/models/operations/listplatformmodelsgeneratedimages.md
+  - docs/models/operations/listplatformmodelscustommodels.md
+  - docs/models/operations/listplatformmodelsresponsebody.md
+  - docs/models/operations/listplatformmodelsresponse.md
   - docs/models/operations/delete3dmodelbyidrequestbody.md
   - docs/models/operations/delete3dmodelbyidrequest.md
   - docs/models/operations/modelassets.md
   - docs/models/operations/delete3dmodelbyidresponsebody.md
   - docs/models/operations/delete3dmodelbyidresponse.md
-  - docs/models/operations/deletemodelbyidrequest.md
-  - docs/models/operations/custommodels.md
-  - docs/models/operations/deletemodelbyidresponsebody.md
-  - docs/models/operations/deletemodelbyidresponse.md
   - docs/models/operations/get3dmodelbyidrequestbody.md
   - docs/models/operations/get3dmodelbyidrequest.md
   - docs/models/operations/get3dmodelbyidmodelassets.md
@@ -234,14 +246,6 @@ generatedFiles:
   - docs/models/operations/get3dmodelsbyuseridmodelassets.md
   - docs/models/operations/get3dmodelsbyuseridresponsebody.md
   - docs/models/operations/get3dmodelsbyuseridresponse.md
-  - docs/models/operations/getmodelbyidrequest.md
-  - docs/models/operations/getmodelbyidcustommodels.md
-  - docs/models/operations/getmodelbyidresponsebody.md
-  - docs/models/operations/getmodelbyidresponse.md
-  - docs/models/operations/listplatformmodelsgeneratedimages.md
-  - docs/models/operations/listplatformmodelscustommodels.md
-  - docs/models/operations/listplatformmodelsresponsebody.md
-  - docs/models/operations/listplatformmodelsresponse.md
   - docs/models/operations/uploadmodelassetrequestbody.md
   - docs/models/operations/modelassetuploadoutput.md
   - docs/models/operations/uploadmodelassetresponsebody.md
@@ -290,9 +294,9 @@ generatedFiles:
   - docs/models/shared/sdgenerationstyle.md
   - docs/models/shared/elementinput.md
   - docs/models/shared/controlnettype.md
-  - docs/models/shared/lcmgenerationstyle.md
   - docs/models/shared/jobstatus.md
   - docs/models/shared/variationtype.md
+  - docs/models/shared/lcmgenerationstyle.md
   - docs/models/shared/modelassettexturetypes.md
   - docs/models/shared/strength.md
   - docs/models/shared/custommodeltype.md
@@ -301,11 +305,15 @@ generatedFiles:
   - docs/models/shared/security.md
   - docs/sdks/leonardoaisdk/README.md
   - docs/sdks/dataset/README.md
-  - docs/sdks/element/README.md
-  - docs/sdks/generation/README.md
-  - docs/sdks/initimage/README.md
+  - docs/sdks/elements/README.md
+  - docs/sdks/image/README.md
+  - docs/sdks/realtimecanvas/README.md
+  - docs/sdks/motion/README.md
+  - docs/sdks/texture/README.md
+  - docs/sdks/initimages/README.md
   - docs/sdks/user/README.md
-  - docs/sdks/model/README.md
+  - docs/sdks/models/README.md
+  - docs/sdks/threedmodelassets/README.md
   - docs/sdks/pricingcalculator/README.md
   - docs/sdks/prompt/README.md
   - docs/sdks/variation/README.md

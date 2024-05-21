@@ -1,5 +1,5 @@
-# InitImage
-(*init_image*)
+# InitImages
+(*init_images*)
 
 ### Available Operations
 
@@ -20,7 +20,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.init_image.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -57,7 +57,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.init_image.get_init_image_by_id(id='<value>')
+res = s.init_images.get_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -95,7 +95,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-res = s.init_image.upload_init_image(request=operations.UploadInitImageRequestBody(
+res = s.init_images.upload_init_image(request=operations.UploadInitImageRequestBody(
     extension='png',
 ))
 

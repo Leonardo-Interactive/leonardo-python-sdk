@@ -7,7 +7,7 @@ from leonardoaisdk._hooks import AfterErrorContext, AfterSuccessContext, BeforeR
 from leonardoaisdk.models import errors, operations
 from typing import Optional
 
-class Element:
+class Motion:
     sdk_configuration: SDKConfiguration
 
     def __init__(self, sdk_config: SDKConfiguration) -> None:
@@ -15,26 +15,29 @@ class Element:
         
     
     
-    def list_elements(self) -> operations.ListElementsResponse:
-        r"""List Elements
-        Get a list of public Elements available for use with generations.
+    def create_svd_motion_generation(self, request: Optional[operations.CreateSVDMotionGenerationRequestBody] = None) -> operations.CreateSVDMotionGenerationResponse:
+        r"""Create SVD Motion Generation
+        This endpoint will generate a SVD motion generation.
         """
-        hook_ctx = HookContext(operation_id='listElements', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='createSVDMotionGeneration', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/elements'
+        url = base_url + '/generations-motion-svd'
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.CreateSVDMotionGenerationRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client
         
         try:
-            req = client.prepare_request(requests_http.Request('GET', url, params=query_params, headers=headers))
+            req = client.prepare_request(requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers))
             req = self.sdk_configuration.get_hooks().before_request(BeforeRequestContext(hook_ctx), req)
             http_res = client.send(req)
         except Exception as e:
@@ -53,12 +56,12 @@ class Element:
             
         
         
-        res = operations.ListElementsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
+        res = operations.CreateSVDMotionGenerationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
             # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListElementsResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSVDMotionGenerationResponseBody])
                 res.object = out
             else:
                 content_type = http_res.headers.get('Content-Type')
