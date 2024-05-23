@@ -23,6 +23,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
 ))
@@ -146,6 +147,7 @@ try:
     res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
 ))
+
 except errors.SDKError as e:
     # handle exception
     raise(e)
@@ -199,6 +201,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
 ))
@@ -221,6 +224,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
@@ -254,6 +258,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',

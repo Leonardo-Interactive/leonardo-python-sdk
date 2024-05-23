@@ -205,9 +205,9 @@ class Image:
         """
         hook_ctx = HookContext(operation_id='getGenerationsByUserId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetGenerationsByUserIDRequest(
-            user_id=user_id,
             limit=limit,
             offset=offset,
+            user_id=user_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

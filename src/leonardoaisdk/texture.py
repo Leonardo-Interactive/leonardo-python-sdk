@@ -81,8 +81,8 @@ class Texture:
         """
         hook_ctx = HookContext(operation_id='deleteTextureGenerationById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteTextureGenerationByIDRequest(
-            id=id,
             request_body=request_body,
+            id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -146,8 +146,8 @@ class Texture:
         """
         hook_ctx = HookContext(operation_id='getTextureGenerationById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetTextureGenerationByIDRequest(
-            id=id,
             request_body=request_body,
+            id=id,
             limit=limit,
             offset=offset,
         )
@@ -214,9 +214,9 @@ class Texture:
         """
         hook_ctx = HookContext(operation_id='getTextureGenerationsByModelId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetTextureGenerationsByModelIDRequest(
-            model_id=model_id,
             request_body=request_body,
             limit=limit,
+            model_id=model_id,
             offset=offset,
         )
         

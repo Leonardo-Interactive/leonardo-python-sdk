@@ -22,6 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.texture.create_texture_generation(request=operations.CreateTextureGenerationRequestBody())
 
 if res.object is not None:
@@ -59,6 +60,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.texture.delete_texture_generation_by_id(id='<value>', request_body=operations.DeleteTextureGenerationByIDRequestBody())
 
@@ -98,6 +100,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.texture.get_texture_generation_by_id(id='<value>', request_body=operations.GetTextureGenerationByIDRequestBody(), limit=10, offset=0)
 
@@ -139,6 +142,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.texture.get_texture_generations_by_model_id(model_id='<value>', request_body=operations.GetTextureGenerationsByModelIDRequestBody(), limit=10, offset=0)
 

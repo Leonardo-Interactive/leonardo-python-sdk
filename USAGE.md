@@ -7,6 +7,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
     name='<value>',
 ))

@@ -22,6 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.image.create_generation(request=operations.CreateGenerationRequestBody())
 
 if res.object is not None:
@@ -58,6 +59,7 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.image.delete_generation_by_id(id='<value>')
 
@@ -96,6 +98,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.image.get_generation_by_id(id='<value>')
 
 if res.object is not None:
@@ -132,6 +135,7 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.image.get_generations_by_user_id(user_id='<value>', limit=10, offset=0)
 

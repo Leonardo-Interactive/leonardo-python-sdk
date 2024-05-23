@@ -19,6 +19,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.pricing_calculator.pricing_calculator(request=operations.PricingCalculatorRequestBody())
 
 if res.object is not None:

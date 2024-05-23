@@ -20,6 +20,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
@@ -56,6 +57,7 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.init_images.get_init_image_by_id(id='<value>')
 
@@ -94,6 +96,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.init_images.upload_init_image(request=operations.UploadInitImageRequestBody(
     extension='png',

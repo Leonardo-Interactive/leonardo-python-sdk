@@ -19,6 +19,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.motion.create_svd_motion_generation(request=operations.CreateSVDMotionGenerationRequestBody(
     image_id='<value>',
 ))

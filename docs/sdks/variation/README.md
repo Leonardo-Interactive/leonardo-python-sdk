@@ -23,6 +23,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.variation.create_universal_upscaler_job(request=operations.CreateUniversalUpscalerJobRequestBody())
 
 if res.object is not None:
@@ -60,6 +61,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.variation.create_variation_no_bg(request=operations.CreateVariationNoBGRequestBody(
     id='<id>',
@@ -101,6 +103,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.variation.create_variation_unzoom(request=operations.CreateVariationUnzoomRequestBody())
 
 if res.object is not None:
@@ -138,6 +141,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.variation.create_variation_upscale(request=operations.CreateVariationUpscaleRequestBody(
     id='<id>',
@@ -177,6 +181,7 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.variation.get_variation_by_id(id='<value>')
 

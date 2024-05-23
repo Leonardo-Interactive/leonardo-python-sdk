@@ -22,6 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.realtime_canvas.create_lcm_generation(request=operations.CreateLCMGenerationRequestBody(
     image_data_url='<value>',
     prompt='<value>',
@@ -62,6 +63,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.realtime_canvas.perform_alchemy_upscale_lcm(request=operations.PerformAlchemyUpscaleLCMRequestBody(
     image_data_url='<value>',
@@ -104,6 +106,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.realtime_canvas.perform_inpainting_lcm(request=operations.PerformInpaintingLCMRequestBody(
     image_data_url='<value>',
     mask_data_url='<value>',
@@ -145,6 +148,7 @@ from leonardoaisdk.models import operations
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.realtime_canvas.perform_instant_refine(request=operations.PerformInstantRefineRequestBody(
     image_data_url='<value>',

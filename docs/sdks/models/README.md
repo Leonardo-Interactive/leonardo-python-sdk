@@ -22,6 +22,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.models.create_model(request=operations.CreateModelRequestBody(
     dataset_id='<value>',
     instance_prompt='<value>',
@@ -63,6 +64,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.models.delete_model_by_id(id='<value>')
 
 if res.object is not None:
@@ -100,6 +102,7 @@ s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+
 res = s.models.get_model_by_id(id='<value>')
 
 if res.object is not None:
@@ -136,6 +139,7 @@ import leonardoaisdk
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
+
 
 res = s.models.list_platform_models()
 

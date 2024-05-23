@@ -21,8 +21,8 @@ class ThreeDModelAssets:
         """
         hook_ctx = HookContext(operation_id='delete3DModelById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.Delete3DModelByIDRequest(
-            id=id,
             request_body=request_body,
+            id=id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -86,8 +86,8 @@ class ThreeDModelAssets:
         """
         hook_ctx = HookContext(operation_id='get3DModelById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.Get3DModelByIDRequest(
-            id=id,
             request_body=request_body,
+            id=id,
             limit=limit,
             offset=offset,
         )
@@ -154,10 +154,10 @@ class ThreeDModelAssets:
         """
         hook_ctx = HookContext(operation_id='get3DModelsByUserId', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.Get3DModelsByUserIDRequest(
-            user_id=user_id,
             request_body=request_body,
             limit=limit,
             offset=offset,
+            user_id=user_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
