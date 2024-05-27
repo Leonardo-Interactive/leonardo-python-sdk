@@ -5,7 +5,10 @@ from enum import Enum
 
 
 class ControlnetType(str, Enum):
-    r"""The type of ControlNet to use."""
+    r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+
+    Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     POSE = 'POSE'
     CANNY = 'CANNY'
     DEPTH = 'DEPTH'

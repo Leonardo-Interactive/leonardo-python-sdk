@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.shared import controlnet_input as shared_controlnet_input
 from ...models.shared import controlnet_type as shared_controlnet_type
 from ...models.shared import element_input as shared_element_input
 from ...models.shared import sd_generation_schedulers as shared_sd_generation_schedulers
@@ -30,9 +31,16 @@ class CreateGenerationRequestBody:
     contrast_ratio: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contrastRatio'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive."""
     control_net: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNet'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
-    r"""Enable to use ControlNet. Requires an init image to be provided. Requires a model based on SD v1.5"""
+    r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     control_net_type: Optional[shared_controlnet_type.ControlnetType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNetType'), 'exclude': lambda f: f is None }})
-    r"""The type of ControlNet to use."""
+    r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
+    controlnets: Optional[List[shared_controlnet_input.ControlnetInput]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlnets'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     elements: Optional[List[shared_element_input.ElementInput]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('elements'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     expanded_domain: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandedDomain'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Enable to use the Expanded Domain feature of Alchemy."""
@@ -96,7 +104,10 @@ class CreateGenerationRequestBody:
     upscale_ratio: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upscaleRatio'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""How much the image should be upscaled. (Enterprise Only)"""
     weighting: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weighting'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
-    r"""How much weighting to use for ControlNet. This parameter works with controlNet and controlNetType."""
+    r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     width: Optional[int] = dataclasses.field(default=1024, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
     

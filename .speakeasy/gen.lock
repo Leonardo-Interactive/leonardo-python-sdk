@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 7b2ad4afc01fdd9efa952567fa3b247f
+  docChecksum: 8446f60bbfe4ceae9f7f4945e95ff557
   docVersion: v1.0.0
-  speakeasyVersion: 1.295.1
-  generationVersion: 2.335.5
-  releaseVersion: 5.4.4
-  configChecksum: a6f8e0cc3035c65a237484429d2e8163
+  speakeasyVersion: 1.296.1
+  generationVersion: 2.338.1
+  releaseVersion: 5.5.0
+  configChecksum: 926bb24cd9c1f8100fd3e91c58c1608c
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -16,6 +16,7 @@ features:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.3
     core: 4.6.8
+    deprecations: 2.81.1
     devContainers: 2.86.0
     flattening: 2.81.1
     getRequestBodies: 2.81.1
@@ -93,6 +94,7 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/sd_generation_schedulers.py
   - src/leonardoaisdk/models/shared/sd_generation_style.py
   - src/leonardoaisdk/models/shared/element_input.py
+  - src/leonardoaisdk/models/shared/controlnet_input.py
   - src/leonardoaisdk/models/shared/controlnet_type.py
   - src/leonardoaisdk/models/shared/job_status.py
   - src/leonardoaisdk/models/shared/variation_type.py
@@ -293,6 +295,9 @@ generatedFiles:
   - docs/models/shared/sdgenerationschedulers.md
   - docs/models/shared/sdgenerationstyle.md
   - docs/models/shared/elementinput.md
+  - docs/models/shared/initimagetype.md
+  - docs/models/shared/strengthtype.md
+  - docs/models/shared/controlnetinput.md
   - docs/models/shared/controlnettype.md
   - docs/models/shared/jobstatus.md
   - docs/models/shared/variationtype.md
