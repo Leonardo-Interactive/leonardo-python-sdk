@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 82c7ac42c922a46aa5fc8804655d02bc
+  docChecksum: ccea4d36ebd5eea281cd3bd2e9664c26
   docVersion: v1.0.0
-  speakeasyVersion: 1.299.6
-  generationVersion: 2.338.12
-  releaseVersion: 5.5.2
-  configChecksum: 9a342586e68ed58762286e58b1210ddc
+  speakeasyVersion: 1.306.0
+  generationVersion: 2.340.3
+  releaseVersion: 5.5.3
+  configChecksum: ec9f1e3020838969cb04f89aa25405c8
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -29,13 +29,13 @@ features:
     sdkHooks: 0.1.0
 generatedFiles:
   - src/leonardoaisdk/sdkconfiguration.py
+  - src/leonardoaisdk/init_images.py
   - src/leonardoaisdk/dataset.py
   - src/leonardoaisdk/elements.py
   - src/leonardoaisdk/image.py
   - src/leonardoaisdk/realtime_canvas.py
   - src/leonardoaisdk/motion.py
   - src/leonardoaisdk/texture.py
-  - src/leonardoaisdk/init_images.py
   - src/leonardoaisdk/user.py
   - src/leonardoaisdk/models_.py
   - src/leonardoaisdk/threed_model_assets.py
@@ -51,6 +51,10 @@ generatedFiles:
   - src/leonardoaisdk/utils/retries.py
   - src/leonardoaisdk/utils/utils.py
   - src/leonardoaisdk/models/errors/sdkerror.py
+  - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
+  - src/leonardoaisdk/models/operations/getinitimagebyid.py
+  - src/leonardoaisdk/models/operations/uploadcanvasinitimage.py
+  - src/leonardoaisdk/models/operations/uploadinitimage.py
   - src/leonardoaisdk/models/operations/createdataset.py
   - src/leonardoaisdk/models/operations/deletedatasetbyid.py
   - src/leonardoaisdk/models/operations/getdatasetbyid.py
@@ -70,9 +74,6 @@ generatedFiles:
   - src/leonardoaisdk/models/operations/deletetexturegenerationbyid.py
   - src/leonardoaisdk/models/operations/gettexturegenerationbyid.py
   - src/leonardoaisdk/models/operations/gettexturegenerationsbymodelid.py
-  - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
-  - src/leonardoaisdk/models/operations/getinitimagebyid.py
-  - src/leonardoaisdk/models/operations/uploadinitimage.py
   - src/leonardoaisdk/models/operations/getuserself.py
   - src/leonardoaisdk/models/operations/createmodel.py
   - src/leonardoaisdk/models/operations/deletemodelbyid.py
@@ -96,6 +97,7 @@ generatedFiles:
   - src/leonardoaisdk/models/shared/element_input.py
   - src/leonardoaisdk/models/shared/controlnet_input.py
   - src/leonardoaisdk/models/shared/controlnet_type.py
+  - src/leonardoaisdk/models/shared/canvasrequesttype.py
   - src/leonardoaisdk/models/shared/job_status.py
   - src/leonardoaisdk/models/shared/variation_type.py
   - src/leonardoaisdk/models/shared/lcm_generation_style.py
@@ -109,6 +111,22 @@ generatedFiles:
   - src/leonardoaisdk/models/errors/__init__.py
   - src/leonardoaisdk/models/operations/__init__.py
   - src/leonardoaisdk/models/shared/__init__.py
+  - docs/models/operations/deleteinitimagebyidrequest.md
+  - docs/models/operations/initimages.md
+  - docs/models/operations/deleteinitimagebyidresponsebody.md
+  - docs/models/operations/deleteinitimagebyidresponse.md
+  - docs/models/operations/getinitimagebyidrequest.md
+  - docs/models/operations/getinitimagebyidinitimages.md
+  - docs/models/operations/getinitimagebyidresponsebody.md
+  - docs/models/operations/getinitimagebyidresponse.md
+  - docs/models/operations/uploadcanvasinitimagerequestbody.md
+  - docs/models/operations/canvasinitimageuploadoutput.md
+  - docs/models/operations/uploadcanvasinitimageresponsebody.md
+  - docs/models/operations/uploadcanvasinitimageresponse.md
+  - docs/models/operations/uploadinitimagerequestbody.md
+  - docs/models/operations/initimageuploadoutput.md
+  - docs/models/operations/uploadinitimageresponsebody.md
+  - docs/models/operations/uploadinitimageresponse.md
   - docs/models/operations/createdatasetrequestbody.md
   - docs/models/operations/datasets.md
   - docs/models/operations/createdatasetresponsebody.md
@@ -201,18 +219,6 @@ generatedFiles:
   - docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md
   - docs/models/operations/gettexturegenerationsbymodelidresponsebody.md
   - docs/models/operations/gettexturegenerationsbymodelidresponse.md
-  - docs/models/operations/deleteinitimagebyidrequest.md
-  - docs/models/operations/initimages.md
-  - docs/models/operations/deleteinitimagebyidresponsebody.md
-  - docs/models/operations/deleteinitimagebyidresponse.md
-  - docs/models/operations/getinitimagebyidrequest.md
-  - docs/models/operations/getinitimagebyidinitimages.md
-  - docs/models/operations/getinitimagebyidresponsebody.md
-  - docs/models/operations/getinitimagebyidresponse.md
-  - docs/models/operations/uploadinitimagerequestbody.md
-  - docs/models/operations/initimageuploadoutput.md
-  - docs/models/operations/uploadinitimageresponsebody.md
-  - docs/models/operations/uploadinitimageresponse.md
   - docs/models/operations/users.md
   - docs/models/operations/userdetails.md
   - docs/models/operations/getuserselfresponsebody.md
@@ -299,6 +305,7 @@ generatedFiles:
   - docs/models/shared/strengthtype.md
   - docs/models/shared/controlnetinput.md
   - docs/models/shared/controlnettype.md
+  - docs/models/shared/canvasrequesttype.md
   - docs/models/shared/jobstatus.md
   - docs/models/shared/variationtype.md
   - docs/models/shared/lcmgenerationstyle.md
@@ -309,13 +316,13 @@ generatedFiles:
   - docs/models/shared/universalupscalerstyle.md
   - docs/models/shared/security.md
   - docs/sdks/leonardoaisdk/README.md
+  - docs/sdks/initimages/README.md
   - docs/sdks/dataset/README.md
   - docs/sdks/elements/README.md
   - docs/sdks/image/README.md
   - docs/sdks/realtimecanvas/README.md
   - docs/sdks/motion/README.md
   - docs/sdks/texture/README.md
-  - docs/sdks/initimages/README.md
   - docs/sdks/user/README.md
   - docs/sdks/models/README.md
   - docs/sdks/threedmodelassets/README.md

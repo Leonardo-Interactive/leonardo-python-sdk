@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.shared import canvasrequesttype as shared_canvasrequesttype
 from ...models.shared import controlnet_input as shared_controlnet_input
 from ...models.shared import controlnet_type as shared_controlnet_type
 from ...models.shared import element_input as shared_element_input
@@ -28,6 +29,14 @@ class CreateGenerationRequestBody:
     UNSET='__SPEAKEASY_UNSET__'
     alchemy: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alchemy'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Enable to use Alchemy. Note: The appropriate Alchemy version is selected for the specified model. For example, XL models will use Alchemy V2."""
+    canvas_init_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canvasInitId'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""The ID of an initial image to use in Canvas Editor request."""
+    canvas_mask_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canvasMaskId'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""The ID of a mask image to use in Canvas Editor request."""
+    canvas_request: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canvasRequest'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""Whether the generation is for the Canvas Editor feature."""
+    canvas_request_type: Optional[shared_canvasrequesttype.CanvasRequestType] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canvasRequestType'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""The type of request for the Canvas Editor."""
     contrast_ratio: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contrastRatio'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive."""
     control_net: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlNet'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})

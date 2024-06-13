@@ -23,13 +23,13 @@ from typing import Callable, Dict, Optional, Union
 
 class LeonardoAiSDK:
     r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
+    init_images: InitImages
     dataset: Dataset
     elements: Elements
     image: Image
     realtime_canvas: RealtimeCanvas
     motion: Motion
     texture: Texture
-    init_images: InitImages
     user: User
     models: Models
     three_d_model_assets: ThreeDModelAssets
@@ -98,13 +98,13 @@ class LeonardoAiSDK:
 
 
     def _init_sdks(self):
+        self.init_images = InitImages(self.sdk_configuration)
         self.dataset = Dataset(self.sdk_configuration)
         self.elements = Elements(self.sdk_configuration)
         self.image = Image(self.sdk_configuration)
         self.realtime_canvas = RealtimeCanvas(self.sdk_configuration)
         self.motion = Motion(self.sdk_configuration)
         self.texture = Texture(self.sdk_configuration)
-        self.init_images = InitImages(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
         self.models = Models(self.sdk_configuration)
         self.three_d_model_assets = ThreeDModelAssets(self.sdk_configuration)

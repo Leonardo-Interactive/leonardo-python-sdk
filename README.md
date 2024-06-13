@@ -17,16 +17,13 @@ pip install Leonardo-Ai-SDK
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -37,6 +34,13 @@ if res.object is not None:
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
+
+### [init_images](docs/sdks/initimages/README.md)
+
+* [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
+* [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
+* [upload_canvas_init_image](docs/sdks/initimages/README.md#upload_canvas_init_image) - Upload Canvas Editor init and mask image
+* [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
 ### [dataset](docs/sdks/dataset/README.md)
 
@@ -74,12 +78,6 @@ if res.object is not None:
 * [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
 * [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
 * [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
-
-### [init_images](docs/sdks/initimages/README.md)
-
-* [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
-* [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
-* [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
 ### [user](docs/sdks/user/README.md)
 
@@ -136,7 +134,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import errors, operations
+from leonardoaisdk.models import errors
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -144,9 +142,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = None
 try:
-    res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+    res = s.init_images.delete_init_image_by_id(id='<value>')
 
 except errors.SDKError as e:
     # handle exception
@@ -194,7 +190,6 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     server_idx=0,
@@ -202,9 +197,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -218,7 +211,6 @@ if res.object is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
@@ -226,9 +218,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
@@ -253,16 +243,13 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+res = s.init_images.delete_init_image_by_id(id='<value>')
 
 if res.object is not None:
     # handle response
