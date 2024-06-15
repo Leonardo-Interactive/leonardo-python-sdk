@@ -3,10 +3,10 @@ id: de81127b-e65c-4970-8911-8f8874953a42
 management:
   docChecksum: ccea4d36ebd5eea281cd3bd2e9664c26
   docVersion: v1.0.0
-  speakeasyVersion: 1.307.2
-  generationVersion: 2.342.2
-  releaseVersion: 5.5.4
-  configChecksum: e74a6670d6bc5553f751cf4347711aa4
+  speakeasyVersion: 1.308.1
+  generationVersion: 2.342.6
+  releaseVersion: 5.5.5
+  configChecksum: 27f5429b74a5d3856a3ffeb2ee5a9725
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -15,7 +15,7 @@ features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.3
-    core: 4.6.10
+    core: 4.6.11
     deprecations: 2.81.1
     devContainers: 2.86.0
     flattening: 2.81.1
