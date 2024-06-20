@@ -3,10 +3,10 @@ id: de81127b-e65c-4970-8911-8f8874953a42
 management:
   docChecksum: ccea4d36ebd5eea281cd3bd2e9664c26
   docVersion: v1.0.0
-  speakeasyVersion: 1.308.1
-  generationVersion: 2.342.6
-  releaseVersion: 5.5.5
-  configChecksum: 27f5429b74a5d3856a3ffeb2ee5a9725
+  speakeasyVersion: 1.310.0
+  generationVersion: 2.347.4
+  releaseVersion: 5.5.6
+  configChecksum: 985ef369a22118699c327b79f1a70de0
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -43,7 +43,6 @@ generatedFiles:
   - src/leonardoaisdk/prompt.py
   - src/leonardoaisdk/variation.py
   - src/leonardoaisdk/sdk.py
-  - Makefile
   - py.typed
   - pylintrc
   - scripts/publish.sh
