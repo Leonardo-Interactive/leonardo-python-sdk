@@ -50,12 +50,12 @@ class PricingCalculatorPricingCalculatorObject:
     r"""The number of elements used for the generation."""
     num_images: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numImages'), 'exclude': lambda f: f is None }})
     r"""The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."""
-    prompt_magic: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagic'), 'exclude': lambda f: f is None }})
-    r"""Enable to use prompt magic."""
+    prompt_magic: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagic'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
+    r"""Enable to use Prompt Magic."""
     prompt_magic_strength: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagicStrength'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
     r"""Strength of prompt magic. Must be a float between 0.1 and 1.0"""
-    prompt_magic_strength_arg: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagicStrengthArg'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
-    r"""Strength of prompt magic."""
+    prompt_magic_version: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('promptMagicVersion'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
+    r"""Prompt magic version v2 or v3, for use when promptMagic: true"""
     
 
 
