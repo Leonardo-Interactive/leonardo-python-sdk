@@ -51,6 +51,10 @@ class CreateGenerationRequestBody:
     """
     controlnets: Optional[List[shared_controlnet_input.ControlnetInput]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('controlnets'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     elements: Optional[List[shared_element_input.ElementInput]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('elements'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    enhance_prompt: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enhancePrompt'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""When enabled, your prompt is expanded to include more detail."""
+    enhance_prompt_instruction: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enhancePromptInstruction'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
+    r"""When enhancePrompt is enabled, the prompt is enhanced based on the given instructions."""
     expanded_domain: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandedDomain'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
     r"""Enable to use the Expanded Domain feature of Alchemy."""
     fantasy_avatar: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fantasyAvatar'), 'exclude': lambda f: f is CreateGenerationRequestBody.UNSET }})
