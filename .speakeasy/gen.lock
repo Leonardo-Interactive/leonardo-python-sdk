@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: e5deb43d96d4d418550e1cec0de131a1
+  docChecksum: 3a41efc27f0622ed34034d315390d0f6
   docVersion: v1.0.0
-  speakeasyVersion: 1.331.0
-  generationVersion: 2.365.0
-  releaseVersion: 5.6.1
-  configChecksum: a5c775bd24d60b9641a23e2e546365f0
+  speakeasyVersion: 1.348.1
+  generationVersion: 2.380.1
+  releaseVersion: 5.6.2
+  configChecksum: ba86eda1910f0cb7d0d6992db497e5e4
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -15,7 +15,7 @@ features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.3
-    core: 4.8.1
+    core: 4.8.4
     deprecations: 2.81.1
     devContainers: 2.86.0
     flattening: 2.81.1
@@ -338,3 +338,4 @@ generatedFiles:
   - src/leonardoaisdk/_hooks/sdkhooks.py
   - src/leonardoaisdk/_hooks/types.py
   - src/leonardoaisdk/_hooks/__init__.py
+  - CONTRIBUTING.md
