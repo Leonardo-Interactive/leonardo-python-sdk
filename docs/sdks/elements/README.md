@@ -1,6 +1,8 @@
 # Elements
 (*elements*)
 
+## Overview
+
 ### Available Operations
 
 * [list_elements](#list_elements) - List Elements
@@ -27,10 +29,10 @@ if res.object is not None:
 
 ```
 
-
 ### Response
 
 **[operations.ListElementsResponse](../../models/operations/listelementsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

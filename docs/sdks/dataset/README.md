@@ -1,6 +1,8 @@
 # Dataset
 (*dataset*)
 
+## Overview
+
 ### Available Operations
 
 * [create_dataset](#create_dataset) - Create a Dataset
@@ -40,15 +42,16 @@ if res.object is not None:
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `request`                                                                                  | [operations.CreateDatasetRequestBody](../../models/operations/createdatasetrequestbody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
-
 ### Response
 
 **[operations.CreateDatasetResponse](../../models/operations/createdatasetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_dataset_by_id
 
@@ -64,7 +67,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.delete_dataset_by_id(id='<value>')
+res = s.dataset.delete_dataset_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -78,15 +81,16 @@ if res.object is not None:
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 | `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to delete. |
 
-
 ### Response
 
 **[operations.DeleteDatasetByIDResponse](../../models/operations/deletedatasetbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_dataset_by_id
 
@@ -102,7 +106,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.get_dataset_by_id(id='<value>')
+res = s.dataset.get_dataset_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -116,15 +120,16 @@ if res.object is not None:
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 | `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to return. |
 
-
 ### Response
 
 **[operations.GetDatasetByIDResponse](../../models/operations/getdatasetbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## upload_dataset_image
 
@@ -141,9 +146,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.upload_dataset_image(request_body=operations.UploadDatasetImageRequestBody(
+res = s.dataset.upload_dataset_image(dataset_id='<value>', request_body=operations.UploadDatasetImageRequestBody(
     extension='mpg4',
-), dataset_id='<value>')
+))
 
 if res.object is not None:
     # handle response
@@ -158,15 +163,16 @@ if res.object is not None:
 | `request_body`                                                                                       | [operations.UploadDatasetImageRequestBody](../../models/operations/uploaddatasetimagerequestbody.md) | :heavy_check_mark:                                                                                   | Query parameters provided in the request body as a JSON object                                       |
 | `dataset_id`                                                                                         | *str*                                                                                                | :heavy_check_mark:                                                                                   | _"datasetId" is required                                                                             |
 
-
 ### Response
 
 **[operations.UploadDatasetImageResponse](../../models/operations/uploaddatasetimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## upload_dataset_image_from_gen
 
@@ -183,9 +189,9 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.dataset.upload_dataset_image_from_gen(request_body=operations.UploadDatasetImageFromGenRequestBody(
+res = s.dataset.upload_dataset_image_from_gen(dataset_id='<value>', request_body=operations.UploadDatasetImageFromGenRequestBody(
     generated_image_id='<value>',
-), dataset_id='<value>')
+))
 
 if res.object is not None:
     # handle response
@@ -200,10 +206,10 @@ if res.object is not None:
 | `request_body`                                                                                                     | [operations.UploadDatasetImageFromGenRequestBody](../../models/operations/uploaddatasetimagefromgenrequestbody.md) | :heavy_check_mark:                                                                                                 | Query parameters to be provided in the request body as a JSON object                                               |
 | `dataset_id`                                                                                                       | *str*                                                                                                              | :heavy_check_mark:                                                                                                 | The ID of the dataset to upload the image to.                                                                      |
 
-
 ### Response
 
 **[operations.UploadDatasetImageFromGenResponse](../../models/operations/uploaddatasetimagefromgenresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

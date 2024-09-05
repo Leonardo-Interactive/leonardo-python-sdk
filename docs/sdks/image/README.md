@@ -1,6 +1,8 @@
 # Image
 (*image*)
 
+## Overview
+
 ### Available Operations
 
 * [create_generation](#create_generation) - Create a Generation of Images
@@ -37,15 +39,16 @@ if res.object is not None:
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `request`                                                                                        | [operations.CreateGenerationRequestBody](../../models/operations/creategenerationrequestbody.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 
-
 ### Response
 
 **[operations.CreateGenerationResponse](../../models/operations/creategenerationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_generation_by_id
 
@@ -61,7 +64,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.image.delete_generation_by_id(id='<value>')
+res = s.image.delete_generation_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -75,15 +78,16 @@ if res.object is not None:
 | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | `id`                                | *str*                               | :heavy_check_mark:                  | The ID of the generation to delete. |
 
-
 ### Response
 
 **[operations.DeleteGenerationByIDResponse](../../models/operations/deletegenerationbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_generation_by_id
 
@@ -99,7 +103,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.image.get_generation_by_id(id='<value>')
+res = s.image.get_generation_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -113,15 +117,16 @@ if res.object is not None:
 | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | `id`                                | *str*                               | :heavy_check_mark:                  | The ID of the generation to return. |
 
-
 ### Response
 
 **[operations.GetGenerationByIDResponse](../../models/operations/getgenerationbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_generations_by_user_id
 
@@ -137,7 +142,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.image.get_generations_by_user_id(user_id='<value>', limit=10, offset=0)
+res = s.image.get_generations_by_user_id(user_id='<value>')
 
 if res.object is not None:
     # handle response
@@ -153,10 +158,10 @@ if res.object is not None:
 | `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 | `offset`           | *Optional[int]*    | :heavy_minus_sign: | N/A                |
 
-
 ### Response
 
 **[operations.GetGenerationsByUserIDResponse](../../models/operations/getgenerationsbyuseridresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

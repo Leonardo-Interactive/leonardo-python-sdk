@@ -42,6 +42,8 @@ class PricingCalculatorPricingCalculatorObject:
     r"""The Step Count to use for the generation. Must be between 10 and 60."""
     is_model_custom: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isModelCustom'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
     r"""Enable to use custom model."""
+    is_phoenix: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isPhoenix'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
+    r"""Enable to use Phoenix model."""
     is_sdxl: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isSDXL'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})
     r"""Enable to use SDXL model."""
     is_sdxl_lightning: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isSDXLLightning'), 'exclude': lambda f: f is PricingCalculatorPricingCalculatorObject.UNSET }})

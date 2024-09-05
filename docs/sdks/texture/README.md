@@ -1,6 +1,8 @@
 # Texture
 (*texture*)
 
+## Overview
+
 ### Available Operations
 
 * [create_texture_generation](#create_texture_generation) - Create Texture Generation
@@ -16,14 +18,13 @@ This endpoint will generate a texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.texture.create_texture_generation(request=operations.CreateTextureGenerationRequestBody())
+res = s.texture.create_texture_generation()
 
 if res.object is not None:
     # handle response
@@ -37,15 +38,16 @@ if res.object is not None:
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                      | [operations.CreateTextureGenerationRequestBody](../../models/operations/createtexturegenerationrequestbody.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
-
 ### Response
 
 **[operations.CreateTextureGenerationResponse](../../models/operations/createtexturegenerationresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_texture_generation_by_id
 
@@ -55,14 +57,13 @@ This endpoint deletes the specific texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.texture.delete_texture_generation_by_id(id='<value>', request_body=operations.DeleteTextureGenerationByIDRequestBody())
+res = s.texture.delete_texture_generation_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -77,15 +78,16 @@ if res.object is not None:
 | `id`                                                                                                                             | *str*                                                                                                                            | :heavy_check_mark:                                                                                                               | _"id" is required (enter it either in parameters or request body)_                                                               |
 | `request_body`                                                                                                                   | [Optional[operations.DeleteTextureGenerationByIDRequestBody]](../../models/operations/deletetexturegenerationbyidrequestbody.md) | :heavy_minus_sign:                                                                                                               | Query parameters can also be provided in the request body as a JSON object                                                       |
 
-
 ### Response
 
 **[operations.DeleteTextureGenerationByIDResponse](../../models/operations/deletetexturegenerationbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_texture_generation_by_id
 
@@ -95,14 +97,13 @@ This endpoint gets the specific texture generation.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.texture.get_texture_generation_by_id(id='<value>', request_body=operations.GetTextureGenerationByIDRequestBody(), limit=10, offset=0)
+res = s.texture.get_texture_generation_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -119,15 +120,16 @@ if res.object is not None:
 | `limit`                                                                                                                    | *Optional[int]*                                                                                                            | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
 | `offset`                                                                                                                   | *Optional[int]*                                                                                                            | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
 
-
 ### Response
 
 **[operations.GetTextureGenerationByIDResponse](../../models/operations/gettexturegenerationbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_texture_generations_by_model_id
 
@@ -137,14 +139,13 @@ This endpoint gets the specific texture generations by the 3d model id.
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.texture.get_texture_generations_by_model_id(model_id='<value>', request_body=operations.GetTextureGenerationsByModelIDRequestBody(), limit=10, offset=0)
+res = s.texture.get_texture_generations_by_model_id(model_id='<value>')
 
 if res.object is not None:
     # handle response
@@ -161,10 +162,10 @@ if res.object is not None:
 | `limit`                                                                                                                                | *Optional[int]*                                                                                                                        | :heavy_minus_sign:                                                                                                                     | N/A                                                                                                                                    |
 | `offset`                                                                                                                               | *Optional[int]*                                                                                                                        | :heavy_minus_sign:                                                                                                                     | N/A                                                                                                                                    |
 
-
 ### Response
 
 **[operations.GetTextureGenerationsByModelIDResponse](../../models/operations/gettexturegenerationsbymodelidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

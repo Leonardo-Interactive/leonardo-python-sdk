@@ -1,6 +1,8 @@
 # User
 (*user*)
 
+## Overview
+
 ### Available Operations
 
 * [get_user_self](#get_user_self) - Get user information
@@ -27,10 +29,10 @@ if res.object is not None:
 
 ```
 
-
 ### Response
 
 **[operations.GetUserSelfResponse](../../models/operations/getuserselfresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

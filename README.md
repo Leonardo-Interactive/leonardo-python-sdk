@@ -2,8 +2,28 @@
 
 <a href="https://codespaces.new/Leonardo-Interactive/leonardo-python-sdk.git/tree/main"><img src="https://github.com/codespaces/badge.svg" /></a>
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Rest Endpoints: Leonardo.Ai API OpenAPI specification.
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+The SDK can be installed using the *pip* package manager, with dependencies and metadata stored in the `setup.py` file.
 
 ```bash
 pip install Leonardo-Ai-SDK
@@ -23,7 +43,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -142,7 +162,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 
 res = None
 try:
-    res = s.init_images.delete_init_image_by_id(id='<value>')
+    res = s.init_images.delete_init_image_by_id(id='<id>')
 
 except errors.SDKError as e:
     # handle exception
@@ -197,7 +217,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -218,7 +238,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -249,7 +269,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response

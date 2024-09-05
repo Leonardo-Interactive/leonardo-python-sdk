@@ -1,6 +1,8 @@
 # PricingCalculator
 (*pricing_calculator*)
 
+## Overview
+
 ### Available Operations
 
 * [pricing_calculator](#pricing_calculator) - Calculating API Cost
@@ -13,14 +15,13 @@ This endpoint returns the cost used for generating images using a particular ser
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.pricing_calculator.pricing_calculator(request=operations.PricingCalculatorRequestBody())
+res = s.pricing_calculator.pricing_calculator()
 
 if res.object is not None:
     # handle response
@@ -34,10 +35,10 @@ if res.object is not None:
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `request`                                                                                          | [operations.PricingCalculatorRequestBody](../../models/operations/pricingcalculatorrequestbody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
-
 ### Response
 
 **[operations.PricingCalculatorResponse](../../models/operations/pricingcalculatorresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

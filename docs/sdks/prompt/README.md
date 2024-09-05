@@ -1,6 +1,8 @@
 # Prompt
 (*prompt*)
 
+## Overview
+
 ### Available Operations
 
 * [prompt_improve](#prompt_improve) - Improve a Prompt
@@ -37,15 +39,16 @@ if res.object is not None:
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `request`                                                                                  | [operations.PromptImproveRequestBody](../../models/operations/promptimproverequestbody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
-
 ### Response
 
 **[operations.PromptImproveResponse](../../models/operations/promptimproveresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## prompt_random
 
@@ -69,10 +72,10 @@ if res.object is not None:
 
 ```
 
-
 ### Response
 
 **[operations.PromptRandomResponse](../../models/operations/promptrandomresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

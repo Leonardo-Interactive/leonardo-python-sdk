@@ -1,6 +1,8 @@
 # Variation
 (*variation*)
 
+## Overview
+
 ### Available Operations
 
 * [create_universal_upscaler_job](#create_universal_upscaler_job) - Create using Universal Upscaler
@@ -38,15 +40,16 @@ if res.object is not None:
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                            | [operations.CreateUniversalUpscalerJobRequestBody](../../models/operations/createuniversalupscalerjobrequestbody.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
 
-
 ### Response
 
 **[operations.CreateUniversalUpscalerJobResponse](../../models/operations/createuniversalupscalerjobresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_variation_no_bg
 
@@ -79,15 +82,16 @@ if res.object is not None:
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                              | [operations.CreateVariationNoBGRequestBody](../../models/operations/createvariationnobgrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
-
 ### Response
 
 **[operations.CreateVariationNoBGResponse](../../models/operations/createvariationnobgresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_variation_unzoom
 
@@ -97,14 +101,13 @@ This endpoint will create an unzoom variation for the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.variation.create_variation_unzoom(request=operations.CreateVariationUnzoomRequestBody())
+res = s.variation.create_variation_unzoom()
 
 if res.object is not None:
     # handle response
@@ -118,15 +121,16 @@ if res.object is not None:
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.CreateVariationUnzoomRequestBody](../../models/operations/createvariationunzoomrequestbody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
-
 ### Response
 
 **[operations.CreateVariationUnzoomResponse](../../models/operations/createvariationunzoomresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_variation_upscale
 
@@ -136,16 +140,13 @@ This endpoint will create an upscale for the provided image ID
 
 ```python
 import leonardoaisdk
-from leonardoaisdk.models import operations
 
 s = leonardoaisdk.LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.variation.create_variation_upscale(request=operations.CreateVariationUpscaleRequestBody(
-    id='<id>',
-))
+res = s.variation.create_variation_upscale()
 
 if res.object is not None:
     # handle response
@@ -159,15 +160,16 @@ if res.object is not None:
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                    | [operations.CreateVariationUpscaleRequestBody](../../models/operations/createvariationupscalerequestbody.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
-
 ### Response
 
 **[operations.CreateVariationUpscaleResponse](../../models/operations/createvariationupscaleresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_variation_by_id
 
@@ -183,7 +185,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.variation.get_variation_by_id(id='<value>')
+res = s.variation.get_variation_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -197,10 +199,10 @@ if res.object is not None:
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | "id" is required   |
 
-
 ### Response
 
 **[operations.GetVariationByIDResponse](../../models/operations/getvariationbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

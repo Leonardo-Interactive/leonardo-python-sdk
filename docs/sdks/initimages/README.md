@@ -1,6 +1,8 @@
 # InitImages
 (*init_images*)
 
+## Overview
+
 ### Available Operations
 
 * [delete_init_image_by_id](#delete_init_image_by_id) - Delete init image
@@ -22,7 +24,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.delete_init_image_by_id(id='<value>')
+res = s.init_images.delete_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -36,15 +38,16 @@ if res.object is not None:
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
 
-
 ### Response
 
 **[operations.DeleteInitImageByIDResponse](../../models/operations/deleteinitimagebyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_init_image_by_id
 
@@ -60,7 +63,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.init_images.get_init_image_by_id(id='<value>')
+res = s.init_images.get_init_image_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -74,15 +77,16 @@ if res.object is not None:
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
 
-
 ### Response
 
 **[operations.GetInitImageByIDResponse](../../models/operations/getinitimagebyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## upload_canvas_init_image
 
@@ -116,15 +120,16 @@ if res.object is not None:
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.UploadCanvasInitImageRequestBody](../../models/operations/uploadcanvasinitimagerequestbody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
-
 ### Response
 
 **[operations.UploadCanvasInitImageResponse](../../models/operations/uploadcanvasinitimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## upload_init_image
 
@@ -157,10 +162,10 @@ if res.object is not None:
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `request`                                                                                      | [operations.UploadInitImageRequestBody](../../models/operations/uploadinitimagerequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
-
 ### Response
 
 **[operations.UploadInitImageResponse](../../models/operations/uploadinitimageresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

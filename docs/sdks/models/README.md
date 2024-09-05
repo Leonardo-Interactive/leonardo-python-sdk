@@ -1,6 +1,8 @@
 # Models
 (*models*)
 
+## Overview
+
 ### Available Operations
 
 * [create_model](#create_model) - Train a Custom Model
@@ -41,15 +43,16 @@ if res.object is not None:
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `request`                                                                              | [operations.CreateModelRequestBody](../../models/operations/createmodelrequestbody.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
-
 ### Response
 
 **[operations.CreateModelResponse](../../models/operations/createmodelresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_model_by_id
 
@@ -65,7 +68,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.models.delete_model_by_id(id='<value>')
+res = s.models.delete_model_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -79,15 +82,16 @@ if res.object is not None:
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
 | `id`                           | *str*                          | :heavy_check_mark:             | The ID of the model to delete. |
 
-
 ### Response
 
 **[operations.DeleteModelByIDResponse](../../models/operations/deletemodelbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_model_by_id
 
@@ -103,7 +107,7 @@ s = leonardoaisdk.LeonardoAiSDK(
 )
 
 
-res = s.models.get_model_by_id(id='<value>')
+res = s.models.get_model_by_id(id='<id>')
 
 if res.object is not None:
     # handle response
@@ -117,15 +121,16 @@ if res.object is not None:
 | ------------------------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
 | `id`                                  | *str*                                 | :heavy_check_mark:                    | The ID of the custom model to return. |
 
-
 ### Response
 
 **[operations.GetModelByIDResponse](../../models/operations/getmodelbyidresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## list_platform_models
 
@@ -149,10 +154,10 @@ if res.object is not None:
 
 ```
 
-
 ### Response
 
 **[operations.ListPlatformModelsResponse](../../models/operations/listplatformmodelsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

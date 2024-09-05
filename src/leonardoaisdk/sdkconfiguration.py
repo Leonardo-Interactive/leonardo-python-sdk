@@ -24,9 +24,9 @@ class SDKConfiguration:
     server_idx: Optional[int] = 0
     language: str = 'python'
     openapi_doc_version: str = 'v1.0.0'
-    sdk_version: str = '5.6.2'
-    gen_version: str = '2.380.1'
-    user_agent: str = 'speakeasy-sdk/python 5.6.2 2.380.1 v1.0.0 Leonardo-Ai-SDK'
+    sdk_version: str = '5.6.3'
+    gen_version: str = '2.409.3'
+    user_agent: str = 'speakeasy-sdk/python 5.6.3 2.409.3 v1.0.0 Leonardo-Ai-SDK'
     retry_config: Optional[RetryConfig] = None
 
     def __post_init__(self):
