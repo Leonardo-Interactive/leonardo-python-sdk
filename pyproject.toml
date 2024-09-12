@@ -1,17 +1,17 @@
 [tool.poetry]
-name = "LeonardoAiSDK"
-version = "6.1.0"
+name = "Leonardo-Ai-SDK"
+version = "6.0.0"
 description = "Leonardo AI Python Client SDK"
 authors = ["Leonardo-Ai",]
 readme = "README-PYPI.md"
 repository = "https://github.com/Leonardo-Interactive/leonardo-python-sdk.git"
 packages = [
-    { include = "leonardoaisdk", from = "src" }
+    { include = "leonardo_ai_sdk", from = "src" }
 ]
-include = ["py.typed", "src/leonardoaisdk/py.typed"]
+include = ["py.typed", "src/leonardo_ai_sdk/py.typed"]
 
 [tool.setuptools.package-data]
-"*" = ["py.typed", "src/leonardoaisdk/py.typed"]
+"*" = ["py.typed", "src/leonardo_ai_sdk/py.typed"]
 
 [virtualenvs]
 in-project = true

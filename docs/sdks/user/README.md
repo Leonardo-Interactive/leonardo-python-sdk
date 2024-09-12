@@ -14,7 +14,7 @@ This endpoint will return your user information such as your user id, username, 
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

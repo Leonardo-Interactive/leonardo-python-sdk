@@ -13,7 +13,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 6.1.0
+  version: 6.0.0
   additionalDependencies:
     dev: {}
     main: {}
@@ -36,7 +36,7 @@ python:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   outputModelSuffix: output
-  packageName: LeonardoAiSDK
+  packageName: Leonardo-Ai-SDK
   projectUrls: {}
   responseFormat: envelope
   templateVersion: v2

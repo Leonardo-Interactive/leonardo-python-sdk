@@ -33,7 +33,7 @@ The SDK can be installed with either *pip* or *poetry* package managers.
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install LeonardoAiSDK
+pip install Leonardo-Ai-SDK
 ```
 
 ### Poetry
@@ -41,7 +41,7 @@ pip install LeonardoAiSDK
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add LeonardoAiSDK
+poetry add Leonardo-Ai-SDK
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -62,7 +62,7 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -81,7 +81,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 async def main():
     s = LeonardoAiSDK(
@@ -198,7 +198,7 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 from leonardoaisdk.utils import BackoffStrategy, RetryConfig
 
 s = LeonardoAiSDK(
@@ -216,7 +216,7 @@ if res.object is not None:
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 from leonardoaisdk.utils import BackoffStrategy, RetryConfig
 
 s = LeonardoAiSDK(
@@ -245,8 +245,8 @@ Handling errors in this SDK should largely match your expectations.  All operati
 ### Example
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
-from leonardoaisdk.models import errors
+from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import errors
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -277,7 +277,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -286,8 +286,8 @@ s = LeonardoAiSDK(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from leonardoaisdk import LeonardoAiSDK
-from leonardoaisdk.httpclient import AsyncHttpClient
+from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -365,7 +365,7 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     server_idx=0,
@@ -385,7 +385,7 @@ if res.object is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
@@ -416,7 +416,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -438,11 +438,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = LeonardoAiSDK(debug_logger=logging.getLogger("leonardoaisdk"))
+s = LeonardoAiSDK(debug_logger=logging.getLogger("leonardo_ai_sdk"))
 ```
 <!-- End Debugging [debug] -->
 

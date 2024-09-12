@@ -17,7 +17,7 @@ This endpoint will generate a LCM image generation.
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -56,7 +56,7 @@ This endpoint will perform Alchemy Upscale on a LCM image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -95,7 +95,7 @@ This endpoint will perform a inpainting on a LCM image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -134,7 +134,7 @@ This endpoint will perform instant refine on a LCM image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

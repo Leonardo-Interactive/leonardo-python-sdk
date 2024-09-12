@@ -17,7 +17,7 @@ This endpoint deletes an init image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -56,7 +56,7 @@ This endpoint will return a single init image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -95,7 +95,7 @@ This endpoint returns presigned details to upload an init image and a mask image
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -137,7 +137,7 @@ This endpoint returns presigned details to upload an init image to S3
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

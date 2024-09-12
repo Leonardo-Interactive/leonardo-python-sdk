@@ -18,7 +18,7 @@ This endpoint creates a new dataset
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -59,7 +59,7 @@ This endpoint deletes the specific dataset
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -98,7 +98,7 @@ This endpoint gets the specific dataset
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -137,7 +137,7 @@ This endpoint returns presigned details to upload a dataset image to S3
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -179,7 +179,7 @@ This endpoint will upload a previously generated image to the dataset
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

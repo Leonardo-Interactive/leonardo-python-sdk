@@ -14,7 +14,7 @@ This endpoint returns the cost used for generating images using a particular ser
 ### Example Usage
 
 ```python
-from leonardoaisdk import LeonardoAiSDK
+from leonardo_ai_sdk import LeonardoAiSDK
 
 s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
