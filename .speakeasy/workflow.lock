@@ -1,18 +1,18 @@
-speakeasyVersion: 1.396.2
+speakeasyVersion: 1.396.6
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:1d400f46802f80dfa12f3555ef3ec13ad32e2b087519bba365bf2b2053fbcedf
-        sourceBlobDigest: sha256:f03f5b69f5f0029381fd405b9985539c6af6fdfd3bd3f5e4b2f689f8710c2a57
+        sourceRevisionDigest: sha256:7e78991f2b5c7c3d5ee83e75a33f220c8b709a70830485db8b35c4187843d906
+        sourceBlobDigest: sha256:7795ce93c2cd2bed48f77a05eead55d73ce1d93227c230ae806913736ad38d19
         tags:
             - latest
+            - main
 targets:
     leonardo-python-sdk:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:1d400f46802f80dfa12f3555ef3ec13ad32e2b087519bba365bf2b2053fbcedf
-        sourceBlobDigest: sha256:f03f5b69f5f0029381fd405b9985539c6af6fdfd3bd3f5e4b2f689f8710c2a57
-        outLocation: /Users/marcel/Projects/Work/leonardo-python-sdk
+        sourceRevisionDigest: sha256:7e78991f2b5c7c3d5ee83e75a33f220c8b709a70830485db8b35c4187843d906
+        sourceBlobDigest: sha256:7795ce93c2cd2bed48f77a05eead55d73ce1d93227c230ae806913736ad38d19
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

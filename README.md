@@ -99,12 +99,8 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [init_images](docs/sdks/initimages/README.md)
-
-* [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
-* [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
-* [upload_canvas_init_image](docs/sdks/initimages/README.md#upload_canvas_init_image) - Upload Canvas Editor init and mask image
-* [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
+<details open>
+<summary>Available methods</summary>
 
 ### [dataset](docs/sdks/dataset/README.md)
 
@@ -125,27 +121,13 @@ asyncio.run(main())
 * [get_generation_by_id](docs/sdks/image/README.md#get_generation_by_id) - Get a Single Generation
 * [get_generations_by_user_id](docs/sdks/image/README.md#get_generations_by_user_id) - Get generations by user ID
 
-### [realtime_canvas](docs/sdks/realtimecanvas/README.md)
+### [init_images](docs/sdks/initimages/README.md)
 
-* [create_lcm_generation](docs/sdks/realtimecanvas/README.md#create_lcm_generation) - Create LCM Generation
-* [perform_alchemy_upscale_lcm](docs/sdks/realtimecanvas/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
-* [perform_inpainting_lcm](docs/sdks/realtimecanvas/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
-* [perform_instant_refine](docs/sdks/realtimecanvas/README.md#perform_instant_refine) - Perform instant refine on a LCM image
+* [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
+* [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
+* [upload_canvas_init_image](docs/sdks/initimages/README.md#upload_canvas_init_image) - Upload Canvas Editor init and mask image
+* [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
-### [motion](docs/sdks/motion/README.md)
-
-* [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
-
-### [texture](docs/sdks/texture/README.md)
-
-* [create_texture_generation](docs/sdks/texture/README.md#create_texture_generation) - Create Texture Generation
-* [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
-* [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
-* [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
-
-### [user](docs/sdks/user/README.md)
-
-* [get_user_self](docs/sdks/user/README.md#get_user_self) - Get user information
 
 ### [models](docs/sdks/models/README.md)
 
@@ -154,12 +136,9 @@ asyncio.run(main())
 * [get_model_by_id](docs/sdks/models/README.md#get_model_by_id) - Get a Single Custom Model by ID
 * [list_platform_models](docs/sdks/models/README.md#list_platform_models) - List Platform Models
 
-### [three_d_model_assets](docs/sdks/threedmodelassets/README.md)
+### [motion](docs/sdks/motion/README.md)
 
-* [delete3_d_model_by_id](docs/sdks/threedmodelassets/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
-* [get3_d_model_by_id](docs/sdks/threedmodelassets/README.md#get3_d_model_by_id) - Get 3D Model by ID
-* [get3_d_models_by_user_id](docs/sdks/threedmodelassets/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
-* [upload_model_asset](docs/sdks/threedmodelassets/README.md#upload_model_asset) - Upload 3D Model
+* [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
 
 ### [pricing_calculator](docs/sdks/pricingcalculator/README.md)
 
@@ -170,6 +149,31 @@ asyncio.run(main())
 * [prompt_improve](docs/sdks/prompt/README.md#prompt_improve) - Improve a Prompt
 * [prompt_random](docs/sdks/prompt/README.md#prompt_random) - Generate a Random prompt
 
+### [realtime_canvas](docs/sdks/realtimecanvas/README.md)
+
+* [create_lcm_generation](docs/sdks/realtimecanvas/README.md#create_lcm_generation) - Create LCM Generation
+* [perform_alchemy_upscale_lcm](docs/sdks/realtimecanvas/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
+* [perform_inpainting_lcm](docs/sdks/realtimecanvas/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
+* [perform_instant_refine](docs/sdks/realtimecanvas/README.md#perform_instant_refine) - Perform instant refine on a LCM image
+
+### [texture](docs/sdks/texture/README.md)
+
+* [create_texture_generation](docs/sdks/texture/README.md#create_texture_generation) - Create Texture Generation
+* [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
+* [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
+* [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
+
+### [three_d_model_assets](docs/sdks/threedmodelassets/README.md)
+
+* [delete3_d_model_by_id](docs/sdks/threedmodelassets/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
+* [get3_d_model_by_id](docs/sdks/threedmodelassets/README.md#get3_d_model_by_id) - Get 3D Model by ID
+* [get3_d_models_by_user_id](docs/sdks/threedmodelassets/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
+* [upload_model_asset](docs/sdks/threedmodelassets/README.md#upload_model_asset) - Upload 3D Model
+
+### [user](docs/sdks/user/README.md)
+
+* [get_user_self](docs/sdks/user/README.md#get_user_self) - Get user information
+
 ### [variation](docs/sdks/variation/README.md)
 
 * [create_universal_upscaler_job](docs/sdks/variation/README.md#create_universal_upscaler_job) - Create using Universal Upscaler
@@ -177,6 +181,8 @@ asyncio.run(main())
 * [create_variation_unzoom](docs/sdks/variation/README.md#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
 * [get_variation_by_id](docs/sdks/variation/README.md#get_variation_by_id) - Get variation by ID
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 

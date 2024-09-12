@@ -27,9 +27,9 @@ class SDKConfiguration:
     server_idx: Optional[int] = 0
     language: str = "python"
     openapi_doc_version: str = "v1.0.0"
-    sdk_version: str = "6.0.2"
-    gen_version: str = "2.415.0"
-    user_agent: str = "speakeasy-sdk/python 6.0.2 2.415.0 v1.0.0 LeonardoAiSDK"
+    sdk_version: str = "6.1.0"
+    gen_version: str = "2.415.6"
+    user_agent: str = "speakeasy-sdk/python 6.1.0 2.415.6 v1.0.0 LeonardoAiSDK"
     retry_config: OptionalNullable[RetryConfig] = Field(default_factory=lambda: UNSET)
     timeout_ms: Optional[int] = None
 
