@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Leonardo-Ai-SDK"
-version = "6.0.0"
+version = "6.0.1"
 description = "Leonardo AI Python Client SDK"
 authors = ["Leonardo-Ai",]
 readme = "README-PYPI.md"

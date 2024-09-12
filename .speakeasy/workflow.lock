@@ -2,16 +2,17 @@ speakeasyVersion: 1.396.6
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:d41c7865a5acee62ed515da09f0e40c9a56a972468939d135a8dcebfba3b7847
-        sourceBlobDigest: sha256:f03f5b69f5f0029381fd405b9985539c6af6fdfd3bd3f5e4b2f689f8710c2a57
+        sourceRevisionDigest: sha256:17eb04779d96a225add3ef8a596a7504debcbde5c58eb3b91a5275e3c68ccc62
+        sourceBlobDigest: sha256:7795ce93c2cd2bed48f77a05eead55d73ce1d93227c230ae806913736ad38d19
         tags:
             - latest
+            - main
 targets:
     leonardo-python-sdk:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:d41c7865a5acee62ed515da09f0e40c9a56a972468939d135a8dcebfba3b7847
-        sourceBlobDigest: sha256:f03f5b69f5f0029381fd405b9985539c6af6fdfd3bd3f5e4b2f689f8710c2a57
+        sourceRevisionDigest: sha256:17eb04779d96a225add3ef8a596a7504debcbde5c58eb3b91a5275e3c68ccc62
+        sourceBlobDigest: sha256:7795ce93c2cd2bed48f77a05eead55d73ce1d93227c230ae806913736ad38d19
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

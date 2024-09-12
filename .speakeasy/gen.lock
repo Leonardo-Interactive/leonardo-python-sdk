@@ -5,8 +5,8 @@ management:
   docVersion: v1.0.0
   speakeasyVersion: 1.396.6
   generationVersion: 2.415.6
-  releaseVersion: 6.0.0
-  configChecksum: 40ceb09e7ead974725cda4bc07cb5499
+  releaseVersion: 6.0.1
+  configChecksum: 390504f916e89bf560c0f144ba2f389e
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
