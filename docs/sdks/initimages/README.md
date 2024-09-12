@@ -17,14 +17,13 @@ This endpoint deletes an init image
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.init_images.delete_init_image_by_id(id='<id>')
+res = s.init_images.delete_init_image_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -34,9 +33,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | _"id" is required_                                                  |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -56,14 +56,13 @@ This endpoint will return a single init image
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.init_images.get_init_image_by_id(id='<id>')
+res = s.init_images.get_init_image_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -73,9 +72,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | _"id" is required_ |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | _"id" is required_                                                  |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -95,18 +95,16 @@ This endpoint returns presigned details to upload an init image and a mask image
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.init_images.upload_canvas_init_image(request=operations.UploadCanvasInitImageRequestBody(
-    init_extension='<value>',
-    mask_extension='<value>',
-))
+res = s.init_images.upload_canvas_init_image(request={
+    "init_extension": "<value>",
+    "mask_extension": "<value>",
+})
 
 if res.object is not None:
     # handle response
@@ -119,6 +117,7 @@ if res.object is not None:
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.UploadCanvasInitImageRequestBody](../../models/operations/uploadcanvasinitimagerequestbody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |
 
 ### Response
 
@@ -138,17 +137,15 @@ This endpoint returns presigned details to upload an init image to S3
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.init_images.upload_init_image(request=operations.UploadInitImageRequestBody(
-    extension='png',
-))
+res = s.init_images.upload_init_image(request={
+    "extension": "png",
+})
 
 if res.object is not None:
     # handle response
@@ -161,6 +158,7 @@ if res.object is not None:
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `request`                                                                                      | [operations.UploadInitImageRequestBody](../../models/operations/uploadinitimagerequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `retries`                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                               | :heavy_minus_sign:                                                                             | Configuration to override the default retry behavior of the client.                            |
 
 ### Response
 

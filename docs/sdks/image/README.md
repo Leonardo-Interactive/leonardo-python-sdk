@@ -17,15 +17,13 @@ This endpoint will generate images
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.image.create_generation(request=operations.CreateGenerationRequestBody())
+res = s.image.create_generation(request={})
 
 if res.object is not None:
     # handle response
@@ -38,6 +36,7 @@ if res.object is not None:
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `request`                                                                                        | [operations.CreateGenerationRequestBody](../../models/operations/creategenerationrequestbody.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `retries`                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                 | :heavy_minus_sign:                                                                               | Configuration to override the default retry behavior of the client.                              |
 
 ### Response
 
@@ -57,14 +56,13 @@ This endpoint deletes a specific generation
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.image.delete_generation_by_id(id='<id>')
+res = s.image.delete_generation_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -74,9 +72,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                           | Type                                | Required                            | Description                         |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| `id`                                | *str*                               | :heavy_check_mark:                  | The ID of the generation to delete. |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The ID of the generation to delete.                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -96,14 +95,13 @@ This endpoint will provide information about a specific generation
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.image.get_generation_by_id(id='<id>')
+res = s.image.get_generation_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -113,9 +111,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                           | Type                                | Required                            | Description                         |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| `id`                                | *str*                               | :heavy_check_mark:                  | The ID of the generation to return. |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The ID of the generation to return.                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -135,14 +134,13 @@ This endpoint returns all generations by a specific user
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.image.get_generations_by_user_id(user_id='<value>')
+res = s.image.get_generations_by_user_id(user_id="<value>")
 
 if res.object is not None:
     # handle response
@@ -152,11 +150,12 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `user_id`          | *str*              | :heavy_check_mark: | N/A                |
-| `limit`            | *Optional[int]*    | :heavy_minus_sign: | N/A                |
-| `offset`           | *Optional[int]*    | :heavy_minus_sign: | N/A                |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |
+| `limit`                                                             | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `offset`                                                            | *Optional[int]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 

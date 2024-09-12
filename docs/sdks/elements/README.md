@@ -14,12 +14,11 @@ Get a list of public Elements available for use with generations.
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.elements.list_elements()
 
@@ -28,6 +27,12 @@ if res.object is not None:
     pass
 
 ```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 

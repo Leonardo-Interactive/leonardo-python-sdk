@@ -6,7 +6,8 @@ from enum import Enum
 
 class UniversalUpscalerStyle(str, Enum):
     r"""The style to upscale images using universal upscaler with."""
-    GENERAL = 'GENERAL'
-    CINEMATIC = 'CINEMATIC'
-    TWO_D_ART_AND_ILLUSTRATION = '2D ART & ILLUSTRATION'
-    CG_ART_AND_GAME_ASSETS = 'CG ART & GAME ASSETS'
+
+    GENERAL = "GENERAL"
+    CINEMATIC = "CINEMATIC"
+    TWO_D_ART_AND_ILLUSTRATION = "2D ART & ILLUSTRATION"
+    CG_ART_AND_GAME_ASSETS = "CG ART & GAME ASSETS"

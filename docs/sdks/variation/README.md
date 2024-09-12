@@ -18,15 +18,13 @@ This endpoint will create a high resolution image using Universal Upscaler
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.variation.create_universal_upscaler_job(request=operations.CreateUniversalUpscalerJobRequestBody())
+res = s.variation.create_universal_upscaler_job(request={})
 
 if res.object is not None:
     # handle response
@@ -39,6 +37,7 @@ if res.object is not None:
 | Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                            | [operations.CreateUniversalUpscalerJobRequestBody](../../models/operations/createuniversalupscalerjobrequestbody.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `retries`                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                     | :heavy_minus_sign:                                                                                                   | Configuration to override the default retry behavior of the client.                                                  |
 
 ### Response
 
@@ -58,17 +57,15 @@ This endpoint will create a no background variation of the provided image ID
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.variation.create_variation_no_bg(request=operations.CreateVariationNoBGRequestBody(
-    id='<id>',
-))
+res = s.variation.create_variation_no_bg(request={
+    "id": "<id>",
+})
 
 if res.object is not None:
     # handle response
@@ -81,6 +78,7 @@ if res.object is not None:
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                              | [operations.CreateVariationNoBGRequestBody](../../models/operations/createvariationnobgrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `retries`                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                       | :heavy_minus_sign:                                                                                     | Configuration to override the default retry behavior of the client.                                    |
 
 ### Response
 
@@ -100,12 +98,11 @@ This endpoint will create an unzoom variation for the provided image ID
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.variation.create_variation_unzoom()
 
@@ -120,6 +117,7 @@ if res.object is not None:
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.CreateVariationUnzoomRequestBody](../../models/operations/createvariationunzoomrequestbody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |
 
 ### Response
 
@@ -139,12 +137,11 @@ This endpoint will create an upscale for the provided image ID
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.variation.create_variation_upscale()
 
@@ -159,6 +156,7 @@ if res.object is not None:
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                    | [operations.CreateVariationUpscaleRequestBody](../../models/operations/createvariationupscalerequestbody.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `retries`                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                             | :heavy_minus_sign:                                                                                           | Configuration to override the default retry behavior of the client.                                          |
 
 ### Response
 
@@ -178,14 +176,13 @@ This endpoint will get the variation by ID
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.variation.get_variation_by_id(id='<id>')
+res = s.variation.get_variation_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -195,9 +192,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *str*              | :heavy_check_mark: | "id" is required   |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | "id" is required                                                    |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 

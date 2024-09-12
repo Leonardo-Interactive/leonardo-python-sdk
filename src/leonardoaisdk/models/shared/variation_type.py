@@ -6,8 +6,9 @@ from enum import Enum
 
 class VariationType(str, Enum):
     r"""The type of variation."""
-    OUTPAINT = 'OUTPAINT'
-    INPAINT = 'INPAINT'
-    UPSCALE = 'UPSCALE'
-    UNZOOM = 'UNZOOM'
-    NOBG = 'NOBG'
+
+    OUTPAINT = "OUTPAINT"
+    INPAINT = "INPAINT"
+    UPSCALE = "UPSCALE"
+    UNZOOM = "UNZOOM"
+    NOBG = "NOBG"

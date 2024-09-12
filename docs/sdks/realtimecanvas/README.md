@@ -17,12 +17,11 @@ This endpoint will generate a LCM image generation.
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.realtime_canvas.create_lcm_generation()
 
@@ -37,6 +36,7 @@ if res.object is not None:
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                              | [operations.CreateLCMGenerationRequestBody](../../models/operations/createlcmgenerationrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `retries`                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                       | :heavy_minus_sign:                                                                                     | Configuration to override the default retry behavior of the client.                                    |
 
 ### Response
 
@@ -56,12 +56,11 @@ This endpoint will perform Alchemy Upscale on a LCM image
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.realtime_canvas.perform_alchemy_upscale_lcm()
 
@@ -76,6 +75,7 @@ if res.object is not None:
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                        | [operations.PerformAlchemyUpscaleLCMRequestBody](../../models/operations/performalchemyupscalelcmrequestbody.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `retries`                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                 | :heavy_minus_sign:                                                                                               | Configuration to override the default retry behavior of the client.                                              |
 
 ### Response
 
@@ -95,12 +95,11 @@ This endpoint will perform a inpainting on a LCM image
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.realtime_canvas.perform_inpainting_lcm()
 
@@ -115,6 +114,7 @@ if res.object is not None:
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                | [operations.PerformInpaintingLCMRequestBody](../../models/operations/performinpaintinglcmrequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `retries`                                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                         | :heavy_minus_sign:                                                                                       | Configuration to override the default retry behavior of the client.                                      |
 
 ### Response
 
@@ -134,12 +134,11 @@ This endpoint will perform instant refine on a LCM image
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.realtime_canvas.perform_instant_refine()
 
@@ -154,6 +153,7 @@ if res.object is not None:
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                | [operations.PerformInstantRefineRequestBody](../../models/operations/performinstantrefinerequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `retries`                                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                         | :heavy_minus_sign:                                                                                       | Configuration to override the default retry behavior of the client.                                      |
 
 ### Response
 

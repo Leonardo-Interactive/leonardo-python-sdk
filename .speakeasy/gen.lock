@@ -3,262 +3,184 @@ id: de81127b-e65c-4970-8911-8f8874953a42
 management:
   docChecksum: 4f2a40193a1ee14be648834f76a40ec4
   docVersion: v1.0.0
-  speakeasyVersion: 1.390.5
-  generationVersion: 2.409.3
-  releaseVersion: 5.6.3
-  configChecksum: 05f5dadb7920b9c29d5ea86737d0ca84
+  speakeasyVersion: 1.396.2
+  generationVersion: 2.415.0
+  releaseVersion: 6.0.2
+  configChecksum: 33f54a1f8691b3669cfb463a243849de
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   published: true
 features:
   python:
-    additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.4
-    core: 4.8.6
-    deprecations: 2.81.1
-    devContainers: 2.86.0
-    flattening: 2.81.1
-    getRequestBodies: 2.81.1
-    globalSecurity: 2.83.7
-    globalSecurityCallbacks: 0.1.0
-    globalSecurityFlattening: 0.1.0
-    globalServerURLs: 2.82.2
-    nullables: 0.1.0
-    responseFormat: 0.1.0
-    sdkHooks: 0.1.0
+    additionalDependencies: 1.0.0
+    constsAndDefaults: 1.0.2
+    core: 5.5.0
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.0
+    devContainers: 3.0.0
+    envVarSecurityUsage: 0.3.1
+    flattening: 3.0.0
+    getRequestBodies: 3.0.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.0.0
+    nullables: 1.0.0
+    responseFormat: 1.0.0
+    retries: 3.0.2
+    sdkHooks: 1.0.0
 generatedFiles:
-  - src/leonardoaisdk/sdkconfiguration.py
-  - src/leonardoaisdk/init_images.py
-  - src/leonardoaisdk/dataset.py
-  - src/leonardoaisdk/elements.py
-  - src/leonardoaisdk/image.py
-  - src/leonardoaisdk/realtime_canvas.py
-  - src/leonardoaisdk/motion.py
-  - src/leonardoaisdk/texture.py
-  - src/leonardoaisdk/user.py
-  - src/leonardoaisdk/models_.py
-  - src/leonardoaisdk/threed_model_assets.py
-  - src/leonardoaisdk/pricing_calculator.py
-  - src/leonardoaisdk/prompt.py
-  - src/leonardoaisdk/variation.py
-  - src/leonardoaisdk/sdk.py
-  - py.typed
-  - pylintrc
-  - scripts/publish.sh
-  - setup.py
-  - src/leonardoaisdk/__init__.py
-  - src/leonardoaisdk/utils/__init__.py
-  - src/leonardoaisdk/utils/retries.py
-  - src/leonardoaisdk/utils/utils.py
-  - src/leonardoaisdk/models/errors/sdkerror.py
-  - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
-  - src/leonardoaisdk/models/operations/getinitimagebyid.py
-  - src/leonardoaisdk/models/operations/uploadcanvasinitimage.py
-  - src/leonardoaisdk/models/operations/uploadinitimage.py
-  - src/leonardoaisdk/models/operations/createdataset.py
-  - src/leonardoaisdk/models/operations/deletedatasetbyid.py
-  - src/leonardoaisdk/models/operations/getdatasetbyid.py
-  - src/leonardoaisdk/models/operations/uploaddatasetimage.py
-  - src/leonardoaisdk/models/operations/uploaddatasetimagefromgen.py
-  - src/leonardoaisdk/models/operations/listelements.py
-  - src/leonardoaisdk/models/operations/creategeneration.py
-  - src/leonardoaisdk/models/operations/deletegenerationbyid.py
-  - src/leonardoaisdk/models/operations/getgenerationbyid.py
-  - src/leonardoaisdk/models/operations/getgenerationsbyuserid.py
-  - src/leonardoaisdk/models/operations/createlcmgeneration.py
-  - src/leonardoaisdk/models/operations/performalchemyupscalelcm.py
-  - src/leonardoaisdk/models/operations/performinpaintinglcm.py
-  - src/leonardoaisdk/models/operations/performinstantrefine.py
-  - src/leonardoaisdk/models/operations/createsvdmotiongeneration.py
-  - src/leonardoaisdk/models/operations/createtexturegeneration.py
-  - src/leonardoaisdk/models/operations/deletetexturegenerationbyid.py
-  - src/leonardoaisdk/models/operations/gettexturegenerationbyid.py
-  - src/leonardoaisdk/models/operations/gettexturegenerationsbymodelid.py
-  - src/leonardoaisdk/models/operations/getuserself.py
-  - src/leonardoaisdk/models/operations/createmodel.py
-  - src/leonardoaisdk/models/operations/deletemodelbyid.py
-  - src/leonardoaisdk/models/operations/getmodelbyid.py
-  - src/leonardoaisdk/models/operations/listplatformmodels.py
-  - src/leonardoaisdk/models/operations/delete3dmodelbyid.py
-  - src/leonardoaisdk/models/operations/get3dmodelbyid.py
-  - src/leonardoaisdk/models/operations/get3dmodelsbyuserid.py
-  - src/leonardoaisdk/models/operations/uploadmodelasset.py
-  - src/leonardoaisdk/models/operations/pricingcalculator.py
-  - src/leonardoaisdk/models/operations/promptimprove.py
-  - src/leonardoaisdk/models/operations/promptrandom.py
-  - src/leonardoaisdk/models/operations/createuniversalupscalerjob.py
-  - src/leonardoaisdk/models/operations/createvariationnobg.py
-  - src/leonardoaisdk/models/operations/createvariationunzoom.py
-  - src/leonardoaisdk/models/operations/createvariationupscale.py
-  - src/leonardoaisdk/models/operations/getvariationbyid.py
-  - src/leonardoaisdk/models/shared/sd_versions.py
-  - src/leonardoaisdk/models/shared/sd_generation_schedulers.py
-  - src/leonardoaisdk/models/shared/sd_generation_style.py
-  - src/leonardoaisdk/models/shared/element_input.py
-  - src/leonardoaisdk/models/shared/controlnet_input.py
-  - src/leonardoaisdk/models/shared/controlnet_type.py
-  - src/leonardoaisdk/models/shared/canvasrequesttype.py
-  - src/leonardoaisdk/models/shared/job_status.py
-  - src/leonardoaisdk/models/shared/variation_type.py
-  - src/leonardoaisdk/models/shared/lcm_generation_style.py
-  - src/leonardoaisdk/models/shared/model_asset_texture_types.py
-  - src/leonardoaisdk/models/shared/strength.py
-  - src/leonardoaisdk/models/shared/custom_model_type.py
-  - src/leonardoaisdk/models/shared/pricingcalculatorservices.py
-  - src/leonardoaisdk/models/shared/universal_upscaler_style.py
-  - src/leonardoaisdk/models/shared/security.py
-  - src/leonardoaisdk/models/__init__.py
-  - src/leonardoaisdk/models/errors/__init__.py
-  - src/leonardoaisdk/models/operations/__init__.py
-  - src/leonardoaisdk/models/shared/__init__.py
-  - docs/models/operations/deleteinitimagebyidrequest.md
-  - docs/models/operations/initimages.md
-  - docs/models/operations/deleteinitimagebyidresponsebody.md
-  - docs/models/operations/deleteinitimagebyidresponse.md
-  - docs/models/operations/getinitimagebyidrequest.md
-  - docs/models/operations/getinitimagebyidinitimages.md
-  - docs/models/operations/getinitimagebyidresponsebody.md
-  - docs/models/operations/getinitimagebyidresponse.md
-  - docs/models/operations/uploadcanvasinitimagerequestbody.md
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/operations/calculateproductionapiservicecost.md
   - docs/models/operations/canvasinitimageuploadoutput.md
-  - docs/models/operations/uploadcanvasinitimageresponsebody.md
-  - docs/models/operations/uploadcanvasinitimageresponse.md
-  - docs/models/operations/uploadinitimagerequestbody.md
-  - docs/models/operations/initimageuploadoutput.md
-  - docs/models/operations/uploadinitimageresponsebody.md
-  - docs/models/operations/uploadinitimageresponse.md
   - docs/models/operations/createdatasetrequestbody.md
-  - docs/models/operations/datasets.md
-  - docs/models/operations/createdatasetresponsebody.md
   - docs/models/operations/createdatasetresponse.md
-  - docs/models/operations/deletedatasetbyidrequest.md
-  - docs/models/operations/deletedatasetbyiddatasets.md
-  - docs/models/operations/deletedatasetbyidresponsebody.md
-  - docs/models/operations/deletedatasetbyidresponse.md
-  - docs/models/operations/getdatasetbyidrequest.md
-  - docs/models/operations/datasetimages.md
-  - docs/models/operations/getdatasetbyiddatasets.md
-  - docs/models/operations/getdatasetbyidresponsebody.md
-  - docs/models/operations/getdatasetbyidresponse.md
-  - docs/models/operations/uploaddatasetimagerequestbody.md
-  - docs/models/operations/uploaddatasetimagerequest.md
-  - docs/models/operations/datasetuploadoutput.md
-  - docs/models/operations/uploaddatasetimageresponsebody.md
-  - docs/models/operations/uploaddatasetimageresponse.md
-  - docs/models/operations/uploaddatasetimagefromgenrequestbody.md
-  - docs/models/operations/uploaddatasetimagefromgenrequest.md
-  - docs/models/operations/datasetgenuploadoutput.md
-  - docs/models/operations/uploaddatasetimagefromgenresponsebody.md
-  - docs/models/operations/uploaddatasetimagefromgenresponse.md
-  - docs/models/operations/loras.md
-  - docs/models/operations/listelementsresponsebody.md
-  - docs/models/operations/listelementsresponse.md
-  - docs/models/operations/transparencytype.md
+  - docs/models/operations/createdatasetresponsebody.md
   - docs/models/operations/creategenerationrequestbody.md
-  - docs/models/operations/sdgenerationoutput.md
-  - docs/models/operations/creategenerationresponsebody.md
   - docs/models/operations/creategenerationresponse.md
+  - docs/models/operations/creategenerationresponsebody.md
+  - docs/models/operations/createlcmgenerationrequestbody.md
+  - docs/models/operations/createlcmgenerationresponse.md
+  - docs/models/operations/createlcmgenerationresponsebody.md
+  - docs/models/operations/createmodelrequestbody.md
+  - docs/models/operations/createmodelresponse.md
+  - docs/models/operations/createmodelresponsebody.md
+  - docs/models/operations/createsvdmotiongenerationrequestbody.md
+  - docs/models/operations/createsvdmotiongenerationresponse.md
+  - docs/models/operations/createsvdmotiongenerationresponsebody.md
+  - docs/models/operations/createtexturegenerationrequestbody.md
+  - docs/models/operations/createtexturegenerationresponse.md
+  - docs/models/operations/createtexturegenerationresponsebody.md
+  - docs/models/operations/createuniversalupscalerjobrequestbody.md
+  - docs/models/operations/createuniversalupscalerjobresponse.md
+  - docs/models/operations/createuniversalupscalerjobresponsebody.md
+  - docs/models/operations/createvariationnobgrequestbody.md
+  - docs/models/operations/createvariationnobgresponse.md
+  - docs/models/operations/createvariationnobgresponsebody.md
+  - docs/models/operations/createvariationunzoomrequestbody.md
+  - docs/models/operations/createvariationunzoomresponse.md
+  - docs/models/operations/createvariationunzoomresponsebody.md
+  - docs/models/operations/createvariationupscalerequestbody.md
+  - docs/models/operations/createvariationupscaleresponse.md
+  - docs/models/operations/createvariationupscaleresponsebody.md
+  - docs/models/operations/createvariationupscalesdupscalejoboutput.md
+  - docs/models/operations/custommodels.md
+  - docs/models/operations/datasetgenuploadoutput.md
+  - docs/models/operations/datasetimages.md
+  - docs/models/operations/datasets.md
+  - docs/models/operations/datasetuploadoutput.md
+  - docs/models/operations/delete3dmodelbyidrequest.md
+  - docs/models/operations/delete3dmodelbyidrequestbody.md
+  - docs/models/operations/delete3dmodelbyidresponse.md
+  - docs/models/operations/delete3dmodelbyidresponsebody.md
+  - docs/models/operations/deletedatasetbyiddatasets.md
+  - docs/models/operations/deletedatasetbyidrequest.md
+  - docs/models/operations/deletedatasetbyidresponse.md
+  - docs/models/operations/deletedatasetbyidresponsebody.md
   - docs/models/operations/deletegenerationbyidrequest.md
-  - docs/models/operations/generations.md
-  - docs/models/operations/deletegenerationbyidresponsebody.md
   - docs/models/operations/deletegenerationbyidresponse.md
-  - docs/models/operations/getgenerationbyidrequest.md
-  - docs/models/operations/getgenerationbyidgeneratedimagevariationgeneric.md
-  - docs/models/operations/generatedimages.md
-  - docs/models/operations/getgenerationbyidloras.md
-  - docs/models/operations/generationelements.md
-  - docs/models/operations/getgenerationbyidgenerations.md
-  - docs/models/operations/getgenerationbyidresponsebody.md
-  - docs/models/operations/getgenerationbyidresponse.md
-  - docs/models/operations/getgenerationsbyuseridrequest.md
-  - docs/models/operations/getgenerationsbyuseridgeneratedimagevariationgeneric.md
-  - docs/models/operations/getgenerationsbyuseridgeneratedimages.md
+  - docs/models/operations/deletegenerationbyidresponsebody.md
+  - docs/models/operations/deleteinitimagebyidrequest.md
+  - docs/models/operations/deleteinitimagebyidresponse.md
+  - docs/models/operations/deleteinitimagebyidresponsebody.md
+  - docs/models/operations/deletemodelbyidrequest.md
+  - docs/models/operations/deletemodelbyidresponse.md
+  - docs/models/operations/deletemodelbyidresponsebody.md
+  - docs/models/operations/deletetexturegenerationbyidrequest.md
+  - docs/models/operations/deletetexturegenerationbyidrequestbody.md
+  - docs/models/operations/deletetexturegenerationbyidresponse.md
+  - docs/models/operations/deletetexturegenerationbyidresponsebody.md
   - docs/models/operations/elements.md
+  - docs/models/operations/generatedimages.md
+  - docs/models/operations/generatedimagevariationgeneric.md
+  - docs/models/operations/generationelements.md
+  - docs/models/operations/generations.md
+  - docs/models/operations/get3dmodelbyidmodelassets.md
+  - docs/models/operations/get3dmodelbyidrequest.md
+  - docs/models/operations/get3dmodelbyidrequestbody.md
+  - docs/models/operations/get3dmodelbyidresponse.md
+  - docs/models/operations/get3dmodelbyidresponsebody.md
+  - docs/models/operations/get3dmodelsbyuseridmodelassets.md
+  - docs/models/operations/get3dmodelsbyuseridrequest.md
+  - docs/models/operations/get3dmodelsbyuseridrequestbody.md
+  - docs/models/operations/get3dmodelsbyuseridresponse.md
+  - docs/models/operations/get3dmodelsbyuseridresponsebody.md
+  - docs/models/operations/getdatasetbyiddatasets.md
+  - docs/models/operations/getdatasetbyidrequest.md
+  - docs/models/operations/getdatasetbyidresponse.md
+  - docs/models/operations/getdatasetbyidresponsebody.md
+  - docs/models/operations/getgenerationbyidgeneratedimagevariationgeneric.md
+  - docs/models/operations/getgenerationbyidgenerations.md
+  - docs/models/operations/getgenerationbyidloras.md
+  - docs/models/operations/getgenerationbyidrequest.md
+  - docs/models/operations/getgenerationbyidresponse.md
+  - docs/models/operations/getgenerationbyidresponsebody.md
+  - docs/models/operations/getgenerationsbyuseridgeneratedimages.md
+  - docs/models/operations/getgenerationsbyuseridgeneratedimagevariationgeneric.md
   - docs/models/operations/getgenerationsbyuseridgenerationelements.md
   - docs/models/operations/getgenerationsbyuseridgenerations.md
-  - docs/models/operations/getgenerationsbyuseridresponsebody.md
+  - docs/models/operations/getgenerationsbyuseridrequest.md
   - docs/models/operations/getgenerationsbyuseridresponse.md
-  - docs/models/operations/createlcmgenerationrequestbody.md
-  - docs/models/operations/lcmgenerationoutput.md
-  - docs/models/operations/createlcmgenerationresponsebody.md
-  - docs/models/operations/createlcmgenerationresponse.md
-  - docs/models/operations/performalchemyupscalelcmrequestbody.md
-  - docs/models/operations/performalchemyupscalelcmlcmgenerationoutput.md
-  - docs/models/operations/performalchemyupscalelcmresponsebody.md
-  - docs/models/operations/performalchemyupscalelcmresponse.md
-  - docs/models/operations/performinpaintinglcmrequestbody.md
-  - docs/models/operations/performinpaintinglcmlcmgenerationoutput.md
-  - docs/models/operations/performinpaintinglcmresponsebody.md
-  - docs/models/operations/performinpaintinglcmresponse.md
-  - docs/models/operations/performinstantrefinerequestbody.md
-  - docs/models/operations/performinstantrefinelcmgenerationoutput.md
-  - docs/models/operations/performinstantrefineresponsebody.md
-  - docs/models/operations/performinstantrefineresponse.md
-  - docs/models/operations/createsvdmotiongenerationrequestbody.md
-  - docs/models/operations/motionsvdgenerationoutput.md
-  - docs/models/operations/createsvdmotiongenerationresponsebody.md
-  - docs/models/operations/createsvdmotiongenerationresponse.md
-  - docs/models/operations/createtexturegenerationrequestbody.md
-  - docs/models/operations/texturegenerationjoboutput.md
-  - docs/models/operations/createtexturegenerationresponsebody.md
-  - docs/models/operations/createtexturegenerationresponse.md
-  - docs/models/operations/deletetexturegenerationbyidrequestbody.md
-  - docs/models/operations/deletetexturegenerationbyidrequest.md
-  - docs/models/operations/modelassettexturegenerations.md
-  - docs/models/operations/deletetexturegenerationbyidresponsebody.md
-  - docs/models/operations/deletetexturegenerationbyidresponse.md
-  - docs/models/operations/gettexturegenerationbyidrequestbody.md
-  - docs/models/operations/gettexturegenerationbyidrequest.md
-  - docs/models/operations/modelassettextureimages.md
-  - docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md
-  - docs/models/operations/gettexturegenerationbyidresponsebody.md
-  - docs/models/operations/gettexturegenerationbyidresponse.md
-  - docs/models/operations/gettexturegenerationsbymodelidrequestbody.md
-  - docs/models/operations/gettexturegenerationsbymodelidrequest.md
-  - docs/models/operations/gettexturegenerationsbymodelidmodelassettextureimages.md
-  - docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md
-  - docs/models/operations/gettexturegenerationsbymodelidresponsebody.md
-  - docs/models/operations/gettexturegenerationsbymodelidresponse.md
-  - docs/models/operations/users.md
-  - docs/models/operations/userdetails.md
-  - docs/models/operations/getuserselfresponsebody.md
-  - docs/models/operations/getuserselfresponse.md
-  - docs/models/operations/createmodelrequestbody.md
-  - docs/models/operations/sdtrainingoutput.md
-  - docs/models/operations/createmodelresponsebody.md
-  - docs/models/operations/createmodelresponse.md
-  - docs/models/operations/deletemodelbyidrequest.md
-  - docs/models/operations/custommodels.md
-  - docs/models/operations/deletemodelbyidresponsebody.md
-  - docs/models/operations/deletemodelbyidresponse.md
-  - docs/models/operations/getmodelbyidrequest.md
+  - docs/models/operations/getgenerationsbyuseridresponsebody.md
+  - docs/models/operations/getinitimagebyidinitimages.md
+  - docs/models/operations/getinitimagebyidrequest.md
+  - docs/models/operations/getinitimagebyidresponse.md
+  - docs/models/operations/getinitimagebyidresponsebody.md
   - docs/models/operations/getmodelbyidcustommodels.md
-  - docs/models/operations/getmodelbyidresponsebody.md
+  - docs/models/operations/getmodelbyidrequest.md
   - docs/models/operations/getmodelbyidresponse.md
-  - docs/models/operations/listplatformmodelsgeneratedimages.md
+  - docs/models/operations/getmodelbyidresponsebody.md
+  - docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md
+  - docs/models/operations/gettexturegenerationbyidrequest.md
+  - docs/models/operations/gettexturegenerationbyidrequestbody.md
+  - docs/models/operations/gettexturegenerationbyidresponse.md
+  - docs/models/operations/gettexturegenerationbyidresponsebody.md
+  - docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md
+  - docs/models/operations/gettexturegenerationsbymodelidmodelassettextureimages.md
+  - docs/models/operations/gettexturegenerationsbymodelidrequest.md
+  - docs/models/operations/gettexturegenerationsbymodelidrequestbody.md
+  - docs/models/operations/gettexturegenerationsbymodelidresponse.md
+  - docs/models/operations/gettexturegenerationsbymodelidresponsebody.md
+  - docs/models/operations/getuserselfresponse.md
+  - docs/models/operations/getuserselfresponsebody.md
+  - docs/models/operations/getvariationbyidrequest.md
+  - docs/models/operations/getvariationbyidresponse.md
+  - docs/models/operations/getvariationbyidresponsebody.md
+  - docs/models/operations/initimages.md
+  - docs/models/operations/initimageuploadoutput.md
+  - docs/models/operations/lcmgenerationoutput.md
+  - docs/models/operations/listelementsresponse.md
+  - docs/models/operations/listelementsresponsebody.md
   - docs/models/operations/listplatformmodelscustommodels.md
-  - docs/models/operations/listplatformmodelsresponsebody.md
+  - docs/models/operations/listplatformmodelsgeneratedimages.md
   - docs/models/operations/listplatformmodelsresponse.md
-  - docs/models/operations/delete3dmodelbyidrequestbody.md
-  - docs/models/operations/delete3dmodelbyidrequest.md
+  - docs/models/operations/listplatformmodelsresponsebody.md
+  - docs/models/operations/loras.md
   - docs/models/operations/modelassets.md
-  - docs/models/operations/delete3dmodelbyidresponsebody.md
-  - docs/models/operations/delete3dmodelbyidresponse.md
-  - docs/models/operations/get3dmodelbyidrequestbody.md
-  - docs/models/operations/get3dmodelbyidrequest.md
-  - docs/models/operations/get3dmodelbyidmodelassets.md
-  - docs/models/operations/get3dmodelbyidresponsebody.md
-  - docs/models/operations/get3dmodelbyidresponse.md
-  - docs/models/operations/get3dmodelsbyuseridrequestbody.md
-  - docs/models/operations/get3dmodelsbyuseridrequest.md
-  - docs/models/operations/get3dmodelsbyuseridmodelassets.md
-  - docs/models/operations/get3dmodelsbyuseridresponsebody.md
-  - docs/models/operations/get3dmodelsbyuseridresponse.md
-  - docs/models/operations/uploadmodelassetrequestbody.md
+  - docs/models/operations/modelassettexturegenerations.md
+  - docs/models/operations/modelassettextureimages.md
   - docs/models/operations/modelassetuploadoutput.md
-  - docs/models/operations/uploadmodelassetresponsebody.md
-  - docs/models/operations/uploadmodelassetresponse.md
+  - docs/models/operations/motionsvdgenerationoutput.md
+  - docs/models/operations/object.md
+  - docs/models/operations/performalchemyupscalelcmlcmgenerationoutput.md
+  - docs/models/operations/performalchemyupscalelcmrequestbody.md
+  - docs/models/operations/performalchemyupscalelcmresponse.md
+  - docs/models/operations/performalchemyupscalelcmresponsebody.md
+  - docs/models/operations/performinpaintinglcmlcmgenerationoutput.md
+  - docs/models/operations/performinpaintinglcmrequestbody.md
+  - docs/models/operations/performinpaintinglcmresponse.md
+  - docs/models/operations/performinpaintinglcmresponsebody.md
+  - docs/models/operations/performinstantrefinelcmgenerationoutput.md
+  - docs/models/operations/performinstantrefinerequestbody.md
+  - docs/models/operations/performinstantrefineresponse.md
+  - docs/models/operations/performinstantrefineresponsebody.md
   - docs/models/operations/pricingcalculatorobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestobject.md
@@ -266,76 +188,334 @@ generatedFiles:
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamstexturegenerationobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerobject.md
-  - docs/models/operations/object.md
   - docs/models/operations/pricingcalculatorrequestbody.md
-  - docs/models/operations/calculateproductionapiservicecost.md
-  - docs/models/operations/pricingcalculatorresponsebody.md
   - docs/models/operations/pricingcalculatorresponse.md
-  - docs/models/operations/promptimproverequestbody.md
+  - docs/models/operations/pricingcalculatorresponsebody.md
   - docs/models/operations/promptgenerationoutput.md
-  - docs/models/operations/promptimproveresponsebody.md
+  - docs/models/operations/promptimproverequestbody.md
   - docs/models/operations/promptimproveresponse.md
+  - docs/models/operations/promptimproveresponsebody.md
   - docs/models/operations/promptrandompromptgenerationoutput.md
-  - docs/models/operations/promptrandomresponsebody.md
   - docs/models/operations/promptrandomresponse.md
-  - docs/models/operations/createuniversalupscalerjobrequestbody.md
-  - docs/models/operations/universalupscaleroutput.md
-  - docs/models/operations/createuniversalupscalerjobresponsebody.md
-  - docs/models/operations/createuniversalupscalerjobresponse.md
-  - docs/models/operations/createvariationnobgrequestbody.md
-  - docs/models/operations/sdupscalejoboutput.md
-  - docs/models/operations/createvariationnobgresponsebody.md
-  - docs/models/operations/createvariationnobgresponse.md
-  - docs/models/operations/createvariationunzoomrequestbody.md
+  - docs/models/operations/promptrandomresponsebody.md
+  - docs/models/operations/sdgenerationoutput.md
+  - docs/models/operations/sdtrainingoutput.md
   - docs/models/operations/sdunzoomoutput.md
-  - docs/models/operations/createvariationunzoomresponsebody.md
-  - docs/models/operations/createvariationunzoomresponse.md
-  - docs/models/operations/createvariationupscalerequestbody.md
-  - docs/models/operations/createvariationupscalesdupscalejoboutput.md
-  - docs/models/operations/createvariationupscaleresponsebody.md
-  - docs/models/operations/createvariationupscaleresponse.md
-  - docs/models/operations/getvariationbyidrequest.md
-  - docs/models/operations/generatedimagevariationgeneric.md
-  - docs/models/operations/getvariationbyidresponsebody.md
-  - docs/models/operations/getvariationbyidresponse.md
-  - docs/models/shared/sdversions.md
-  - docs/models/shared/sdgenerationschedulers.md
-  - docs/models/shared/sdgenerationstyle.md
-  - docs/models/shared/elementinput.md
-  - docs/models/shared/initimagetype.md
-  - docs/models/shared/strengthtype.md
+  - docs/models/operations/sdupscalejoboutput.md
+  - docs/models/operations/texturegenerationjoboutput.md
+  - docs/models/operations/transparencytype.md
+  - docs/models/operations/universalupscaleroutput.md
+  - docs/models/operations/uploadcanvasinitimagerequestbody.md
+  - docs/models/operations/uploadcanvasinitimageresponse.md
+  - docs/models/operations/uploadcanvasinitimageresponsebody.md
+  - docs/models/operations/uploaddatasetimagefromgenrequest.md
+  - docs/models/operations/uploaddatasetimagefromgenrequestbody.md
+  - docs/models/operations/uploaddatasetimagefromgenresponse.md
+  - docs/models/operations/uploaddatasetimagefromgenresponsebody.md
+  - docs/models/operations/uploaddatasetimagerequest.md
+  - docs/models/operations/uploaddatasetimagerequestbody.md
+  - docs/models/operations/uploaddatasetimageresponse.md
+  - docs/models/operations/uploaddatasetimageresponsebody.md
+  - docs/models/operations/uploadinitimagerequestbody.md
+  - docs/models/operations/uploadinitimageresponse.md
+  - docs/models/operations/uploadinitimageresponsebody.md
+  - docs/models/operations/uploadmodelassetrequestbody.md
+  - docs/models/operations/uploadmodelassetresponse.md
+  - docs/models/operations/uploadmodelassetresponsebody.md
+  - docs/models/operations/userdetails.md
+  - docs/models/operations/users.md
+  - docs/models/shared/canvasrequesttype.md
   - docs/models/shared/controlnetinput.md
   - docs/models/shared/controlnettype.md
-  - docs/models/shared/canvasrequesttype.md
+  - docs/models/shared/custommodeltype.md
+  - docs/models/shared/elementinput.md
+  - docs/models/shared/initimagetype.md
   - docs/models/shared/jobstatus.md
-  - docs/models/shared/variationtype.md
   - docs/models/shared/lcmgenerationstyle.md
   - docs/models/shared/modelassettexturetypes.md
-  - docs/models/shared/strength.md
-  - docs/models/shared/custommodeltype.md
   - docs/models/shared/pricingcalculatorservices.md
-  - docs/models/shared/universalupscalerstyle.md
+  - docs/models/shared/sdgenerationschedulers.md
+  - docs/models/shared/sdgenerationstyle.md
+  - docs/models/shared/sdversions.md
   - docs/models/shared/security.md
-  - docs/sdks/leonardoaisdk/README.md
-  - docs/sdks/initimages/README.md
+  - docs/models/shared/strength.md
+  - docs/models/shared/strengthtype.md
+  - docs/models/shared/universalupscalerstyle.md
+  - docs/models/shared/variationtype.md
+  - docs/models/utils/retryconfig.md
   - docs/sdks/dataset/README.md
   - docs/sdks/elements/README.md
   - docs/sdks/image/README.md
-  - docs/sdks/realtimecanvas/README.md
-  - docs/sdks/motion/README.md
-  - docs/sdks/texture/README.md
-  - docs/sdks/user/README.md
+  - docs/sdks/initimages/README.md
+  - docs/sdks/leonardoaisdk/README.md
   - docs/sdks/models/README.md
-  - docs/sdks/threedmodelassets/README.md
+  - docs/sdks/motion/README.md
   - docs/sdks/pricingcalculator/README.md
   - docs/sdks/prompt/README.md
+  - docs/sdks/realtimecanvas/README.md
+  - docs/sdks/texture/README.md
+  - docs/sdks/threedmodelassets/README.md
+  - docs/sdks/user/README.md
   - docs/sdks/variation/README.md
-  - USAGE.md
-  - .gitattributes
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/compile.sh
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/leonardoaisdk/__init__.py
+  - src/leonardoaisdk/_hooks/__init__.py
   - src/leonardoaisdk/_hooks/sdkhooks.py
   - src/leonardoaisdk/_hooks/types.py
-  - src/leonardoaisdk/_hooks/__init__.py
-  - CONTRIBUTING.md
+  - src/leonardoaisdk/basesdk.py
+  - src/leonardoaisdk/dataset.py
+  - src/leonardoaisdk/elements.py
+  - src/leonardoaisdk/httpclient.py
+  - src/leonardoaisdk/image.py
+  - src/leonardoaisdk/init_images.py
+  - src/leonardoaisdk/models/errors/__init__.py
+  - src/leonardoaisdk/models/errors/sdkerror.py
+  - src/leonardoaisdk/models/operations/__init__.py
+  - src/leonardoaisdk/models/operations/createdataset.py
+  - src/leonardoaisdk/models/operations/creategeneration.py
+  - src/leonardoaisdk/models/operations/createlcmgeneration.py
+  - src/leonardoaisdk/models/operations/createmodel.py
+  - src/leonardoaisdk/models/operations/createsvdmotiongeneration.py
+  - src/leonardoaisdk/models/operations/createtexturegeneration.py
+  - src/leonardoaisdk/models/operations/createuniversalupscalerjob.py
+  - src/leonardoaisdk/models/operations/createvariationnobg.py
+  - src/leonardoaisdk/models/operations/createvariationunzoom.py
+  - src/leonardoaisdk/models/operations/createvariationupscale.py
+  - src/leonardoaisdk/models/operations/delete3dmodelbyid.py
+  - src/leonardoaisdk/models/operations/deletedatasetbyid.py
+  - src/leonardoaisdk/models/operations/deletegenerationbyid.py
+  - src/leonardoaisdk/models/operations/deleteinitimagebyid.py
+  - src/leonardoaisdk/models/operations/deletemodelbyid.py
+  - src/leonardoaisdk/models/operations/deletetexturegenerationbyid.py
+  - src/leonardoaisdk/models/operations/get3dmodelbyid.py
+  - src/leonardoaisdk/models/operations/get3dmodelsbyuserid.py
+  - src/leonardoaisdk/models/operations/getdatasetbyid.py
+  - src/leonardoaisdk/models/operations/getgenerationbyid.py
+  - src/leonardoaisdk/models/operations/getgenerationsbyuserid.py
+  - src/leonardoaisdk/models/operations/getinitimagebyid.py
+  - src/leonardoaisdk/models/operations/getmodelbyid.py
+  - src/leonardoaisdk/models/operations/gettexturegenerationbyid.py
+  - src/leonardoaisdk/models/operations/gettexturegenerationsbymodelid.py
+  - src/leonardoaisdk/models/operations/getuserself.py
+  - src/leonardoaisdk/models/operations/getvariationbyid.py
+  - src/leonardoaisdk/models/operations/listelements.py
+  - src/leonardoaisdk/models/operations/listplatformmodels.py
+  - src/leonardoaisdk/models/operations/performalchemyupscalelcm.py
+  - src/leonardoaisdk/models/operations/performinpaintinglcm.py
+  - src/leonardoaisdk/models/operations/performinstantrefine.py
+  - src/leonardoaisdk/models/operations/pricingcalculator.py
+  - src/leonardoaisdk/models/operations/promptimprove.py
+  - src/leonardoaisdk/models/operations/promptrandom.py
+  - src/leonardoaisdk/models/operations/uploadcanvasinitimage.py
+  - src/leonardoaisdk/models/operations/uploaddatasetimage.py
+  - src/leonardoaisdk/models/operations/uploaddatasetimagefromgen.py
+  - src/leonardoaisdk/models/operations/uploadinitimage.py
+  - src/leonardoaisdk/models/operations/uploadmodelasset.py
+  - src/leonardoaisdk/models/shared/__init__.py
+  - src/leonardoaisdk/models/shared/canvasrequesttype.py
+  - src/leonardoaisdk/models/shared/controlnet_input.py
+  - src/leonardoaisdk/models/shared/controlnet_type.py
+  - src/leonardoaisdk/models/shared/custom_model_type.py
+  - src/leonardoaisdk/models/shared/element_input.py
+  - src/leonardoaisdk/models/shared/job_status.py
+  - src/leonardoaisdk/models/shared/lcm_generation_style.py
+  - src/leonardoaisdk/models/shared/model_asset_texture_types.py
+  - src/leonardoaisdk/models/shared/pricingcalculatorservices.py
+  - src/leonardoaisdk/models/shared/sd_generation_schedulers.py
+  - src/leonardoaisdk/models/shared/sd_generation_style.py
+  - src/leonardoaisdk/models/shared/sd_versions.py
+  - src/leonardoaisdk/models/shared/security.py
+  - src/leonardoaisdk/models/shared/strength.py
+  - src/leonardoaisdk/models/shared/universal_upscaler_style.py
+  - src/leonardoaisdk/models/shared/variation_type.py
+  - src/leonardoaisdk/models_.py
+  - src/leonardoaisdk/motion.py
+  - src/leonardoaisdk/pricing_calculator.py
+  - src/leonardoaisdk/prompt.py
+  - src/leonardoaisdk/py.typed
+  - src/leonardoaisdk/realtime_canvas.py
+  - src/leonardoaisdk/sdk.py
+  - src/leonardoaisdk/sdkconfiguration.py
+  - src/leonardoaisdk/texture.py
+  - src/leonardoaisdk/threed_model_assets.py
+  - src/leonardoaisdk/types/__init__.py
+  - src/leonardoaisdk/types/basemodel.py
+  - src/leonardoaisdk/user.py
+  - src/leonardoaisdk/utils/__init__.py
+  - src/leonardoaisdk/utils/annotations.py
+  - src/leonardoaisdk/utils/enums.py
+  - src/leonardoaisdk/utils/eventstreaming.py
+  - src/leonardoaisdk/utils/forms.py
+  - src/leonardoaisdk/utils/headers.py
+  - src/leonardoaisdk/utils/logger.py
+  - src/leonardoaisdk/utils/metadata.py
+  - src/leonardoaisdk/utils/queryparams.py
+  - src/leonardoaisdk/utils/requestbodies.py
+  - src/leonardoaisdk/utils/retries.py
+  - src/leonardoaisdk/utils/security.py
+  - src/leonardoaisdk/utils/serializers.py
+  - src/leonardoaisdk/utils/url.py
+  - src/leonardoaisdk/utils/values.py
+  - src/leonardoaisdk/variation.py
+examples:
+  deleteInitImageById:
+    speakeasy-default-delete-init-image-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getInitImageById:
+    speakeasy-default-get-init-image-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  uploadCanvasInitImage:
+    speakeasy-default-upload-canvas-init-image:
+      requestBody:
+        application/json: {"initExtension": "<value>", "maskExtension": "<value>"}
+  uploadInitImage:
+    speakeasy-default-upload-init-image:
+      requestBody:
+        application/json: {"extension": "png"}
+  createDataset:
+    speakeasy-default-create-dataset:
+      requestBody:
+        application/json: {"name": "<value>"}
+  deleteDatasetById:
+    speakeasy-default-delete-dataset-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getDatasetById:
+    speakeasy-default-get-dataset-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  uploadDatasetImage:
+    speakeasy-default-upload-dataset-image:
+      parameters:
+        path:
+          datasetId: "<value>"
+      requestBody:
+        application/json: {"extension": "mpg4"}
+  uploadDatasetImageFromGen:
+    speakeasy-default-upload-dataset-image-from-gen:
+      parameters:
+        path:
+          datasetId: "<value>"
+      requestBody:
+        application/json: {"generatedImageId": "<value>"}
+  listElements:
+    speakeasy-default-list-elements: {}
+  createGeneration:
+    speakeasy-default-create-generation: {}
+  deleteGenerationById:
+    speakeasy-default-delete-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getGenerationById:
+    speakeasy-default-get-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getGenerationsByUserId:
+    speakeasy-default-get-generations-by-user-id:
+      parameters:
+        path:
+          userId: "<value>"
+        query: {}
+  createLCMGeneration:
+    speakeasy-default-create-LCM-generation: {}
+  performAlchemyUpscaleLCM:
+    speakeasy-default-perform-alchemy-upscale-LCM: {}
+  performInpaintingLCM:
+    speakeasy-default-perform-inpainting-LCM: {}
+  performInstantRefine:
+    speakeasy-default-perform-instant-refine: {}
+  createSVDMotionGeneration:
+    speakeasy-default-create-SVD-motion-generation: {}
+  createTextureGeneration:
+    speakeasy-default-create-texture-generation: {}
+  deleteTextureGenerationById:
+    speakeasy-default-delete-texture-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getTextureGenerationById:
+    speakeasy-default-get-texture-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+  getTextureGenerationsByModelId:
+    speakeasy-default-get-texture-generations-by-model-id:
+      parameters:
+        path:
+          modelId: "<value>"
+        query: {}
+  getUserSelf:
+    speakeasy-default-get-user-self: {}
+  createModel:
+    speakeasy-default-create-model:
+      requestBody:
+        application/json: {"datasetId": "<value>", "instance_prompt": "<value>", "name": "<value>"}
+  deleteModelById:
+    speakeasy-default-delete-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  getModelById:
+    speakeasy-default-get-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  listPlatformModels:
+    speakeasy-default-list-platform-models: {}
+  delete3DModelById:
+    speakeasy-default-delete3-D-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+  get3DModelById:
+    speakeasy-default-get3-D-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+  get3DModelsByUserId:
+    speakeasy-default-get3-D-models-by-user-id:
+      parameters:
+        path:
+          userId: "<value>"
+        query: {}
+  uploadModelAsset:
+    speakeasy-default-upload-model-asset: {}
+  pricingCalculator:
+    speakeasy-default-pricing-calculator: {}
+  promptImprove:
+    speakeasy-default-prompt-improve:
+      requestBody:
+        application/json: {"prompt": "<value>"}
+  promptRandom:
+    speakeasy-default-prompt-random: {}
+  CreateUniversalUpscalerJob:
+    speakeasy-default-create-universal-upscaler-job: {}
+  createVariationNoBG:
+    speakeasy-default-create-variation-no-BG:
+      requestBody:
+        application/json: {"id": "<id>"}
+  createVariationUnzoom:
+    speakeasy-default-create-variation-unzoom: {}
+  createVariationUpscale:
+    speakeasy-default-create-variation-upscale: {}
+  getVariationById:
+    speakeasy-default-get-variation-by-id:
+      parameters:
+        path:
+          id: "<id>"

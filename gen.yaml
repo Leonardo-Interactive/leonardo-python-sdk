@@ -13,15 +13,17 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 5.6.3
+  version: 6.0.2
   additionalDependencies:
-    dependencies: {}
-    extraDependencies:
-      dev: {}
-  author: Leonardo-Ai
+    dev: {}
+    main: {}
+  authors:
+    - Leonardo-Ai
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK
+  enumFormat: enum
   flattenGlobalSecurity: true
+  flattenRequests: false
   imports:
     option: openapi
     paths:
@@ -34,7 +36,7 @@ python:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   outputModelSuffix: output
-  packageName: Leonardo-Ai-SDK
+  packageName: LeonardoAiSDK
   projectUrls: {}
   responseFormat: envelope
-  templateVersion: v1
+  templateVersion: v2

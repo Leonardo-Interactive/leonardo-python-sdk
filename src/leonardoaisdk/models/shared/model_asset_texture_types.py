@@ -6,8 +6,9 @@ from enum import Enum
 
 class ModelAssetTextureTypes(str, Enum):
     r"""When training model assets these are the texture types available to use."""
-    ALBEDO = 'ALBEDO'
-    NORMAL = 'NORMAL'
-    ROUGHNESS = 'ROUGHNESS'
-    DISPLACEMENT = 'DISPLACEMENT'
-    HDRP_MASK = 'HDRP_MASK'
+
+    ALBEDO = "ALBEDO"
+    NORMAL = "NORMAL"
+    ROUGHNESS = "ROUGHNESS"
+    DISPLACEMENT = "DISPLACEMENT"
+    HDRP_MASK = "HDRP_MASK"

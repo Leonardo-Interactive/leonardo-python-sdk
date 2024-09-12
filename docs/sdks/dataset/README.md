@@ -18,17 +18,15 @@ This endpoint creates a new dataset
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.dataset.create_dataset(request=operations.CreateDatasetRequestBody(
-    name='<value>',
-))
+res = s.dataset.create_dataset(request={
+    "name": "<value>",
+})
 
 if res.object is not None:
     # handle response
@@ -41,6 +39,7 @@ if res.object is not None:
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `request`                                                                                  | [operations.CreateDatasetRequestBody](../../models/operations/createdatasetrequestbody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
 ### Response
 
@@ -60,14 +59,13 @@ This endpoint deletes the specific dataset
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.dataset.delete_dataset_by_id(id='<id>')
+res = s.dataset.delete_dataset_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -77,9 +75,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to delete. |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The ID of the dataset to delete.                                    |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -99,14 +98,13 @@ This endpoint gets the specific dataset
 ### Example Usage
 
 ```python
-import leonardoaisdk
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.dataset.get_dataset_by_id(id='<id>')
+res = s.dataset.get_dataset_by_id(id="<id>")
 
 if res.object is not None:
     # handle response
@@ -116,9 +114,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `id`                             | *str*                            | :heavy_check_mark:               | The ID of the dataset to return. |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The ID of the dataset to return.                                    |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
@@ -138,17 +137,15 @@ This endpoint returns presigned details to upload a dataset image to S3
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.dataset.upload_dataset_image(dataset_id='<value>', request_body=operations.UploadDatasetImageRequestBody(
-    extension='mpg4',
-))
+res = s.dataset.upload_dataset_image(dataset_id="<value>", request_body={
+    "extension": "mpg4",
+})
 
 if res.object is not None:
     # handle response
@@ -160,8 +157,9 @@ if res.object is not None:
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request_body`                                                                                       | [operations.UploadDatasetImageRequestBody](../../models/operations/uploaddatasetimagerequestbody.md) | :heavy_check_mark:                                                                                   | Query parameters provided in the request body as a JSON object                                       |
 | `dataset_id`                                                                                         | *str*                                                                                                | :heavy_check_mark:                                                                                   | _"datasetId" is required                                                                             |
+| `request_body`                                                                                       | [operations.UploadDatasetImageRequestBody](../../models/operations/uploaddatasetimagerequestbody.md) | :heavy_check_mark:                                                                                   | Query parameters provided in the request body as a JSON object                                       |
+| `retries`                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                     | :heavy_minus_sign:                                                                                   | Configuration to override the default retry behavior of the client.                                  |
 
 ### Response
 
@@ -181,17 +179,15 @@ This endpoint will upload a previously generated image to the dataset
 ### Example Usage
 
 ```python
-import leonardoaisdk
-from leonardoaisdk.models import operations
+from leonardoaisdk import LeonardoAiSDK
 
-s = leonardoaisdk.LeonardoAiSDK(
+s = LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.dataset.upload_dataset_image_from_gen(dataset_id='<value>', request_body=operations.UploadDatasetImageFromGenRequestBody(
-    generated_image_id='<value>',
-))
+res = s.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
+    "generated_image_id": "<value>",
+})
 
 if res.object is not None:
     # handle response
@@ -203,8 +199,9 @@ if res.object is not None:
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request_body`                                                                                                     | [operations.UploadDatasetImageFromGenRequestBody](../../models/operations/uploaddatasetimagefromgenrequestbody.md) | :heavy_check_mark:                                                                                                 | Query parameters to be provided in the request body as a JSON object                                               |
 | `dataset_id`                                                                                                       | *str*                                                                                                              | :heavy_check_mark:                                                                                                 | The ID of the dataset to upload the image to.                                                                      |
+| `request_body`                                                                                                     | [operations.UploadDatasetImageFromGenRequestBody](../../models/operations/uploaddatasetimagefromgenrequestbody.md) | :heavy_check_mark:                                                                                                 | Query parameters to be provided in the request body as a JSON object                                               |
+| `retries`                                                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                   | :heavy_minus_sign:                                                                                                 | Configuration to override the default retry behavior of the client.                                                |
 
 ### Response
 

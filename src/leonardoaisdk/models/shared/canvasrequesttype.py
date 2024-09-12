@@ -6,7 +6,8 @@ from enum import Enum
 
 class CanvasRequestType(str, Enum):
     r"""The type of request for the Canvas Editor."""
-    INPAINT = 'INPAINT'
-    OUTPAINT = 'OUTPAINT'
-    SKETCH2_IMG = 'SKETCH2IMG'
-    IMG2_IMG = 'IMG2IMG'
+
+    INPAINT = "INPAINT"
+    OUTPAINT = "OUTPAINT"
+    SKETCH2_IMG = "SKETCH2IMG"
+    IMG2_IMG = "IMG2IMG"

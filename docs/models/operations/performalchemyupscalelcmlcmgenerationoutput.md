@@ -5,7 +5,7 @@
 
 | Field                                                 | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `api_credit_cost`                                     | *Optional[int]*                                       | :heavy_minus_sign:                                    | API credits cost, available for Production API users. |
+| `api_credit_cost`                                     | *OptionalNullable[int]*                               | :heavy_minus_sign:                                    | API credits cost, available for Production API users. |
 | `generated_image_id`                                  | *Optional[str]*                                       | :heavy_minus_sign:                                    | N/A                                                   |
 | `generation_id`                                       | List[*str*]                                           | :heavy_minus_sign:                                    | N/A                                                   |
 | `image_data_url`                                      | List[*str*]                                           | :heavy_minus_sign:                                    | N/A                                                   |
