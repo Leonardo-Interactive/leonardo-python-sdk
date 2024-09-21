@@ -39,11 +39,13 @@ class Motion(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateSVDMotionGenerationRequestBody
+                request, Optional[operations.CreateSVDMotionGenerationRequestBody]
             )
-        request = cast(operations.CreateSVDMotionGenerationRequestBody, request)
+        request = cast(
+            Optional[operations.CreateSVDMotionGenerationRequestBody], request
+        )
 
         req = self.build_request(
             method="POST",
@@ -139,11 +141,13 @@ class Motion(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateSVDMotionGenerationRequestBody
+                request, Optional[operations.CreateSVDMotionGenerationRequestBody]
             )
-        request = cast(operations.CreateSVDMotionGenerationRequestBody, request)
+        request = cast(
+            Optional[operations.CreateSVDMotionGenerationRequestBody], request
+        )
 
         req = self.build_request_async(
             method="POST",

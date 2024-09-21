@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 4f2a40193a1ee14be648834f76a40ec4
+  docChecksum: 10310c36cca44ad9ea65148525284fda
   docVersion: v1.0.0
-  speakeasyVersion: 1.396.6
-  generationVersion: 2.415.6
-  releaseVersion: 6.0.1
-  configChecksum: 390504f916e89bf560c0f144ba2f389e
+  speakeasyVersion: 1.401.2
+  generationVersion: 2.421.3
+  releaseVersion: 6.0.2
+  configChecksum: 7acf2acfa94d67f7f335927089eb68db
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,8 +14,8 @@ management:
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.2
-    core: 5.5.3
+    constsAndDefaults: 1.0.3
+    core: 5.5.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     devContainers: 3.0.0
@@ -189,6 +189,7 @@ generatedFiles:
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamstexturegenerationobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerultraobject.md
   - docs/models/operations/pricingcalculatorrequestbody.md
   - docs/models/operations/pricingcalculatorresponse.md
   - docs/models/operations/pricingcalculatorresponsebody.md
@@ -242,6 +243,7 @@ generatedFiles:
   - docs/models/shared/strength.md
   - docs/models/shared/strengthtype.md
   - docs/models/shared/universalupscalerstyle.md
+  - docs/models/shared/universalupscalerultrastyle.md
   - docs/models/shared/variationtype.md
   - docs/models/utils/retryconfig.md
   - docs/sdks/dataset/README.md
@@ -334,6 +336,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/shared/security.py
   - src/leonardo_ai_sdk/models/shared/strength.py
   - src/leonardo_ai_sdk/models/shared/universal_upscaler_style.py
+  - src/leonardo_ai_sdk/models/shared/universal_upscaler_ultra_style.py
   - src/leonardo_ai_sdk/models/shared/variation_type.py
   - src/leonardo_ai_sdk/models_.py
   - src/leonardo_ai_sdk/motion.py

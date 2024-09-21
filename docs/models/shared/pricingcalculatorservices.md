@@ -14,3 +14,4 @@ The services to be chosen for calculating the API credit cost.
 | `MODEL_TRAINING`            | MODEL_TRAINING              |
 | `TEXTURE_GENERATION`        | TEXTURE_GENERATION          |
 | `UNIVERSAL_UPSCALER`        | UNIVERSAL_UPSCALER          |
+| `UNIVERSAL_UPSCALER_ULTRA`  | UNIVERSAL_UPSCALER_ULTRA    |

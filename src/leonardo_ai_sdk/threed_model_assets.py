@@ -675,9 +675,11 @@ class ThreeDModelAssets(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, operations.UploadModelAssetRequestBody)
-        request = cast(operations.UploadModelAssetRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[operations.UploadModelAssetRequestBody]
+            )
+        request = cast(Optional[operations.UploadModelAssetRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -772,9 +774,11 @@ class ThreeDModelAssets(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, operations.UploadModelAssetRequestBody)
-        request = cast(operations.UploadModelAssetRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[operations.UploadModelAssetRequestBody]
+            )
+        request = cast(Optional[operations.UploadModelAssetRequestBody], request)
 
         req = self.build_request_async(
             method="POST",

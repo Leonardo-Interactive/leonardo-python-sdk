@@ -4,6 +4,7 @@ from __future__ import annotations
 import httpx
 from leonardo_ai_sdk.models.shared import (
     universal_upscaler_style as shared_universal_upscaler_style,
+    universal_upscaler_ultra_style as shared_universal_upscaler_ultra_style,
 )
 from leonardo_ai_sdk.types import (
     BaseModel,
@@ -22,21 +23,29 @@ class CreateUniversalUpscalerJobRequestBodyTypedDict(TypedDict):
     r"""Query parameters are provided in the request body as a JSON object"""
 
     creativity_strength: NotRequired[Nullable[int]]
-    r"""The creativity strength of the universal upscaler, must be integer between 1 and 10"""
+    r"""The creativity strength of the universal upscaler. Must be between 1 and 10."""
+    detail_contrast: NotRequired[Nullable[int]]
+    r"""The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle."""
     generated_image_id: NotRequired[Nullable[str]]
-    r"""The ID of the generated image"""
+    r"""The ID of the generated image."""
     init_image_id: NotRequired[Nullable[str]]
-    r"""The ID of the init image uploaded"""
+    r"""The ID of the init image uploaded."""
     prompt: NotRequired[Nullable[str]]
-    r"""The prompt for the universal upscaler"""
+    r"""The prompt for the universal upscaler."""
+    similarity: NotRequired[Nullable[int]]
+    r"""The similarity of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle."""
+    ultra_upscale_style: NotRequired[
+        Nullable[shared_universal_upscaler_ultra_style.UniversalUpscalerUltraStyle]
+    ]
+    r"""The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle."""
     upscale_multiplier: NotRequired[Nullable[float]]
-    r"""The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00"""
+    r"""The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0."""
     upscaler_style: NotRequired[
         Nullable[shared_universal_upscaler_style.UniversalUpscalerStyle]
     ]
-    r"""The style to upscale images using universal upscaler with."""
+    r"""The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle."""
     variation_id: NotRequired[Nullable[str]]
-    r"""The ID of the variation image"""
+    r"""The ID of the variation image."""
 
 
 class CreateUniversalUpscalerJobRequestBody(BaseModel):
@@ -45,53 +54,75 @@ class CreateUniversalUpscalerJobRequestBody(BaseModel):
     creativity_strength: Annotated[
         OptionalNullable[int], pydantic.Field(alias="creativityStrength")
     ] = 5
-    r"""The creativity strength of the universal upscaler, must be integer between 1 and 10"""
+    r"""The creativity strength of the universal upscaler. Must be between 1 and 10."""
+
+    detail_contrast: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="detailContrast")
+    ] = UNSET
+    r"""The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle."""
 
     generated_image_id: Annotated[
         OptionalNullable[str], pydantic.Field(alias="generatedImageId")
     ] = UNSET
-    r"""The ID of the generated image"""
+    r"""The ID of the generated image."""
 
     init_image_id: Annotated[
         OptionalNullable[str], pydantic.Field(alias="initImageId")
     ] = UNSET
-    r"""The ID of the init image uploaded"""
+    r"""The ID of the init image uploaded."""
 
     prompt: OptionalNullable[str] = UNSET
-    r"""The prompt for the universal upscaler"""
+    r"""The prompt for the universal upscaler."""
+
+    similarity: OptionalNullable[int] = UNSET
+    r"""The similarity of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle."""
+
+    ultra_upscale_style: Annotated[
+        OptionalNullable[
+            shared_universal_upscaler_ultra_style.UniversalUpscalerUltraStyle
+        ],
+        pydantic.Field(alias="ultraUpscaleStyle"),
+    ] = UNSET
+    r"""The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle."""
 
     upscale_multiplier: Annotated[
         OptionalNullable[float], pydantic.Field(alias="upscaleMultiplier")
     ] = 1.5
-    r"""The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00"""
+    r"""The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0."""
 
     upscaler_style: Annotated[
         OptionalNullable[shared_universal_upscaler_style.UniversalUpscalerStyle],
         pydantic.Field(alias="upscalerStyle"),
     ] = shared_universal_upscaler_style.UniversalUpscalerStyle.GENERAL
-    r"""The style to upscale images using universal upscaler with."""
+    r"""The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle."""
 
     variation_id: Annotated[
         OptionalNullable[str], pydantic.Field(alias="variationId")
     ] = UNSET
-    r"""The ID of the variation image"""
+    r"""The ID of the variation image."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
             "creativityStrength",
+            "detailContrast",
             "generatedImageId",
             "initImageId",
             "prompt",
+            "similarity",
+            "ultraUpscaleStyle",
             "upscaleMultiplier",
             "upscalerStyle",
             "variationId",
         ]
         nullable_fields = [
             "creativityStrength",
+            "detailContrast",
             "generatedImageId",
             "initImageId",
             "prompt",
+            "similarity",
+            "ultraUpscaleStyle",
             "upscaleMultiplier",
             "upscalerStyle",
             "variationId",

@@ -75,6 +75,8 @@ class PricingCalculatorPricingCalculatorObjectTypedDict(TypedDict):
     r"""Strength of prompt magic. Must be a float between 0.1 and 1.0"""
     prompt_magic_version: NotRequired[Nullable[str]]
     r"""Prompt magic version v2 or v3, for use when promptMagic: true"""
+    ultra: NotRequired[Nullable[bool]]
+    r"""Enable to use Ultra mode."""
 
 
 class PricingCalculatorPricingCalculatorObject(BaseModel):
@@ -145,6 +147,9 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
     ] = UNSET
     r"""Prompt magic version v2 or v3, for use when promptMagic: true"""
 
+    ultra: OptionalNullable[bool] = UNSET
+    r"""Enable to use Ultra mode."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -163,6 +168,7 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
             "promptMagic",
             "promptMagicStrength",
             "promptMagicVersion",
+            "ultra",
         ]
         nullable_fields = [
             "controlnetsCost",
@@ -174,6 +180,7 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
             "promptMagic",
             "promptMagicStrength",
             "promptMagicVersion",
+            "ultra",
         ]
         null_default_fields = []
 
@@ -331,6 +338,36 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSAL
     r"""The maximum upscaled image size is 20 megapixels."""
 
 
+class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSALUPSCALERULTRAObjectTypedDict(
+    TypedDict
+):
+    r"""Parameters for UNIVERSAL_UPSCALER_ULTRA service"""
+
+    input_height: NotRequired[int]
+    r"""The input height of the image."""
+    input_width: NotRequired[int]
+    r"""The input width of the image."""
+    upscale_multiplier: NotRequired[float]
+    r"""The upscale multiplier of the universal upscaler. Must be between 1.00 and 2.00."""
+
+
+class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSALUPSCALERULTRAObject(
+    BaseModel
+):
+    r"""Parameters for UNIVERSAL_UPSCALER_ULTRA service"""
+
+    input_height: Annotated[Optional[int], pydantic.Field(alias="inputHeight")] = None
+    r"""The input height of the image."""
+
+    input_width: Annotated[Optional[int], pydantic.Field(alias="inputWidth")] = None
+    r"""The input width of the image."""
+
+    upscale_multiplier: Annotated[
+        Optional[float], pydantic.Field(alias="upscaleMultiplier")
+    ] = 1.5
+    r"""The upscale multiplier of the universal upscaler. Must be between 1.00 and 2.00."""
+
+
 class ObjectTypedDict(TypedDict):
     r"""Parameters for the service"""
 
@@ -366,6 +403,12 @@ class ObjectTypedDict(TypedDict):
         ]
     ]
     r"""Parameters for UNIVERSAL_UPSCALER service"""
+    universal_upscaler_ultra: NotRequired[
+        Nullable[
+            PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSALUPSCALERULTRAObjectTypedDict
+        ]
+    ]
+    r"""Parameters for UNIVERSAL_UPSCALER_ULTRA service"""
 
 
 class Object(BaseModel):
@@ -419,6 +462,14 @@ class Object(BaseModel):
     ] = UNSET
     r"""Parameters for UNIVERSAL_UPSCALER service"""
 
+    universal_upscaler_ultra: Annotated[
+        OptionalNullable[
+            PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSALUPSCALERULTRAObject
+        ],
+        pydantic.Field(alias="UNIVERSAL_UPSCALER_ULTRA"),
+    ] = UNSET
+    r"""Parameters for UNIVERSAL_UPSCALER_ULTRA service"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -429,6 +480,7 @@ class Object(BaseModel):
             "MOTION_GENERATION",
             "TEXTURE_GENERATION",
             "UNIVERSAL_UPSCALER",
+            "UNIVERSAL_UPSCALER_ULTRA",
         ]
         nullable_fields = [
             "FANTASY_AVATAR_GENERATION",
@@ -438,6 +490,7 @@ class Object(BaseModel):
             "MOTION_GENERATION",
             "TEXTURE_GENERATION",
             "UNIVERSAL_UPSCALER",
+            "UNIVERSAL_UPSCALER_ULTRA",
         ]
         null_default_fields = []
 

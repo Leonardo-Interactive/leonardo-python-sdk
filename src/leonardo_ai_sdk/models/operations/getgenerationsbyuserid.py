@@ -409,6 +409,8 @@ class GetGenerationsByUserIDGenerationsTypedDict(TypedDict):
     seed: NotRequired[Nullable[int]]
     status: NotRequired[shared_job_status.JobStatus]
     r"""The status of the current task."""
+    ultra: NotRequired[Nullable[bool]]
+    r"""If ultra generation mode was used."""
 
 
 class GetGenerationsByUserIDGenerations(BaseModel):
@@ -492,6 +494,9 @@ class GetGenerationsByUserIDGenerations(BaseModel):
     status: Optional[shared_job_status.JobStatus] = None
     r"""The status of the current task."""
 
+    ultra: OptionalNullable[bool] = UNSET
+    r"""If ultra generation mode was used."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -518,6 +523,7 @@ class GetGenerationsByUserIDGenerations(BaseModel):
             "sdVersion",
             "seed",
             "status",
+            "ultra",
         ]
         nullable_fields = [
             "guidanceScale",
@@ -533,6 +539,7 @@ class GetGenerationsByUserIDGenerations(BaseModel):
             "promptMagicStrength",
             "promptMagicVersion",
             "seed",
+            "ultra",
         ]
         null_default_fields = []
 

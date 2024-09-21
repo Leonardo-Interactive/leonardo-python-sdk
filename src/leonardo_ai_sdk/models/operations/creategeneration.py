@@ -112,6 +112,8 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     r"""Whether the generated images should tile on all axis."""
     transparency: NotRequired[Nullable[TransparencyType]]
     r"""Which type of transparency this image should use"""
+    ultra: NotRequired[Nullable[bool]]
+    r"""Enable to use Ultra mode. Note: can not be used with Alchemy."""
     unzoom: NotRequired[Nullable[bool]]
     r"""Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set)."""
     unzoom_amount: NotRequired[Nullable[float]]
@@ -291,6 +293,9 @@ class CreateGenerationRequestBody(BaseModel):
     transparency: OptionalNullable[TransparencyType] = UNSET
     r"""Which type of transparency this image should use"""
 
+    ultra: OptionalNullable[bool] = UNSET
+    r"""Enable to use Ultra mode. Note: can not be used with Alchemy."""
+
     unzoom: OptionalNullable[bool] = UNSET
     r"""Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set)."""
 
@@ -357,6 +362,7 @@ class CreateGenerationRequestBody(BaseModel):
             "seed",
             "tiling",
             "transparency",
+            "ultra",
             "unzoom",
             "unzoomAmount",
             "upscaleRatio",
@@ -399,6 +405,7 @@ class CreateGenerationRequestBody(BaseModel):
             "seed",
             "tiling",
             "transparency",
+            "ultra",
             "unzoom",
             "unzoomAmount",
             "upscaleRatio",

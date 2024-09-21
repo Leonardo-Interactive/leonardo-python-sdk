@@ -39,9 +39,11 @@ class PricingCalculator(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, operations.PricingCalculatorRequestBody)
-        request = cast(operations.PricingCalculatorRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[operations.PricingCalculatorRequestBody]
+            )
+        request = cast(Optional[operations.PricingCalculatorRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -136,9 +138,11 @@ class PricingCalculator(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, operations.PricingCalculatorRequestBody)
-        request = cast(operations.PricingCalculatorRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[operations.PricingCalculatorRequestBody]
+            )
+        request = cast(Optional[operations.PricingCalculatorRequestBody], request)
 
         req = self.build_request_async(
             method="POST",

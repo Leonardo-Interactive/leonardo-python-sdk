@@ -5,7 +5,7 @@ from enum import Enum
 
 
 class UniversalUpscalerStyle(str, Enum):
-    r"""The style to upscale images using universal upscaler with."""
+    r"""The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle."""
 
     GENERAL = "GENERAL"
     CINEMATIC = "CINEMATIC"

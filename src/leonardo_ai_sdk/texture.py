@@ -39,11 +39,11 @@ class Texture(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateTextureGenerationRequestBody
+                request, Optional[operations.CreateTextureGenerationRequestBody]
             )
-        request = cast(operations.CreateTextureGenerationRequestBody, request)
+        request = cast(Optional[operations.CreateTextureGenerationRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -139,11 +139,11 @@ class Texture(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateTextureGenerationRequestBody
+                request, Optional[operations.CreateTextureGenerationRequestBody]
             )
-        request = cast(operations.CreateTextureGenerationRequestBody, request)
+        request = cast(Optional[operations.CreateTextureGenerationRequestBody], request)
 
         req = self.build_request_async(
             method="POST",

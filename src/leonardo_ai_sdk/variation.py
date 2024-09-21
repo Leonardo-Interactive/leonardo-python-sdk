@@ -421,11 +421,11 @@ class Variation(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateVariationUnzoomRequestBody
+                request, Optional[operations.CreateVariationUnzoomRequestBody]
             )
-        request = cast(operations.CreateVariationUnzoomRequestBody, request)
+        request = cast(Optional[operations.CreateVariationUnzoomRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -521,11 +521,11 @@ class Variation(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateVariationUnzoomRequestBody
+                request, Optional[operations.CreateVariationUnzoomRequestBody]
             )
-        request = cast(operations.CreateVariationUnzoomRequestBody, request)
+        request = cast(Optional[operations.CreateVariationUnzoomRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -621,11 +621,11 @@ class Variation(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateVariationUpscaleRequestBody
+                request, Optional[operations.CreateVariationUpscaleRequestBody]
             )
-        request = cast(operations.CreateVariationUpscaleRequestBody, request)
+        request = cast(Optional[operations.CreateVariationUpscaleRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -721,11 +721,11 @@ class Variation(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateVariationUpscaleRequestBody
+                request, Optional[operations.CreateVariationUpscaleRequestBody]
             )
-        request = cast(operations.CreateVariationUpscaleRequestBody, request)
+        request = cast(Optional[operations.CreateVariationUpscaleRequestBody], request)
 
         req = self.build_request_async(
             method="POST",

@@ -39,11 +39,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateLCMGenerationRequestBody
+                request, Optional[operations.CreateLCMGenerationRequestBody]
             )
-        request = cast(operations.CreateLCMGenerationRequestBody, request)
+        request = cast(Optional[operations.CreateLCMGenerationRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -138,11 +138,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.CreateLCMGenerationRequestBody
+                request, Optional[operations.CreateLCMGenerationRequestBody]
             )
-        request = cast(operations.CreateLCMGenerationRequestBody, request)
+        request = cast(Optional[operations.CreateLCMGenerationRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -237,11 +237,13 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformAlchemyUpscaleLCMRequestBody
+                request, Optional[operations.PerformAlchemyUpscaleLCMRequestBody]
             )
-        request = cast(operations.PerformAlchemyUpscaleLCMRequestBody, request)
+        request = cast(
+            Optional[operations.PerformAlchemyUpscaleLCMRequestBody], request
+        )
 
         req = self.build_request(
             method="POST",
@@ -337,11 +339,13 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformAlchemyUpscaleLCMRequestBody
+                request, Optional[operations.PerformAlchemyUpscaleLCMRequestBody]
             )
-        request = cast(operations.PerformAlchemyUpscaleLCMRequestBody, request)
+        request = cast(
+            Optional[operations.PerformAlchemyUpscaleLCMRequestBody], request
+        )
 
         req = self.build_request_async(
             method="POST",
@@ -437,11 +441,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformInpaintingLCMRequestBody
+                request, Optional[operations.PerformInpaintingLCMRequestBody]
             )
-        request = cast(operations.PerformInpaintingLCMRequestBody, request)
+        request = cast(Optional[operations.PerformInpaintingLCMRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -536,11 +540,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformInpaintingLCMRequestBody
+                request, Optional[operations.PerformInpaintingLCMRequestBody]
             )
-        request = cast(operations.PerformInpaintingLCMRequestBody, request)
+        request = cast(Optional[operations.PerformInpaintingLCMRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -635,11 +639,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformInstantRefineRequestBody
+                request, Optional[operations.PerformInstantRefineRequestBody]
             )
-        request = cast(operations.PerformInstantRefineRequestBody, request)
+        request = cast(Optional[operations.PerformInstantRefineRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -734,11 +738,11 @@ class RealtimeCanvas(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
+        if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, operations.PerformInstantRefineRequestBody
+                request, Optional[operations.PerformInstantRefineRequestBody]
             )
-        request = cast(operations.PerformInstantRefineRequestBody, request)
+        request = cast(Optional[operations.PerformInstantRefineRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
