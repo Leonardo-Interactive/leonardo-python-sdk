@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 10310c36cca44ad9ea65148525284fda
+  docChecksum: da0e11043d85a8de4b607ec6b8709636
   docVersion: v1.0.0
-  speakeasyVersion: 1.401.2
-  generationVersion: 2.421.3
-  releaseVersion: 6.0.2
-  configChecksum: 7acf2acfa94d67f7f335927089eb68db
+  speakeasyVersion: 1.406.0
+  generationVersion: 2.429.0
+  releaseVersion: 6.1.0
+  configChecksum: f44c9c123db14fff31cefb097d99d514
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,21 +14,21 @@ management:
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.3
-    core: 5.5.4
+    constsAndDefaults: 1.0.4
+    core: 5.5.8
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
-    flattening: 3.0.0
+    flattening: 3.1.0
     getRequestBodies: 3.0.0
     globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
     nullables: 1.0.0
-    responseFormat: 1.0.0
+    responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.0.0
 generatedFiles:
@@ -36,6 +36,7 @@ generatedFiles:
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
   - .gitattributes
+  - .python-version
   - .vscode/settings.json
   - CONTRIBUTING.md
   - USAGE.md

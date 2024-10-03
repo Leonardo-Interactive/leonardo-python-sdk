@@ -21,8 +21,8 @@ from leonardo_ai_sdk.types import (
 )
 import pydantic
 from pydantic import model_serializer
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TransparencyType(str, Enum):
@@ -64,7 +64,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     guidance_scale: NotRequired[Nullable[int]]
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
     height: NotRequired[Nullable[int]]
-    r"""The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
+    r"""The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
     high_contrast: NotRequired[Nullable[bool]]
     r"""Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode."""
     high_resolution: NotRequired[Nullable[bool]]
@@ -123,7 +123,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     weighting: NotRequired[Nullable[float]]
     r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead."""
     width: NotRequired[Nullable[int]]
-    r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
+    r"""The input width of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
 
 
 class CreateGenerationRequestBody(BaseModel):
@@ -194,7 +194,7 @@ class CreateGenerationRequestBody(BaseModel):
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
 
     height: OptionalNullable[int] = 768
-    r"""The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
+    r"""The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
 
     high_contrast: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="highContrast")
@@ -318,7 +318,7 @@ class CreateGenerationRequestBody(BaseModel):
     r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead."""
 
     width: OptionalNullable[int] = 1024
-    r"""The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
+    r"""The input width of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

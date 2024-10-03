@@ -4,8 +4,8 @@ from __future__ import annotations
 import httpx
 from leonardo_ai_sdk.types import BaseModel
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class PromptImproveRequestBodyTypedDict(TypedDict):

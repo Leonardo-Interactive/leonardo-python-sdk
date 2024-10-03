@@ -10,8 +10,8 @@ from leonardo_ai_sdk.types import (
     UNSET_SENTINEL,
 )
 from pydantic import model_serializer
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class CreateDatasetRequestBodyTypedDict(TypedDict):

@@ -3,8 +3,7 @@
 from __future__ import annotations
 from leonardo_ai_sdk.types import BaseModel
 from leonardo_ai_sdk.utils import FieldMetadata, SecurityMetadata
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class SecurityTypedDict(TypedDict):

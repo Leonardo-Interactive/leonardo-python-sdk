@@ -12,8 +12,8 @@ from leonardo_ai_sdk.types import (
 from leonardo_ai_sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 import pydantic
 from pydantic import model_serializer
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class UploadDatasetImageFromGenRequestBodyTypedDict(TypedDict):

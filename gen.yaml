@@ -13,7 +13,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 6.0.2
+  version: 6.1.0
   additionalDependencies:
     dev: {}
     main: {}
@@ -22,8 +22,11 @@ python:
   clientServerStatusCodesAsErrors: true
   description: Leonardo AI Python Client SDK
   enumFormat: enum
+  fixFlags:
+    responseRequiredSep2024: false
   flattenGlobalSecurity: true
   flattenRequests: false
+  flatteningOrder: parameters-first
   imports:
     option: openapi
     paths:
