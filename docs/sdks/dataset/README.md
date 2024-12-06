@@ -20,17 +20,16 @@ This endpoint creates a new dataset
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.dataset.create_dataset(request={
+        "name": "<value>",
+    })
 
-res = s.dataset.create_dataset(request={
-    "name": "<value>",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -60,15 +59,14 @@ This endpoint deletes the specific dataset
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.dataset.delete_dataset_by_id(id="<id>")
 
-res = s.dataset.delete_dataset_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -98,15 +96,14 @@ This endpoint gets the specific dataset
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.dataset.get_dataset_by_id(id="<id>")
 
-res = s.dataset.get_dataset_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -136,17 +133,16 @@ This endpoint returns presigned details to upload a dataset image to S3
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.dataset.upload_dataset_image(dataset_id="<value>", request_body={
+        "extension": "mpg4",
+    })
 
-res = s.dataset.upload_dataset_image(dataset_id="<value>", request_body={
-    "extension": "mpg4",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -177,17 +173,16 @@ This endpoint will upload a previously generated image to the dataset
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
+        "generated_image_id": "<value>",
+    })
 
-res = s.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
-    "generated_image_id": "<value>",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

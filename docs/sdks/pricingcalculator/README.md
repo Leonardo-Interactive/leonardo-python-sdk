@@ -16,15 +16,14 @@ This endpoint returns the cost used for generating images using a particular ser
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.pricing_calculator.pricing_calculator()
 
-res = s.pricing_calculator.pricing_calculator()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

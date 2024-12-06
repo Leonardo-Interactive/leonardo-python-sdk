@@ -5,7 +5,121 @@
 
 ### Available Operations
 
+* [create_element](#create_element) - Train a Custom Element
+* [delete_element_by_id](#delete_element_by_id) - Delete a Single Custom Element by ID
+* [get_element_by_id](#get_element_by_id) - Get a Single Custom Element by ID
 * [list_elements](#list_elements) - List Elements
+
+## create_element
+
+This endpoint will train a new custom element.
+
+### Example Usage
+
+```python
+from leonardo_ai_sdk import LeonardoAiSDK
+
+with LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as s:
+    res = s.elements.create_element(request={})
+
+    if res.object is not None:
+        # handle response
+        pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreateElementRequestBody](../../models/operations/createelementrequestbody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
+
+### Response
+
+**[operations.CreateElementResponse](../../models/operations/createelementresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## delete_element_by_id
+
+This endpoint will delete a specific custom model.
+
+### Example Usage
+
+```python
+from leonardo_ai_sdk import LeonardoAiSDK
+
+with LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as s:
+    res = s.elements.delete_element_by_id(id=39024)
+
+    if res.object is not None:
+        # handle response
+        pass
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *int*                                                               | :heavy_check_mark:                                                  | The ID of the element to delete.                                    |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[operations.DeleteElementByIDResponse](../../models/operations/deleteelementbyidresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## get_element_by_id
+
+This endpoint gets the specific custom element.
+
+### Example Usage
+
+```python
+from leonardo_ai_sdk import LeonardoAiSDK
+
+with LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as s:
+    res = s.elements.get_element_by_id(id=665696)
+
+    if res.object is not None:
+        # handle response
+        pass
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *int*                                                               | :heavy_check_mark:                                                  | The ID of the custom element to return.                             |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[operations.GetElementByIDResponse](../../models/operations/getelementbyidresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_elements
 
@@ -16,15 +130,14 @@ Get a list of public Elements available for use with generations.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.elements.list_elements()
 
-res = s.elements.list_elements()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

@@ -3,10 +3,6 @@
 from __future__ import annotations
 from enum import Enum
 import httpx
-from leonardo_ai_sdk.models.shared import (
-    custom_model_type as shared_custom_model_type,
-    strength as shared_strength,
-)
 from leonardo_ai_sdk.types import (
     BaseModel,
     Nullable,
@@ -20,80 +16,91 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class CreateModelSdVersions(str, Enum):
-    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
+class SdVersions(str, Enum):
+    r"""The base version of stable diffusion to use if not using a custom model."""
 
-    V1_5 = "v1_5"
-    V2 = "v2"
+    SDXL_0_9 = "SDXL_0_9"
+    SDXL_1_0 = "SDXL_1_0"
+    LEONARDO_DIFFUSION_XL = "LEONARDO_DIFFUSION_XL"
+    LEONARDO_LIGHTNING_XL = "LEONARDO_LIGHTNING_XL"
+    VISION_XL = "VISION_XL"
+    KINO_XL = "KINO_XL"
+    ALBEDO_XL = "ALBEDO_XL"
 
 
-class CreateModelRequestBodyTypedDict(TypedDict):
-    r"""Query parameters to be provided in the request body as a JSON object"""
+class CreateElementRequestBodyTypedDict(TypedDict):
+    r"""Query parameters to be provided in the request body as a JSON object."""
 
-    dataset_id: str
-    r"""The ID of the dataset to train the model on."""
-    instance_prompt: str
-    r"""The instance prompt to use during training."""
-    name: str
-    r"""The name of the model."""
+    dataset_id: NotRequired[str]
+    r"""The ID of the dataset to train the element on."""
     description: NotRequired[Nullable[str]]
-    r"""The description of the model."""
-    model_type: NotRequired[shared_custom_model_type.CustomModelType]
-    r"""The category the most accurately reflects the model."""
-    nsfw: NotRequired[Nullable[bool]]
-    r"""Whether or not the model is NSFW."""
+    r"""The description of the element."""
+    instance_prompt: NotRequired[str]
+    r"""The instance prompt to use during training.Try “a” by a noun. E.g. a castle"""
+    learning_rate: NotRequired[float]
+    r"""The speed of element learns."""
+    lora_focus: NotRequired[str]
+    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'."""
+    name: NotRequired[str]
+    r"""The name of the element."""
+    num_train_epochs: NotRequired[int]
+    r"""The number of times the entire training dataset is passed through the element."""
     resolution: NotRequired[Nullable[int]]
-    r"""The resolution for training. Must be 512 or 768."""
-    sd_version: NotRequired[Nullable[CreateModelSdVersions]]
-    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
-    strength: NotRequired[shared_strength.Strength]
-    r"""When training using the PIXEL_ART model type, this influences the training strength."""
+    r"""The resolution for training. Must be 1024."""
+    sd_version: NotRequired[SdVersions]
+    r"""The base version of stable diffusion to use if not using a custom model."""
+    train_text_encoder: NotRequired[bool]
+    r"""Whether or not encode the train text."""
 
 
-class CreateModelRequestBody(BaseModel):
-    r"""Query parameters to be provided in the request body as a JSON object"""
+class CreateElementRequestBody(BaseModel):
+    r"""Query parameters to be provided in the request body as a JSON object."""
 
-    dataset_id: Annotated[str, pydantic.Field(alias="datasetId")]
-    r"""The ID of the dataset to train the model on."""
-
-    instance_prompt: str
-    r"""The instance prompt to use during training."""
-
-    name: str
-    r"""The name of the model."""
+    dataset_id: Annotated[Optional[str], pydantic.Field(alias="datasetId")] = ""
+    r"""The ID of the dataset to train the element on."""
 
     description: OptionalNullable[str] = ""
-    r"""The description of the model."""
+    r"""The description of the element."""
 
-    model_type: Annotated[
-        Optional[shared_custom_model_type.CustomModelType],
-        pydantic.Field(alias="modelType"),
-    ] = shared_custom_model_type.CustomModelType.GENERAL
-    r"""The category the most accurately reflects the model."""
+    instance_prompt: Optional[str] = "a character"
+    r"""The instance prompt to use during training.Try “a” by a noun. E.g. a castle"""
 
-    nsfw: OptionalNullable[bool] = False
-    r"""Whether or not the model is NSFW."""
+    learning_rate: Optional[float] = 0.000001
+    r"""The speed of element learns."""
 
-    resolution: OptionalNullable[int] = 512
-    r"""The resolution for training. Must be 512 or 768."""
+    lora_focus: Optional[str] = "General"
+    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'."""
 
-    sd_version: OptionalNullable[CreateModelSdVersions] = UNSET
-    r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."""
+    name: Optional[str] = "placeholder"
+    r"""The name of the element."""
 
-    strength: Optional[shared_strength.Strength] = shared_strength.Strength.MEDIUM
-    r"""When training using the PIXEL_ART model type, this influences the training strength."""
+    num_train_epochs: Optional[int] = 100
+    r"""The number of times the entire training dataset is passed through the element."""
+
+    resolution: OptionalNullable[int] = 1024
+    r"""The resolution for training. Must be 1024."""
+
+    sd_version: Optional[SdVersions] = SdVersions.SDXL_0_9
+    r"""The base version of stable diffusion to use if not using a custom model."""
+
+    train_text_encoder: Optional[bool] = True
+    r"""Whether or not encode the train text."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
+            "datasetId",
             "description",
-            "modelType",
-            "nsfw",
+            "instance_prompt",
+            "learning_rate",
+            "lora_focus",
+            "name",
+            "num_train_epochs",
             "resolution",
             "sd_version",
-            "strength",
+            "train_text_encoder",
         ]
-        nullable_fields = ["description", "nsfw", "resolution", "sd_version"]
+        nullable_fields = ["description", "resolution"]
         null_default_fields = []
 
         serialized = handler(self)
@@ -121,25 +128,23 @@ class CreateModelRequestBody(BaseModel):
         return m
 
 
-class CreateModelSDTrainingOutputTypedDict(TypedDict):
+class SDTrainingOutputTypedDict(TypedDict):
     api_credit_cost: NotRequired[Nullable[int]]
     r"""API Credits Cost for Model Training. Available for Production API Users."""
-    custom_model_id: NotRequired[str]
+    user_lora_id: NotRequired[int]
 
 
-class CreateModelSDTrainingOutput(BaseModel):
+class SDTrainingOutput(BaseModel):
     api_credit_cost: Annotated[
         OptionalNullable[int], pydantic.Field(alias="apiCreditCost")
     ] = UNSET
     r"""API Credits Cost for Model Training. Available for Production API Users."""
 
-    custom_model_id: Annotated[Optional[str], pydantic.Field(alias="customModelId")] = (
-        None
-    )
+    user_lora_id: Annotated[Optional[int], pydantic.Field(alias="userLoraId")] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["apiCreditCost", "customModelId"]
+        optional_fields = ["apiCreditCost", "userLoraId"]
         nullable_fields = ["apiCreditCost"]
         null_default_fields = []
 
@@ -168,18 +173,17 @@ class CreateModelSDTrainingOutput(BaseModel):
         return m
 
 
-class CreateModelResponseBodyTypedDict(TypedDict):
-    r"""Responses for POST /models"""
+class CreateElementResponseBodyTypedDict(TypedDict):
+    r"""Responses for POST /elements."""
 
-    sd_training_job: NotRequired[Nullable[CreateModelSDTrainingOutputTypedDict]]
+    sd_training_job: NotRequired[Nullable[SDTrainingOutputTypedDict]]
 
 
-class CreateModelResponseBody(BaseModel):
-    r"""Responses for POST /models"""
+class CreateElementResponseBody(BaseModel):
+    r"""Responses for POST /elements."""
 
     sd_training_job: Annotated[
-        OptionalNullable[CreateModelSDTrainingOutput],
-        pydantic.Field(alias="sdTrainingJob"),
+        OptionalNullable[SDTrainingOutput], pydantic.Field(alias="sdTrainingJob")
     ] = UNSET
 
     @model_serializer(mode="wrap")
@@ -213,18 +217,18 @@ class CreateModelResponseBody(BaseModel):
         return m
 
 
-class CreateModelResponseTypedDict(TypedDict):
+class CreateElementResponseTypedDict(TypedDict):
     content_type: str
     r"""HTTP response content type for this operation"""
     status_code: int
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    object: NotRequired[CreateModelResponseBodyTypedDict]
-    r"""Responses for POST /models"""
+    object: NotRequired[CreateElementResponseBodyTypedDict]
+    r"""Responses for POST /elements."""
 
 
-class CreateModelResponse(BaseModel):
+class CreateElementResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
 
@@ -234,5 +238,5 @@ class CreateModelResponse(BaseModel):
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
 
-    object: Optional[CreateModelResponseBody] = None
-    r"""Responses for POST /models"""
+    object: Optional[CreateElementResponseBody] = None
+    r"""Responses for POST /elements."""

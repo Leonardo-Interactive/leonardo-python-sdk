@@ -19,15 +19,14 @@ This endpoint deletes the specific 3D Model
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.three_d_model_assets.delete3_d_model_by_id(id="<id>")
 
-res = s.three_d_model_assets.delete3_d_model_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -58,15 +57,14 @@ This endpoint gets the specific 3D model
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.three_d_model_assets.get3_d_model_by_id(id="<id>")
 
-res = s.three_d_model_assets.get3_d_model_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -99,15 +97,14 @@ This endpoint returns all 3D models by a specific user
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.three_d_model_assets.get3_d_models_by_user_id(user_id="<value>")
 
-res = s.three_d_model_assets.get3_d_models_by_user_id(user_id="<value>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -140,15 +137,14 @@ This endpoint returns presigned details to upload a 3D model to S3
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.three_d_model_assets.upload_model_asset()
 
-res = s.three_d_model_assets.upload_model_asset()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

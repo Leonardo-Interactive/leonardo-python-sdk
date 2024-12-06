@@ -19,15 +19,14 @@ This endpoint will generate a texture generation.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.texture.create_texture_generation()
 
-res = s.texture.create_texture_generation()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -57,15 +56,14 @@ This endpoint deletes the specific texture generation.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.texture.delete_texture_generation_by_id(id="<id>")
 
-res = s.texture.delete_texture_generation_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -96,15 +94,14 @@ This endpoint gets the specific texture generation.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.texture.get_texture_generation_by_id(id="<id>")
 
-res = s.texture.get_texture_generation_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -137,15 +134,14 @@ This endpoint gets the specific texture generations by the 3d model id.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.texture.get_texture_generations_by_model_id(model_id="<value>")
 
-res = s.texture.get_texture_generations_by_model_id(model_id="<value>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

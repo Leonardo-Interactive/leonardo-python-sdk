@@ -12,14 +12,16 @@ generation:
     requestResponseComponentNamesFeb2024: false
   auth:
     oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
 python:
-  version: 6.2.0
+  version: 6.2.1
   additionalDependencies:
     dev: {}
     main: {}
   authors:
     - Leonardo-Ai
   clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKError
   description: Leonardo AI Python Client SDK
   enumFormat: enum
   fixFlags:

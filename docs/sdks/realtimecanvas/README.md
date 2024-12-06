@@ -19,15 +19,14 @@ This endpoint will generate a LCM image generation.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.realtime_canvas.create_lcm_generation()
 
-res = s.realtime_canvas.create_lcm_generation()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -57,15 +56,14 @@ This endpoint will perform Alchemy Upscale on a LCM image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.realtime_canvas.perform_alchemy_upscale_lcm()
 
-res = s.realtime_canvas.perform_alchemy_upscale_lcm()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -95,15 +93,14 @@ This endpoint will perform a inpainting on a LCM image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.realtime_canvas.perform_inpainting_lcm()
 
-res = s.realtime_canvas.perform_inpainting_lcm()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -133,15 +130,14 @@ This endpoint will perform instant refine on a LCM image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.realtime_canvas.perform_instant_refine()
 
-res = s.realtime_canvas.perform_instant_refine()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

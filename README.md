@@ -10,17 +10,19 @@ Rest Endpoints: Leonardo.Ai API OpenAPI specification.
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [Leonardo-Ai-SDK](#leonardo-ai-sdk)
+  * [SDK Installation](#sdk-installation)
+  * [IDE Support](#ide-support)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Server Selection](#server-selection)
+  * [Authentication](#authentication)
+  * [Debugging](#debugging)
 
-* [SDK Installation](#sdk-installation)
-* [IDE Support](#ide-support)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -64,15 +66,14 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 # Synchronous Example
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 ```
 
 </br>
@@ -84,13 +85,14 @@ import asyncio
 from leonardo_ai_sdk import LeonardoAiSDK
 
 async def main():
-    s = LeonardoAiSDK(
+    async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    res = await s.init_images.delete_init_image_by_id_async(id="<id>")
-    if res.object is not None:
-        # handle response
-        pass
+    ) as s:
+        res = await s.init_images.delete_init_image_by_id_async(id="<id>")
+
+        if res.object is not None:
+            # handle response
+            pass
 
 asyncio.run(main())
 ```
@@ -112,6 +114,9 @@ asyncio.run(main())
 
 ### [elements](docs/sdks/elements/README.md)
 
+* [create_element](docs/sdks/elements/README.md#create_element) - Train a Custom Element
+* [delete_element_by_id](docs/sdks/elements/README.md#delete_element_by_id) - Delete a Single Custom Element by ID
+* [get_element_by_id](docs/sdks/elements/README.md#get_element_by_id) - Get a Single Custom Element by ID
 * [list_elements](docs/sdks/elements/README.md#list_elements) - List Elements
 
 ### [image](docs/sdks/image/README.md)
@@ -201,16 +206,15 @@ To change the default retry strategy for a single API call, simply provide a `Re
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardoaisdk.utils import BackoffStrategy, RetryConfig
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>",
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-res = s.init_images.delete_init_image_by_id(id="<id>",
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -219,16 +223,15 @@ If you'd like to override the default retry strategy for all operations that sup
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardoaisdk.utils import BackoffStrategy, RetryConfig
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 <!-- End Retries [retries] -->
@@ -249,9 +252,9 @@ By default, an API error will raise a errors.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `delete_init_image_by_id_async` method may raise the following exceptions:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| errors.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -259,21 +262,20 @@ When custom error responses are specified for an operation, the SDK may also rai
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardo_ai_sdk.models import errors
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = None
+    try:
+        res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = None
-try:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+        if res.object is not None:
+            # handle response
+            pass
 
-    if res.object is not None:
-        # handle response
-        pass
-
-except errors.SDKError as e:
-    # handle exception
-    raise(e)
+    except errors.SDKError as e:
+        # handle exception
+        raise(e)
 ```
 <!-- End Error Handling [errors] -->
 
@@ -365,49 +367,21 @@ s = LeonardoAiSDK(async_client=CustomClient(httpx.AsyncClient()))
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://cloud.leonardo.ai/api/rest/v1` | None |
-
-#### Example
-
-```python
-from leonardo_ai_sdk import LeonardoAiSDK
-
-s = LeonardoAiSDK(
-    server_idx=0,
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 <!-- End Server Selection [server] -->
@@ -421,23 +395,22 @@ if res.object is not None:
 
 This SDK supports the following security scheme globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `bearer_auth` | http          | HTTP Bearer   |
+| Name          | Type | Scheme      |
+| ------------- | ---- | ----------- |
+| `bearer_auth` | http | HTTP Bearer |
 
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 <!-- End Authentication [security] -->

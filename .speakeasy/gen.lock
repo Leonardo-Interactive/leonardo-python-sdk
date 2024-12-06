@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 588dbc24f8067737fe66a440c824796b
+  docChecksum: 51ce9eed19d52c005de8a312c57c1412
   docVersion: v1.0.0
-  speakeasyVersion: 1.413.0
-  generationVersion: 2.436.3
-  releaseVersion: 6.2.0
-  configChecksum: 7d02e22c177f3e963e3b54ff3894b537
+  speakeasyVersion: 1.453.0
+  generationVersion: 2.472.1
+  releaseVersion: 6.2.1
+  configChecksum: fc781557c34477dff84cf29a18e4ceac
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -14,13 +14,13 @@ management:
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.4
-    core: 5.6.0
+    constsAndDefaults: 1.0.5
+    core: 5.6.9
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
-    envVarSecurityUsage: 0.3.1
+    envVarSecurityUsage: 0.3.2
     flattening: 3.1.0
     getRequestBodies: 3.0.0
     globalSecurity: 3.0.2
@@ -45,6 +45,9 @@ generatedFiles:
   - docs/models/operations/createdatasetrequestbody.md
   - docs/models/operations/createdatasetresponse.md
   - docs/models/operations/createdatasetresponsebody.md
+  - docs/models/operations/createelementrequestbody.md
+  - docs/models/operations/createelementresponse.md
+  - docs/models/operations/createelementresponsebody.md
   - docs/models/operations/creategenerationrequestbody.md
   - docs/models/operations/creategenerationresponse.md
   - docs/models/operations/creategenerationresponsebody.md
@@ -54,6 +57,8 @@ generatedFiles:
   - docs/models/operations/createmodelrequestbody.md
   - docs/models/operations/createmodelresponse.md
   - docs/models/operations/createmodelresponsebody.md
+  - docs/models/operations/createmodelsdtrainingoutput.md
+  - docs/models/operations/createmodelsdversions.md
   - docs/models/operations/createsvdmotiongenerationrequestbody.md
   - docs/models/operations/createsvdmotiongenerationresponse.md
   - docs/models/operations/createsvdmotiongenerationresponsebody.md
@@ -86,6 +91,9 @@ generatedFiles:
   - docs/models/operations/deletedatasetbyidrequest.md
   - docs/models/operations/deletedatasetbyidresponse.md
   - docs/models/operations/deletedatasetbyidresponsebody.md
+  - docs/models/operations/deleteelementbyidrequest.md
+  - docs/models/operations/deleteelementbyidresponse.md
+  - docs/models/operations/deleteelementbyidresponsebody.md
   - docs/models/operations/deletegenerationbyidrequest.md
   - docs/models/operations/deletegenerationbyidresponse.md
   - docs/models/operations/deletegenerationbyidresponsebody.md
@@ -118,6 +126,10 @@ generatedFiles:
   - docs/models/operations/getdatasetbyidrequest.md
   - docs/models/operations/getdatasetbyidresponse.md
   - docs/models/operations/getdatasetbyidresponsebody.md
+  - docs/models/operations/getelementbyidrequest.md
+  - docs/models/operations/getelementbyidresponse.md
+  - docs/models/operations/getelementbyidresponsebody.md
+  - docs/models/operations/getelementbyiduserloras.md
   - docs/models/operations/getgenerationbyidgeneratedimagevariationgeneric.md
   - docs/models/operations/getgenerationbyidgenerations.md
   - docs/models/operations/getgenerationbyidloras.md
@@ -205,6 +217,7 @@ generatedFiles:
   - docs/models/operations/sdtrainingoutput.md
   - docs/models/operations/sdunzoomoutput.md
   - docs/models/operations/sdupscalejoboutput.md
+  - docs/models/operations/sdversions.md
   - docs/models/operations/texturegenerationjoboutput.md
   - docs/models/operations/transparencytype.md
   - docs/models/operations/universalupscaleroutput.md
@@ -226,6 +239,7 @@ generatedFiles:
   - docs/models/operations/uploadmodelassetresponse.md
   - docs/models/operations/uploadmodelassetresponsebody.md
   - docs/models/operations/userdetails.md
+  - docs/models/operations/userloras.md
   - docs/models/operations/users.md
   - docs/models/shared/canvasrequesttype.md
   - docs/models/shared/controlnetinput.md
@@ -265,7 +279,6 @@ generatedFiles:
   - py.typed
   - pylintrc
   - pyproject.toml
-  - scripts/compile.sh
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/leonardo_ai_sdk/__init__.py
@@ -283,6 +296,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/errors/sdkerror.py
   - src/leonardo_ai_sdk/models/operations/__init__.py
   - src/leonardo_ai_sdk/models/operations/createdataset.py
+  - src/leonardo_ai_sdk/models/operations/createelement.py
   - src/leonardo_ai_sdk/models/operations/creategeneration.py
   - src/leonardo_ai_sdk/models/operations/createlcmgeneration.py
   - src/leonardo_ai_sdk/models/operations/createmodel.py
@@ -294,6 +308,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/operations/createvariationupscale.py
   - src/leonardo_ai_sdk/models/operations/delete3dmodelbyid.py
   - src/leonardo_ai_sdk/models/operations/deletedatasetbyid.py
+  - src/leonardo_ai_sdk/models/operations/deleteelementbyid.py
   - src/leonardo_ai_sdk/models/operations/deletegenerationbyid.py
   - src/leonardo_ai_sdk/models/operations/deleteinitimagebyid.py
   - src/leonardo_ai_sdk/models/operations/deletemodelbyid.py
@@ -301,6 +316,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/operations/get3dmodelbyid.py
   - src/leonardo_ai_sdk/models/operations/get3dmodelsbyuserid.py
   - src/leonardo_ai_sdk/models/operations/getdatasetbyid.py
+  - src/leonardo_ai_sdk/models/operations/getelementbyid.py
   - src/leonardo_ai_sdk/models/operations/getgenerationbyid.py
   - src/leonardo_ai_sdk/models/operations/getgenerationsbyuserid.py
   - src/leonardo_ai_sdk/models/operations/getinitimagebyid.py
@@ -525,3 +541,15 @@ examples:
       parameters:
         path:
           id: "<id>"
+  createElement: {}
+  deleteElementById:
+    speakeasy-default-delete-element-by-id:
+      parameters:
+        path:
+          id: 39024
+  getElementById:
+    speakeasy-default-get-element-by-id:
+      parameters:
+        path:
+          id: 665696
+generatedTests: {}

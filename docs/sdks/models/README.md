@@ -19,19 +19,18 @@ This endpoint will train a new custom model
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.models.create_model(request={
+        "dataset_id": "<value>",
+        "instance_prompt": "<value>",
+        "name": "<value>",
+    })
 
-res = s.models.create_model(request={
-    "dataset_id": "<value>",
-    "instance_prompt": "<value>",
-    "name": "<value>",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -61,15 +60,14 @@ This endpoint will delete a specific custom model
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.models.delete_model_by_id(id="<id>")
 
-res = s.models.delete_model_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -99,15 +97,14 @@ This endpoint gets the specific custom model
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.models.get_model_by_id(id="<id>")
 
-res = s.models.get_model_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -137,15 +134,14 @@ Get a list of public Platform Models available for use with generations.
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.models.list_platform_models()
 
-res = s.models.list_platform_models()
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 

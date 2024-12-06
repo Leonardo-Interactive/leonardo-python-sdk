@@ -17,7 +17,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class LorasTypedDict(TypedDict):
-    r"""columns and relationships of \"elements\" """
+    r"""columns and relationships of \"elements\"."""
 
     ak_uuid: NotRequired[Nullable[str]]
     r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
@@ -40,7 +40,7 @@ class LorasTypedDict(TypedDict):
 
 
 class Loras(BaseModel):
-    r"""columns and relationships of \"elements\" """
+    r"""columns and relationships of \"elements\"."""
 
     ak_uuid: Annotated[OptionalNullable[str], pydantic.Field(alias="akUUID")] = UNSET
     r"""Unique identifier for the element. Elements can be found from the List Elements endpoint."""
@@ -132,13 +132,13 @@ class Loras(BaseModel):
 
 
 class ListElementsResponseBodyTypedDict(TypedDict):
-    r"""Responses for GET /api/rest/v1/elements"""
+    r"""Responses for GET /api/rest/v1/elements."""
 
     loras: NotRequired[List[LorasTypedDict]]
 
 
 class ListElementsResponseBody(BaseModel):
-    r"""Responses for GET /api/rest/v1/elements"""
+    r"""Responses for GET /api/rest/v1/elements."""
 
     loras: Optional[List[Loras]] = None
 
@@ -151,7 +151,7 @@ class ListElementsResponseTypedDict(TypedDict):
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
     object: NotRequired[ListElementsResponseBodyTypedDict]
-    r"""Responses for GET /api/rest/v1/elements"""
+    r"""Responses for GET /api/rest/v1/elements."""
 
 
 class ListElementsResponse(BaseModel):
@@ -165,4 +165,4 @@ class ListElementsResponse(BaseModel):
     r"""Raw HTTP response; suitable for custom response parsing"""
 
     object: Optional[ListElementsResponseBody] = None
-    r"""Responses for GET /api/rest/v1/elements"""
+    r"""Responses for GET /api/rest/v1/elements."""

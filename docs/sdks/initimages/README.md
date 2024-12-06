@@ -19,15 +19,14 @@ This endpoint deletes an init image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.delete_init_image_by_id(id="<id>")
 
-res = s.init_images.delete_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -57,15 +56,14 @@ This endpoint will return a single init image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.get_init_image_by_id(id="<id>")
 
-res = s.init_images.get_init_image_by_id(id="<id>")
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -95,18 +93,17 @@ This endpoint returns presigned details to upload an init image and a mask image
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.upload_canvas_init_image(request={
+        "init_extension": "<value>",
+        "mask_extension": "<value>",
+    })
 
-res = s.init_images.upload_canvas_init_image(request={
-    "init_extension": "<value>",
-    "mask_extension": "<value>",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
@@ -136,17 +133,16 @@ This endpoint returns presigned details to upload an init image to S3
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
-s = LeonardoAiSDK(
+with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.init_images.upload_init_image(request={
+        "extension": "png",
+    })
 
-res = s.init_images.upload_init_image(request={
-    "extension": "png",
-})
-
-if res.object is not None:
-    # handle response
-    pass
+    if res.object is not None:
+        # handle response
+        pass
 
 ```
 
