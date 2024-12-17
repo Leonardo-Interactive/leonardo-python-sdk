@@ -21,16 +21,18 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.models.create_model(request={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.models.create_model(request={
         "dataset_id": "<value>",
         "instance_prompt": "<value>",
         "name": "<value>",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -62,12 +64,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.models.delete_model_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.models.delete_model_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -99,12 +103,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.models.get_model_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.models.get_model_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -136,12 +142,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.models.list_platform_models()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.models.list_platform_models()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

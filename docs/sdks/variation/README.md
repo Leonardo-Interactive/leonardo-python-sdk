@@ -22,12 +22,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.variation.create_universal_upscaler_job(request={})
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.variation.create_universal_upscaler_job(request={})
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -59,14 +61,16 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.variation.create_variation_no_bg(request={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.variation.create_variation_no_bg(request={
         "id": "<id>",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -98,12 +102,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.variation.create_variation_unzoom()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.variation.create_variation_unzoom()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -135,12 +141,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.variation.create_variation_upscale()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.variation.create_variation_upscale()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -172,12 +180,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.variation.get_variation_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.variation.get_variation_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

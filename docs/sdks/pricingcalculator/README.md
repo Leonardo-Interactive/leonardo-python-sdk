@@ -18,12 +18,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.pricing_calculator.pricing_calculator()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.pricing_calculator.pricing_calculator()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

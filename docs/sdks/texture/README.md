@@ -21,12 +21,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.texture.create_texture_generation()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.texture.create_texture_generation()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -58,12 +60,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.texture.delete_texture_generation_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.texture.delete_texture_generation_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -96,12 +100,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.texture.get_texture_generation_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.texture.get_texture_generation_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -136,12 +142,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.texture.get_texture_generations_by_model_id(model_id="<value>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.texture.get_texture_generations_by_model_id(model_id="<value>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

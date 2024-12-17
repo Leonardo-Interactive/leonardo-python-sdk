@@ -18,12 +18,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.user.get_user_self()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.user.get_user_self()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

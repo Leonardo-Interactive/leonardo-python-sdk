@@ -3,7 +3,7 @@
 import importlib.metadata
 
 __title__: str = "Leonardo-Ai-SDK"
-__version__: str = "6.2.1"
+__version__: str = "6.3.0"
 
 try:
     if __package__ is not None:

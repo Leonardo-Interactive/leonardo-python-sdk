@@ -68,12 +68,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 ```
 
 </br>
@@ -87,12 +89,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 async def main():
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ) as s:
-        res = await s.init_images.delete_init_image_by_id_async(id="<id>")
+    ) as leonardo_ai_sdk:
 
-        if res.object is not None:
-            # handle response
-            pass
+        res = await leonardo_ai_sdk.init_images.delete_init_image_by_id_async(id="<id>")
+
+        assert res.object is not None
+
+        # Handle response
+        print(res.object)
 
 asyncio.run(main())
 ```
@@ -204,34 +208,38 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
-from leonardoaisdk.utils import BackoffStrategy, RetryConfig
+from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>",
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
-from leonardoaisdk.utils import BackoffStrategy, RetryConfig
+from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 
 with LeonardoAiSDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 <!-- End Retries [retries] -->
@@ -264,14 +272,16 @@ from leonardo_ai_sdk.models import errors
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
+) as leonardo_ai_sdk:
     res = None
     try:
-        res = s.init_images.delete_init_image_by_id(id="<id>")
 
-        if res.object is not None:
-            # handle response
-            pass
+        res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+        assert res.object is not None
+
+        # Handle response
+        print(res.object)
 
     except errors.SDKError as e:
         # handle exception
@@ -376,12 +386,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 with LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 <!-- End Server Selection [server] -->
@@ -405,12 +417,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 <!-- End Authentication [security] -->

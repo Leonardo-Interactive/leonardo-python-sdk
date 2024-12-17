@@ -19,14 +19,16 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.prompt.prompt_improve(request={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.prompt.prompt_improve(request={
         "prompt": "<value>",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -58,12 +60,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.prompt.prompt_random()
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.prompt.prompt_random()
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

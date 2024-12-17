@@ -22,14 +22,16 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.dataset.create_dataset(request={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.dataset.create_dataset(request={
         "name": "<value>",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -61,12 +63,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.dataset.delete_dataset_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.dataset.delete_dataset_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -98,12 +102,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.dataset.get_dataset_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.dataset.get_dataset_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -135,14 +141,16 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.dataset.upload_dataset_image(dataset_id="<value>", request_body={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.dataset.upload_dataset_image(dataset_id="<value>", request_body={
         "extension": "mpg4",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 
@@ -175,14 +183,16 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
+) as leonardo_ai_sdk:
+
+    res = leonardo_ai_sdk.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
         "generated_image_id": "<value>",
     })
 
-    if res.object is not None:
-        # handle response
-        pass
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 
 ```
 

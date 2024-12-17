@@ -5,12 +5,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.init_images.delete_init_image_by_id(id="<id>")
+) as leonardo_ai_sdk:
 
-    if res.object is not None:
-        # handle response
-        pass
+    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
 ```
 
 </br>
@@ -24,12 +26,14 @@ from leonardo_ai_sdk import LeonardoAiSDK
 async def main():
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ) as s:
-        res = await s.init_images.delete_init_image_by_id_async(id="<id>")
+    ) as leonardo_ai_sdk:
 
-        if res.object is not None:
-            # handle response
-            pass
+        res = await leonardo_ai_sdk.init_images.delete_init_image_by_id_async(id="<id>")
+
+        assert res.object is not None
+
+        # Handle response
+        print(res.object)
 
 asyncio.run(main())
 ```

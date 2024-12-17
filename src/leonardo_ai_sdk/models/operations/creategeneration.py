@@ -57,6 +57,10 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
         Nullable[List[shared_controlnet_input.ControlnetInputTypedDict]]
     ]
     elements: NotRequired[Nullable[List[shared_element_input.ElementInputTypedDict]]]
+    enhance_prompt: NotRequired[Nullable[bool]]
+    r"""When enabled, your prompt is expanded to include more detail."""
+    enhance_prompt_instruction: NotRequired[Nullable[str]]
+    r"""When enhancePrompt is enabled, the prompt is enhanced based on the given instructions."""
     expanded_domain: NotRequired[Nullable[bool]]
     r"""Enable to use the Expanded Domain feature of Alchemy."""
     fantasy_avatar: NotRequired[Nullable[bool]]
@@ -179,6 +183,16 @@ class CreateGenerationRequestBody(BaseModel):
     controlnets: OptionalNullable[List[shared_controlnet_input.ControlnetInput]] = UNSET
 
     elements: OptionalNullable[List[shared_element_input.ElementInput]] = UNSET
+
+    enhance_prompt: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="enhancePrompt")
+    ] = UNSET
+    r"""When enabled, your prompt is expanded to include more detail."""
+
+    enhance_prompt_instruction: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="enhancePromptInstruction")
+    ] = UNSET
+    r"""When enhancePrompt is enabled, the prompt is enhanced based on the given instructions."""
 
     expanded_domain: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="expandedDomain")
@@ -333,6 +347,8 @@ class CreateGenerationRequestBody(BaseModel):
             "controlNetType",
             "controlnets",
             "elements",
+            "enhancePrompt",
+            "enhancePromptInstruction",
             "expandedDomain",
             "fantasyAvatar",
             "guidance_scale",
@@ -379,6 +395,8 @@ class CreateGenerationRequestBody(BaseModel):
             "controlNet",
             "controlnets",
             "elements",
+            "enhancePrompt",
+            "enhancePromptInstruction",
             "expandedDomain",
             "fantasyAvatar",
             "guidance_scale",
