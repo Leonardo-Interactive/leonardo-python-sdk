@@ -50,7 +50,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/models-3d/{id}",
             base_url=base_url,
@@ -157,7 +157,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/models-3d/{id}",
             base_url=base_url,
@@ -270,7 +270,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/models-3d/{id}",
             base_url=base_url,
@@ -383,7 +383,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/models-3d/{id}",
             base_url=base_url,
@@ -496,7 +496,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/models-3d/user/{userId}",
             base_url=base_url,
@@ -609,7 +609,7 @@ class ThreeDModelAssets(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/models-3d/user/{userId}",
             base_url=base_url,
@@ -713,7 +713,7 @@ class ThreeDModelAssets(BaseSDK):
             )
         request = cast(Optional[operations.UploadModelAssetRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/models-3d/upload",
             base_url=base_url,
@@ -817,7 +817,7 @@ class ThreeDModelAssets(BaseSDK):
             )
         request = cast(Optional[operations.UploadModelAssetRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/models-3d/upload",
             base_url=base_url,

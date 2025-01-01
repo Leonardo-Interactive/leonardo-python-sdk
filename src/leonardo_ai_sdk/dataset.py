@@ -43,7 +43,7 @@ class Dataset(BaseSDK):
             request = utils.unmarshal(request, operations.CreateDatasetRequestBody)
         request = cast(operations.CreateDatasetRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/datasets",
             base_url=base_url,
@@ -139,7 +139,7 @@ class Dataset(BaseSDK):
             request = utils.unmarshal(request, operations.CreateDatasetRequestBody)
         request = cast(operations.CreateDatasetRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/datasets",
             base_url=base_url,
@@ -232,7 +232,7 @@ class Dataset(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/datasets/{id}",
             base_url=base_url,
@@ -322,7 +322,7 @@ class Dataset(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/datasets/{id}",
             base_url=base_url,
@@ -412,7 +412,7 @@ class Dataset(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/datasets/{id}",
             base_url=base_url,
@@ -502,7 +502,7 @@ class Dataset(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/datasets/{id}",
             base_url=base_url,
@@ -600,7 +600,7 @@ class Dataset(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/datasets/{datasetId}/upload",
             base_url=base_url,
@@ -705,7 +705,7 @@ class Dataset(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/datasets/{datasetId}/upload",
             base_url=base_url,
@@ -810,7 +810,7 @@ class Dataset(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/datasets/{datasetId}/upload/gen",
             base_url=base_url,
@@ -916,7 +916,7 @@ class Dataset(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/datasets/{datasetId}/upload/gen",
             base_url=base_url,

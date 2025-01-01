@@ -47,7 +47,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.CreateLCMGenerationRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/generations-lcm",
             base_url=base_url,
@@ -151,7 +151,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.CreateLCMGenerationRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/generations-lcm",
             base_url=base_url,
@@ -257,7 +257,7 @@ class RealtimeCanvas(BaseSDK):
             Optional[operations.PerformAlchemyUpscaleLCMRequestBody], request
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/lcm-upscale",
             base_url=base_url,
@@ -364,7 +364,7 @@ class RealtimeCanvas(BaseSDK):
             Optional[operations.PerformAlchemyUpscaleLCMRequestBody], request
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/lcm-upscale",
             base_url=base_url,
@@ -469,7 +469,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.PerformInpaintingLCMRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/lcm-inpainting",
             base_url=base_url,
@@ -573,7 +573,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.PerformInpaintingLCMRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/lcm-inpainting",
             base_url=base_url,
@@ -677,7 +677,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.PerformInstantRefineRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/lcm-instant-refine",
             base_url=base_url,
@@ -781,7 +781,7 @@ class RealtimeCanvas(BaseSDK):
             )
         request = cast(Optional[operations.PerformInstantRefineRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/lcm-instant-refine",
             base_url=base_url,

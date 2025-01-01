@@ -43,7 +43,7 @@ class Prompt(BaseSDK):
             request = utils.unmarshal(request, operations.PromptImproveRequestBody)
         request = cast(operations.PromptImproveRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/prompt/improve",
             base_url=base_url,
@@ -139,7 +139,7 @@ class Prompt(BaseSDK):
             request = utils.unmarshal(request, operations.PromptImproveRequestBody)
         request = cast(operations.PromptImproveRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/prompt/improve",
             base_url=base_url,
@@ -225,7 +225,7 @@ class Prompt(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/prompt/random",
             base_url=base_url,
@@ -308,7 +308,7 @@ class Prompt(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/prompt/random",
             base_url=base_url,

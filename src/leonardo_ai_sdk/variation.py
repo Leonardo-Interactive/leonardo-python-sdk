@@ -45,7 +45,7 @@ class Variation(BaseSDK):
             )
         request = cast(operations.CreateUniversalUpscalerJobRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/variations/universal-upscaler",
             base_url=base_url,
@@ -148,7 +148,7 @@ class Variation(BaseSDK):
             )
         request = cast(operations.CreateUniversalUpscalerJobRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/variations/universal-upscaler",
             base_url=base_url,
@@ -251,7 +251,7 @@ class Variation(BaseSDK):
             )
         request = cast(operations.CreateVariationNoBGRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/variations/nobg",
             base_url=base_url,
@@ -349,7 +349,7 @@ class Variation(BaseSDK):
             )
         request = cast(operations.CreateVariationNoBGRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/variations/nobg",
             base_url=base_url,
@@ -449,7 +449,7 @@ class Variation(BaseSDK):
             )
         request = cast(Optional[operations.CreateVariationUnzoomRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/variations/unzoom",
             base_url=base_url,
@@ -554,7 +554,7 @@ class Variation(BaseSDK):
             )
         request = cast(Optional[operations.CreateVariationUnzoomRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/variations/unzoom",
             base_url=base_url,
@@ -659,7 +659,7 @@ class Variation(BaseSDK):
             )
         request = cast(Optional[operations.CreateVariationUpscaleRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/variations/upscale",
             base_url=base_url,
@@ -764,7 +764,7 @@ class Variation(BaseSDK):
             )
         request = cast(Optional[operations.CreateVariationUpscaleRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/variations/upscale",
             base_url=base_url,
@@ -862,7 +862,7 @@ class Variation(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/variations/{id}",
             base_url=base_url,
@@ -952,7 +952,7 @@ class Variation(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/variations/{id}",
             base_url=base_url,

@@ -40,7 +40,7 @@ class InitImages(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/init-image/{id}",
             base_url=base_url,
@@ -130,7 +130,7 @@ class InitImages(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/init-image/{id}",
             base_url=base_url,
@@ -220,7 +220,7 @@ class InitImages(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/init-image/{id}",
             base_url=base_url,
@@ -310,7 +310,7 @@ class InitImages(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/init-image/{id}",
             base_url=base_url,
@@ -405,7 +405,7 @@ class InitImages(BaseSDK):
             )
         request = cast(operations.UploadCanvasInitImageRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/canvas-init-image",
             base_url=base_url,
@@ -508,7 +508,7 @@ class InitImages(BaseSDK):
             )
         request = cast(operations.UploadCanvasInitImageRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/canvas-init-image",
             base_url=base_url,
@@ -609,7 +609,7 @@ class InitImages(BaseSDK):
             request = utils.unmarshal(request, operations.UploadInitImageRequestBody)
         request = cast(operations.UploadInitImageRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/init-image",
             base_url=base_url,
@@ -705,7 +705,7 @@ class InitImages(BaseSDK):
             request = utils.unmarshal(request, operations.UploadInitImageRequestBody)
         request = cast(operations.UploadInitImageRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/init-image",
             base_url=base_url,

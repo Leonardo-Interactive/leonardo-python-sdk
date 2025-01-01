@@ -120,6 +120,7 @@ asyncio.run(main())
 
 * [create_element](docs/sdks/elements/README.md#create_element) - Train a Custom Element
 * [delete_element_by_id](docs/sdks/elements/README.md#delete_element_by_id) - Delete a Single Custom Element by ID
+* [get_custom_elements_by_user_id](docs/sdks/elements/README.md#get_custom_elements_by_user_id) - Get a list of Custom Elements by User ID
 * [get_element_by_id](docs/sdks/elements/README.md#get_element_by_id) - Get a Single Custom Element by ID
 * [list_elements](docs/sdks/elements/README.md#list_elements) - List Elements
 
@@ -142,6 +143,7 @@ asyncio.run(main())
 
 * [create_model](docs/sdks/models/README.md#create_model) - Train a Custom Model
 * [delete_model_by_id](docs/sdks/models/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
+* [get_custom_models_by_user_id](docs/sdks/models/README.md#get_custom_models_by_user_id) - Get a list of Custom Models by User ID
 * [get_model_by_id](docs/sdks/models/README.md#get_model_by_id) - Get a Single Custom Model by ID
 * [list_platform_models](docs/sdks/models/README.md#list_platform_models) - List Platform Models
 

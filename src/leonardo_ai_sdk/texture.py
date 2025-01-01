@@ -47,7 +47,7 @@ class Texture(BaseSDK):
             )
         request = cast(Optional[operations.CreateTextureGenerationRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/generations-texture",
             base_url=base_url,
@@ -152,7 +152,7 @@ class Texture(BaseSDK):
             )
         request = cast(Optional[operations.CreateTextureGenerationRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/generations-texture",
             base_url=base_url,
@@ -261,7 +261,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/generations-texture/{id}",
             base_url=base_url,
@@ -370,7 +370,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/generations-texture/{id}",
             base_url=base_url,
@@ -484,7 +484,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/generations-texture/{id}",
             base_url=base_url,
@@ -598,7 +598,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/generations-texture/{id}",
             base_url=base_url,
@@ -713,7 +713,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/generations-texture/model/{modelId}",
             base_url=base_url,
@@ -828,7 +828,7 @@ class Texture(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/generations-texture/model/{modelId}",
             base_url=base_url,

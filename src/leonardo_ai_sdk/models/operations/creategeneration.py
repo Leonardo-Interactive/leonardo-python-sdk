@@ -11,6 +11,7 @@ from leonardo_ai_sdk.models.shared import (
     sd_generation_schedulers as shared_sd_generation_schedulers,
     sd_generation_style as shared_sd_generation_style,
     sd_versions as shared_sd_versions,
+    user_elements_input as shared_user_elements_input,
 )
 from leonardo_ai_sdk.types import (
     BaseModel,
@@ -124,6 +125,9 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     r"""How much the image should be unzoomed (requires an init_image_id and unzoom to be set to true)."""
     upscale_ratio: NotRequired[Nullable[float]]
     r"""How much the image should be upscaled. (Enterprise Only)"""
+    user_elements: NotRequired[
+        Nullable[List[shared_user_elements_input.UserElementsInputTypedDict]]
+    ]
     weighting: NotRequired[Nullable[float]]
     r"""This parameter will be deprecated in September 2024. Please use the controlnets array instead."""
     width: NotRequired[Nullable[int]]
@@ -323,6 +327,11 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
     r"""How much the image should be upscaled. (Enterprise Only)"""
 
+    user_elements: Annotated[
+        OptionalNullable[List[shared_user_elements_input.UserElementsInput]],
+        pydantic.Field(alias="userElements"),
+    ] = UNSET
+
     weighting: Annotated[
         OptionalNullable[float],
         pydantic.Field(
@@ -382,6 +391,7 @@ class CreateGenerationRequestBody(BaseModel):
             "unzoom",
             "unzoomAmount",
             "upscaleRatio",
+            "userElements",
             "weighting",
             "width",
         ]
@@ -427,6 +437,7 @@ class CreateGenerationRequestBody(BaseModel):
             "unzoom",
             "unzoomAmount",
             "upscaleRatio",
+            "userElements",
             "weighting",
             "width",
         ]

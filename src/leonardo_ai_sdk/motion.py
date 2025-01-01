@@ -49,7 +49,7 @@ class Motion(BaseSDK):
             Optional[operations.CreateSVDMotionGenerationRequestBody], request
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/generations-motion-svd",
             base_url=base_url,
@@ -156,7 +156,7 @@ class Motion(BaseSDK):
             Optional[operations.CreateSVDMotionGenerationRequestBody], request
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/generations-motion-svd",
             base_url=base_url,

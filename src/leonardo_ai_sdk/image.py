@@ -43,7 +43,7 @@ class Image(BaseSDK):
             request = utils.unmarshal(request, operations.CreateGenerationRequestBody)
         request = cast(operations.CreateGenerationRequestBody, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/generations",
             base_url=base_url,
@@ -139,7 +139,7 @@ class Image(BaseSDK):
             request = utils.unmarshal(request, operations.CreateGenerationRequestBody)
         request = cast(operations.CreateGenerationRequestBody, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/generations",
             base_url=base_url,
@@ -232,7 +232,7 @@ class Image(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/generations/{id}",
             base_url=base_url,
@@ -322,7 +322,7 @@ class Image(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/generations/{id}",
             base_url=base_url,
@@ -412,7 +412,7 @@ class Image(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/generations/{id}",
             base_url=base_url,
@@ -502,7 +502,7 @@ class Image(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/generations/{id}",
             base_url=base_url,
@@ -598,7 +598,7 @@ class Image(BaseSDK):
             user_id=user_id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/generations/user/{userId}",
             base_url=base_url,
@@ -695,7 +695,7 @@ class Image(BaseSDK):
             user_id=user_id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/generations/user/{userId}",
             base_url=base_url,

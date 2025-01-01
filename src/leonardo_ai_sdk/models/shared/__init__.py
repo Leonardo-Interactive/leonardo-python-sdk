@@ -21,6 +21,7 @@ from .security import Security, SecurityTypedDict
 from .strength import Strength
 from .universal_upscaler_style import UniversalUpscalerStyle
 from .universal_upscaler_ultra_style import UniversalUpscalerUltraStyle
+from .user_elements_input import UserElementsInput, UserElementsInputTypedDict
 from .variation_type import VariationType
 
 __all__ = [
@@ -45,5 +46,7 @@ __all__ = [
     "StrengthType",
     "UniversalUpscalerStyle",
     "UniversalUpscalerUltraStyle",
+    "UserElementsInput",
+    "UserElementsInputTypedDict",
     "VariationType",
 ]
