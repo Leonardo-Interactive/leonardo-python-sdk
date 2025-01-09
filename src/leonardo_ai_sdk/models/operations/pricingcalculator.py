@@ -69,6 +69,12 @@ class PricingCalculatorPricingCalculatorObjectTypedDict(TypedDict):
     r"""The number of elements used for the generation."""
     num_images: NotRequired[int]
     r"""The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."""
+    photo_real_mode: NotRequired[Nullable[bool]]
+    r"""Enable to use PhotoReal. Requires enabling alchemy."""
+    photo_real_strength: NotRequired[Nullable[float]]
+    r"""Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified."""
+    photo_real_version: NotRequired[Nullable[str]]
+    r"""The version of photoReal to use. Must be v1 or v2."""
     prompt_magic: NotRequired[Nullable[bool]]
     r"""Enable to use Prompt Magic."""
     prompt_magic_strength: NotRequired[Nullable[float]]
@@ -132,6 +138,21 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
     num_images: Annotated[Optional[int], pydantic.Field(alias="numImages")] = None
     r"""The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."""
 
+    photo_real_mode: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="photoRealMode")
+    ] = UNSET
+    r"""Enable to use PhotoReal. Requires enabling alchemy."""
+
+    photo_real_strength: Annotated[
+        OptionalNullable[float], pydantic.Field(alias="photoRealStrength")
+    ] = UNSET
+    r"""Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified."""
+
+    photo_real_version: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="photoRealVersion")
+    ] = UNSET
+    r"""The version of photoReal to use. Must be v1 or v2."""
+
     prompt_magic: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="promptMagic")
     ] = UNSET
@@ -165,6 +186,9 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
             "isSDXLLightning",
             "loraCount",
             "numImages",
+            "photoRealMode",
+            "photoRealStrength",
+            "photoRealVersion",
             "promptMagic",
             "promptMagicStrength",
             "promptMagicVersion",
@@ -177,6 +201,9 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
             "isSDXL",
             "isSDXLLightning",
             "loraCount",
+            "photoRealMode",
+            "photoRealStrength",
+            "photoRealVersion",
             "promptMagic",
             "promptMagicStrength",
             "promptMagicVersion",
