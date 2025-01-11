@@ -15,3 +15,5 @@ The base version of stable diffusion to use if not using a custom model. v1_5 is
 | `SDXL_1_0`       | SDXL_1_0         |
 | `SDXL_LIGHTNING` | SDXL_LIGHTNING   |
 | `PHOENIX`        | PHOENIX          |
+| `FLUX`           | FLUX             |
+| `FLUX_DEV`       | FLUX_DEV         |
