@@ -21,9 +21,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.three_d_model_assets.delete3_d_model_by_id(id="<id>")
+    res = las_client.three_d_model_assets.delete3_d_model_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -61,9 +61,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.three_d_model_assets.get3_d_model_by_id(id="<id>")
+    res = las_client.three_d_model_assets.get3_d_model_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -103,9 +103,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.three_d_model_assets.get3_d_models_by_user_id(user_id="<value>")
+    res = las_client.three_d_model_assets.get3_d_models_by_user_id(user_id="<id>")
 
     assert res.object is not None
 
@@ -145,9 +145,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.three_d_model_assets.upload_model_asset()
+    res = las_client.three_d_model_assets.upload_model_asset()
 
     assert res.object is not None
 

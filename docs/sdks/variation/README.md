@@ -22,9 +22,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.variation.create_universal_upscaler_job(request={})
+    res = las_client.variation.create_universal_upscaler_job(request={})
 
     assert res.object is not None
 
@@ -61,9 +61,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.variation.create_variation_no_bg(request={
+    res = las_client.variation.create_variation_no_bg(request={
         "id": "<id>",
     })
 
@@ -102,9 +102,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.variation.create_variation_unzoom()
+    res = las_client.variation.create_variation_unzoom()
 
     assert res.object is not None
 
@@ -141,9 +141,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.variation.create_variation_upscale()
+    res = las_client.variation.create_variation_upscale()
 
     assert res.object is not None
 
@@ -180,9 +180,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.variation.get_variation_by_id(id="<id>")
+    res = las_client.variation.get_variation_by_id(id="<id>")
 
     assert res.object is not None
 

@@ -24,6 +24,7 @@ from .universal_upscaler_ultra_style import UniversalUpscalerUltraStyle
 from .user_elements_input import UserElementsInput, UserElementsInputTypedDict
 from .variation_type import VariationType
 
+
 __all__ = [
     "CanvasRequestType",
     "ControlnetInput",

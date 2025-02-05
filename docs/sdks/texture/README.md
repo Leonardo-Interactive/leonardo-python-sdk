@@ -21,9 +21,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.texture.create_texture_generation()
+    res = las_client.texture.create_texture_generation()
 
     assert res.object is not None
 
@@ -60,9 +60,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.texture.delete_texture_generation_by_id(id="<id>")
+    res = las_client.texture.delete_texture_generation_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -100,9 +100,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.texture.get_texture_generation_by_id(id="<id>")
+    res = las_client.texture.get_texture_generation_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -142,9 +142,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.texture.get_texture_generations_by_model_id(model_id="<value>")
+    res = las_client.texture.get_texture_generations_by_model_id(model_id="<id>")
 
     assert res.object is not None
 

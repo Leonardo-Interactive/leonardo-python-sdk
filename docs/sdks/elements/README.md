@@ -22,9 +22,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.elements.create_element(request={})
+    res = las_client.elements.create_element(request={})
 
     assert res.object is not None
 
@@ -61,9 +61,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.elements.delete_element_by_id(id=39024)
+    res = las_client.elements.delete_element_by_id(id=39024)
 
     assert res.object is not None
 
@@ -100,9 +100,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.elements.get_custom_elements_by_user_id(user_id="<id>")
+    res = las_client.elements.get_custom_elements_by_user_id(user_id="<id>")
 
     assert res.object is not None
 
@@ -139,9 +139,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.elements.get_element_by_id(id=665696)
+    res = las_client.elements.get_element_by_id(id=665696)
 
     assert res.object is not None
 
@@ -178,9 +178,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.elements.list_elements()
+    res = las_client.elements.list_elements()
 
     assert res.object is not None
 

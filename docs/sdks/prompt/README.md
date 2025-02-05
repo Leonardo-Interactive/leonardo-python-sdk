@@ -19,9 +19,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.prompt.prompt_improve(request={
+    res = las_client.prompt.prompt_improve(request={
         "prompt": "<value>",
     })
 
@@ -60,9 +60,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.prompt.prompt_random()
+    res = las_client.prompt.prompt_random()
 
     assert res.object is not None
 
