@@ -22,10 +22,10 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.models.create_model(request={
-        "dataset_id": "<value>",
+    res = las_client.models.create_model(request={
+        "dataset_id": "<id>",
         "instance_prompt": "<value>",
         "name": "<value>",
     })
@@ -65,9 +65,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.models.delete_model_by_id(id="<id>")
+    res = las_client.models.delete_model_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -104,9 +104,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.models.get_custom_models_by_user_id(user_id="<id>")
+    res = las_client.models.get_custom_models_by_user_id(user_id="<id>")
 
     assert res.object is not None
 
@@ -143,9 +143,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.models.get_model_by_id(id="<id>")
+    res = las_client.models.get_model_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -182,9 +182,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.models.list_platform_models()
+    res = las_client.models.list_platform_models()
 
     assert res.object is not None
 

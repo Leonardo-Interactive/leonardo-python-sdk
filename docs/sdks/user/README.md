@@ -18,9 +18,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.user.get_user_self()
+    res = las_client.user.get_user_self()
 
     assert res.object is not None
 

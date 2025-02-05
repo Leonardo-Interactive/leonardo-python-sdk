@@ -5,9 +5,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -26,9 +26,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 async def main():
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ) as leonardo_ai_sdk:
+    ) as las_client:
 
-        res = await leonardo_ai_sdk.init_images.delete_init_image_by_id_async(id="<id>")
+        res = await las_client.init_images.delete_init_image_by_id_async(id="<id>")
 
         assert res.object is not None
 

@@ -21,9 +21,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.image.create_generation(request={})
+    res = las_client.image.create_generation(request={})
 
     assert res.object is not None
 
@@ -60,9 +60,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.image.delete_generation_by_id(id="<id>")
+    res = las_client.image.delete_generation_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -99,9 +99,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.image.get_generation_by_id(id="<id>")
+    res = las_client.image.get_generation_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -138,9 +138,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.image.get_generations_by_user_id(user_id="<value>")
+    res = las_client.image.get_generations_by_user_id(user_id="<id>")
 
     assert res.object is not None
 

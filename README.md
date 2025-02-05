@@ -21,12 +21,18 @@ Rest Endpoints: Leonardo.Ai API OpenAPI specification.
   * [Custom HTTP Client](#custom-http-client)
   * [Server Selection](#server-selection)
   * [Authentication](#authentication)
+  * [Resource Management](#resource-management)
   * [Debugging](#debugging)
 
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+> [!NOTE]
+> **Python version upgrade policy**
+>
+> Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
 The SDK can be installed with either *pip* or *poetry* package managers.
 
@@ -45,6 +51,37 @@ pip install Leonardo-Ai-SDK
 ```bash
 poetry add Leonardo-Ai-SDK
 ```
+
+### Shell and script usage with `uv`
+
+You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
+
+```shell
+uvx --from Leonardo-Ai-SDK python
+```
+
+It's also possible to write a standalone Python script without needing to set up a whole project like so:
+
+```python
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.9"
+# dependencies = [
+#     "Leonardo-Ai-SDK",
+# ]
+# ///
+
+from leonardo_ai_sdk import LeonardoAiSDK
+
+sdk = LeonardoAiSDK(
+  # SDK arguments
+)
+
+# Rest of script here...
+```
+
+Once that is saved to a file, you can run it with `uv run script.py` where
+`script.py` can be replaced with the actual file name.
 <!-- End SDK Installation [installation] -->
 
 <!-- Start IDE Support [idesupport] -->
@@ -68,9 +105,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -89,9 +126,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 async def main():
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ) as leonardo_ai_sdk:
+    ) as las_client:
 
-        res = await leonardo_ai_sdk.init_images.delete_init_image_by_id_async(id="<id>")
+        res = await las_client.init_images.delete_init_image_by_id_async(id="<id>")
 
         assert res.object is not None
 
@@ -214,9 +251,9 @@ from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>",
+    res = las_client.init_images.delete_init_image_by_id(id="<id>",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     assert res.object is not None
@@ -234,9 +271,9 @@ from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 with LeonardoAiSDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -274,11 +311,11 @@ from leonardo_ai_sdk.models import errors
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
     res = None
     try:
 
-        res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+        res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
         assert res.object is not None
 
@@ -388,9 +425,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 with LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -419,9 +456,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.init_images.delete_init_image_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -430,6 +467,31 @@ with LeonardoAiSDK(
 
 ```
 <!-- End Authentication [security] -->
+
+<!-- Start Resource Management [resource-management] -->
+## Resource Management
+
+The `LeonardoAiSDK` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+
+[context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
+
+```python
+from leonardo_ai_sdk import LeonardoAiSDK
+def main():
+    with LeonardoAiSDK(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as las_client:
+        # Rest of application here...
+
+
+# Or when using async:
+async def amain():
+    async with LeonardoAiSDK(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as las_client:
+        # Rest of application here...
+```
+<!-- End Resource Management [resource-management] -->
 
 <!-- Start Debugging [debug] -->
 ## Debugging

@@ -21,9 +21,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.realtime_canvas.create_lcm_generation()
+    res = las_client.realtime_canvas.create_lcm_generation()
 
     assert res.object is not None
 
@@ -60,9 +60,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.realtime_canvas.perform_alchemy_upscale_lcm()
+    res = las_client.realtime_canvas.perform_alchemy_upscale_lcm()
 
     assert res.object is not None
 
@@ -99,9 +99,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.realtime_canvas.perform_inpainting_lcm()
+    res = las_client.realtime_canvas.perform_inpainting_lcm()
 
     assert res.object is not None
 
@@ -138,9 +138,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.realtime_canvas.perform_instant_refine()
+    res = las_client.realtime_canvas.perform_instant_refine()
 
     assert res.object is not None
 

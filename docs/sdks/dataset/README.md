@@ -22,9 +22,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.dataset.create_dataset(request={
+    res = las_client.dataset.create_dataset(request={
         "name": "<value>",
     })
 
@@ -63,9 +63,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.dataset.delete_dataset_by_id(id="<id>")
+    res = las_client.dataset.delete_dataset_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -102,9 +102,9 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.dataset.get_dataset_by_id(id="<id>")
+    res = las_client.dataset.get_dataset_by_id(id="<id>")
 
     assert res.object is not None
 
@@ -141,10 +141,10 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.dataset.upload_dataset_image(dataset_id="<value>", request_body={
-        "extension": "mpg4",
+    res = las_client.dataset.upload_dataset_image(dataset_id="<id>", request_body={
+        "extension": "mp4v",
     })
 
     assert res.object is not None
@@ -183,10 +183,10 @@ from leonardo_ai_sdk import LeonardoAiSDK
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as leonardo_ai_sdk:
+) as las_client:
 
-    res = leonardo_ai_sdk.dataset.upload_dataset_image_from_gen(dataset_id="<value>", request_body={
-        "generated_image_id": "<value>",
+    res = las_client.dataset.upload_dataset_image_from_gen(dataset_id="<id>", request_body={
+        "generated_image_id": "<id>",
     })
 
     assert res.object is not None
