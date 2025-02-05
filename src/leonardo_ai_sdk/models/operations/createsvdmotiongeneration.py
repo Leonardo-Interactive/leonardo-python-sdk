@@ -135,15 +135,15 @@ class MotionSvdGenerationOutput(BaseModel):
 class CreateSVDMotionGenerationResponseBodyTypedDict(TypedDict):
     r"""Responses for POST /generations-motion-svd"""
 
-    sd_generation_job: NotRequired[Nullable[MotionSvdGenerationOutputTypedDict]]
+    motion_svd_generation_job: NotRequired[Nullable[MotionSvdGenerationOutputTypedDict]]
 
 
 class CreateSVDMotionGenerationResponseBody(BaseModel):
     r"""Responses for POST /generations-motion-svd"""
 
-    sd_generation_job: Annotated[
+    motion_svd_generation_job: Annotated[
         OptionalNullable[MotionSvdGenerationOutput],
-        pydantic.Field(alias="sdGenerationJob"),
+        pydantic.Field(alias="motionSvdGenerationJob"),
     ] = UNSET
 
     @model_serializer(mode="wrap")
