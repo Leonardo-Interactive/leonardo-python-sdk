@@ -113,6 +113,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     sd_version: NotRequired[shared_sd_versions.SdVersions]
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models"""
     seed: NotRequired[Nullable[int]]
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
     tiling: NotRequired[Nullable[bool]]
     r"""Whether the generated images should tile on all axis."""
     transparency: NotRequired[Nullable[TransparencyType]]
@@ -304,6 +305,7 @@ class CreateGenerationRequestBody(BaseModel):
     r"""The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models"""
 
     seed: OptionalNullable[int] = UNSET
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
     tiling: OptionalNullable[bool] = UNSET
     r"""Whether the generated images should tile on all axis."""

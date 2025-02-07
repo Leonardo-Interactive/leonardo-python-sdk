@@ -26,6 +26,7 @@ class CreateTextureGenerationRequestBodyTypedDict(TypedDict):
     prompt: NotRequired[str]
     sd_version: NotRequired[Nullable[str]]
     seed: NotRequired[Nullable[int]]
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
 
 class CreateTextureGenerationRequestBody(BaseModel):
@@ -48,6 +49,7 @@ class CreateTextureGenerationRequestBody(BaseModel):
     sd_version: OptionalNullable[str] = UNSET
 
     seed: OptionalNullable[int] = UNSET
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

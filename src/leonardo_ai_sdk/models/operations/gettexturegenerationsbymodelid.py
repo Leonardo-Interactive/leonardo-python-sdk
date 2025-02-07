@@ -170,6 +170,7 @@ class GetTextureGenerationsByModelIDModelAssetTextureGenerationsTypedDict(TypedD
     negative_prompt: NotRequired[Nullable[str]]
     prompt: NotRequired[str]
     seed: NotRequired[Nullable[int]]
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
     status: NotRequired[shared_job_status.JobStatus]
     r"""The status of the current task."""
 
@@ -192,6 +193,7 @@ class GetTextureGenerationsByModelIDModelAssetTextureGenerations(BaseModel):
     prompt: Optional[str] = None
 
     seed: OptionalNullable[int] = UNSET
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
     status: Optional[shared_job_status.JobStatus] = None
     r"""The status of the current task."""
