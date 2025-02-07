@@ -35,6 +35,7 @@ class PerformAlchemyUpscaleLCMRequestBodyTypedDict(TypedDict):
     r"""Must be a float between 0.5 and 0.9."""
     request_timestamp: NotRequired[str]
     seed: NotRequired[Nullable[int]]
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
     steps: NotRequired[Nullable[int]]
     r"""The number of steps to use for the generation. Must be between 4 and 16."""
     strength: NotRequired[Nullable[float]]
@@ -75,6 +76,7 @@ class PerformAlchemyUpscaleLCMRequestBody(BaseModel):
     ] = None
 
     seed: OptionalNullable[int] = UNSET
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
     steps: OptionalNullable[int] = UNSET
     r"""The number of steps to use for the generation. Must be between 4 and 16."""

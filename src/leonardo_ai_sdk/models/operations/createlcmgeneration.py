@@ -31,6 +31,7 @@ class CreateLCMGenerationRequestBodyTypedDict(TypedDict):
     r"""The output width of the image. Must be 512, 640 or 1024."""
     request_timestamp: NotRequired[str]
     seed: NotRequired[Nullable[int]]
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
     steps: NotRequired[Nullable[int]]
     r"""The number of steps to use for the generation. Must be between 4 and 16."""
     strength: NotRequired[Nullable[float]]
@@ -61,6 +62,7 @@ class CreateLCMGenerationRequestBody(BaseModel):
     ] = None
 
     seed: OptionalNullable[int] = UNSET
+    r"""Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models"""
 
     steps: OptionalNullable[int] = UNSET
     r"""The number of steps to use for the generation. Must be between 4 and 16."""
