@@ -1,6 +1,6 @@
 [project]
 name = "Leonardo-Ai-SDK"
-version = "6.5.0"
+version = "6.5.1"
 description = "Leonardo AI Python Client SDK"
 authors = [{ name = "Leonardo-Ai" },]
 readme = "README-PYPI.md"

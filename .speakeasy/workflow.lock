@@ -1,21 +1,21 @@
-speakeasyVersion: 1.487.0
+speakeasyVersion: 1.488.0
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:28c83462a3cf17c2932056d49f6cb31d024ff1836716ac5a4883b92da1cdcdb7
+        sourceRevisionDigest: sha256:c0003dac49c5ef097a7add6c026d46352de355736400b4ac337b907e99f30fde
         sourceBlobDigest: sha256:4ead44bcaac5b14a8184f8fcc7512d53a00a5a029b3085c55d7eb331256f1dcc
         tags:
             - latest
-            - speakeasy-sdk-regen-1738800070
+            - speakeasy-sdk-regen-1739240004
             - v1.0.0
 targets:
     leonardo-python-sdk:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:28c83462a3cf17c2932056d49f6cb31d024ff1836716ac5a4883b92da1cdcdb7
+        sourceRevisionDigest: sha256:c0003dac49c5ef097a7add6c026d46352de355736400b4ac337b907e99f30fde
         sourceBlobDigest: sha256:4ead44bcaac5b14a8184f8fcc7512d53a00a5a029b3085c55d7eb331256f1dcc
         codeSamplesNamespace: my-source-python-code-samples
-        codeSamplesRevisionDigest: sha256:496c7a0f7ad2322cc028537efce0e6f55d23c7e29546a62deb36a5c20ec85cb5
+        codeSamplesRevisionDigest: sha256:ecf688a971e1f9e4a34ebef8f973e8d86442a51b1d811e50fad073c10498043e
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -31,8 +31,7 @@ workflow:
             source: my-source
             publish:
                 pypi:
-                    token: $PYPI_TOKEN
+                    token: $pypi_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/leonardo-ai/leonardo-ai/my-source-python-code-samples
-                blocking: false
