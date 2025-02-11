@@ -12,8 +12,8 @@ targets:
         source: my-source
         publish:
             pypi:
-                token: $PYPI_TOKEN
+                token: $pypi_token
         codeSamples:
+            output: ""
             registry:
                 location: registry.speakeasyapi.dev/leonardo-ai/leonardo-ai/my-source-python-code-samples
-            blocking: false
