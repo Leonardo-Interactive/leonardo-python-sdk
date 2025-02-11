@@ -14,6 +14,5 @@ targets:
             pypi:
                 token: $pypi_token
         codeSamples:
-            output: ""
             registry:
                 location: registry.speakeasyapi.dev/leonardo-ai/leonardo-ai/my-source-python-code-samples
