@@ -13,8 +13,10 @@ This endpoint returns the cost used for generating images using a particular ser
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="pricingCalculator" method="post" path="/pricing-calculator" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

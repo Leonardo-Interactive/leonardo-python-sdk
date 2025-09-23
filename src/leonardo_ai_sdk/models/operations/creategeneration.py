@@ -48,6 +48,8 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
         Nullable[shared_canvasrequesttype.CanvasRequestType]
     ]
     r"""The type of request for the Canvas Editor."""
+    contrast: NotRequired[Nullable[float]]
+    r"""Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher."""
     contrast_ratio: NotRequired[Nullable[float]]
     r"""Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive."""
     control_net: NotRequired[Nullable[bool]]
@@ -75,7 +77,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     high_resolution: NotRequired[Nullable[bool]]
     r"""Enable to use the High Resolution feature of Prompt Magic."""
     image_prompt_weight: NotRequired[Nullable[float]]
-    image_prompts: NotRequired[Nullable[List[str]]]
+    image_prompts: NotRequired[Nullable[List[Nullable[str]]]]
     init_generation_image_id: NotRequired[Nullable[str]]
     r"""The ID of an existing image to use in image2image."""
     init_image_id: NotRequired[Nullable[str]]
@@ -162,6 +164,9 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
     r"""The type of request for the Canvas Editor."""
 
+    contrast: OptionalNullable[float] = UNSET
+    r"""Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher."""
+
     contrast_ratio: Annotated[
         OptionalNullable[float], pydantic.Field(alias="contrastRatio")
     ] = UNSET
@@ -230,7 +235,7 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
 
     image_prompts: Annotated[
-        OptionalNullable[List[str]], pydantic.Field(alias="imagePrompts")
+        OptionalNullable[List[Nullable[str]]], pydantic.Field(alias="imagePrompts")
     ] = UNSET
 
     init_generation_image_id: OptionalNullable[str] = UNSET
@@ -353,6 +358,7 @@ class CreateGenerationRequestBody(BaseModel):
             "canvasMaskId",
             "canvasRequest",
             "canvasRequestType",
+            "contrast",
             "contrastRatio",
             "controlNet",
             "controlNetType",
@@ -403,6 +409,7 @@ class CreateGenerationRequestBody(BaseModel):
             "canvasMaskId",
             "canvasRequest",
             "canvasRequestType",
+            "contrast",
             "contrastRatio",
             "controlNet",
             "controlnets",
@@ -449,7 +456,7 @@ class CreateGenerationRequestBody(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)
@@ -494,7 +501,7 @@ class SDGenerationOutput(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)
@@ -538,7 +545,7 @@ class CreateGenerationResponseBody(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)

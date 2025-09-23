@@ -17,8 +17,10 @@ This endpoint creates a new dataset
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createDataset" method="post" path="/datasets" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -58,8 +60,10 @@ This endpoint deletes the specific dataset
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteDatasetById" method="delete" path="/datasets/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -97,8 +101,10 @@ This endpoint gets the specific dataset
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getDatasetById" method="get" path="/datasets/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -136,15 +142,17 @@ This endpoint returns presigned details to upload a dataset image to S3
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="uploadDatasetImage" method="post" path="/datasets/{datasetId}/upload" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
     res = las_client.dataset.upload_dataset_image(dataset_id="<id>", request_body={
-        "extension": "mp4v",
+        "extension": "shtml",
     })
 
     assert res.object is not None
@@ -178,8 +186,10 @@ This endpoint will upload a previously generated image to the dataset
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="uploadDatasetImageFromGen" method="post" path="/datasets/{datasetId}/upload/gen" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

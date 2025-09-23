@@ -17,3 +17,4 @@ class SdVersions(str, Enum):
     PHOENIX = "PHOENIX"
     FLUX = "FLUX"
     FLUX_DEV = "FLUX_DEV"
+    KINO_2_0 = "KINO_2_0"

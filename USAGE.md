@@ -3,6 +3,7 @@
 # Synchronous Example
 from leonardo_ai_sdk import LeonardoAiSDK
 
+
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
@@ -17,13 +18,14 @@ with LeonardoAiSDK(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
 from leonardo_ai_sdk import LeonardoAiSDK
 
 async def main():
+
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:

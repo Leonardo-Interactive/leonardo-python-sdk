@@ -114,7 +114,7 @@ class GetCustomModelsByUserIDCustomModels(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)
@@ -139,14 +139,16 @@ class GetCustomModelsByUserIDResponseBodyTypedDict(TypedDict):
     r"""Responses for GET /models/user/{userId}"""
 
     custom_models: NotRequired[
-        Nullable[List[GetCustomModelsByUserIDCustomModelsTypedDict]]
+        Nullable[List[Nullable[GetCustomModelsByUserIDCustomModelsTypedDict]]]
     ]
 
 
 class GetCustomModelsByUserIDResponseBody(BaseModel):
     r"""Responses for GET /models/user/{userId}"""
 
-    custom_models: OptionalNullable[List[GetCustomModelsByUserIDCustomModels]] = UNSET
+    custom_models: OptionalNullable[
+        List[Nullable[GetCustomModelsByUserIDCustomModels]]
+    ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -158,7 +160,7 @@ class GetCustomModelsByUserIDResponseBody(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)

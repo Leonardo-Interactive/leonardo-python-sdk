@@ -20,6 +20,8 @@ class PromptImproveRequestBodyTypedDict(TypedDict):
 
     prompt: str
     r"""The prompt to improve."""
+    is_video: NotRequired[Nullable[bool]]
+    r"""Specifies whether the prompt is for a video generation. Defaults to false (image prompt)."""
     prompt_instructions: NotRequired[Nullable[str]]
     r"""The prompt is improved based on the given instructions."""
 
@@ -30,6 +32,9 @@ class PromptImproveRequestBody(BaseModel):
     prompt: str
     r"""The prompt to improve."""
 
+    is_video: Annotated[OptionalNullable[bool], pydantic.Field(alias="isVideo")] = UNSET
+    r"""Specifies whether the prompt is for a video generation. Defaults to false (image prompt)."""
+
     prompt_instructions: Annotated[
         OptionalNullable[str], pydantic.Field(alias="promptInstructions")
     ] = UNSET
@@ -37,15 +42,15 @@ class PromptImproveRequestBody(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["promptInstructions"]
-        nullable_fields = ["promptInstructions"]
+        optional_fields = ["isVideo", "promptInstructions"]
+        nullable_fields = ["isVideo", "promptInstructions"]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)

@@ -34,7 +34,15 @@ Rest Endpoints: Leonardo.Ai API OpenAPI specification.
 >
 > Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-The SDK can be installed with either *pip* or *poetry* package managers.
+The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
+
+### uv
+
+*uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
+
+```bash
+uv add Leonardo-Ai-SDK
+```
 
 ### PIP
 
@@ -103,6 +111,7 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 # Synchronous Example
 from leonardo_ai_sdk import LeonardoAiSDK
 
+
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
@@ -117,13 +126,14 @@ with LeonardoAiSDK(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
 from leonardo_ai_sdk import LeonardoAiSDK
 
 async def main():
+
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:
@@ -186,7 +196,10 @@ asyncio.run(main())
 
 ### [motion](docs/sdks/motion/README.md)
 
+* [create_image_to_video_generation](docs/sdks/motion/README.md#create_image_to_video_generation) - Create a video generation from an image
 * [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
+* [create_text_to_video_generation](docs/sdks/motion/README.md#create_text_to_video_generation) - Create a video generation from a text prompt
+* [create_video_upscale](docs/sdks/motion/README.md#create_video_upscale) - Upscale a generated video
 
 ### [pricing_calculator](docs/sdks/pricingcalculator/README.md)
 
@@ -228,6 +241,7 @@ asyncio.run(main())
 * [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background
 * [create_variation_unzoom](docs/sdks/variation/README.md#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
+* [get_motion_variation_by_id](docs/sdks/variation/README.md#get_motion_variation_by_id) - Get motion variation by ID
 * [get_variation_by_id](docs/sdks/variation/README.md#get_variation_by_id) - Get variation by ID
 
 </details>
@@ -249,6 +263,7 @@ To change the default retry strategy for a single API call, simply provide a `Re
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 
+
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
@@ -268,6 +283,7 @@ If you'd like to override the default retry strategy for all operations that sup
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
 
+
 with LeonardoAiSDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -286,28 +302,21 @@ with LeonardoAiSDK(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a errors.SDKError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `delete_init_image_by_id_async` method may raise the following exceptions:
-
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| errors.SDKError | 4XX, 5XX    | \*/\*        |
+| Property           | Type             | Description                                            |
+| ------------------ | ---------------- | ------------------------------------------------------ |
+| `err.message`      | `str`            | Error message                                          |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                     |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                  |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned. |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                      |
 
 ### Example
-
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 from leonardo_ai_sdk.models import errors
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -322,10 +331,35 @@ with LeonardoAiSDK(
         # Handle response
         print(res.object)
 
-    except errors.SDKError as e:
-        # handle exception
-        raise(e)
+
+    except errors.LeonardoAiSDKError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
 ```
+
+### Error Classes
+**Primary error:**
+* [`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py): The base class for HTTP error responses.
+
+<details><summary>Less common errors (5)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py)**:
+* [`ResponseValidationError`](./src/leonardo_ai_sdk/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 
@@ -418,9 +452,10 @@ s = LeonardoAiSDK(async_client=CustomClient(httpx.AsyncClient()))
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
@@ -454,6 +489,7 @@ To authenticate with the API the `bearer_auth` parameter must be set when initia
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 
+
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
@@ -478,6 +514,7 @@ The `LeonardoAiSDK` class implements the context manager protocol and registers 
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 def main():
+
     with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:
@@ -486,6 +523,7 @@ def main():
 
 # Or when using async:
 async def amain():
+
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:

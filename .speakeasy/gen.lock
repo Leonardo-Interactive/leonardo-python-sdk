@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 4b74d250e4dae46c2d3e1dec7a2be5b9
+  docChecksum: b45e9ce55beb4dc0ec24ef6a1a38b2e9
   docVersion: v1.0.0
-  speakeasyVersion: 1.488.0
-  generationVersion: 2.506.0
-  releaseVersion: 6.5.1
-  configChecksum: be9b11784105c7e38276fec79614825d
+  speakeasyVersion: 1.622.1
+  generationVersion: 2.709.0
+  releaseVersion: 6.6.0
+  configChecksum: 1fb2586c7a65b64a6e6717b006721dfe
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
@@ -15,7 +15,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.11.0
+    core: 5.20.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     devContainers: 3.0.0
@@ -23,20 +23,19 @@ features:
     envVarSecurityUsage: 0.3.2
     flattening: 3.1.1
     getRequestBodies: 3.0.0
-    globalSecurity: 3.0.2
+    globalSecurity: 3.0.4
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.1.0
-    nullables: 1.0.0
+    globalServerURLs: 3.1.1
+    nullables: 1.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
-    sdkHooks: 1.0.0
+    sdkHooks: 1.1.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
   - .gitattributes
-  - .python-version
   - .vscode/settings.json
   - USAGE.md
   - docs/models/operations/calculateproductionapiservicecost.md
@@ -50,6 +49,10 @@ generatedFiles:
   - docs/models/operations/creategenerationrequestbody.md
   - docs/models/operations/creategenerationresponse.md
   - docs/models/operations/creategenerationresponsebody.md
+  - docs/models/operations/createimagetovideogenerationrequestbody.md
+  - docs/models/operations/createimagetovideogenerationresponse.md
+  - docs/models/operations/createimagetovideogenerationresponsebody.md
+  - docs/models/operations/createimagetovideogenerationstring.md
   - docs/models/operations/createlcmgenerationrequestbody.md
   - docs/models/operations/createlcmgenerationresponse.md
   - docs/models/operations/createlcmgenerationresponsebody.md
@@ -61,6 +64,12 @@ generatedFiles:
   - docs/models/operations/createsvdmotiongenerationrequestbody.md
   - docs/models/operations/createsvdmotiongenerationresponse.md
   - docs/models/operations/createsvdmotiongenerationresponsebody.md
+  - docs/models/operations/createtexttovideogenerationmotionstring.md
+  - docs/models/operations/createtexttovideogenerationmotionvideogenerationoutput.md
+  - docs/models/operations/createtexttovideogenerationrequestbody.md
+  - docs/models/operations/createtexttovideogenerationresponse.md
+  - docs/models/operations/createtexttovideogenerationresponsebody.md
+  - docs/models/operations/createtexttovideogenerationstring.md
   - docs/models/operations/createtexturegenerationrequestbody.md
   - docs/models/operations/createtexturegenerationresponse.md
   - docs/models/operations/createtexturegenerationresponsebody.md
@@ -77,6 +86,11 @@ generatedFiles:
   - docs/models/operations/createvariationupscaleresponse.md
   - docs/models/operations/createvariationupscaleresponsebody.md
   - docs/models/operations/createvariationupscalesdupscalejoboutput.md
+  - docs/models/operations/createvideoupscalemotionvideogenerationoutput.md
+  - docs/models/operations/createvideoupscalerequestbody.md
+  - docs/models/operations/createvideoupscaleresponse.md
+  - docs/models/operations/createvideoupscaleresponsebody.md
+  - docs/models/operations/createvideoupscalestring.md
   - docs/models/operations/custommodels.md
   - docs/models/operations/datasetgenuploadoutput.md
   - docs/models/operations/datasetimages.md
@@ -109,6 +123,7 @@ generatedFiles:
   - docs/models/operations/elements.md
   - docs/models/operations/generatedimages.md
   - docs/models/operations/generatedimagevariationgeneric.md
+  - docs/models/operations/generatedimagevariationmotion.md
   - docs/models/operations/generationelements.md
   - docs/models/operations/generations.md
   - docs/models/operations/get3dmodelbyidmodelassets.md
@@ -158,6 +173,9 @@ generatedFiles:
   - docs/models/operations/getmodelbyidrequest.md
   - docs/models/operations/getmodelbyidresponse.md
   - docs/models/operations/getmodelbyidresponsebody.md
+  - docs/models/operations/getmotionvariationbyidrequest.md
+  - docs/models/operations/getmotionvariationbyidresponse.md
+  - docs/models/operations/getmotionvariationbyidresponsebody.md
   - docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md
   - docs/models/operations/gettexturegenerationbyidrequest.md
   - docs/models/operations/gettexturegenerationbyidrequestbody.md
@@ -174,6 +192,7 @@ generatedFiles:
   - docs/models/operations/getvariationbyidrequest.md
   - docs/models/operations/getvariationbyidresponse.md
   - docs/models/operations/getvariationbyidresponsebody.md
+  - docs/models/operations/imagetype.md
   - docs/models/operations/initimages.md
   - docs/models/operations/initimageuploadoutput.md
   - docs/models/operations/lcmgenerationoutput.md
@@ -189,6 +208,7 @@ generatedFiles:
   - docs/models/operations/modelassettextureimages.md
   - docs/models/operations/modelassetuploadoutput.md
   - docs/models/operations/motionsvdgenerationoutput.md
+  - docs/models/operations/motionvideogenerationoutput.md
   - docs/models/operations/object.md
   - docs/models/operations/performalchemyupscalelcmlcmgenerationoutput.md
   - docs/models/operations/performalchemyupscalelcmrequestbody.md
@@ -206,13 +226,16 @@ generatedFiles:
   - docs/models/operations/pricingcalculatorpricingcalculatorobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsmotionvideogenerationobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamstexturegenerationobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerobject.md
   - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerultraobject.md
+  - docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsveo3motionvideogenerationobject.md
   - docs/models/operations/pricingcalculatorrequestbody.md
   - docs/models/operations/pricingcalculatorresponse.md
   - docs/models/operations/pricingcalculatorresponsebody.md
+  - docs/models/operations/pricingcalculatorstring.md
   - docs/models/operations/promptgenerationoutput.md
   - docs/models/operations/promptimproverequestbody.md
   - docs/models/operations/promptimproveresponse.md
@@ -224,7 +247,9 @@ generatedFiles:
   - docs/models/operations/sdtrainingoutput.md
   - docs/models/operations/sdunzoomoutput.md
   - docs/models/operations/sdupscalejoboutput.md
+  - docs/models/operations/sdversion.md
   - docs/models/operations/sdversions.md
+  - docs/models/operations/string.md
   - docs/models/operations/texturegenerationjoboutput.md
   - docs/models/operations/transparencytype.md
   - docs/models/operations/universalupscaleroutput.md
@@ -257,6 +282,8 @@ generatedFiles:
   - docs/models/shared/jobstatus.md
   - docs/models/shared/lcmgenerationstyle.md
   - docs/models/shared/modelassettexturetypes.md
+  - docs/models/shared/motionresolution.md
+  - docs/models/shared/motionvariationtype.md
   - docs/models/shared/pricingcalculatorservices.md
   - docs/models/shared/sdgenerationschedulers.md
   - docs/models/shared/sdgenerationstyle.md
@@ -287,7 +314,7 @@ generatedFiles:
   - py.typed
   - pylintrc
   - pyproject.toml
-  - scripts/prepare-readme.py
+  - scripts/prepare_readme.py
   - scripts/publish.sh
   - src/leonardo_ai_sdk/__init__.py
   - src/leonardo_ai_sdk/_hooks/__init__.py
@@ -300,20 +327,27 @@ generatedFiles:
   - src/leonardo_ai_sdk/httpclient.py
   - src/leonardo_ai_sdk/image.py
   - src/leonardo_ai_sdk/init_images.py
+  - src/leonardo_ai_sdk/models/__init__.py
   - src/leonardo_ai_sdk/models/errors/__init__.py
+  - src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py
+  - src/leonardo_ai_sdk/models/errors/no_response_error.py
+  - src/leonardo_ai_sdk/models/errors/responsevalidationerror.py
   - src/leonardo_ai_sdk/models/errors/sdkerror.py
   - src/leonardo_ai_sdk/models/operations/__init__.py
   - src/leonardo_ai_sdk/models/operations/createdataset.py
   - src/leonardo_ai_sdk/models/operations/createelement.py
   - src/leonardo_ai_sdk/models/operations/creategeneration.py
+  - src/leonardo_ai_sdk/models/operations/createimagetovideogeneration.py
   - src/leonardo_ai_sdk/models/operations/createlcmgeneration.py
   - src/leonardo_ai_sdk/models/operations/createmodel.py
   - src/leonardo_ai_sdk/models/operations/createsvdmotiongeneration.py
+  - src/leonardo_ai_sdk/models/operations/createtexttovideogeneration.py
   - src/leonardo_ai_sdk/models/operations/createtexturegeneration.py
   - src/leonardo_ai_sdk/models/operations/createuniversalupscalerjob.py
   - src/leonardo_ai_sdk/models/operations/createvariationnobg.py
   - src/leonardo_ai_sdk/models/operations/createvariationunzoom.py
   - src/leonardo_ai_sdk/models/operations/createvariationupscale.py
+  - src/leonardo_ai_sdk/models/operations/createvideoupscale.py
   - src/leonardo_ai_sdk/models/operations/delete3dmodelbyid.py
   - src/leonardo_ai_sdk/models/operations/deletedatasetbyid.py
   - src/leonardo_ai_sdk/models/operations/deleteelementbyid.py
@@ -331,6 +365,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/operations/getgenerationsbyuserid.py
   - src/leonardo_ai_sdk/models/operations/getinitimagebyid.py
   - src/leonardo_ai_sdk/models/operations/getmodelbyid.py
+  - src/leonardo_ai_sdk/models/operations/getmotionvariationbyid.py
   - src/leonardo_ai_sdk/models/operations/gettexturegenerationbyid.py
   - src/leonardo_ai_sdk/models/operations/gettexturegenerationsbymodelid.py
   - src/leonardo_ai_sdk/models/operations/getuserself.py
@@ -357,6 +392,8 @@ generatedFiles:
   - src/leonardo_ai_sdk/models/shared/job_status.py
   - src/leonardo_ai_sdk/models/shared/lcm_generation_style.py
   - src/leonardo_ai_sdk/models/shared/model_asset_texture_types.py
+  - src/leonardo_ai_sdk/models/shared/motion_resolution.py
+  - src/leonardo_ai_sdk/models/shared/motion_variation_type.py
   - src/leonardo_ai_sdk/models/shared/pricingcalculatorservices.py
   - src/leonardo_ai_sdk/models/shared/sd_generation_schedulers.py
   - src/leonardo_ai_sdk/models/shared/sd_generation_style.py
@@ -382,6 +419,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/user.py
   - src/leonardo_ai_sdk/utils/__init__.py
   - src/leonardo_ai_sdk/utils/annotations.py
+  - src/leonardo_ai_sdk/utils/datetimes.py
   - src/leonardo_ai_sdk/utils/enums.py
   - src/leonardo_ai_sdk/utils/eventstreaming.py
   - src/leonardo_ai_sdk/utils/forms.py
@@ -393,6 +431,7 @@ generatedFiles:
   - src/leonardo_ai_sdk/utils/retries.py
   - src/leonardo_ai_sdk/utils/security.py
   - src/leonardo_ai_sdk/utils/serializers.py
+  - src/leonardo_ai_sdk/utils/unmarshal_json_response.py
   - src/leonardo_ai_sdk/utils/url.py
   - src/leonardo_ai_sdk/utils/values.py
   - src/leonardo_ai_sdk/variation.py
@@ -423,7 +462,7 @@ examples:
   uploadInitImage:
     speakeasy-default-upload-init-image:
       requestBody:
-        application/json: {"extension": "png"}
+        application/json: {"extension": "gif"}
       responses:
         "200":
           application/json: {}
@@ -456,7 +495,7 @@ examples:
         path:
           datasetId: "<id>"
       requestBody:
-        application/json: {"extension": "mp4v"}
+        application/json: {"extension": "shtml"}
       responses:
         "200":
           application/json: {}
@@ -473,7 +512,7 @@ examples:
   createElement:
     speakeasy-default-create-element:
       requestBody:
-        application/json: {"datasetId": "", "description": "", "instance_prompt": "a character", "learning_rate": 0.000001, "lora_focus": "General", "name": "placeholder", "num_train_epochs": 100, "resolution": 1024, "sd_version": "SDXL_0_9", "train_text_encoder": true}
+        application/json: {"datasetId": "", "description": "", "instance_prompt": "", "learning_rate": 3344.47, "lora_focus": "<value>", "name": "placeholder", "num_train_epochs": 543724, "resolution": 1024, "sd_version": "FLUX_DEV", "train_text_encoder": true}
       responses:
         "200":
           application/json: {}
@@ -481,7 +520,7 @@ examples:
     speakeasy-default-delete-element-by-id:
       parameters:
         path:
-          id: 39024
+          id: 709546
       responses:
         "200":
           application/json: {}
@@ -497,7 +536,7 @@ examples:
     speakeasy-default-get-element-by-id:
       parameters:
         path:
-          id: 665696
+          id: 320312
       responses:
         "200":
           application/json: {}
@@ -509,7 +548,7 @@ examples:
   createGeneration:
     speakeasy-default-create-generation:
       requestBody:
-        application/json: {"alchemy": true, "height": 768, "modelId": "b24e16ff-06e3-43eb-8d33-4416c2d75876", "num_images": 4, "presetStyle": "DYNAMIC", "prompt": "A majestic cat in the snow", "width": 1024}
+        application/json: {"alchemy": true, "contrast": 3.5, "height": 768, "modelId": "b24e16ff-06e3-43eb-8d33-4416c2d75876", "num_images": 4, "presetStyle": "DYNAMIC", "prompt": "A majestic cat in the snow", "width": 1024}
       responses:
         "200":
           application/json: {}
@@ -540,6 +579,26 @@ examples:
       responses:
         "200":
           application/json: {}
+  createImageToVideoGeneration:
+    speakeasy-default-create-image-to-video-generation:
+      responses:
+        "200":
+          application/json: {}
+  createSVDMotionGeneration:
+    speakeasy-default-create-SVD-motion-generation:
+      responses:
+        "200":
+          application/json: {}
+  createTextToVideoGeneration:
+    speakeasy-default-create-text-to-video-generation:
+      responses:
+        "200":
+          application/json: {}
+  createVideoUpscale:
+    speakeasy-default-create-video-upscale:
+      responses:
+        "200":
+          application/json: {}
   createLCMGeneration:
     speakeasy-default-create-LCM-generation:
       responses:
@@ -557,11 +616,6 @@ examples:
           application/json: {}
   performInstantRefine:
     speakeasy-default-perform-instant-refine:
-      responses:
-        "200":
-          application/json: {}
-  createSVDMotionGeneration:
-    speakeasy-default-create-SVD-motion-generation:
       responses:
         "200":
           application/json: {}
@@ -676,23 +730,6 @@ examples:
       responses:
         "200":
           application/json: {}
-  pricingCalculator:
-    speakeasy-default-pricing-calculator:
-      responses:
-        "200":
-          application/json: {}
-  promptImprove:
-    speakeasy-default-prompt-improve:
-      requestBody:
-        application/json: {"prompt": "<value>"}
-      responses:
-        "200":
-          application/json: {}
-  promptRandom:
-    speakeasy-default-prompt-random:
-      responses:
-        "200":
-          application/json: {}
   CreateUniversalUpscalerJob:
     speakeasy-default-create-universal-upscaler-job:
       requestBody:
@@ -717,6 +754,14 @@ examples:
       responses:
         "200":
           application/json: {}
+  getMotionVariationById:
+    speakeasy-default-get-motion-variation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   getVariationById:
     speakeasy-default-get-variation-by-id:
       parameters:
@@ -725,5 +770,23 @@ examples:
       responses:
         "200":
           application/json: {}
-examplesVersion: 1.0.0
+  pricingCalculator:
+    speakeasy-default-pricing-calculator:
+      responses:
+        "200":
+          application/json: {}
+  promptImprove:
+    speakeasy-default-prompt-improve:
+      requestBody:
+        application/json: {"isVideo": true, "prompt": "<value>"}
+      responses:
+        "200":
+          application/json: {}
+  promptRandom:
+    speakeasy-default-prompt-random:
+      responses:
+        "200":
+          application/json: {}
+examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Python SDK Changes Detected:\n* `leonardo_ai_sdk.elements.create_element()`:  `request` **Changed** **Breaking** :warning:\n* `leonardo_ai_sdk.image.create_generation()`:  `request` **Changed** **Breaking** :warning:\n* `leonardo_ai_sdk.pricing_calculator.pricing_calculator()`: \n  *  `request.service_params` **Changed** **Breaking** :warning:\n* `leonardo_ai_sdk.motion.create_image_to_video_generation()`: **Added**\n* `leonardo_ai_sdk.motion.create_text_to_video_generation()`: **Added**\n* `leonardo_ai_sdk.motion.create_video_upscale()`: **Added**\n* `leonardo_ai_sdk.variation.get_motion_variation_by_id()`: **Added**\n* `leonardo_ai_sdk.prompt.prompt_improve()`: \n  *  `request.is_video` **Added**\n"

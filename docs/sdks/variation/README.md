@@ -9,6 +9,7 @@
 * [create_variation_no_bg](#create_variation_no_bg) - Create no background
 * [create_variation_unzoom](#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](#create_variation_upscale) - Create upscale
+* [get_motion_variation_by_id](#get_motion_variation_by_id) - Get motion variation by ID
 * [get_variation_by_id](#get_variation_by_id) - Get variation by ID
 
 ## create_universal_upscaler_job
@@ -17,8 +18,10 @@ This endpoint will create a high resolution image using Universal Upscaler
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="CreateUniversalUpscalerJob" method="post" path="/variations/universal-upscaler" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -56,8 +59,10 @@ This endpoint will create a no background variation of the provided image ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createVariationNoBG" method="post" path="/variations/nobg" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -97,8 +102,10 @@ This endpoint will create an unzoom variation for the provided image ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createVariationUnzoom" method="post" path="/variations/unzoom" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -136,8 +143,10 @@ This endpoint will create an upscale for the provided image ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createVariationUpscale" method="post" path="/variations/upscale" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -169,14 +178,57 @@ with LeonardoAiSDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## get_motion_variation_by_id
+
+This endpoint will get the motion variation by ID
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="getMotionVariationById" method="get" path="/motion-variations/{id}" -->
+```python
+from leonardo_ai_sdk import LeonardoAiSDK
+
+
+with LeonardoAiSDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as las_client:
+
+    res = las_client.variation.get_motion_variation_by_id(id="<id>")
+
+    assert res.object is not None
+
+    # Handle response
+    print(res.object)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | "id" is required                                                    |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[operations.GetMotionVariationByIDResponse](../../models/operations/getmotionvariationbyidresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## get_variation_by_id
 
 This endpoint will get the variation by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getVariationById" method="get" path="/variations/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

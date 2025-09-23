@@ -16,14 +16,18 @@ This endpoint will generate images
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createGeneration" method="post" path="/generations" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.image.create_generation(request={})
+    res = las_client.image.create_generation(request={
+        "contrast": 3.5,
+    })
 
     assert res.object is not None
 
@@ -55,8 +59,10 @@ This endpoint deletes a specific generation
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteGenerationById" method="delete" path="/generations/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -94,8 +100,10 @@ This endpoint will provide information about a specific generation
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getGenerationById" method="get" path="/generations/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -133,14 +141,16 @@ This endpoint returns all generations by a specific user
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getGenerationsByUserId" method="get" path="/generations/user/{userId}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.image.get_generations_by_user_id(user_id="<id>")
+    res = las_client.image.get_generations_by_user_id(user_id="<id>", limit=10, offset=0)
 
     assert res.object is not None
 

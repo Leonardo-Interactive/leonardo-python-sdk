@@ -5,6 +5,7 @@ from leonardo_ai_sdk import utils
 from leonardo_ai_sdk._hooks import HookContext
 from leonardo_ai_sdk.models import errors, operations
 from leonardo_ai_sdk.types import BaseModel, OptionalNullable, UNSET
+from leonardo_ai_sdk.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Mapping, Optional, Union, cast
 
 
@@ -38,6 +39,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateElementRequestBody)
@@ -72,6 +75,8 @@ class Elements(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createElement",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -83,8 +88,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateElementResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateElementResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateElementResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -92,23 +97,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def create_element_async(
         self,
@@ -139,6 +133,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateElementRequestBody)
@@ -173,6 +169,8 @@ class Elements(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createElement",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -184,8 +182,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateElementResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateElementResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateElementResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -193,23 +191,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def delete_element_by_id(
         self,
@@ -237,6 +224,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteElementByIDRequest(
             id=id,
@@ -268,6 +257,8 @@ class Elements(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteElementById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -279,8 +270,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteElementByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteElementByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteElementByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -288,23 +279,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def delete_element_by_id_async(
         self,
@@ -332,6 +312,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteElementByIDRequest(
             id=id,
@@ -363,6 +345,8 @@ class Elements(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteElementById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -374,8 +358,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteElementByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteElementByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteElementByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -383,23 +367,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def get_custom_elements_by_user_id(
         self,
@@ -427,6 +400,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetCustomElementsByUserIDRequest(
             user_id=user_id,
@@ -458,6 +433,8 @@ class Elements(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getCustomElementsByUserId",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -469,9 +446,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetCustomElementsByUserIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.GetCustomElementsByUserIDResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.GetCustomElementsByUserIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -479,23 +455,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def get_custom_elements_by_user_id_async(
         self,
@@ -523,6 +488,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetCustomElementsByUserIDRequest(
             user_id=user_id,
@@ -554,6 +521,8 @@ class Elements(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getCustomElementsByUserId",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -565,9 +534,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetCustomElementsByUserIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.GetCustomElementsByUserIDResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.GetCustomElementsByUserIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -575,23 +543,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def get_element_by_id(
         self,
@@ -619,6 +576,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetElementByIDRequest(
             id=id,
@@ -650,6 +609,8 @@ class Elements(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getElementById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -661,8 +622,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetElementByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetElementByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetElementByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -670,23 +631,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def get_element_by_id_async(
         self,
@@ -714,6 +664,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetElementByIDRequest(
             id=id,
@@ -745,6 +697,8 @@ class Elements(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getElementById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -756,8 +710,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetElementByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetElementByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetElementByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -765,23 +719,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def list_elements(
         self,
@@ -807,6 +750,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
         req = self._build_request(
             method="GET",
             path="/elements",
@@ -833,6 +778,8 @@ class Elements(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="listElements",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -844,8 +791,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.ListElementsResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.ListElementsResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.ListElementsResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -853,23 +800,12 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def list_elements_async(
         self,
@@ -895,6 +831,8 @@ class Elements(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
         req = self._build_request_async(
             method="GET",
             path="/elements",
@@ -921,6 +859,8 @@ class Elements(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="listElements",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -932,8 +872,8 @@ class Elements(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.ListElementsResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.ListElementsResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.ListElementsResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -941,20 +881,9 @@ class Elements(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)

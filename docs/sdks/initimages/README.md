@@ -16,8 +16,10 @@ This endpoint deletes an init image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteInitImageById" method="delete" path="/init-image/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -55,8 +57,10 @@ This endpoint will return a single init image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getInitImageById" method="get" path="/init-image/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -94,8 +98,10 @@ This endpoint returns presigned details to upload an init image and a mask image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="uploadCanvasInitImage" method="post" path="/canvas-init-image" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -136,15 +142,17 @@ This endpoint returns presigned details to upload an init image to S3
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="uploadInitImage" method="post" path="/init-image" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
     res = las_client.init_images.upload_init_image(request={
-        "extension": "png",
+        "extension": "gif",
     })
 
     assert res.object is not None

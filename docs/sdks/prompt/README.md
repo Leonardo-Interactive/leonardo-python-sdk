@@ -14,14 +14,17 @@ This endpoint returns a improved prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="promptImprove" method="post" path="/prompt/improve" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
     res = las_client.prompt.prompt_improve(request={
+        "is_video": True,
         "prompt": "<value>",
     })
 
@@ -55,8 +58,10 @@ This endpoint returns a random prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="promptRandom" method="post" path="/prompt/random" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

@@ -5,6 +5,7 @@ from leonardo_ai_sdk import utils
 from leonardo_ai_sdk._hooks import HookContext
 from leonardo_ai_sdk.models import errors, operations
 from leonardo_ai_sdk.types import BaseModel, OptionalNullable, UNSET
+from leonardo_ai_sdk.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Mapping, Optional, Union, cast
 
 
@@ -38,6 +39,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateDatasetRequestBody)
@@ -72,6 +75,8 @@ class Dataset(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createDataset",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -83,8 +88,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateDatasetResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateDatasetResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateDatasetResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -92,23 +97,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def create_dataset_async(
         self,
@@ -139,6 +133,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateDatasetRequestBody)
@@ -173,6 +169,8 @@ class Dataset(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createDataset",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -184,8 +182,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateDatasetResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateDatasetResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateDatasetResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -193,23 +191,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def delete_dataset_by_id(
         self,
@@ -237,6 +224,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteDatasetByIDRequest(
             id=id,
@@ -268,6 +257,8 @@ class Dataset(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteDatasetById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -279,8 +270,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteDatasetByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteDatasetByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteDatasetByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -288,23 +279,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def delete_dataset_by_id_async(
         self,
@@ -332,6 +312,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteDatasetByIDRequest(
             id=id,
@@ -363,6 +345,8 @@ class Dataset(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteDatasetById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -374,8 +358,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteDatasetByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteDatasetByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteDatasetByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -383,23 +367,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def get_dataset_by_id(
         self,
@@ -427,6 +400,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetDatasetByIDRequest(
             id=id,
@@ -458,6 +433,8 @@ class Dataset(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getDatasetById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -469,8 +446,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetDatasetByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetDatasetByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetDatasetByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -478,23 +455,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def get_dataset_by_id_async(
         self,
@@ -522,6 +488,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetDatasetByIDRequest(
             id=id,
@@ -553,6 +521,8 @@ class Dataset(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getDatasetById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -564,8 +534,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetDatasetByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetDatasetByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetDatasetByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -573,23 +543,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def upload_dataset_image(
         self,
@@ -622,6 +581,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.UploadDatasetImageRequest(
             dataset_id=dataset_id,
@@ -663,6 +624,8 @@ class Dataset(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="uploadDatasetImage",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -674,8 +637,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.UploadDatasetImageResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.UploadDatasetImageResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.UploadDatasetImageResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -683,23 +646,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def upload_dataset_image_async(
         self,
@@ -732,6 +684,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.UploadDatasetImageRequest(
             dataset_id=dataset_id,
@@ -773,6 +727,8 @@ class Dataset(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="uploadDatasetImage",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -784,8 +740,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.UploadDatasetImageResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.UploadDatasetImageResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.UploadDatasetImageResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -793,23 +749,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def upload_dataset_image_from_gen(
         self,
@@ -842,6 +787,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.UploadDatasetImageFromGenRequest(
             dataset_id=dataset_id,
@@ -883,6 +830,8 @@ class Dataset(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="uploadDatasetImageFromGen",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -894,9 +843,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.UploadDatasetImageFromGenResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.UploadDatasetImageFromGenResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.UploadDatasetImageFromGenResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -904,23 +852,12 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def upload_dataset_image_from_gen_async(
         self,
@@ -953,6 +890,8 @@ class Dataset(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.UploadDatasetImageFromGenRequest(
             dataset_id=dataset_id,
@@ -994,6 +933,8 @@ class Dataset(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="uploadDatasetImageFromGen",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -1005,9 +946,8 @@ class Dataset(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.UploadDatasetImageFromGenResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.UploadDatasetImageFromGenResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.UploadDatasetImageFromGenResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -1015,20 +955,9 @@ class Dataset(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)

@@ -5,6 +5,7 @@ from leonardo_ai_sdk import utils
 from leonardo_ai_sdk._hooks import HookContext
 from leonardo_ai_sdk.models import errors, operations
 from leonardo_ai_sdk.types import BaseModel, OptionalNullable, UNSET
+from leonardo_ai_sdk.utils.unmarshal_json_response import unmarshal_json_response
 from typing import Mapping, Optional, Union, cast
 
 
@@ -38,6 +39,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateGenerationRequestBody)
@@ -72,6 +75,8 @@ class Image(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createGeneration",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -83,8 +88,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateGenerationResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateGenerationResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateGenerationResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -92,23 +97,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def create_generation_async(
         self,
@@ -139,6 +133,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(request, operations.CreateGenerationRequestBody)
@@ -173,6 +169,8 @@ class Image(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="createGeneration",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -184,8 +182,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.CreateGenerationResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.CreateGenerationResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.CreateGenerationResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -193,23 +191,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def delete_generation_by_id(
         self,
@@ -237,6 +224,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteGenerationByIDRequest(
             id=id,
@@ -268,6 +257,8 @@ class Image(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteGenerationById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -279,8 +270,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteGenerationByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteGenerationByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteGenerationByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -288,23 +279,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def delete_generation_by_id_async(
         self,
@@ -332,6 +312,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.DeleteGenerationByIDRequest(
             id=id,
@@ -363,6 +345,8 @@ class Image(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="deleteGenerationById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -374,8 +358,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.DeleteGenerationByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.DeleteGenerationByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.DeleteGenerationByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -383,23 +367,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def get_generation_by_id(
         self,
@@ -427,6 +400,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetGenerationByIDRequest(
             id=id,
@@ -458,6 +433,8 @@ class Image(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getGenerationById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -469,8 +446,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetGenerationByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetGenerationByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetGenerationByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -478,23 +455,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def get_generation_by_id_async(
         self,
@@ -522,6 +488,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetGenerationByIDRequest(
             id=id,
@@ -553,6 +521,8 @@ class Image(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getGenerationById",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -564,8 +534,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetGenerationByIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text, Optional[operations.GetGenerationByIDResponseBody]
+                object=unmarshal_json_response(
+                    Optional[operations.GetGenerationByIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -573,23 +543,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     def get_generations_by_user_id(
         self,
@@ -621,6 +580,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetGenerationsByUserIDRequest(
             limit=limit,
@@ -654,6 +615,8 @@ class Image(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getGenerationsByUserId",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -665,9 +628,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetGenerationsByUserIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.GetGenerationsByUserIDResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.GetGenerationsByUserIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -675,23 +637,12 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = utils.stream_to_text(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = utils.stream_to_text(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)
 
     async def get_generations_by_user_id_async(
         self,
@@ -723,6 +674,8 @@ class Image(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
 
         request = operations.GetGenerationsByUserIDRequest(
             limit=limit,
@@ -756,6 +709,8 @@ class Image(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
                 operation_id="getGenerationsByUserId",
                 oauth2_scopes=[],
                 security_source=self.sdk_configuration.security,
@@ -767,9 +722,8 @@ class Image(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetGenerationsByUserIDResponse(
-                object=utils.unmarshal_json(
-                    http_res.text,
-                    Optional[operations.GetGenerationsByUserIDResponseBody],
+                object=unmarshal_json_response(
+                    Optional[operations.GetGenerationsByUserIDResponseBody], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -777,20 +731,9 @@ class Image(BaseSDK):
             )
         if utils.match_response(http_res, "4XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
         if utils.match_response(http_res, "5XX", "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
-            raise errors.SDKError(
-                "API error occurred", http_res.status_code, http_res_text, http_res
-            )
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
 
-        content_type = http_res.headers.get("Content-Type")
-        http_res_text = await utils.stream_to_text_async(http_res)
-        raise errors.SDKError(
-            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
-            http_res.status_code,
-            http_res_text,
-            http_res,
-        )
+        raise errors.SDKError("Unexpected response received", http_res)

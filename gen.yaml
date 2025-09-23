@@ -6,20 +6,32 @@ generation:
   sdkClassName: LeonardoAiSDK
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   fixes:
-    nameResolutionDec2023: false
+    nameResolutionFeb2025: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+    securityFeb2025: false
+    sharedErrorComponentsApr2025: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
 python:
-  version: 6.5.1
+  version: 6.6.0
   additionalDependencies:
     dev: {}
     main: {}
+  allowedRedefinedBuiltins:
+    - id
+    - object
   authors:
     - Leonardo-Ai
+  baseErrorName: LeonardoAiSDKError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   description: Leonardo AI Python Client SDK
@@ -41,8 +53,13 @@ python:
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request
+  moduleName: ""
   outputModelSuffix: output
+  packageManager: poetry
   packageName: Leonardo-Ai-SDK
   projectUrls: {}
+  pytestFilterWarnings: []
+  pytestTimeout: 0
   responseFormat: envelope
+  sseFlatResponse: false
   templateVersion: v2

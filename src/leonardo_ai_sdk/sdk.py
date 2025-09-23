@@ -6,43 +6,68 @@ from .sdkconfiguration import SDKConfiguration
 from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 import httpx
+import importlib
 from leonardo_ai_sdk import utils
 from leonardo_ai_sdk._hooks import SDKHooks
-from leonardo_ai_sdk.dataset import Dataset
-from leonardo_ai_sdk.elements import Elements
-from leonardo_ai_sdk.image import Image
-from leonardo_ai_sdk.init_images import InitImages
 from leonardo_ai_sdk.models import shared
-from leonardo_ai_sdk.models_ import Models
-from leonardo_ai_sdk.motion import Motion
-from leonardo_ai_sdk.pricing_calculator import PricingCalculator
-from leonardo_ai_sdk.prompt import Prompt
-from leonardo_ai_sdk.realtime_canvas import RealtimeCanvas
-from leonardo_ai_sdk.texture import Texture
-from leonardo_ai_sdk.threed_model_assets import ThreeDModelAssets
 from leonardo_ai_sdk.types import OptionalNullable, UNSET
-from leonardo_ai_sdk.user import User
-from leonardo_ai_sdk.variation import Variation
-from typing import Any, Callable, Dict, Optional, Union, cast
+import sys
+from typing import Any, Callable, Dict, Optional, TYPE_CHECKING, Union, cast
 import weakref
+
+if TYPE_CHECKING:
+    from leonardo_ai_sdk.dataset import Dataset
+    from leonardo_ai_sdk.elements import Elements
+    from leonardo_ai_sdk.image import Image
+    from leonardo_ai_sdk.init_images import InitImages
+    from leonardo_ai_sdk.models_ import Models
+    from leonardo_ai_sdk.motion import Motion
+    from leonardo_ai_sdk.pricing_calculator import PricingCalculator
+    from leonardo_ai_sdk.prompt import Prompt
+    from leonardo_ai_sdk.realtime_canvas import RealtimeCanvas
+    from leonardo_ai_sdk.texture import Texture
+    from leonardo_ai_sdk.threed_model_assets import ThreeDModelAssets
+    from leonardo_ai_sdk.user import User
+    from leonardo_ai_sdk.variation import Variation
 
 
 class LeonardoAiSDK(BaseSDK):
     r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
 
-    init_images: InitImages
-    dataset: Dataset
-    elements: Elements
-    image: Image
-    realtime_canvas: RealtimeCanvas
-    motion: Motion
-    texture: Texture
-    user: User
-    models: Models
-    three_d_model_assets: ThreeDModelAssets
-    pricing_calculator: PricingCalculator
-    prompt: Prompt
-    variation: Variation
+    init_images: "InitImages"
+    dataset: "Dataset"
+    elements: "Elements"
+    image: "Image"
+    motion: "Motion"
+    realtime_canvas: "RealtimeCanvas"
+    texture: "Texture"
+    user: "User"
+    models: "Models"
+    three_d_model_assets: "ThreeDModelAssets"
+    variation: "Variation"
+    pricing_calculator: "PricingCalculator"
+    prompt: "Prompt"
+    _sub_sdk_map = {
+        "init_images": ("leonardo_ai_sdk.init_images", "InitImages"),
+        "dataset": ("leonardo_ai_sdk.dataset", "Dataset"),
+        "elements": ("leonardo_ai_sdk.elements", "Elements"),
+        "image": ("leonardo_ai_sdk.image", "Image"),
+        "motion": ("leonardo_ai_sdk.motion", "Motion"),
+        "realtime_canvas": ("leonardo_ai_sdk.realtime_canvas", "RealtimeCanvas"),
+        "texture": ("leonardo_ai_sdk.texture", "Texture"),
+        "user": ("leonardo_ai_sdk.user", "User"),
+        "models": ("leonardo_ai_sdk.models_", "Models"),
+        "three_d_model_assets": (
+            "leonardo_ai_sdk.threed_model_assets",
+            "ThreeDModelAssets",
+        ),
+        "variation": ("leonardo_ai_sdk.variation", "Variation"),
+        "pricing_calculator": (
+            "leonardo_ai_sdk.pricing_calculator",
+            "PricingCalculator",
+        ),
+        "prompt": ("leonardo_ai_sdk.prompt", "Prompt"),
+    }
 
     def __init__(
         self,
@@ -67,15 +92,19 @@ class LeonardoAiSDK(BaseSDK):
         :param retry_config: The retry configuration to use for all supported methods
         :param timeout_ms: Optional request timeout applied to each operation in milliseconds
         """
+        client_supplied = True
         if client is None:
             client = httpx.Client()
+            client_supplied = False
 
         assert issubclass(
             type(client), HttpClient
         ), "The provided client must implement the HttpClient protocol."
 
+        async_client_supplied = True
         if async_client is None:
             async_client = httpx.AsyncClient()
+            async_client_supplied = False
 
         if debug_logger is None:
             debug_logger = get_default_logger()
@@ -99,7 +128,9 @@ class LeonardoAiSDK(BaseSDK):
             self,
             SDKConfiguration(
                 client=client,
+                client_supplied=client_supplied,
                 async_client=async_client,
+                async_client_supplied=async_client_supplied,
                 security=security,
                 server_url=server_url,
                 server_idx=server_idx,
@@ -107,44 +138,68 @@ class LeonardoAiSDK(BaseSDK):
                 timeout_ms=timeout_ms,
                 debug_logger=debug_logger,
             ),
+            parent_ref=self,
         )
 
         hooks = SDKHooks()
 
+        # pylint: disable=protected-access
+        self.sdk_configuration.__dict__["_hooks"] = hooks
+
         current_server_url, *_ = self.sdk_configuration.get_server_details()
         server_url, self.sdk_configuration.client = hooks.sdk_init(
-            current_server_url, self.sdk_configuration.client
+            current_server_url, client
         )
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
-
-        # pylint: disable=protected-access
-        self.sdk_configuration.__dict__["_hooks"] = hooks
 
         weakref.finalize(
             self,
             close_clients,
             cast(ClientOwner, self.sdk_configuration),
             self.sdk_configuration.client,
+            self.sdk_configuration.client_supplied,
             self.sdk_configuration.async_client,
+            self.sdk_configuration.async_client_supplied,
         )
 
-        self._init_sdks()
+    def dynamic_import(self, modname, retries=3):
+        for attempt in range(retries):
+            try:
+                return importlib.import_module(modname)
+            except KeyError:
+                # Clear any half-initialized module and retry
+                sys.modules.pop(modname, None)
+                if attempt == retries - 1:
+                    break
+        raise KeyError(f"Failed to import module '{modname}' after {retries} attempts")
 
-    def _init_sdks(self):
-        self.init_images = InitImages(self.sdk_configuration)
-        self.dataset = Dataset(self.sdk_configuration)
-        self.elements = Elements(self.sdk_configuration)
-        self.image = Image(self.sdk_configuration)
-        self.realtime_canvas = RealtimeCanvas(self.sdk_configuration)
-        self.motion = Motion(self.sdk_configuration)
-        self.texture = Texture(self.sdk_configuration)
-        self.user = User(self.sdk_configuration)
-        self.models = Models(self.sdk_configuration)
-        self.three_d_model_assets = ThreeDModelAssets(self.sdk_configuration)
-        self.pricing_calculator = PricingCalculator(self.sdk_configuration)
-        self.prompt = Prompt(self.sdk_configuration)
-        self.variation = Variation(self.sdk_configuration)
+    def __getattr__(self, name: str):
+        if name in self._sub_sdk_map:
+            module_path, class_name = self._sub_sdk_map[name]
+            try:
+                module = self.dynamic_import(module_path)
+                klass = getattr(module, class_name)
+                instance = klass(self.sdk_configuration, parent_ref=self)
+                setattr(self, name, instance)
+                return instance
+            except ImportError as e:
+                raise AttributeError(
+                    f"Failed to import module {module_path} for attribute {name}: {e}"
+                ) from e
+            except AttributeError as e:
+                raise AttributeError(
+                    f"Failed to find class {class_name} in module {module_path} for attribute {name}: {e}"
+                ) from e
+
+        raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+
+    def __dir__(self):
+        default_attrs = list(super().__dir__())
+        lazy_attrs = list(self._sub_sdk_map.keys())
+        return sorted(list(set(default_attrs + lazy_attrs)))
 
     def __enter__(self):
         return self
@@ -153,9 +208,17 @@ class LeonardoAiSDK(BaseSDK):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.sdk_configuration.client is not None:
+        if (
+            self.sdk_configuration.client is not None
+            and not self.sdk_configuration.client_supplied
+        ):
             self.sdk_configuration.client.close()
+        self.sdk_configuration.client = None
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.sdk_configuration.async_client is not None:
+        if (
+            self.sdk_configuration.async_client is not None
+            and not self.sdk_configuration.async_client_supplied
+        ):
             await self.sdk_configuration.async_client.aclose()
+        self.sdk_configuration.async_client = None

@@ -112,7 +112,7 @@ class GetCustomElementsByUserIDUserLoras(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)
@@ -136,13 +136,17 @@ class GetCustomElementsByUserIDUserLoras(BaseModel):
 class GetCustomElementsByUserIDResponseBodyTypedDict(TypedDict):
     r"""Responses for GET /elements/user/{userId}."""
 
-    user_loras: NotRequired[Nullable[List[GetCustomElementsByUserIDUserLorasTypedDict]]]
+    user_loras: NotRequired[
+        Nullable[List[Nullable[GetCustomElementsByUserIDUserLorasTypedDict]]]
+    ]
 
 
 class GetCustomElementsByUserIDResponseBody(BaseModel):
     r"""Responses for GET /elements/user/{userId}."""
 
-    user_loras: OptionalNullable[List[GetCustomElementsByUserIDUserLoras]] = UNSET
+    user_loras: OptionalNullable[List[Nullable[GetCustomElementsByUserIDUserLoras]]] = (
+        UNSET
+    )
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -154,7 +158,7 @@ class GetCustomElementsByUserIDResponseBody(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
             serialized.pop(k, None)
