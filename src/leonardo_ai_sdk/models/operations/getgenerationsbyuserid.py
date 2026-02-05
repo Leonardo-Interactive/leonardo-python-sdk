@@ -46,6 +46,22 @@ class GetGenerationsByUserIDRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
 
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["limit", "offset"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
+
 
 class GetGenerationsByUserIDGeneratedImageVariationGenericTypedDict(TypedDict):
     r"""columns and relationships of \"generated_image_variation_generic\" """
@@ -76,31 +92,26 @@ class GetGenerationsByUserIDGeneratedImageVariationGeneric(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["id", "status", "transformType", "url"]
-        nullable_fields = ["id", "url"]
-        null_default_fields = []
-
+        optional_fields = set(["id", "status", "transformType", "url"])
+        nullable_fields = set(["id", "url"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -167,49 +178,48 @@ class GetGenerationsByUserIDGeneratedImages(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "generated_image_variation_generics",
-            "id",
-            "imageToVideo",
-            "likeCount",
-            "motion",
-            "motionMP4URL",
-            "motionModel",
-            "motionStrength",
-            "nsfw",
-            "url",
-        ]
-        nullable_fields = [
-            "id",
-            "imageToVideo",
-            "motion",
-            "motionMP4URL",
-            "motionModel",
-            "motionStrength",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "generated_image_variation_generics",
+                "id",
+                "imageToVideo",
+                "likeCount",
+                "motion",
+                "motionMP4URL",
+                "motionModel",
+                "motionStrength",
+                "nsfw",
+                "url",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "id",
+                "imageToVideo",
+                "motion",
+                "motionMP4URL",
+                "motionModel",
+                "motionStrength",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -274,48 +284,47 @@ class Elements(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "akUUID",
-            "baseModel",
-            "description",
-            "name",
-            "urlImage",
-            "weightDefault",
-            "weightMax",
-            "weightMin",
-        ]
-        nullable_fields = [
-            "akUUID",
-            "description",
-            "name",
-            "urlImage",
-            "weightDefault",
-            "weightMax",
-            "weightMin",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "akUUID",
+                "baseModel",
+                "description",
+                "name",
+                "urlImage",
+                "weightDefault",
+                "weightMax",
+                "weightMin",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "akUUID",
+                "description",
+                "name",
+                "urlImage",
+                "weightDefault",
+                "weightMax",
+                "weightMin",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -343,31 +352,26 @@ class GetGenerationsByUserIDGenerationElements(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["id", "lora", "weightApplied"]
-        nullable_fields = ["id", "lora", "weightApplied"]
-        null_default_fields = []
-
+        optional_fields = set(["id", "lora", "weightApplied"])
+        nullable_fields = set(["id", "lora", "weightApplied"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -501,71 +505,70 @@ class GetGenerationsByUserIDGenerations(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "createdAt",
-            "generated_images",
-            "generation_elements",
-            "guidanceScale",
-            "id",
-            "imageHeight",
-            "imageWidth",
-            "inferenceSteps",
-            "initStrength",
-            "modelId",
-            "negativePrompt",
-            "photoReal",
-            "photoRealStrength",
-            "presetStyle",
-            "prompt",
-            "promptMagic",
-            "promptMagicStrength",
-            "promptMagicVersion",
-            "public",
-            "scheduler",
-            "sdVersion",
-            "seed",
-            "status",
-            "ultra",
-        ]
-        nullable_fields = [
-            "guidanceScale",
-            "id",
-            "inferenceSteps",
-            "initStrength",
-            "modelId",
-            "negativePrompt",
-            "photoReal",
-            "photoRealStrength",
-            "presetStyle",
-            "promptMagic",
-            "promptMagicStrength",
-            "promptMagicVersion",
-            "seed",
-            "ultra",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "createdAt",
+                "generated_images",
+                "generation_elements",
+                "guidanceScale",
+                "id",
+                "imageHeight",
+                "imageWidth",
+                "inferenceSteps",
+                "initStrength",
+                "modelId",
+                "negativePrompt",
+                "photoReal",
+                "photoRealStrength",
+                "presetStyle",
+                "prompt",
+                "promptMagic",
+                "promptMagicStrength",
+                "promptMagicVersion",
+                "public",
+                "scheduler",
+                "sdVersion",
+                "seed",
+                "status",
+                "ultra",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "guidanceScale",
+                "id",
+                "inferenceSteps",
+                "initStrength",
+                "modelId",
+                "negativePrompt",
+                "photoReal",
+                "photoRealStrength",
+                "presetStyle",
+                "promptMagic",
+                "promptMagicStrength",
+                "promptMagicVersion",
+                "seed",
+                "ultra",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -580,6 +583,22 @@ class GetGenerationsByUserIDResponseBody(BaseModel):
     r"""Responses for GET /generations/user/{userId}"""
 
     generations: Optional[List[GetGenerationsByUserIDGenerations]] = None
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["generations"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class GetGenerationsByUserIDResponseTypedDict(TypedDict):
@@ -605,3 +624,19 @@ class GetGenerationsByUserIDResponse(BaseModel):
 
     object: Optional[GetGenerationsByUserIDResponseBody] = None
     r"""Responses for GET /generations/user/{userId}"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

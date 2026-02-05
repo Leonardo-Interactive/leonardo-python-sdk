@@ -1,5 +1,4 @@
 # Models
-(*models*)
 
 ## Overview
 
@@ -17,8 +16,10 @@ This endpoint will train a new custom model
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createModel" method="post" path="/models" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -60,8 +61,10 @@ This endpoint will delete a specific custom model
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteModelById" method="delete" path="/models/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -99,8 +102,10 @@ This endpoint gets the list of custom models belongs to the user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getCustomModelsByUserId" method="get" path="/models/user/{userId}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -138,8 +143,10 @@ This endpoint gets the specific custom model
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getModelById" method="get" path="/models/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -177,8 +184,10 @@ Get a list of public Platform Models available for use with generations.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="listPlatformModels" method="get" path="/platformModels" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

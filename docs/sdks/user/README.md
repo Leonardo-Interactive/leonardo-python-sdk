@@ -1,5 +1,4 @@
 # User
-(*user*)
 
 ## Overview
 
@@ -13,8 +12,10 @@ This endpoint will return your user information such as your user id, username, 
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getUserSelf" method="get" path="/me" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

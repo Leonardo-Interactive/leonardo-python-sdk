@@ -34,7 +34,15 @@ Rest Endpoints: Leonardo.Ai API OpenAPI specification.
 >
 > Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-The SDK can be installed with either *pip* or *poetry* package managers.
+The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
+
+### uv
+
+*uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
+
+```bash
+uv add Leonardo-Ai-SDK
+```
 
 ### PIP
 
@@ -65,7 +73,7 @@ It's also possible to write a standalone Python script without needing to set up
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.10"
 # dependencies = [
 #     "Leonardo-Ai-SDK",
 # ]
@@ -102,38 +110,107 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 ```python
 # Synchronous Example
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.blueprints.execute_blueprint(request={
+        "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+        "input": {
+            "collection_ids": [],
+            "node_inputs": [
+                {
+                    "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    "setting_name": shared.SettingName.TEXT,
+                    "value": "A futuristic cityscape at sunset",
+                },
+                {
+                    "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                    "setting_name": shared.SettingName.TEXT_VARIABLES,
+                    "value": [
+                        {
+                            "name": "characterName",
+                            "value": "Luna",
+                        },
+                        {
+                            "name": "outfit",
+                            "value": "cyberpunk armor",
+                        },
+                    ],
+                },
+                {
+                    "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                    "setting_name": shared.SettingName.IMAGE_URL,
+                    "value": "https://cdn.leonardo.ai/users/example/image.png",
+                },
+            ],
+            "public": False,
+        },
+    })
 
-    assert res.object is not None
+    assert res.one_of is not None
 
     # Handle response
-    print(res.object)
+    print(res.one_of)
 ```
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
+
 ```python
 # Asynchronous Example
 import asyncio
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
 
 async def main():
+
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:
 
-        res = await las_client.init_images.delete_init_image_by_id_async(id="<id>")
+        res = await las_client.blueprints.execute_blueprint_async(request={
+            "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+            "input": {
+                "collection_ids": [],
+                "node_inputs": [
+                    {
+                        "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                        "setting_name": shared.SettingName.TEXT,
+                        "value": "A futuristic cityscape at sunset",
+                    },
+                    {
+                        "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                        "setting_name": shared.SettingName.TEXT_VARIABLES,
+                        "value": [
+                            {
+                                "name": "characterName",
+                                "value": "Luna",
+                            },
+                            {
+                                "name": "outfit",
+                                "value": "cyberpunk armor",
+                            },
+                        ],
+                    },
+                    {
+                        "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                        "setting_name": shared.SettingName.IMAGE_URL,
+                        "value": "https://cdn.leonardo.ai/users/example/image.png",
+                    },
+                ],
+                "public": False,
+            },
+        })
 
-        assert res.object is not None
+        assert res.one_of is not None
 
         # Handle response
-        print(res.object)
+        print(res.one_of)
 
 asyncio.run(main())
 ```
@@ -145,7 +222,23 @@ asyncio.run(main())
 <details open>
 <summary>Available methods</summary>
 
-### [dataset](docs/sdks/dataset/README.md)
+### [ThreeDModelAssets](docs/sdks/threedmodelassets/README.md)
+
+* [delete3_d_model_by_id](docs/sdks/threedmodelassets/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
+* [get3_d_model_by_id](docs/sdks/threedmodelassets/README.md#get3_d_model_by_id) - Get 3D Model by ID
+* [get3_d_models_by_user_id](docs/sdks/threedmodelassets/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
+* [upload_model_asset](docs/sdks/threedmodelassets/README.md#upload_model_asset) - Upload 3D Model
+
+### [Blueprints](docs/sdks/blueprints/README.md)
+
+* [execute_blueprint](docs/sdks/blueprints/README.md#execute_blueprint) - Execute a Blueprint
+* [get_blueprint_by_id](docs/sdks/blueprints/README.md#get_blueprint_by_id) - Get Blueprint by ID
+* [get_blueprint_execution](docs/sdks/blueprints/README.md#get_blueprint_execution) - Get Blueprint Execution by ID
+* [get_blueprint_execution_generations](docs/sdks/blueprints/README.md#get_blueprint_execution_generations) - Get Blueprint Execution Generations by Execution ID
+* [get_blueprint_versions_by_blueprint_id](docs/sdks/blueprints/README.md#get_blueprint_versions_by_blueprint_id) - Get Blueprint Versions by Blueprint ID
+* [list_blueprints](docs/sdks/blueprints/README.md#list_blueprints) - List Blueprints
+
+### [Dataset](docs/sdks/dataset/README.md)
 
 * [create_dataset](docs/sdks/dataset/README.md#create_dataset) - Create a Dataset
 * [delete_dataset_by_id](docs/sdks/dataset/README.md#delete_dataset_by_id) - Delete a Single Dataset by ID
@@ -153,7 +246,7 @@ asyncio.run(main())
 * [upload_dataset_image](docs/sdks/dataset/README.md#upload_dataset_image) - Upload dataset image
 * [upload_dataset_image_from_gen](docs/sdks/dataset/README.md#upload_dataset_image_from_gen) - Upload a Single Generated Image to a Dataset
 
-### [elements](docs/sdks/elements/README.md)
+### [Elements](docs/sdks/elements/README.md)
 
 * [create_element](docs/sdks/elements/README.md#create_element) - Train a Custom Element
 * [delete_element_by_id](docs/sdks/elements/README.md#delete_element_by_id) - Delete a Single Custom Element by ID
@@ -161,22 +254,21 @@ asyncio.run(main())
 * [get_element_by_id](docs/sdks/elements/README.md#get_element_by_id) - Get a Single Custom Element by ID
 * [list_elements](docs/sdks/elements/README.md#list_elements) - List Elements
 
-### [image](docs/sdks/image/README.md)
+### [Image](docs/sdks/image/README.md)
 
 * [create_generation](docs/sdks/image/README.md#create_generation) - Create a Generation of Images
 * [delete_generation_by_id](docs/sdks/image/README.md#delete_generation_by_id) - Delete a Single Generation
 * [get_generation_by_id](docs/sdks/image/README.md#get_generation_by_id) - Get a Single Generation
 * [get_generations_by_user_id](docs/sdks/image/README.md#get_generations_by_user_id) - Get generations by user ID
 
-### [init_images](docs/sdks/initimages/README.md)
+### [InitImages](docs/sdks/initimages/README.md)
 
 * [delete_init_image_by_id](docs/sdks/initimages/README.md#delete_init_image_by_id) - Delete init image
 * [get_init_image_by_id](docs/sdks/initimages/README.md#get_init_image_by_id) - Get single init image
 * [upload_canvas_init_image](docs/sdks/initimages/README.md#upload_canvas_init_image) - Upload Canvas Editor init and mask image
 * [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
-
-### [models](docs/sdks/models/README.md)
+### [Models](docs/sdks/models/README.md)
 
 * [create_model](docs/sdks/models/README.md#create_model) - Train a Custom Model
 * [delete_model_by_id](docs/sdks/models/README.md#delete_model_by_id) - Delete a Single Custom Model by ID
@@ -184,50 +276,47 @@ asyncio.run(main())
 * [get_model_by_id](docs/sdks/models/README.md#get_model_by_id) - Get a Single Custom Model by ID
 * [list_platform_models](docs/sdks/models/README.md#list_platform_models) - List Platform Models
 
-### [motion](docs/sdks/motion/README.md)
+### [Motion](docs/sdks/motion/README.md)
 
+* [create_image_to_video_generation](docs/sdks/motion/README.md#create_image_to_video_generation) - Create a video generation from an image
 * [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
+* [create_text_to_video_generation](docs/sdks/motion/README.md#create_text_to_video_generation) - Create a video generation from a text prompt
+* [create_video_upscale](docs/sdks/motion/README.md#create_video_upscale) - Upscale a generated video
 
-### [pricing_calculator](docs/sdks/pricingcalculator/README.md)
+### [PricingCalculator](docs/sdks/pricingcalculator/README.md)
 
 * [pricing_calculator](docs/sdks/pricingcalculator/README.md#pricing_calculator) - Calculating API Cost
 
-### [prompt](docs/sdks/prompt/README.md)
+### [Prompt](docs/sdks/prompt/README.md)
 
 * [prompt_improve](docs/sdks/prompt/README.md#prompt_improve) - Improve a Prompt
 * [prompt_random](docs/sdks/prompt/README.md#prompt_random) - Generate a Random prompt
 
-### [realtime_canvas](docs/sdks/realtimecanvas/README.md)
+### [RealtimeCanvas](docs/sdks/realtimecanvas/README.md)
 
 * [create_lcm_generation](docs/sdks/realtimecanvas/README.md#create_lcm_generation) - Create LCM Generation
 * [perform_alchemy_upscale_lcm](docs/sdks/realtimecanvas/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
 * [perform_inpainting_lcm](docs/sdks/realtimecanvas/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
 * [perform_instant_refine](docs/sdks/realtimecanvas/README.md#perform_instant_refine) - Perform instant refine on a LCM image
 
-### [texture](docs/sdks/texture/README.md)
+### [Texture](docs/sdks/texture/README.md)
 
 * [create_texture_generation](docs/sdks/texture/README.md#create_texture_generation) - Create Texture Generation
 * [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
 * [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
 * [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
 
-### [three_d_model_assets](docs/sdks/threedmodelassets/README.md)
-
-* [delete3_d_model_by_id](docs/sdks/threedmodelassets/README.md#delete3_d_model_by_id) - Delete 3D Model by ID
-* [get3_d_model_by_id](docs/sdks/threedmodelassets/README.md#get3_d_model_by_id) - Get 3D Model by ID
-* [get3_d_models_by_user_id](docs/sdks/threedmodelassets/README.md#get3_d_models_by_user_id) - Get 3D models by user ID
-* [upload_model_asset](docs/sdks/threedmodelassets/README.md#upload_model_asset) - Upload 3D Model
-
-### [user](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [get_user_self](docs/sdks/user/README.md#get_user_self) - Get user information
 
-### [variation](docs/sdks/variation/README.md)
+### [Variation](docs/sdks/variation/README.md)
 
 * [create_universal_upscaler_job](docs/sdks/variation/README.md#create_universal_upscaler_job) - Create using Universal Upscaler
 * [create_variation_no_bg](docs/sdks/variation/README.md#create_variation_no_bg) - Create no background
 * [create_variation_unzoom](docs/sdks/variation/README.md#create_variation_unzoom) - Create unzoom
 * [create_variation_upscale](docs/sdks/variation/README.md#create_variation_upscale) - Create upscale
+* [get_motion_variation_by_id](docs/sdks/variation/README.md#get_motion_variation_by_id) - Get motion variation by ID
 * [get_variation_by_id](docs/sdks/variation/README.md#get_variation_by_id) - Get variation by ID
 
 </details>
@@ -247,38 +336,106 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
 from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.init_images.delete_init_image_by_id(id="<id>",
+    res = las_client.blueprints.execute_blueprint(request={
+        "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+        "input": {
+            "collection_ids": [],
+            "node_inputs": [
+                {
+                    "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    "setting_name": shared.SettingName.TEXT,
+                    "value": "A futuristic cityscape at sunset",
+                },
+                {
+                    "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                    "setting_name": shared.SettingName.TEXT_VARIABLES,
+                    "value": [
+                        {
+                            "name": "characterName",
+                            "value": "Luna",
+                        },
+                        {
+                            "name": "outfit",
+                            "value": "cyberpunk armor",
+                        },
+                    ],
+                },
+                {
+                    "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                    "setting_name": shared.SettingName.IMAGE_URL,
+                    "value": "https://cdn.leonardo.ai/users/example/image.png",
+                },
+            ],
+            "public": False,
+        },
+    },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    assert res.object is not None
+    assert res.one_of is not None
 
     # Handle response
-    print(res.object)
+    print(res.one_of)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
 from leonardo_ai_sdk.utils import BackoffStrategy, RetryConfig
+
 
 with LeonardoAiSDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.blueprints.execute_blueprint(request={
+        "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+        "input": {
+            "collection_ids": [],
+            "node_inputs": [
+                {
+                    "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    "setting_name": shared.SettingName.TEXT,
+                    "value": "A futuristic cityscape at sunset",
+                },
+                {
+                    "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                    "setting_name": shared.SettingName.TEXT_VARIABLES,
+                    "value": [
+                        {
+                            "name": "characterName",
+                            "value": "Luna",
+                        },
+                        {
+                            "name": "outfit",
+                            "value": "cyberpunk armor",
+                        },
+                    ],
+                },
+                {
+                    "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                    "setting_name": shared.SettingName.IMAGE_URL,
+                    "value": "https://cdn.leonardo.ai/users/example/image.png",
+                },
+            ],
+            "public": False,
+        },
+    })
 
-    assert res.object is not None
+    assert res.one_of is not None
 
     # Handle response
-    print(res.object)
+    print(res.one_of)
 
 ```
 <!-- End Retries [retries] -->
@@ -286,28 +443,22 @@ with LeonardoAiSDK(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a errors.SDKError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `delete_init_image_by_id_async` method may raise the following exceptions:
-
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| errors.SDKError | 4XX, 5XX    | \*/\*        |
+| Property           | Type             | Description                                                                             |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
+| `err.message`      | `str`            | Error message                                                                           |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                                                      |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
 
 ### Example
-
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
-from leonardo_ai_sdk.models import errors
+from leonardo_ai_sdk.models import errors, shared
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -315,17 +466,81 @@ with LeonardoAiSDK(
     res = None
     try:
 
-        res = las_client.init_images.delete_init_image_by_id(id="<id>")
+        res = las_client.blueprints.execute_blueprint(request={
+            "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+            "input": {
+                "collection_ids": [],
+                "node_inputs": [
+                    {
+                        "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                        "setting_name": shared.SettingName.TEXT,
+                        "value": "A futuristic cityscape at sunset",
+                    },
+                    {
+                        "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                        "setting_name": shared.SettingName.TEXT_VARIABLES,
+                        "value": [
+                            {
+                                "name": "characterName",
+                                "value": "Luna",
+                            },
+                            {
+                                "name": "outfit",
+                                "value": "cyberpunk armor",
+                            },
+                        ],
+                    },
+                    {
+                        "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                        "setting_name": shared.SettingName.IMAGE_URL,
+                        "value": "https://cdn.leonardo.ai/users/example/image.png",
+                    },
+                ],
+                "public": False,
+            },
+        })
 
-        assert res.object is not None
+        assert res.one_of is not None
 
         # Handle response
-        print(res.object)
+        print(res.one_of)
 
-    except errors.SDKError as e:
-        # handle exception
-        raise(e)
+
+    except errors.LeonardoAiSDKError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
+        # Depending on the method different errors may be thrown
+        if isinstance(e, errors.ExecuteBlueprintResponseBody):
+            print(e.data.raw_response)  # Optional[httpx.Response]
+            print(e.data.error)  # Optional[str]
 ```
+
+### Error Classes
+**Primary error:**
+* [`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py): The base class for HTTP error responses.
+
+<details><summary>Less common errors (6)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py)**:
+* [`ExecuteBlueprintResponseBody`](./src/leonardo_ai_sdk/models/errors/executeblueprintresponsebody.py): Bad Request - Invalid input type or missing required GraphQL field. Status code `400`. Applicable to 1 of 55 methods.*
+* [`ResponseValidationError`](./src/leonardo_ai_sdk/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 
@@ -418,21 +633,55 @@ s = LeonardoAiSDK(async_client=CustomClient(httpx.AsyncClient()))
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
+
 
 with LeonardoAiSDK(
     server_url="https://cloud.leonardo.ai/api/rest/v1",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.blueprints.execute_blueprint(request={
+        "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+        "input": {
+            "collection_ids": [],
+            "node_inputs": [
+                {
+                    "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    "setting_name": shared.SettingName.TEXT,
+                    "value": "A futuristic cityscape at sunset",
+                },
+                {
+                    "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                    "setting_name": shared.SettingName.TEXT_VARIABLES,
+                    "value": [
+                        {
+                            "name": "characterName",
+                            "value": "Luna",
+                        },
+                        {
+                            "name": "outfit",
+                            "value": "cyberpunk armor",
+                        },
+                    ],
+                },
+                {
+                    "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                    "setting_name": shared.SettingName.IMAGE_URL,
+                    "value": "https://cdn.leonardo.ai/users/example/image.png",
+                },
+            ],
+            "public": False,
+        },
+    })
 
-    assert res.object is not None
+    assert res.one_of is not None
 
     # Handle response
-    print(res.object)
+    print(res.one_of)
 
 ```
 <!-- End Server Selection [server] -->
@@ -453,17 +702,51 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+from leonardo_ai_sdk.models import shared
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.init_images.delete_init_image_by_id(id="<id>")
+    res = las_client.blueprints.execute_blueprint(request={
+        "blueprint_version_id": "550e8400-e29b-41d4-a716-446655440000",
+        "input": {
+            "collection_ids": [],
+            "node_inputs": [
+                {
+                    "node_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    "setting_name": shared.SettingName.TEXT,
+                    "value": "A futuristic cityscape at sunset",
+                },
+                {
+                    "node_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+                    "setting_name": shared.SettingName.TEXT_VARIABLES,
+                    "value": [
+                        {
+                            "name": "characterName",
+                            "value": "Luna",
+                        },
+                        {
+                            "name": "outfit",
+                            "value": "cyberpunk armor",
+                        },
+                    ],
+                },
+                {
+                    "node_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                    "setting_name": shared.SettingName.IMAGE_URL,
+                    "value": "https://cdn.leonardo.ai/users/example/image.png",
+                },
+            ],
+            "public": False,
+        },
+    })
 
-    assert res.object is not None
+    assert res.one_of is not None
 
     # Handle response
-    print(res.object)
+    print(res.one_of)
 
 ```
 <!-- End Authentication [security] -->
@@ -478,6 +761,7 @@ The `LeonardoAiSDK` class implements the context manager protocol and registers 
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
 def main():
+
     with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:
@@ -486,6 +770,7 @@ def main():
 
 # Or when using async:
 async def amain():
+
     async with LeonardoAiSDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as las_client:

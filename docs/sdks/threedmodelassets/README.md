@@ -1,5 +1,4 @@
 # ThreeDModelAssets
-(*three_d_model_assets*)
 
 ## Overview
 
@@ -16,8 +15,10 @@ This endpoint deletes the specific 3D Model
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="delete3DModelById" method="delete" path="/models-3d/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -56,14 +57,16 @@ This endpoint gets the specific 3D model
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="get3DModelById" method="get" path="/models-3d/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.three_d_model_assets.get3_d_model_by_id(id="<id>")
+    res = las_client.three_d_model_assets.get3_d_model_by_id(id="<id>", limit=10, offset=0)
 
     assert res.object is not None
 
@@ -98,14 +101,16 @@ This endpoint returns all 3D models by a specific user
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="get3DModelsByUserId" method="get" path="/models-3d/user/{userId}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.three_d_model_assets.get3_d_models_by_user_id(user_id="<id>")
+    res = las_client.three_d_model_assets.get3_d_models_by_user_id(user_id="<id>", limit=10, offset=0)
 
     assert res.object is not None
 
@@ -140,8 +145,10 @@ This endpoint returns presigned details to upload a 3D model to S3
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="uploadModelAsset" method="post" path="/models-3d/upload" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

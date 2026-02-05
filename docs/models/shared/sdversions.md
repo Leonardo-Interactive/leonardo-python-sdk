@@ -17,3 +17,4 @@ The base version of stable diffusion to use if not using a custom model. v1_5 is
 | `PHOENIX`        | PHOENIX          |
 | `FLUX`           | FLUX             |
 | `FLUX_DEV`       | FLUX_DEV         |
+| `KINO_2_0`       | KINO_2_0         |

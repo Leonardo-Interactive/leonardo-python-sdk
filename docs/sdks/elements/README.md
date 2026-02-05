@@ -1,5 +1,4 @@
 # Elements
-(*elements*)
 
 ## Overview
 
@@ -17,14 +16,20 @@ This endpoint will train a new custom element.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createElement" method="post" path="/elements" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.elements.create_element(request={})
+    res = las_client.elements.create_element(request={
+        "learning_rate": 3344.47,
+        "lora_focus": "<value>",
+        "num_train_epochs": 543724,
+    })
 
     assert res.object is not None
 
@@ -56,14 +61,16 @@ This endpoint will delete a specific custom model.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteElementById" method="delete" path="/elements/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.elements.delete_element_by_id(id=39024)
+    res = las_client.elements.delete_element_by_id(id=709546)
 
     assert res.object is not None
 
@@ -95,8 +102,10 @@ This endpoint gets the list of custom elements belongs to the user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getCustomElementsByUserId" method="get" path="/elements/user/{userId}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -134,14 +143,16 @@ This endpoint gets the specific custom element.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getElementById" method="get" path="/elements/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.elements.get_element_by_id(id=665696)
+    res = las_client.elements.get_element_by_id(id=320312)
 
     assert res.object is not None
 
@@ -173,8 +184,10 @@ Get a list of public Elements available for use with generations.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="listElements" method="get" path="/elements" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

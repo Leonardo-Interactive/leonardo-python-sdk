@@ -1,21 +1,25 @@
 lockVersion: 2.0.0
 id: de81127b-e65c-4970-8911-8f8874953a42
 management:
-  docChecksum: 4b74d250e4dae46c2d3e1dec7a2be5b9
+  docChecksum: ef42142a2d3c5d69f0d59a720a30a040
   docVersion: v1.0.0
-  speakeasyVersion: 1.488.0
-  generationVersion: 2.506.0
-  releaseVersion: 6.5.1
-  configChecksum: be9b11784105c7e38276fec79614825d
+  speakeasyVersion: 1.704.0
+  generationVersion: 2.806.4
+  releaseVersion: 7.0.0
+  configChecksum: c47cd34237e0650f73dd086cd31d4f8c
   repoURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/Leonardo-Interactive/leonardo-python-sdk.git
   published: true
+persistentEdits:
+  generation_id: 7f365cd2-9210-452e-9524-01ccb8cc5847
+  pristine_commit_hash: 7132214fdbef9b9d24ce27abc8b3b9999e51da3e
+  pristine_tree_hash: 57140aeb4726994ca7ffe232cc859b9a6840e936
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.5
-    core: 5.11.0
+    constsAndDefaults: 1.0.6
+    core: 6.0.2
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     devContainers: 3.0.0
@@ -23,14 +27,2439 @@ features:
     envVarSecurityUsage: 0.3.2
     flattening: 3.1.1
     getRequestBodies: 3.0.0
-    globalSecurity: 3.0.2
+    globalSecurity: 3.0.4
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.1.0
-    nullables: 1.0.0
-    responseFormat: 1.0.1
-    retries: 3.0.2
-    sdkHooks: 1.0.0
+    globalServerURLs: 3.2.0
+    nullables: 1.0.2
+    responseFormat: 1.1.0
+    retries: 3.0.3
+    sdkHooks: 1.2.1
+    unions: 3.1.2
+trackedFiles:
+  .devcontainer/README.md:
+    id: b170c0f184ac
+    last_write_checksum: sha1:485be407d7c9c2f76e55e6626f98c5f0b4921665
+    pristine_git_object: 4244ddea0365cd65c9c2038ec4d34cd60fa01115
+  .devcontainer/devcontainer.json:
+    id: b34062a34eb1
+    last_write_checksum: sha1:fbbce5654b8990b172a9ffe841d7635cd51c495b
+    pristine_git_object: 7e67af9f5b5aeed56bab8dd84f75d3729df3ada1
+  .devcontainer/setup.sh:
+    id: 5f1dfbfeb8eb
+    last_write_checksum: sha1:9a6144aa4ad40e0b8fad2338cc8ad3b9581fdca8
+    pristine_git_object: 22e7b9f7b0bb2a3fdd027c3109682a890d7e844f
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:53134de3ada576f37c22276901e1b5b6d85cd2da
+    pristine_git_object: 4d75d59008e4d8609876d263419a9dc56c8d6f3a
+  .vscode/settings.json:
+    id: 89aa447020cd
+    last_write_checksum: sha1:f84632c81029fcdda8c3b0c768d02b836fc80526
+    pristine_git_object: 8d79f0abb72526f1fb34a4c03e5bba612c6ba2ae
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:72e049ea814fe7d5962011a10086ac1abdb3402b
+    pristine_git_object: eead81c3fb6fb63e5cec583d53a99dde3984939b
+  docs/models/errors/executeblueprintresponsebody.md:
+    id: 2589f1a769ee
+    last_write_checksum: sha1:bc6bb6a6aa7695b54501ba746b7b7914dc5f005d
+    pristine_git_object: ade151c3db9db924fbaf7acddcb8d6f5ed4798ad
+  docs/models/operations/blueprints.md:
+    id: 830c5d6c2cc4
+    last_write_checksum: sha1:f62bdc191dde2c0bf7b7e1aa87ceb053a139759f
+    pristine_git_object: 68dcb5c908dac7947573e4953daa5ef2a4a59eaa
+  docs/models/operations/calculateproductionapiservicecost.md:
+    id: 601880510af0
+    last_write_checksum: sha1:2b61998f4211332981d0efb37036aebdc8ecf73a
+    pristine_git_object: 02bbcb92cbac53c702de18c169ea0112a9e59ffe
+  docs/models/operations/canvasinitimageuploadoutput.md:
+    id: 4575112004b4
+    last_write_checksum: sha1:ab6c540af859d12212e7128f39eec69ea57e046e
+    pristine_git_object: 10013cce7c0491975bc41ac670bc56aa53c125af
+  docs/models/operations/createdatasetrequestbody.md:
+    id: 9c042f0a2819
+    last_write_checksum: sha1:773ba428cfcdc7fc9be87ff1a56a72b579960625
+    pristine_git_object: f1ab25703a3e87deb1d00ebd753e16497a0f0fb3
+  docs/models/operations/createdatasetresponse.md:
+    id: 5c9777bb00c9
+    last_write_checksum: sha1:72f3cce734c31a36da57c2a2a52c88624665ef8d
+    pristine_git_object: 2497df80600efc72c7767150d4ef5105151e06c2
+  docs/models/operations/createdatasetresponsebody.md:
+    id: 6d851416578f
+    last_write_checksum: sha1:3241162a4c7a4d9368988c4f341337d17ea6f62a
+    pristine_git_object: 19ea892997624f17308167f8a50fd1326bb5c7ec
+  docs/models/operations/createelementrequestbody.md:
+    id: 8e752cb8604c
+    last_write_checksum: sha1:37b8893dc4cc38ca25aca540773ec6d2baf1cac8
+    pristine_git_object: f509620dcb31934cd2ff68ecf91cbec718ad403e
+  docs/models/operations/createelementresponse.md:
+    id: 4260d1765ffd
+    last_write_checksum: sha1:41c6666844bf5c3158831cd5a710e31bfd33d745
+    pristine_git_object: c103ae57a176319c57fac8af9ba29edcf773b40c
+  docs/models/operations/createelementresponsebody.md:
+    id: d67d5698940e
+    last_write_checksum: sha1:8e2bb9c148b3ac5830f058de6b31e457c0e12032
+    pristine_git_object: e1ceff3a291eda40db0a54ee49b98435e3fed76b
+  docs/models/operations/creategenerationrequestbody.md:
+    id: 5c4483e70e83
+    last_write_checksum: sha1:0d2c35a5a505a45bfbf39913822f595561749b94
+    pristine_git_object: b18a6fbd12585e31c9d0222f44ef9452abc6d8d7
+  docs/models/operations/creategenerationresponse.md:
+    id: 19e7fda61bce
+    last_write_checksum: sha1:f198673f46ed218e24f82eeccf02eea7f096de14
+    pristine_git_object: 3a586953a9184b82e50c6bc7bda7740d973997cf
+  docs/models/operations/creategenerationresponsebody.md:
+    id: 363705d4e567
+    last_write_checksum: sha1:69966ff52ff503c05c61429ba77088a1010bb3a8
+    pristine_git_object: bf5826c3078fba261901391477b8c4ac5c2921ae
+  docs/models/operations/createimagetovideogenerationmotionstring.md:
+    id: 97f92e8632f0
+    last_write_checksum: sha1:2bd0f28217ec6cd5c674281bf80f3fa39cad09c3
+    pristine_git_object: 5882d58ee3ed6fbedb84d4b479354e8f031c60ac
+  docs/models/operations/createimagetovideogenerationrequestbody.md:
+    id: 99a422ba2e2e
+    last_write_checksum: sha1:ef7098fc018f926f8ffe5972d2a2728ea67280f7
+    pristine_git_object: b0b04ee8aac36cd1347de1955d9e9b3993763e6b
+  docs/models/operations/createimagetovideogenerationresponse.md:
+    id: 1f21b414d191
+    last_write_checksum: sha1:1af575117dd340e6284dcae5a51bf04e38f89d6a
+    pristine_git_object: 459eaf2dfacbcf7a7438f8b39d7a5d2b3d936601
+  docs/models/operations/createimagetovideogenerationresponsebody.md:
+    id: ec35231476ba
+    last_write_checksum: sha1:599bb891902ccb8d08a169c8b7e385bc06888b81
+    pristine_git_object: e3a2531bc560397104e9fd2dc0b2625cb242a9ec
+  docs/models/operations/createimagetovideogenerationstring.md:
+    id: a49ee8bd752e
+    last_write_checksum: sha1:06994890ef0b57887fc5039b1e0290faddb5f7fb
+    pristine_git_object: cdced64325496c3c34dcd403f51b8e20becaba4f
+  docs/models/operations/createlcmgenerationrequestbody.md:
+    id: 020b6884ab1d
+    last_write_checksum: sha1:7ba2a5669f4995089f2b3f813b1f4d2c0a199be4
+    pristine_git_object: 4bb9f6c0ba9cb3c1aa4acb90ece089c721c0c14f
+  docs/models/operations/createlcmgenerationresponse.md:
+    id: 21d1c87c6fa0
+    last_write_checksum: sha1:e7962f7de05c8065ec85a6f288f64cd7ec3866ad
+    pristine_git_object: 54c9a77ad293491cb2e459290f974898cd2972ab
+  docs/models/operations/createlcmgenerationresponsebody.md:
+    id: c4c1d00efa94
+    last_write_checksum: sha1:b180e172b3110e238f0cfa3c742fea74b037275b
+    pristine_git_object: 3edea84884044c454f5b438aa8e5a7f89107cec2
+  docs/models/operations/createmodelrequestbody.md:
+    id: ce27b97fffde
+    last_write_checksum: sha1:1ba86a335e2e0accf4b5d4b4ccc35a0682e0d0d5
+    pristine_git_object: 9595d764e26574cd6f066dad9ddab69ce749d1dd
+  docs/models/operations/createmodelresponse.md:
+    id: 15f3f7657356
+    last_write_checksum: sha1:4cc342f08d91498eecc58ae8b9a7234ab2b7c3fa
+    pristine_git_object: 8ef5e5bfe2724098b87c6cb88c0f397dc67c5f24
+  docs/models/operations/createmodelresponsebody.md:
+    id: f111c833ed6c
+    last_write_checksum: sha1:a825fea398b0c149771e088e35f2d3f273b0bd4b
+    pristine_git_object: ae3f40ca048604db95cc8dc4ff1481dea72fee8a
+  docs/models/operations/createmodelsdtrainingoutput.md:
+    id: 4d4772f32757
+    last_write_checksum: sha1:074bad94e71771e247968755e60cfd939d5d35e3
+    pristine_git_object: 36b7b6aa23d66b531ef4fbe87aedd94f02131b57
+  docs/models/operations/createmodelsdversions.md:
+    id: ac2616288c29
+    last_write_checksum: sha1:773a17e4f38a06e1afb8d21d497505dca745a909
+    pristine_git_object: 45e7135d6c902d245b250e805af15907c3c7a501
+  docs/models/operations/createsvdmotiongenerationrequestbody.md:
+    id: 4e4529819611
+    last_write_checksum: sha1:c8504c5b6e68a069a24839cbbf489ba830a1a185
+    pristine_git_object: 286454c7828491e51cc246a224c65fd2390c80e3
+  docs/models/operations/createsvdmotiongenerationresponse.md:
+    id: effe6d539b4a
+    last_write_checksum: sha1:976b53b62005a70aad354eb252c335ecd8281e39
+    pristine_git_object: 3cb5282b2128f7e9f8ea54dd5b5f9506d21ce9c8
+  docs/models/operations/createsvdmotiongenerationresponsebody.md:
+    id: 7534a3173c86
+    last_write_checksum: sha1:ea8e6eafb07d88a159f676d94e95aa5c6061dd25
+    pristine_git_object: f1d30eb36d957b3f399393d92f3f736fb86540b0
+  docs/models/operations/createtexttovideogenerationmotionstring.md:
+    id: 85de2070ea55
+    last_write_checksum: sha1:432f8d93c9a14fbd6dbfddb1a34e4a4831b8f97d
+    pristine_git_object: a6e775f5da649cc878f09613b2a61deacff5d35c
+  docs/models/operations/createtexttovideogenerationmotionvideogenerationoutput.md:
+    id: c5311f88d26e
+    last_write_checksum: sha1:c38f963f05cedf2f90073d51ac4c6bd17deea3c0
+    pristine_git_object: 6a13b382bf11cd7c8327bbdef3720ebc614d2910
+  docs/models/operations/createtexttovideogenerationrequestbody.md:
+    id: 567758831fbf
+    last_write_checksum: sha1:3b38f18d7c03d5609ef335962eaae67418957483
+    pristine_git_object: 9bee43fd23bd01520e0ff7a13ab10a822d64056f
+  docs/models/operations/createtexttovideogenerationresponse.md:
+    id: 6f67d6b6b167
+    last_write_checksum: sha1:cd988e5aeb462dd9f1c3a34b0537872200fd0af7
+    pristine_git_object: 6ea818a2bad439bf620cd6b53f77153b203ab424
+  docs/models/operations/createtexttovideogenerationresponsebody.md:
+    id: e14dfd63070c
+    last_write_checksum: sha1:2d4febd458a7cda090a3a766d57f1dcf94a7e280
+    pristine_git_object: ecfbb51f742db5cb5944308ef3a2322854e493b2
+  docs/models/operations/createtexttovideogenerationstring.md:
+    id: 01d6fd461bf6
+    last_write_checksum: sha1:8a52c89a9c4322889d3b9756ab1b3578af3de48a
+    pristine_git_object: d095d8c11689d5e215515598382318a77f2828a6
+  docs/models/operations/createtexturegenerationrequestbody.md:
+    id: bf078b04f842
+    last_write_checksum: sha1:fb3c686df3ce7435ac10f5f87f01857b01fb533f
+    pristine_git_object: 36aa9b06dfcef746685de008d615263770fb8687
+  docs/models/operations/createtexturegenerationresponse.md:
+    id: ccc56426b4a2
+    last_write_checksum: sha1:a9de00643cf0afed783cc8b3481ca51c53d67a90
+    pristine_git_object: 65d2ee0040750f3eeac50743eb61900ea3aec27b
+  docs/models/operations/createtexturegenerationresponsebody.md:
+    id: 2af45cbcf0f5
+    last_write_checksum: sha1:83709a5c1dd0df1353734945eae786a62e250d8b
+    pristine_git_object: bcb659234db5c1a7b105511496d418f60ce798e6
+  docs/models/operations/createuniversalupscalerjobrequestbody.md:
+    id: 15ee8c160d88
+    last_write_checksum: sha1:bf659d3f7488c75e3dc525072d80003d7f78f10c
+    pristine_git_object: 091af6094855d003347964a80ff9ecf7bd47fcd7
+  docs/models/operations/createuniversalupscalerjobresponse.md:
+    id: c91d6d826533
+    last_write_checksum: sha1:1f060f0eb00a413af3ff4c48b7596a3ebf98c97e
+    pristine_git_object: d2e53c8bbc928b935260a311a65304d2b098d87b
+  docs/models/operations/createuniversalupscalerjobresponsebody.md:
+    id: 0553f5bb3d9b
+    last_write_checksum: sha1:2084192cdef2efcaea462bc81dba162c8a038401
+    pristine_git_object: f5943b9d8119c79951643cc0a5c1dbe45c849079
+  docs/models/operations/createvariationnobgrequestbody.md:
+    id: be44e2b6e3dc
+    last_write_checksum: sha1:0c78c7bef8ae2a0814f556dcd6a7b85d55969db7
+    pristine_git_object: b5ba16cd5545144c7b300c05b2ccc146f7d5c8b0
+  docs/models/operations/createvariationnobgresponse.md:
+    id: 29a03301fe56
+    last_write_checksum: sha1:00b981ea6cf8f57fa85bdcc5a29b47c78b25f460
+    pristine_git_object: b0168656e9a9746752296de1e9c8e9b940d5be59
+  docs/models/operations/createvariationnobgresponsebody.md:
+    id: 159ee66b4403
+    last_write_checksum: sha1:333290a776f72c6d109ffeeb5721cefc2173f987
+    pristine_git_object: 62beae824693b8f511590d746dee597b5c693e1a
+  docs/models/operations/createvariationunzoomrequestbody.md:
+    id: 5777d76432b1
+    last_write_checksum: sha1:607896c63b783a08887fd5ff54cdedfeaa76349e
+    pristine_git_object: 9df929b7d4af6ee838e6671eac42b78ef5c735ca
+  docs/models/operations/createvariationunzoomresponse.md:
+    id: 01e854ac8b3c
+    last_write_checksum: sha1:32abcfec34e77fd1dd0bfa04d52946ab234a041e
+    pristine_git_object: a64ccdfeda623fd7f96484dadbdc4832e183849b
+  docs/models/operations/createvariationunzoomresponsebody.md:
+    id: 324ab30b2063
+    last_write_checksum: sha1:0110f6dae307ffd8ea1a72f3e3bed7e3632fd308
+    pristine_git_object: 26b12b9a0e06d22835132ebd8ac4cba1f08bc15f
+  docs/models/operations/createvariationupscalerequestbody.md:
+    id: 55aeeba0e7d0
+    last_write_checksum: sha1:b60fabe624f342918bc68793c20683530495d0a5
+    pristine_git_object: e42f79304eefd11fa46ab3308ae260c021227d48
+  docs/models/operations/createvariationupscaleresponse.md:
+    id: a2474a1c4830
+    last_write_checksum: sha1:e0735bbcc614245de941cf1f1c4f11471948dfb8
+    pristine_git_object: 5f5c368b556f714249198fff4176c64b299d5322
+  docs/models/operations/createvariationupscaleresponsebody.md:
+    id: d0d1d8e2b676
+    last_write_checksum: sha1:702059dee2359b38018014add37b477d0ced5d76
+    pristine_git_object: f5b126314e612fa44d8fc4e73a15337331c694da
+  docs/models/operations/createvariationupscalesdupscalejoboutput.md:
+    id: 2a595fdf0a43
+    last_write_checksum: sha1:301572ac1a2d71ad4f4f1b8bbc9b11bf3a34701f
+    pristine_git_object: fe96a9e5dc30ded5c8e31cbb036816e7bb00e6fd
+  docs/models/operations/createvideoupscalemotionvideogenerationoutput.md:
+    id: 3eea0abfc2b2
+    last_write_checksum: sha1:71c1413d04028fb9ce72083b673b664fec0ac648
+    pristine_git_object: 74a4dd9728a0038a8aa515e6b763399f97c7c879
+  docs/models/operations/createvideoupscalerequestbody.md:
+    id: 0401f2dd8ad2
+    last_write_checksum: sha1:2c458ee2127c48bc89c9e57dc08ba324fbab9c42
+    pristine_git_object: fe3b22d625f464c49cc096b4d2b7d9094e80c656
+  docs/models/operations/createvideoupscaleresponse.md:
+    id: 8097a01e4f44
+    last_write_checksum: sha1:07efb7682044e927d25c717f55606e6750486503
+    pristine_git_object: 1cd49352f9f974015850e9a46e5d47ca7031f07a
+  docs/models/operations/createvideoupscaleresponsebody.md:
+    id: fefbf39d4bd9
+    last_write_checksum: sha1:971651e32fe715d2de2b2a51563ff55e8d0bc79f
+    pristine_git_object: 54bc13bb13de08c139ded8be532468b750dccdb6
+  docs/models/operations/createvideoupscalestring.md:
+    id: 5a5448fdb7d4
+    last_write_checksum: sha1:38a153a04921fd4b770621fd56c8a2e9f6b0600c
+    pristine_git_object: bdf3873b3e065d3e4337cd9b0add1960365d14ce
+  docs/models/operations/custommodels.md:
+    id: c5b5df5909ce
+    last_write_checksum: sha1:bef781cc9cc0e8391d64d94689aba85640a215ea
+    pristine_git_object: 3701fa593a9809a6f475e2a7dbd528c39598e138
+  docs/models/operations/datasetgenuploadoutput.md:
+    id: 069a07921fde
+    last_write_checksum: sha1:6ce41cd6adede66b9f5396d845bf3e965f41e46f
+    pristine_git_object: dd8565926a2943b33fc0beb7bd00441790d144c4
+  docs/models/operations/datasetimages.md:
+    id: f5c049619390
+    last_write_checksum: sha1:807db95617eb7dad94b7c41f2eadf4f7c799936f
+    pristine_git_object: 84ea671b1ed2b9f0894cc221038c8bb24b2e4d60
+  docs/models/operations/datasets.md:
+    id: bf448852b9b5
+    last_write_checksum: sha1:21eb40d81bb96927c30057550696cd04fd77b38f
+    pristine_git_object: ef3a8ef1d19e7252f8c82c56770288bc276ea23c
+  docs/models/operations/datasetuploadoutput.md:
+    id: b766283ef9e4
+    last_write_checksum: sha1:642cc0ec3098181f1d72e94555b7280acccc2f9f
+    pristine_git_object: 95d848f15a2451a1021dc062b25f070e68b646c4
+  docs/models/operations/delete3dmodelbyidrequest.md:
+    id: 476411abd617
+    last_write_checksum: sha1:f7b3412e4804d1f92b7e1c642b7e06f7bbea9d96
+    pristine_git_object: 7b6a3f96e0fe2864951ef1fbb87521ae7735591f
+  docs/models/operations/delete3dmodelbyidrequestbody.md:
+    id: c32f51e6c7e0
+    last_write_checksum: sha1:b6c852a66638d6d61821145632eebb6c04320084
+    pristine_git_object: eb9268a82441a1bd6c5ab2733dad4778b11b0335
+  docs/models/operations/delete3dmodelbyidresponse.md:
+    id: c448db567cf7
+    last_write_checksum: sha1:b8d8495933c6953551bc925e0b9bbdd0a87cc2f4
+    pristine_git_object: f39e8ac5f4ef9dd5175d81ac885f86fc067a25ab
+  docs/models/operations/delete3dmodelbyidresponsebody.md:
+    id: e8442e7e48fd
+    last_write_checksum: sha1:75341f6126f5aa85a788cfa4e90ac1078e1a07d2
+    pristine_git_object: 43288eac35a18a632dece3c50488bfd469248d95
+  docs/models/operations/deletedatasetbyiddatasets.md:
+    id: 7ab6a3834696
+    last_write_checksum: sha1:07de83c232697e3df7119733797c0aee8ddba7c5
+    pristine_git_object: 1afc51868fcd671aad79c1d917c7b160c3cd2333
+  docs/models/operations/deletedatasetbyidrequest.md:
+    id: 01681fed7882
+    last_write_checksum: sha1:a5123328dff1958455dce2af9702d517e2a4796c
+    pristine_git_object: 9a5f6b358a22a3878419c558c12c90a7c98c58fd
+  docs/models/operations/deletedatasetbyidresponse.md:
+    id: 0dc424fd5c5f
+    last_write_checksum: sha1:b3dedecd5c98c13aaf21c1a99baa0cb0fa1743a5
+    pristine_git_object: 5ea621780bf71c37f3a2566d27e39d409ebe3d93
+  docs/models/operations/deletedatasetbyidresponsebody.md:
+    id: 6566abdb1975
+    last_write_checksum: sha1:daa6f8442a29ff38c336179e9d3077a20be41f3f
+    pristine_git_object: 6a7cce3a3b41c9b8977f96e6c701e486f39960a4
+  docs/models/operations/deleteelementbyidrequest.md:
+    id: ef9283cd917f
+    last_write_checksum: sha1:6e8d8b0fb641c81ba0f437f16e0e395f0339f86d
+    pristine_git_object: aefad5fd181a2971670c41bdfd0588f7188ec4bb
+  docs/models/operations/deleteelementbyidresponse.md:
+    id: af2c6ed7a872
+    last_write_checksum: sha1:bbe5292ed02ee7d271b14d6dd38782759619eb74
+    pristine_git_object: e66f64386c87d8a3e6419b79140506ae114401ea
+  docs/models/operations/deleteelementbyidresponsebody.md:
+    id: 8ecfe83171a4
+    last_write_checksum: sha1:cd07a9bedab3d344f9a6017263d6ac304f6b8ebc
+    pristine_git_object: 7a8042965c449c12c748e0f7988e6581d6cf7333
+  docs/models/operations/deletegenerationbyidrequest.md:
+    id: 563d06cb4b3e
+    last_write_checksum: sha1:b3b4a8356a4db5a65f1a393b613c0f0eebeb38e8
+    pristine_git_object: 04c5c2f8fd8d7f34f003f22047e487195fee592a
+  docs/models/operations/deletegenerationbyidresponse.md:
+    id: 3e34a043bd02
+    last_write_checksum: sha1:12a31e04b626ef35a6bbc02c7f3b1055e5158591
+    pristine_git_object: 93ee7a3dfd1c8f2d43776f31fc761b5ed70e5b6c
+  docs/models/operations/deletegenerationbyidresponsebody.md:
+    id: a823e8e81eb0
+    last_write_checksum: sha1:131e181f661b26c8d39399046cb48c1da1bd8bbc
+    pristine_git_object: dababcc9082c848a731a93855c30088c730128da
+  docs/models/operations/deleteinitimagebyidrequest.md:
+    id: eec9fbd169d6
+    last_write_checksum: sha1:46c63648f26e493cbfdf19e43dcb0c3726af2b78
+    pristine_git_object: 20252135eb0459c8190cfd94dc945bd6962e93f9
+  docs/models/operations/deleteinitimagebyidresponse.md:
+    id: 395c7832d0ad
+    last_write_checksum: sha1:e52776122f3b78aab7a0b44002cfb1a4af4790e5
+    pristine_git_object: 2a64f1d774bae63b975d4e0e99665a6be615e042
+  docs/models/operations/deleteinitimagebyidresponsebody.md:
+    id: d08ad00d2631
+    last_write_checksum: sha1:652f010dd96d7dbd928f261514abe8c762ffed3b
+    pristine_git_object: 31adb8611a9e7649c99d662b76a1ed09a24174e8
+  docs/models/operations/deletemodelbyidrequest.md:
+    id: 1720e47a0b71
+    last_write_checksum: sha1:bef01cbfd02ab7e57467799c8538455ed6fd1a3f
+    pristine_git_object: 96d8d4626ce217543b0d4ceb99012010338b8add
+  docs/models/operations/deletemodelbyidresponse.md:
+    id: 28a94c61d07b
+    last_write_checksum: sha1:dad68cf9abf43ffd4f18f4c225d274eb63415062
+    pristine_git_object: e1fc39e857afd36d1a63b4929083cebcaea1d01f
+  docs/models/operations/deletemodelbyidresponsebody.md:
+    id: bc5e8ae89b8f
+    last_write_checksum: sha1:40964f71e4501fde0a16e04cbfa591c35496df74
+    pristine_git_object: 8ed0e41802c2095c05ff922a9166738235edc63a
+  docs/models/operations/deletetexturegenerationbyidrequest.md:
+    id: 5591c580eaea
+    last_write_checksum: sha1:2085a235d426619bfe22caa2392a50ff6fee2129
+    pristine_git_object: b9e1367035e12de4edd5b91cb2a552d22cd7fcad
+  docs/models/operations/deletetexturegenerationbyidrequestbody.md:
+    id: 8a66be32450b
+    last_write_checksum: sha1:ac26d65fd57325a88582bdf485d0f37f020a6433
+    pristine_git_object: a9d885e4281163313846aac5a8ebeac1251dd9f6
+  docs/models/operations/deletetexturegenerationbyidresponse.md:
+    id: e3947e33933f
+    last_write_checksum: sha1:5f4c004e831ca61e4aa209ec46d23f8ee3c940d5
+    pristine_git_object: 50d3a166b40ccf588810a0d529f5ed991e92326d
+  docs/models/operations/deletetexturegenerationbyidresponsebody.md:
+    id: f90992f00450
+    last_write_checksum: sha1:363403f38dd3f2929ebea71a4c1713f733bca600
+    pristine_git_object: ea3e69d2b32340893219f096af09e6ed46cf745e
+  docs/models/operations/edges.md:
+    id: 718239332be3
+    last_write_checksum: sha1:350a889f9e3ae20a0805dad842cdfdaa67df9543
+    pristine_git_object: 7c4e2bcf1b31718325e261eb3f01f130425dd6c4
+  docs/models/operations/elements.md:
+    id: 825a0637ae0d
+    last_write_checksum: sha1:cdb1c25a011a6ce28eecbf8f91d5633b3c2462e3
+    pristine_git_object: 86cc0f1cff77b58e603448bc5ec9b4d044346b1b
+  docs/models/operations/executeblueprint.md:
+    id: fa05067f4335
+    last_write_checksum: sha1:47eceaace51b00e7f7b613ad56959eed6c37703a
+    pristine_git_object: e2ee7f441e1b09d86ac756c561ba5861bf12403f
+  docs/models/operations/executeblueprintrequestbody.md:
+    id: 5ed296c7d1ed
+    last_write_checksum: sha1:5c13ad8fbf287011ccb7e53fb424d85aeb1aa81a
+    pristine_git_object: 5b0ac20eb06bc18dafaa66e094ccb7e1ed84ed90
+  docs/models/operations/executeblueprintresponse.md:
+    id: 7f8da61f2288
+    last_write_checksum: sha1:41a4c29955b47b0d682794a534ba756ee1cb0798
+    pristine_git_object: 5270af3e26fa9269e7b3aa774c230b984dbd83cd
+  docs/models/operations/executeblueprintresponsebody.md:
+    id: 0a55dcdffdb0
+    last_write_checksum: sha1:b798e6d041b0552cb33ad8f358c301bc0f54d64c
+    pristine_git_object: 782192c1d75426f9ef92c839d09cc9d0dfe19dae
+  docs/models/operations/generatedimages.md:
+    id: 6c50a67b5bd7
+    last_write_checksum: sha1:f7c95377c62e5c938a5807052925d1468d5af1d1
+    pristine_git_object: 4f1440e711730ce9e87d23193088aff8d51d58af
+  docs/models/operations/generatedimagevariationgeneric.md:
+    id: e7583ed18367
+    last_write_checksum: sha1:5f3d4ead6abcbd561690e6b9a81cbef2f9819fc4
+    pristine_git_object: 79e6f23b5cd288e3a243e96c639e17eeccd6b6f9
+  docs/models/operations/generatedimagevariationmotion.md:
+    id: 347f2c1b0fbb
+    last_write_checksum: sha1:6b3fb4b239cbaacecf68551460b744fb78c34f46
+    pristine_git_object: 49a70b3ea58d68e156dc113c84b2c8acacf9cf8f
+  docs/models/operations/generationelements.md:
+    id: fbfd6a686ae6
+    last_write_checksum: sha1:2b8b6b4f8575e5c0fb42ffb63ad8fc79269a5d41
+    pristine_git_object: 695dd13bdd895e6b6dea0cc9545194769577804c
+  docs/models/operations/generations.md:
+    id: f193d158569e
+    last_write_checksum: sha1:ad8fd78630682c3f328c94df80216d9f68dec1b3
+    pristine_git_object: 594459482ad67897ac2eaa78036a4163045c152b
+  docs/models/operations/get3dmodelbyidmodelassets.md:
+    id: 1bad780385a3
+    last_write_checksum: sha1:bac3d05dbf79cb0e89707cdfbd380924b78e8066
+    pristine_git_object: 2ce3bf7ccb342199bfa7ca46117a6047bc1ac4b6
+  docs/models/operations/get3dmodelbyidrequest.md:
+    id: 2f99e8fc441c
+    last_write_checksum: sha1:5f7b027f9a8a38c2b2c0ea07ffd7f194eeccd38a
+    pristine_git_object: 92e42855808beead308aec081dc13ea38b5c15be
+  docs/models/operations/get3dmodelbyidrequestbody.md:
+    id: 79ceddd59741
+    last_write_checksum: sha1:9aaa2ade75e27218b65e855941a30823e93ac7ad
+    pristine_git_object: 43add8808b3bba05561003883082d6c3c4b374ea
+  docs/models/operations/get3dmodelbyidresponse.md:
+    id: 9787b7adf5b2
+    last_write_checksum: sha1:cb7d35664c09d6e208d1b219e38149fe607ead43
+    pristine_git_object: 218d5aa2520f4edbf97e05e115b10f62a049cd06
+  docs/models/operations/get3dmodelbyidresponsebody.md:
+    id: 6eedd20e7216
+    last_write_checksum: sha1:5c3dcdb6e5d2ccb8df15057c724d25bbc5895943
+    pristine_git_object: d0710c29e53ca17f608668aee492ca2035721792
+  docs/models/operations/get3dmodelsbyuseridmodelassets.md:
+    id: fbb4f4e12ba0
+    last_write_checksum: sha1:7c009d42783311dfc398ee9208705e063f63de7d
+    pristine_git_object: 9e664e21a839f81c6d113f8f4d7c636ce746e7d9
+  docs/models/operations/get3dmodelsbyuseridrequest.md:
+    id: 64c76e89cf26
+    last_write_checksum: sha1:a29926b830eeca8ffe076e8679e60192a6620229
+    pristine_git_object: e0357e0ee5a635cbaf2abf46ee97687ff5a3af61
+  docs/models/operations/get3dmodelsbyuseridrequestbody.md:
+    id: 2590a87fce80
+    last_write_checksum: sha1:2a981b3ef9b2929025862d324c111fd04159c66d
+    pristine_git_object: 35b6334912673d6acf69500811ad18e6b6f25d4d
+  docs/models/operations/get3dmodelsbyuseridresponse.md:
+    id: 498873baebff
+    last_write_checksum: sha1:7710535dc164c57b3059b82061be555a6473b448
+    pristine_git_object: 3ac42ee7d7af74a63a655498bc917131b1862928
+  docs/models/operations/get3dmodelsbyuseridresponsebody.md:
+    id: 6f7470167de9
+    last_write_checksum: sha1:e6f95edc0ac6dc30b075f1b62ab62bfebdfa7b17
+    pristine_git_object: 32f027aff00459ffb6e43662fa04bb624b2ba7f3
+  docs/models/operations/getblueprintbyidrequest.md:
+    id: 1b2ad671be43
+    last_write_checksum: sha1:76ef2ca12f8cad244c95f0fd41de675fea8fe4f4
+    pristine_git_object: 693c6e0283e7106659bfe00f6f968d7674bb000d
+  docs/models/operations/getblueprintbyidresponse.md:
+    id: dc15ebd413cc
+    last_write_checksum: sha1:03d6c45890be2b515e025e469f2dc5ec65047753
+    pristine_git_object: 3a4b968c5aa8d54c9a661660e2551be7a26b73c7
+  docs/models/operations/getblueprintbyidresponsebody.md:
+    id: 184bcd832850
+    last_write_checksum: sha1:f1db13da289c53c395daac5bc212393de5edb9ea
+    pristine_git_object: 6cac76f5e33f4596e6c7c6f865f93ae038dab20b
+  docs/models/operations/getblueprintbyidsuccessresponse.md:
+    id: 6ad5361592d9
+    last_write_checksum: sha1:aeea736c89defb8ceeb4070ae8225bbb0e8e7196
+    pristine_git_object: 96dc93851b41442a91c014ebd0a2bcfb0de8577d
+  docs/models/operations/getblueprintexecutiongenerationsrequest.md:
+    id: c643e74d16f3
+    last_write_checksum: sha1:77155b1259b3224c5ebdf4c77e4f6af138d4875e
+    pristine_git_object: 20a861ff46b151558c65c59260edadff87631bc4
+  docs/models/operations/getblueprintexecutiongenerationsresponse.md:
+    id: 8a2cf2fe6d18
+    last_write_checksum: sha1:d6a3562f10f9e9acd0576ebd207f4097e2a4ae08
+    pristine_git_object: ff5a4c51ec5dbc9bef0ea09fe04ff22e8b73eb09
+  docs/models/operations/getblueprintexecutiongenerationsresponsebody.md:
+    id: b64c977a87b4
+    last_write_checksum: sha1:e07e116752efc4fc9921182eb5fe04f786a8e983
+    pristine_git_object: 5ac38cdbeaa005d23190aa1ad0f4d1b860044ede
+  docs/models/operations/getblueprintexecutionrequest.md:
+    id: 4f67286d4004
+    last_write_checksum: sha1:bdd8ffeef0270b7f6ce455435c1f07b410d70971
+    pristine_git_object: f4061b6d76ab1922698960838a7a474fc4170b61
+  docs/models/operations/getblueprintexecutionresponse.md:
+    id: 37814bd07507
+    last_write_checksum: sha1:31e3a8c65d5dc4a71e91472bbf26c38794900ba8
+    pristine_git_object: ac66a7d619d41b1c72c1481633e643f76c26752a
+  docs/models/operations/getblueprintexecutionresponsebody.md:
+    id: f9d56050b346
+    last_write_checksum: sha1:149383898d7fcf0b7eb221b2f49fd621b33ccfca
+    pristine_git_object: d01656ce0d06ede0b84f49f533a8f56bfef3d904
+  docs/models/operations/getblueprintexecutionsuccessresponse.md:
+    id: bc9cc3d7da88
+    last_write_checksum: sha1:466227422460cd5a5aa24dbfbbbe7290ef30bf95
+    pristine_git_object: 91ef90ebe35546674f171aa42a66b3e9d7049096
+  docs/models/operations/getblueprintversionsbyblueprintidrequest.md:
+    id: acf0a25f8d69
+    last_write_checksum: sha1:c639adeecf85c51fc1154777195ffebdf9e62dfd
+    pristine_git_object: 5b1bdb66b8e8b001fa2e1348a414d6aac093ce19
+  docs/models/operations/getblueprintversionsbyblueprintidresponse.md:
+    id: 43122715c73b
+    last_write_checksum: sha1:bf86cbc418c0769b52cb2547755d3dfe572fa14d
+    pristine_git_object: aa09973fb3f4ac476820fe85bc6e2953bc46ecdf
+  docs/models/operations/getblueprintversionsbyblueprintidresponsebody.md:
+    id: 37a340e18f9d
+    last_write_checksum: sha1:3a71a13c1017bbb235159cd72fcb2ccea188bcf3
+    pristine_git_object: aff2d5fc57d7f055d37ff8c55e0e537efe832682
+  docs/models/operations/getblueprintversionsbyblueprintidsuccessresponse.md:
+    id: 779d2060700c
+    last_write_checksum: sha1:4afecace11b72394cafb6ae999ddc981ac29168a
+    pristine_git_object: 34c2470954eac6dae37770483c4e1ed1f5c7d2e8
+  docs/models/operations/getcustomelementsbyuseridrequest.md:
+    id: e5ac9577f05e
+    last_write_checksum: sha1:08e24927531baeab5ba234e4818926c3b874f366
+    pristine_git_object: 48110814d37b55b065f7922fb6f219c4d8c2212e
+  docs/models/operations/getcustomelementsbyuseridresponse.md:
+    id: 82889109b355
+    last_write_checksum: sha1:f6c3b4fa85f9f9e4f6adaa7a2bb31ee5dffc1ecb
+    pristine_git_object: 9cad575ad219a1f23e7be3d5961b3126c59e8212
+  docs/models/operations/getcustomelementsbyuseridresponsebody.md:
+    id: ac0eacea3ca7
+    last_write_checksum: sha1:4af4ad00e12c4921070cbc2ff65c3161d5fc760c
+    pristine_git_object: dbaedb2ff2e76841e2e6d30ae40de80da4423ea8
+  docs/models/operations/getcustomelementsbyuseriduserloras.md:
+    id: 759eed1d6ba4
+    last_write_checksum: sha1:8425fa602bad86021ae1906e337aadd87e494f7a
+    pristine_git_object: a5036bef603f178ea35cbc6429d3eb24bb0dd7d8
+  docs/models/operations/getcustommodelsbyuseridcustommodels.md:
+    id: d110830216b8
+    last_write_checksum: sha1:95cbf65676a321179761797499a427da89e70a18
+    pristine_git_object: f1145081b3f1e7af67588861532bbc0547677773
+  docs/models/operations/getcustommodelsbyuseridrequest.md:
+    id: 4a6f631519d3
+    last_write_checksum: sha1:f37b0abbb0eba61219706c2d319694a5ff50b74d
+    pristine_git_object: 0bdd98e7b5a3b628b7e0d1648b215fb32e508371
+  docs/models/operations/getcustommodelsbyuseridresponse.md:
+    id: 8abc4e8f11c1
+    last_write_checksum: sha1:22fd3a3cf80219dd445fc5ff3b83b159c3e4f914
+    pristine_git_object: cb06a7f442be97d3629eb14470ce8646a23079e6
+  docs/models/operations/getcustommodelsbyuseridresponsebody.md:
+    id: 86ad528c0b57
+    last_write_checksum: sha1:b550dbd1d2af9b1011dc00f65e15e5c8f2ce2e62
+    pristine_git_object: 8665990385f9916ed1fee527c60d152048cd1c95
+  docs/models/operations/getdatasetbyiddatasets.md:
+    id: 9de076f5c71a
+    last_write_checksum: sha1:f06662455a95ce2f77498b756f3d86b4a66888b4
+    pristine_git_object: b6652b060d080d57da091f7ee5db6b59bb1a1585
+  docs/models/operations/getdatasetbyidrequest.md:
+    id: d5a8447662df
+    last_write_checksum: sha1:f1ecc4d820bc3b33a3a87d58778d4909596914c9
+    pristine_git_object: 302d8eef716afb6996ae703ad5094765c56b250b
+  docs/models/operations/getdatasetbyidresponse.md:
+    id: fc9dc7c90d1c
+    last_write_checksum: sha1:489546ebacffa38d271730caabeb1d650fb6fc32
+    pristine_git_object: 2ee07f4061bba3ba7ddc4552588f06fe633c4bab
+  docs/models/operations/getdatasetbyidresponsebody.md:
+    id: 876c16719345
+    last_write_checksum: sha1:836d4be3bbe4244b2036049eb978781fdac275bb
+    pristine_git_object: 4666ce261acf7dad9f66a4b0df2a3ddf0f251a62
+  docs/models/operations/getelementbyidrequest.md:
+    id: e82c71954a53
+    last_write_checksum: sha1:bb039100616724a01b09549ffe90b8dacb7d197e
+    pristine_git_object: ae4dc1d2b60a3deb6d4bb824490cb0cffbfdbcad
+  docs/models/operations/getelementbyidresponse.md:
+    id: 3a79ebbf8e3c
+    last_write_checksum: sha1:8419d4e1703357a9e25b9d6d9febf2ef544f43ad
+    pristine_git_object: 6a649f8d6b52ad9e484cb3cc6c08a760d89a3b67
+  docs/models/operations/getelementbyidresponsebody.md:
+    id: e402610ba77f
+    last_write_checksum: sha1:8fd51903e95f324b85b9ef36f8218fc6113b1d3c
+    pristine_git_object: f334aba2ae7cc77a4244b1d05555321933cca396
+  docs/models/operations/getelementbyiduserloras.md:
+    id: 595412fe5cfc
+    last_write_checksum: sha1:ff382e3fef349176420b7309c10fa3049d8332b8
+    pristine_git_object: 9e27aa64b21f04dd3ae2dd15eb857dffb5679260
+  docs/models/operations/getgenerationbyidgeneratedimagevariationgeneric.md:
+    id: 9c6352762df4
+    last_write_checksum: sha1:65e05d3a7d2427de62ed8bec974e01c6751164a9
+    pristine_git_object: bf7bcc6b9e294998e76274d19a81e05bc929d337
+  docs/models/operations/getgenerationbyidgenerations.md:
+    id: 6f63c5fbc637
+    last_write_checksum: sha1:dbc1f565ecee5ad8710fba514abb77ea8b726de1
+    pristine_git_object: 7d5930f10e40a6de77aea109f493b92d2584ae1d
+  docs/models/operations/getgenerationbyidloras.md:
+    id: 967418dea7c7
+    last_write_checksum: sha1:d05e44fd754953849643284370af4fb0718fbcbd
+    pristine_git_object: 0b4a6a1c5cd952da211f258579628f3ec93bf58b
+  docs/models/operations/getgenerationbyidrequest.md:
+    id: cb9a543a571c
+    last_write_checksum: sha1:709794b9795a9bf5534d755c5b201527a978145b
+    pristine_git_object: 0460c72a420423ecda3b03c4a1c41913d9d67218
+  docs/models/operations/getgenerationbyidresponse.md:
+    id: 5d3e8057ddaa
+    last_write_checksum: sha1:9a4be8a7cf7085548a7c2db925af4168be85dd2f
+    pristine_git_object: e3b28ae9c24e313fefd2ccf8cdf929c40353ea7c
+  docs/models/operations/getgenerationbyidresponsebody.md:
+    id: f5e601b1a627
+    last_write_checksum: sha1:cf35da5ed053b8309cb7351c00301634760a1071
+    pristine_git_object: c963f44eed1f3d6a10fd67390209e9bd7112ab1b
+  docs/models/operations/getgenerationsbyuseridgeneratedimages.md:
+    id: 2b6d2d9ba907
+    last_write_checksum: sha1:53ad47d231e81de0878c6e152659cb70dc66412b
+    pristine_git_object: ceff2ec614bd70a2b05bdf6edda0ce39a8714859
+  docs/models/operations/getgenerationsbyuseridgeneratedimagevariationgeneric.md:
+    id: 7c35f3ef0161
+    last_write_checksum: sha1:88d9c132a07764b0754a1f6838c24a5aa42b6ac7
+    pristine_git_object: 899eeeb7f7afd69e317a5028e75fbd8c669a5e72
+  docs/models/operations/getgenerationsbyuseridgenerationelements.md:
+    id: 92733a008554
+    last_write_checksum: sha1:de4fcead9b8ee6d0b79ad1f58758e5afbd88a380
+    pristine_git_object: 3d2d6e7ba025bc1825c9af31e8a4ce7e147a5374
+  docs/models/operations/getgenerationsbyuseridgenerations.md:
+    id: beab9315cf90
+    last_write_checksum: sha1:d5e2a4596068dbc7748d0708ea1d20aa08bd471b
+    pristine_git_object: 7768031f7c6fc3888cb49e9d8d156a2c35e0d82c
+  docs/models/operations/getgenerationsbyuseridrequest.md:
+    id: ec254493effd
+    last_write_checksum: sha1:2bf6213a3b7df1f2734b0c435fbb8b367b135d15
+    pristine_git_object: 700e6676f19fe7cbc3e71debb93c9a37919f527d
+  docs/models/operations/getgenerationsbyuseridresponse.md:
+    id: d7084c59cf42
+    last_write_checksum: sha1:3af4fc95f95f7657bd486a72ac12d16c9df27d4e
+    pristine_git_object: 93008c74e547cbc655007d69298be30e97a7da0a
+  docs/models/operations/getgenerationsbyuseridresponsebody.md:
+    id: 81c111dfd42c
+    last_write_checksum: sha1:94058c461635d3a449ccba39569e5f69ece6d0fb
+    pristine_git_object: 346020dcad8f807c4d83945b36bf3a1678fcfc15
+  docs/models/operations/getinitimagebyidinitimages.md:
+    id: 0d7b908927b0
+    last_write_checksum: sha1:a48a74022e9d6efe69ffeacc5bc2e6a817cd56f6
+    pristine_git_object: f055c4c65eaf20e6df6718cc41f989edbbf94023
+  docs/models/operations/getinitimagebyidrequest.md:
+    id: 34a78b90b9bf
+    last_write_checksum: sha1:646cb1b58872918a8d02e47cd3cb6f9d58087a78
+    pristine_git_object: 5ec121fb2a83450042706ab3b9c361ea78d7c4f8
+  docs/models/operations/getinitimagebyidresponse.md:
+    id: 689f056c1075
+    last_write_checksum: sha1:cf02d36f4e44535eadf03f12c36363937d8dc369
+    pristine_git_object: ba01b30f3e89946a21ce02314158d29a70c4b839
+  docs/models/operations/getinitimagebyidresponsebody.md:
+    id: 64f569c145cd
+    last_write_checksum: sha1:ba555402ab5460c308df125b1bbdc8ef91a6a102
+    pristine_git_object: dadf9ae8cb46eda61f13dc393f4a7aa5949028b3
+  docs/models/operations/getmodelbyidcustommodels.md:
+    id: ecd331e109b2
+    last_write_checksum: sha1:2b7886fbc73478727b8775013080c736baab71a9
+    pristine_git_object: ef3618d9519dc91955644b246cf0f05d35cb0be1
+  docs/models/operations/getmodelbyidrequest.md:
+    id: bd7dd481c108
+    last_write_checksum: sha1:6174fab8cce47a3830e6e26b3128cf239e69d9a4
+    pristine_git_object: 9f3c9984d96893de0657b521c1f7c4a548501bb6
+  docs/models/operations/getmodelbyidresponse.md:
+    id: c610b22e8be3
+    last_write_checksum: sha1:28b71a34ca1979e4bb8ee7a9511498262c5d53bf
+    pristine_git_object: a9b2b5832246914df227553d2d336c070162ea9b
+  docs/models/operations/getmodelbyidresponsebody.md:
+    id: 49d1982d754c
+    last_write_checksum: sha1:e93c822864dd35249270d4fad49cf1b414fb2667
+    pristine_git_object: a21bcd6c2588d7ee91f15d29bf2d1d3e1682d922
+  docs/models/operations/getmotionvariationbyidrequest.md:
+    id: e9243c4837cc
+    last_write_checksum: sha1:51bfbf7cef726fc402c6f47f64ce5f63f72ec52e
+    pristine_git_object: c26db13a270acd2579360e5b444e513162f98ef3
+  docs/models/operations/getmotionvariationbyidresponse.md:
+    id: e6c333c66f72
+    last_write_checksum: sha1:61dc2a29cc5146728ccab241783a4a9366f0f6bc
+    pristine_git_object: 6c401dd07f9326f80dea5471aecf1e6f58dcfd2a
+  docs/models/operations/getmotionvariationbyidresponsebody.md:
+    id: c261492ad1d6
+    last_write_checksum: sha1:20668d790093e8858feb1ec2489da29c000f91f7
+    pristine_git_object: 294a6fdc5c95afb4eaa1d7542d1f01875808d768
+  docs/models/operations/gettexturegenerationbyidmodelassettexturegenerations.md:
+    id: bcf1850a2016
+    last_write_checksum: sha1:1ab42bca66ee0cb5aa2dcf8d4200f7a8a18cd076
+    pristine_git_object: 5c6e5f7d79d6a5c10d971a5be73cde0fee86f5d2
+  docs/models/operations/gettexturegenerationbyidrequest.md:
+    id: 14da353e9c38
+    last_write_checksum: sha1:19fe7da070dffe39e80debcdb3e2e52f73fb1dba
+    pristine_git_object: 6387b0183afd15eafe76f6b51add241eea565963
+  docs/models/operations/gettexturegenerationbyidrequestbody.md:
+    id: 6b2450cb0b3d
+    last_write_checksum: sha1:612d8dbc08fecb54fc71c06919c75b098c4dcef5
+    pristine_git_object: 60b6ef4f4dbaa8368392ded4fecc7fe98762636c
+  docs/models/operations/gettexturegenerationbyidresponse.md:
+    id: 719d05398578
+    last_write_checksum: sha1:87b9bf6beca31697d9fbadae502931f50472d265
+    pristine_git_object: 624ca355e8566546aef3bbf6abf4637297dbea7f
+  docs/models/operations/gettexturegenerationbyidresponsebody.md:
+    id: 7e3366568770
+    last_write_checksum: sha1:b99ede66e6cadb200f551f0395c29428622c2c34
+    pristine_git_object: b1313273d69b84d807245e71577a2bccab304844
+  docs/models/operations/gettexturegenerationsbymodelidmodelassettexturegenerations.md:
+    id: 0cc2fa334383
+    last_write_checksum: sha1:1c2ec5b3accd5b5f83b25fec4c870d62395a0b80
+    pristine_git_object: 399bce6817bc2eea7b93627f7447c5b40051ede4
+  docs/models/operations/gettexturegenerationsbymodelidmodelassettextureimages.md:
+    id: 194cfbac6cc7
+    last_write_checksum: sha1:2c64473cd95f461ee3ca43f77e7396523f2381e1
+    pristine_git_object: df9d66b3fd51e938d159c76d8379be58d3ca2d17
+  docs/models/operations/gettexturegenerationsbymodelidrequest.md:
+    id: f356f0090213
+    last_write_checksum: sha1:440a5f9589a4d1af282f25930019d710419eba15
+    pristine_git_object: 7e9613856ac124c13d3d85e5a50ff560b33eae2a
+  docs/models/operations/gettexturegenerationsbymodelidrequestbody.md:
+    id: b202692b9e52
+    last_write_checksum: sha1:17eb7c6ecc8cd32835b2e6187d8fae45d985f086
+    pristine_git_object: 2d9ffcabb94b5d178c044156fb216392d28c0b25
+  docs/models/operations/gettexturegenerationsbymodelidresponse.md:
+    id: 91e3bcf4820d
+    last_write_checksum: sha1:cf9f620034113382adbb072be242acb2594f181a
+    pristine_git_object: 3a7930c2afb68ce9010129e11dec71488aa3bebf
+  docs/models/operations/gettexturegenerationsbymodelidresponsebody.md:
+    id: da1570ddf791
+    last_write_checksum: sha1:0dd18dc9dc06d39567eb68ef32c38485dbd40097
+    pristine_git_object: b6b2593212fec46fac8c6f1388cbac50ff329d78
+  docs/models/operations/getuserselfresponse.md:
+    id: af8e4f436502
+    last_write_checksum: sha1:cb702201e99444b9fa531947573ecee1c3971222
+    pristine_git_object: dc8676d8d28ed6e9c5b2da9aea9fff997973a03e
+  docs/models/operations/getuserselfresponsebody.md:
+    id: 995c522c6053
+    last_write_checksum: sha1:ceb67a38d1d358aa08e9f08f1b657e50d22e3a8f
+    pristine_git_object: b024669a31386af5178d1de379d3936ece63f728
+  docs/models/operations/getvariationbyidrequest.md:
+    id: 49a185c59d44
+    last_write_checksum: sha1:28f1e7a449a2401e89b7720f828b97b2983c61fa
+    pristine_git_object: d2afc4615fa1a7655b2e9dbe92ffbe0109ef1dd0
+  docs/models/operations/getvariationbyidresponse.md:
+    id: 82b79646c018
+    last_write_checksum: sha1:e336a9ca1b2fae7de71ff0c9a268aa06deef7c34
+    pristine_git_object: 2e87cb255c1b9e707a5c8fa0356495e843c7cefc
+  docs/models/operations/getvariationbyidresponsebody.md:
+    id: 091cebaa4a6e
+    last_write_checksum: sha1:3277665a9b2ed5072f90c1791fb9bbd8ad7e5701
+    pristine_git_object: 31a7dd473ab97ae3a2577ade8dc8736bb132a842
+  docs/models/operations/imagetype.md:
+    id: c995e88b2b4a
+    last_write_checksum: sha1:d0e4dad0280c3861f4bec5f70188e9383881212e
+    pristine_git_object: f3ff2bddd998f53660a9c4b0690dc1d87c606ae4
+  docs/models/operations/initimages.md:
+    id: 6b87b56b7ad6
+    last_write_checksum: sha1:74756e787f420716720753530b59a239b5473eea
+    pristine_git_object: cf48c8471f5fd42f8bd6e8ab6ba0d00810aa6868
+  docs/models/operations/initimageuploadoutput.md:
+    id: d7707b0fea87
+    last_write_checksum: sha1:b14a26ad4712637e1e03687cce3f8c042cabaaa0
+    pristine_git_object: 2c3d22969baae6b4b25308beea7e2d9091ec0204
+  docs/models/operations/input.md:
+    id: "202723173087"
+    last_write_checksum: sha1:8bc9d2eb53718fe36bc7bc9c3ce23318fa83fd23
+    pristine_git_object: 6d37b84de291a00c545617a0732cb26c7bf35249
+  docs/models/operations/lcmgenerationoutput.md:
+    id: 69faa8442177
+    last_write_checksum: sha1:440246261cb50f4439eb965c3d2cf5e8a7668574
+    pristine_git_object: e8f0f2d2fc15bb87697112ba6f05d3f4faeeab5d
+  docs/models/operations/listblueprintsrequestbody.md:
+    id: e5aa86770e9c
+    last_write_checksum: sha1:c3699a82f0ca77ba006dbb7fc5dd6df76a8070d4
+    pristine_git_object: 823220726d3d19fc3a13f5cf09c51b2f2ebfc975
+  docs/models/operations/listblueprintsresponse.md:
+    id: 4bcaf3c6be17
+    last_write_checksum: sha1:11cf47e034d193ee2aa888540f743fb62c7d89b1
+    pristine_git_object: 376d06b25b8d9822e3a3df9517ccfcb09de339ea
+  docs/models/operations/listblueprintsresponsebody.md:
+    id: 72675ee57cbc
+    last_write_checksum: sha1:cd85d7cfb45143e36c76b10dfd1438bff8073c0f
+    pristine_git_object: 4e243fa5978e752b9ffd0301aef8ac84864bd58d
+  docs/models/operations/listelementsresponse.md:
+    id: 202c7ca1d580
+    last_write_checksum: sha1:3c136d06d29d1e3650cf8c1721bea6d3c09d4d52
+    pristine_git_object: bce10f4dfae6e18b43a47421183e2bdc023d870f
+  docs/models/operations/listelementsresponsebody.md:
+    id: 2eb8d22b19a7
+    last_write_checksum: sha1:4e42bc79bdde9d785547cffe42ba080e868ac1c3
+    pristine_git_object: 815a567eda38a8b59ff6994bbbd58a35d23c669c
+  docs/models/operations/listplatformmodelscustommodels.md:
+    id: 115d7111f15d
+    last_write_checksum: sha1:bd77780fb3085f5be2ddd636374c7983c8dc7489
+    pristine_git_object: cf38081c9ef8da327674e60d75ab9924cc699108
+  docs/models/operations/listplatformmodelsgeneratedimages.md:
+    id: 08fb24410197
+    last_write_checksum: sha1:67735af0dda046614ac8b960b8aa376eae6b9460
+    pristine_git_object: 18d3725c07d607bc12d486f6a683929bf796e157
+  docs/models/operations/listplatformmodelsresponse.md:
+    id: 8aa3f4c05389
+    last_write_checksum: sha1:3566d023944a265cc72399c1d59b3b3b7950fe4e
+    pristine_git_object: 8bad2f82a84c5c878dedfab2f127bf4f284b0991
+  docs/models/operations/listplatformmodelsresponsebody.md:
+    id: 81e3dad37d9e
+    last_write_checksum: sha1:62842b64c7f7b97ecfc997e64785c631fa38c696
+    pristine_git_object: 2e5150127a48f8c9f175c94837f406597ae9c32f
+  docs/models/operations/loras.md:
+    id: 26f16bace48c
+    last_write_checksum: sha1:7f29a6815782e5ec772b06e3443ef8ea90162c99
+    pristine_git_object: 6f3f5768f86a2df14403858a5014810811fe08cb
+  docs/models/operations/modelassets.md:
+    id: 97e0f8165f73
+    last_write_checksum: sha1:a7b5d6899e18a28bedb19688ce6bcb2b32eed0a5
+    pristine_git_object: 4005c69bc0278ffa8121ba149e793e812dca9865
+  docs/models/operations/modelassettexturegenerations.md:
+    id: 050680d6c461
+    last_write_checksum: sha1:5ca1379e53b086c4c2a6e4fdb8582a20b5246604
+    pristine_git_object: 1655c0c3a3fba3365eb35dcf7719c3a9d14ab159
+  docs/models/operations/modelassettextureimages.md:
+    id: a14500dae268
+    last_write_checksum: sha1:c732ebb21581c8c0b7f29e75c8961f001fa5843f
+    pristine_git_object: 385e2563ffaa30eab0d36c1c1f4b8b48dce8ddba
+  docs/models/operations/modelassetuploadoutput.md:
+    id: c26d8607328e
+    last_write_checksum: sha1:7d0378af36e6f0809dbed37f4c304aaa2f34d37a
+    pristine_git_object: 38195a182b3940d405cb3d682756cb762784d337
+  docs/models/operations/motionsvdgenerationoutput.md:
+    id: 4bb44f8ce431
+    last_write_checksum: sha1:20a365777fc8af33a45abdf0dbd1b58fe35ca1c7
+    pristine_git_object: 3cec61845e0a6df5b5c60e7650eb2afe009c0085
+  docs/models/operations/motionvideogenerationoutput.md:
+    id: 3098e5febdd8
+    last_write_checksum: sha1:86457cd3b4774f4d82dc24db36ab61533de8b352
+    pristine_git_object: 862360990f92e99ad2bf38e47440669300897551
+  docs/models/operations/object.md:
+    id: 1ca5f9e973b6
+    last_write_checksum: sha1:f3f6d748b2b8b13c73080711859717700bb0a49d
+    pristine_git_object: 2581c88a3c7492424a8afcaabf0452ba13ca52b8
+  docs/models/operations/one.md:
+    id: b4b6bf675469
+    last_write_checksum: sha1:a221173dd66888e492d249cf2205b1f0bd68b259
+    pristine_git_object: dddda5411a8d54e135ab2412ba0413b5a298bba1
+  docs/models/operations/performalchemyupscalelcmlcmgenerationoutput.md:
+    id: 4e8accfe8f12
+    last_write_checksum: sha1:7d80b75f384964be811c8f482983c47d99a71e0a
+    pristine_git_object: b123a0a2dc1e560ed8e79018ee0f82dbb4a43938
+  docs/models/operations/performalchemyupscalelcmrequestbody.md:
+    id: 1dde06bd4e31
+    last_write_checksum: sha1:b730ba275be7e70eb665e57dcc309f6ff784699a
+    pristine_git_object: 983d1bc4f6997c16c193592870a3c9097bd259c5
+  docs/models/operations/performalchemyupscalelcmresponse.md:
+    id: bec2ed2dbd14
+    last_write_checksum: sha1:69197660a33c0cc65deff97e63352490d90e67e4
+    pristine_git_object: bae3b3defd94782be2f489618d0e4f3d66db8e2e
+  docs/models/operations/performalchemyupscalelcmresponsebody.md:
+    id: f62568ba69de
+    last_write_checksum: sha1:ec739fa6ed2ecbec5288f64de6458a0f151d5d86
+    pristine_git_object: bd12668d9daf8f4d9a444ff1996ca59a45dcb46a
+  docs/models/operations/performinpaintinglcmlcmgenerationoutput.md:
+    id: fda6aaffd274
+    last_write_checksum: sha1:9199b2709bb7f52f472fafa74fafdbe3f8dd9895
+    pristine_git_object: 5cd26c9a7ee957e481dbe6501ec2c84cad496aae
+  docs/models/operations/performinpaintinglcmrequestbody.md:
+    id: 82916e7ed7cf
+    last_write_checksum: sha1:e0fc2b63ab93a4480021880f52b7ff135d10cd8a
+    pristine_git_object: 57ded138f8c6f7d61d84b10d1018c515f5d76f4a
+  docs/models/operations/performinpaintinglcmresponse.md:
+    id: 30e179f35999
+    last_write_checksum: sha1:ca51192c9de2690eefc200c7459655feb7eb4345
+    pristine_git_object: 09c0548e94b2d925c3de5dcfebb38bc486ebf9c6
+  docs/models/operations/performinpaintinglcmresponsebody.md:
+    id: b2100cf08890
+    last_write_checksum: sha1:3147a4101c1d6e11dbc470ff008d5a97caecbc4d
+    pristine_git_object: 9d21ea41abbf74db93e618aef62340abbbbcfbe5
+  docs/models/operations/performinstantrefinelcmgenerationoutput.md:
+    id: 598fda4d5f75
+    last_write_checksum: sha1:544863016b40ee7f5a6f35d771f4d1b96f4e288a
+    pristine_git_object: d5b4b62ab982540143265e3e6403f99c93e28e05
+  docs/models/operations/performinstantrefinerequestbody.md:
+    id: 5901db79213e
+    last_write_checksum: sha1:3ce79e4ab314feed0f55a621be81f030f5b6117e
+    pristine_git_object: a92758f01dd397155b8117b21c411a604d38c47a
+  docs/models/operations/performinstantrefineresponse.md:
+    id: b2894f515f63
+    last_write_checksum: sha1:e64f57dfa73ea12ccb74b4e8e7c6d4f74b9b9dad
+    pristine_git_object: 67e7ba0b90a462f033d062864663da2669c68d44
+  docs/models/operations/performinstantrefineresponsebody.md:
+    id: 144de67549f7
+    last_write_checksum: sha1:774504ea0645d862be9d2001d902b763f6b4c2db
+    pristine_git_object: f06b5faa7a14fcf4c8b6e6a310825691783f9ef7
+  docs/models/operations/platforms.md:
+    id: 0fa6e9d785e5
+    last_write_checksum: sha1:bf3a38139c26480da4ef6918bd2d42d4e87c03cb
+    pristine_git_object: 24a1afb92d0e3ee3d3890a7001685351176c34d9
+  docs/models/operations/pricingcalculatorobject.md:
+    id: cec14cc40c71
+    last_write_checksum: sha1:18286c5f17a235f925cf89e20c563c80b150d18f
+    pristine_git_object: 2b1eb2c0fb315a004a01057b4721561dc4395f28
+  docs/models/operations/pricingcalculatorpricingcalculatorobject.md:
+    id: 8aad157becc2
+    last_write_checksum: sha1:0201d93791acbb3d4c9b58b467a758cbf20f2833
+    pristine_git_object: fe8620d32192fcc2964c5db45e4c02b82acb53f4
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestobject.md:
+    id: 9f094c79f2e5
+    last_write_checksum: sha1:b60de04d7368cc4a5df2b2a4e3d856deea6d531f
+    pristine_git_object: e64d64424f745a04f68f2da0d59d4be80c4257b2
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyobject.md:
+    id: 461e628e6253
+    last_write_checksum: sha1:3ab63ff0caab049a9f2ecca6d8571ffd3ca9ed38
+    pristine_git_object: 0577ea54961d359142dcb17743449050cc4b59e6
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsmotionsvdgenerationobject.md:
+    id: bff6eaad30b8
+    last_write_checksum: sha1:8dd45d9500965bf8ef7f414aacf6c52173c13324
+    pristine_git_object: f62a71add45a3edc3943d7711cbdc787e26c50a9
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsmotionvideogenerationobject.md:
+    id: 97019dbdd93d
+    last_write_checksum: sha1:603bba727a5402fd1f5b2b214570824ed3dd7a13
+    pristine_git_object: 96961b696c1949c37b9592346f7e777bc3a31e3d
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsobject.md:
+    id: 28aa828dbc93
+    last_write_checksum: sha1:1c7e29ab6bf998b43b49d5fc5183a8d459085446
+    pristine_git_object: 3e9d09cbe6b2c5cb7f30b29d3ef8e809035f4586
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamstexturegenerationobject.md:
+    id: 86a9a972b247
+    last_write_checksum: sha1:3690a49b2c4bd2b8b3548bde96a0a0f7a976eb42
+    pristine_git_object: da6751584dab83bb671d67c71389ad0bdbf0f989
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerobject.md:
+    id: c234b322bfbe
+    last_write_checksum: sha1:780aae848c1c018179585b8641b77914bd95755d
+    pristine_git_object: 2e61274050f586e23124f8ab87a57116565e3981
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsuniversalupscalerultraobject.md:
+    id: f5b847be3ad3
+    last_write_checksum: sha1:4d8bc4a676143ee0b66dc3dd0748a1eed9961c2b
+    pristine_git_object: 6040bb39c66061a15576ca62da06bf5a7e059408
+  docs/models/operations/pricingcalculatorpricingcalculatorrequestrequestbodyserviceparamsveo3motionvideogenerationobject.md:
+    id: f3d48cae7208
+    last_write_checksum: sha1:5c40f67b6ebea407d4e3939b260e0d604bc50223
+    pristine_git_object: 47d72a6ef68e9b9e83bcf6567c964ff9be5fa12a
+  docs/models/operations/pricingcalculatorrequestbody.md:
+    id: 1b617fc9108c
+    last_write_checksum: sha1:65a84cb46527bd034d7980813e5b86eef2c11054
+    pristine_git_object: 1a383368f53e924dc627aa44f860a433e386cb44
+  docs/models/operations/pricingcalculatorresponse.md:
+    id: d158df323388
+    last_write_checksum: sha1:16baf82addaaca672f9113a8103ba2859f852322
+    pristine_git_object: 9d24d3f684cc3b1b0f053da6d87a37b2d2347cb4
+  docs/models/operations/pricingcalculatorresponsebody.md:
+    id: 257126c8e440
+    last_write_checksum: sha1:ddaf26f1e2a46067174127171ece030d813251db
+    pristine_git_object: e1dba6071f11cae5e670cf42fd279eb69317f3cc
+  docs/models/operations/pricingcalculatorstring.md:
+    id: 212f6b2a237e
+    last_write_checksum: sha1:7b7156ea97ecfb3054c9314f540ef0dfba836bb8
+    pristine_git_object: 205ccc6b0a261c2b2aa2f6ad101e9079f622c926
+  docs/models/operations/promptgenerationoutput.md:
+    id: 481d569620e0
+    last_write_checksum: sha1:1b4c634b10b78439b00d932d911e01b29509a723
+    pristine_git_object: 7c169f7cc828592ec8ba36382c64839dd8db393b
+  docs/models/operations/promptimproverequestbody.md:
+    id: ce3ff9b2119d
+    last_write_checksum: sha1:74b4f87ce5eafd47d86ad12b713176a9d74e5291
+    pristine_git_object: 58f9c5bf9e75a51ec7154a77ac820c71522a9c25
+  docs/models/operations/promptimproveresponse.md:
+    id: 65342e58b083
+    last_write_checksum: sha1:c0c6b100bab2c30e76f66ee9e61645e133bfac2e
+    pristine_git_object: d9d48e8311a3ddb6fd78c4b7727bc35da19c42c1
+  docs/models/operations/promptimproveresponsebody.md:
+    id: 642764297cac
+    last_write_checksum: sha1:627ee97d0e4b3ac00e6e40453c5425b18ea06232
+    pristine_git_object: e84baaadfb2f687f761c3d9cdf19436bf4709fac
+  docs/models/operations/promptrandompromptgenerationoutput.md:
+    id: 9b91cd7e8d51
+    last_write_checksum: sha1:b9b7427aaa9082a1d7e43c8fb91c547398792ff1
+    pristine_git_object: 87fea3b318251f4ae6c885c95763091c0efea8e8
+  docs/models/operations/promptrandomresponse.md:
+    id: b0de02e22ab1
+    last_write_checksum: sha1:98ae2bd484a9b5e18249274c7913be0639d60e47
+    pristine_git_object: de2af16b411698970a00bd40c4ce8f3007257295
+  docs/models/operations/promptrandomresponsebody.md:
+    id: 9824683c2d7b
+    last_write_checksum: sha1:2f72d10b973021858c664678f093edd57a94c86a
+    pristine_git_object: 50f8ebc98fde1792cacf8013e720c47b718dd26e
+  docs/models/operations/sdgenerationoutput.md:
+    id: 9da258f88eef
+    last_write_checksum: sha1:1e3bea3401cb4aee6d7fc6ed452932e8d6211b6b
+    pristine_git_object: 504d70c908d0059021a27455031a215348a3e85f
+  docs/models/operations/sdtrainingoutput.md:
+    id: 94f947f33646
+    last_write_checksum: sha1:4687a119872e1ee04a287243a5eb6db1392e6514
+    pristine_git_object: bcabe69ead2079e956aa3f2edd5fbd90d8c98911
+  docs/models/operations/sdunzoomoutput.md:
+    id: 5a3e4911a45c
+    last_write_checksum: sha1:79ed7fa2a667d2225023c5f510398cfe88a41f0d
+    pristine_git_object: 76591612fdf5b8c725a5682d29f29daf929a504b
+  docs/models/operations/sdupscalejoboutput.md:
+    id: 76c3e546b00a
+    last_write_checksum: sha1:1a5d01fd28b71c7a3b2b5fe23b62a6cd1143bace
+    pristine_git_object: 7916d78313ca73278dec59a36c6d5f9cbe95dbd8
+  docs/models/operations/sdversion.md:
+    id: aeedac83285a
+    last_write_checksum: sha1:ac2cdb5d155ec84c80eda4402d02f239e01a4f82
+    pristine_git_object: 01967eb9080a5a5804f349039457e913816ea7f3
+  docs/models/operations/sdversions.md:
+    id: 00e5f434aceb
+    last_write_checksum: sha1:bf04a2ed9b5fe910b616adbaf67d06e412664363
+    pristine_git_object: 244d34c7dcd2a0d804267faf8d7466f85903e0f8
+  docs/models/operations/string.md:
+    id: 478acf9bd0dd
+    last_write_checksum: sha1:e52af60fe991920b4321f669e8448781b8c70f5a
+    pristine_git_object: 71741b580a43e9cf7be074030e69989f17c100ec
+  docs/models/operations/successresponse.md:
+    id: e3d73cad19f5
+    last_write_checksum: sha1:1bf19c875e4c4787e1bac6eccf863c5592dc2848
+    pristine_git_object: 3bfc3b57ea1c908bcc604e1d8af58a3896bc6724
+  docs/models/operations/texturegenerationjoboutput.md:
+    id: fddbefe2a2fb
+    last_write_checksum: sha1:3415c6ff5e2d50a46528f99112c650181d33929c
+    pristine_git_object: 099b953c773b0c63318ec8fbfca5bec40f2eab68
+  docs/models/operations/transparencytype.md:
+    id: 9f06a513bbd4
+    last_write_checksum: sha1:f80034144ed313cfdbab9850eb1baa11777495ef
+    pristine_git_object: c97e249d9dc466c1555e36abc6841d75185d06ec
+  docs/models/operations/universalupscaleroutput.md:
+    id: 0145b7d48e1b
+    last_write_checksum: sha1:96c70e34a171cca30fbbea33b9bb20ff2e0f2676
+    pristine_git_object: 44f05c54b7ed37835fef02b62e3a73e6edaf3ca3
+  docs/models/operations/uploadcanvasinitimagerequestbody.md:
+    id: 86ea8d34c639
+    last_write_checksum: sha1:941c785494d690e6ca17a0d1d0a8ff60c431f9cc
+    pristine_git_object: ca95af9817ff3a01141d93659d1b2d1ce8718c82
+  docs/models/operations/uploadcanvasinitimageresponse.md:
+    id: a2b79049f737
+    last_write_checksum: sha1:0761127b279ae445e5b2767235e1544ec8a67443
+    pristine_git_object: 1401b3b17224e590678e772b3a082dd9b972ec8d
+  docs/models/operations/uploadcanvasinitimageresponsebody.md:
+    id: 4ff0b05f598c
+    last_write_checksum: sha1:661d57bcf5c1b5e26bde6e6f1f73b54fb032821f
+    pristine_git_object: 3e351661dacc1b0bf4c97b50c891ee66d85ca62e
+  docs/models/operations/uploaddatasetimagefromgenrequest.md:
+    id: a5baa58ab3dd
+    last_write_checksum: sha1:08caf86c9f41079d08f8452b0d75c499555d13dc
+    pristine_git_object: 238173956a1d2f9c6752e51f971751f2879bb7fb
+  docs/models/operations/uploaddatasetimagefromgenrequestbody.md:
+    id: 77e8fd1cca66
+    last_write_checksum: sha1:6e3dba2bb9f1d12d6d83e8db237c2670d4274cd6
+    pristine_git_object: f64e64d3068878a57ff693a0f4926c65326958ed
+  docs/models/operations/uploaddatasetimagefromgenresponse.md:
+    id: 9f8563bb7ca1
+    last_write_checksum: sha1:28afbf1cfb2b0e9aba11088df088cc48d6c45b4f
+    pristine_git_object: d02ab56d6e209a9805cdb3c9768f124731f3de0d
+  docs/models/operations/uploaddatasetimagefromgenresponsebody.md:
+    id: 9e67cb4801aa
+    last_write_checksum: sha1:7746a2cf36fca7fe93a264eec26c0d148d78126e
+    pristine_git_object: c6bc8f54ac18e56ab86c1ea516ed45200a939cba
+  docs/models/operations/uploaddatasetimagerequest.md:
+    id: c05134c1b7e4
+    last_write_checksum: sha1:4c0f1234d376f98d41d7867431b2a6e3d168583a
+    pristine_git_object: 34e59190dcacf98b1b23525ae95b431c7f489071
+  docs/models/operations/uploaddatasetimagerequestbody.md:
+    id: e32cc6d3b216
+    last_write_checksum: sha1:e7b80d7da21659ea6c279065ad320f5c5c9af015
+    pristine_git_object: e268ccf9eb194d9307743c61a163fd626302424c
+  docs/models/operations/uploaddatasetimageresponse.md:
+    id: a8c1c18d045e
+    last_write_checksum: sha1:b7f7a730c0ca0b7c6ae95059ec7ca14d8563eb27
+    pristine_git_object: ef18129cc577dc6fe5221f602c960f96d0c5ccdf
+  docs/models/operations/uploaddatasetimageresponsebody.md:
+    id: 725910dd0d89
+    last_write_checksum: sha1:6d8f2e431dcff4adbf047c04b8cd36f6c318aecb
+    pristine_git_object: ca57efe4e7fb0dcfde7e9f05552e78144a1c30e6
+  docs/models/operations/uploadinitimagerequestbody.md:
+    id: cf6fe88a65dc
+    last_write_checksum: sha1:fdca2acefd0f0c6ceebce8930eed611a005e9fb0
+    pristine_git_object: c07266eb9df87ef62881b4689b217d372efd9188
+  docs/models/operations/uploadinitimageresponse.md:
+    id: 3420df47d198
+    last_write_checksum: sha1:5b70a9d4f3bf3ac631532159425149dcaa4d127e
+    pristine_git_object: 9d09740aedb7831883809e892ab7b2e95784c1f7
+  docs/models/operations/uploadinitimageresponsebody.md:
+    id: a4eb71042889
+    last_write_checksum: sha1:1bc6fd2258330d34ad9467058774989bead1d1ed
+    pristine_git_object: 1ed8141682e3b64b9dcb7b67f10cdc62b3a42326
+  docs/models/operations/uploadmodelassetrequestbody.md:
+    id: eac12cb04473
+    last_write_checksum: sha1:28c7c0802af014cbcc87af5a5498ede0274e6beb
+    pristine_git_object: f164e7d27d949a9b0a6f44cdb23d87ed57f12b47
+  docs/models/operations/uploadmodelassetresponse.md:
+    id: c997169a92a5
+    last_write_checksum: sha1:fefd60728e0bac995ecbf665c15a0c73f1278202
+    pristine_git_object: f7125fbb5fe7adbeed6e7895de7acda2412908c7
+  docs/models/operations/uploadmodelassetresponsebody.md:
+    id: b53052cd449c
+    last_write_checksum: sha1:34abdc4a880bdab552c600295017a450ea450c94
+    pristine_git_object: 1822cd890207eecdcaa8afaa3da8dfb445cf4458
+  docs/models/operations/userdetails.md:
+    id: f767a8493192
+    last_write_checksum: sha1:468323f23fdfd3e9396f15daf6216babd35bfc44
+    pristine_git_object: 973890fff1cc396134f22634845ae8c934a69896
+  docs/models/operations/userloras.md:
+    id: 092a41954adf
+    last_write_checksum: sha1:a52deb73f7e33a9cba3d8fe60c731e722be66cbd
+    pristine_git_object: ec16bd40f174c002f5147df4f29891ee949b3908
+  docs/models/operations/users.md:
+    id: 266c84d9837e
+    last_write_checksum: sha1:f9fd93bdb27cc66560437c846fe7fe765012a9f1
+    pristine_git_object: bb1ee0b194e62e9b2ad9ac759aba698e910f3842
+  docs/models/shared/apierror.md:
+    id: 35e52434e4b5
+    last_write_checksum: sha1:e83a44ff86009825ac71f3afaa2275fb1e51e7ce
+    pristine_git_object: 17ccaf69d92eb0c7c4ee1d51fd7dd97c98819f65
+  docs/models/shared/blueprint.md:
+    id: 12c5441c156e
+    last_write_checksum: sha1:99caa62720d040687b33d6a192ab9a9acb47e3c1
+    pristine_git_object: 4396fcd5bec20d387d9605351140e8aaa0fca824
+  docs/models/shared/blueprintexecution.md:
+    id: 5843259523cb
+    last_write_checksum: sha1:507a0678f1064f2fd96299539add3a3862d98739
+    pristine_git_object: 243920d4c5b4efe3ddf5a6a47ecd3b333376b338
+  docs/models/shared/blueprintexecutiongeneration.md:
+    id: 688d10d19938
+    last_write_checksum: sha1:55feaf132455113149b4ce85d37ad51ce2a31e52
+    pristine_git_object: 349b58a6d54264a068391b57a7531190a12cca5d
+  docs/models/shared/blueprintexecutiongenerationedge.md:
+    id: b693c1bb1c2c
+    last_write_checksum: sha1:f26b61187e1e81a9c0e01854b0ed6a7a03a9234c
+    pristine_git_object: 1b5e0648c10aa34d053ddb14d07e22be202b4981
+  docs/models/shared/blueprintexecutiongenerationsconnection.md:
+    id: 74c1437ba7a3
+    last_write_checksum: sha1:bd049b912f28c7ce3a605957f16f36e69fe6cf36
+    pristine_git_object: cb4960607bbcc5fb4489a4fab952f67fee7b6138
+  docs/models/shared/blueprintexecutiongenerationstatus.md:
+    id: acd008e1bb7a
+    last_write_checksum: sha1:8bd8ca98dfc89c25c7f77307e9ac0d14850cd54b
+    pristine_git_object: abe611517896b15121362bed7efd8e0587c913c1
+  docs/models/shared/blueprintexecutionstatus.md:
+    id: d41a17730664
+    last_write_checksum: sha1:76c2ab8c70ea7f1ab2fc7175ec1e1bf5577cfa66
+    pristine_git_object: f041b6c39a758097765f67b5ea5dfb5ab86a4760
+  docs/models/shared/blueprintversion.md:
+    id: 5f627d0eca45
+    last_write_checksum: sha1:a440d9efce164b24911dddcf72a0bf6e8b212481
+    pristine_git_object: f33bfb31a2336dd1140a0d6e956681110ba7e421
+  docs/models/shared/blueprintversionpageinfo.md:
+    id: 494429ccb0eb
+    last_write_checksum: sha1:914e1255f0b810200c1f49f7c6378c7decdb681b
+    pristine_git_object: c5a6a759fe4eac8acc201b52f369910bf55c3173
+  docs/models/shared/canvasrequesttype.md:
+    id: 2a460c5ae2a0
+    last_write_checksum: sha1:fe71f3336eef16f13f523407309301a2806c4589
+    pristine_git_object: 6bb36e7aa4c7547ebaf2c5f3cc8c4e19d1a0a0f0
+  docs/models/shared/controlnetinput.md:
+    id: 3ab2237abd0c
+    last_write_checksum: sha1:f1d98751811da6c40998a2c096b94871a8f06f81
+    pristine_git_object: 382972236815675bd9068652901154a299d5b0cc
+  docs/models/shared/controlnettype.md:
+    id: ad0722a2cb8a
+    last_write_checksum: sha1:ae8c5b8692782725e9d2afa8559422552d83e65f
+    pristine_git_object: 7dc0dc383b2e302962696b80e7063affd56abe58
+  docs/models/shared/cost.md:
+    id: 7b6e11a75d45
+    last_write_checksum: sha1:098370437e6eb75456b7617ea4cc69ec57d9ffc5
+    pristine_git_object: d099fccd690e55dc645cfdda7bca999eb2f23959
+  docs/models/shared/custommodeltype.md:
+    id: 0879b59a214a
+    last_write_checksum: sha1:34ab7c7a3f4d7f37e9663af3d3d96a304467fab2
+    pristine_git_object: 005d047c174f662a094ab65138ab189bc20df4fc
+  docs/models/shared/edges.md:
+    id: e9f05f3aa964
+    last_write_checksum: sha1:58c71f15cf2073dd9d8cbbe37ddd248865f4db2b
+    pristine_git_object: 246ce61ba389fc4c34b323ad8fb0dd96dba2f011
+  docs/models/shared/elementinput.md:
+    id: 2cc1f71720e2
+    last_write_checksum: sha1:05a76b6ade653a6f9c316ec2d88a96c5eaa31261
+    pristine_git_object: 0dd2e81382e85d88e4b62c6b527ecc8bcb4a513c
+  docs/models/shared/executability.md:
+    id: f5d658bfdeaa
+    last_write_checksum: sha1:19373d815e0208608fc5e39b62ba147cd80414bd
+    pristine_git_object: 2da64907a8969837ce38000dac5a3bd0c1b846b0
+  docs/models/shared/extensions.md:
+    id: d2e05a652219
+    last_write_checksum: sha1:8e4e836cfa8ae67abaf5a5716e39b369f2086630
+    pristine_git_object: 8536e5d5a4ac6c7d0e9ad7b3af2bb4896f21c1c5
+  docs/models/shared/initimagetype.md:
+    id: 180ec8722821
+    last_write_checksum: sha1:9dbbbf0886a747e30885c0378c032ebbde242522
+    pristine_git_object: 37601610d0c1c751969c6341a1d94593af702fbb
+  docs/models/shared/inputs.md:
+    id: 618a7a536c4a
+    last_write_checksum: sha1:628a31a470dbdb3a174c1ed2a3f7a4b70ef4d0f8
+    pristine_git_object: 8f586a7a649385398bec58ae23f9f030d88e8e80
+  docs/models/shared/jobstatus.md:
+    id: 94fff3c6f31a
+    last_write_checksum: sha1:568a2c67d1c26bf89ce6be3f06f079cc3830b7a2
+    pristine_git_object: 5248e7fbd11e3d440b0110f6f632966401069f0c
+  docs/models/shared/lcmgenerationstyle.md:
+    id: 23ddfba7fb2e
+    last_write_checksum: sha1:6327d5b24c4fe87640047a10036cbb353951b424
+    pristine_git_object: 93a8d52dd873f28e7980ecd2562257cdcccc2f2e
+  docs/models/shared/locations.md:
+    id: f372ac89f99a
+    last_write_checksum: sha1:1bc6dd76cf70cf2c95b616d638b93068a5381761
+    pristine_git_object: f279cdfbfdd60c7b1d6e5f1e5fc187fbc3ce64fd
+  docs/models/shared/modelassettexturetypes.md:
+    id: 38c8719bcf7d
+    last_write_checksum: sha1:bef02e1517157f256adbbc95e2416d9e66d68ce5
+    pristine_git_object: e21fb57842de3db339c32125789d59dd229fb58b
+  docs/models/shared/motionresolution.md:
+    id: 40ab96891e23
+    last_write_checksum: sha1:bcfca9505b6610ab4362fe6ab0a51331fbbcc0f6
+    pristine_git_object: 17f9b578ec9247458a799be223f80e063cf31a63
+  docs/models/shared/motionvariationtype.md:
+    id: 7485fa1a8a61
+    last_write_checksum: sha1:bf43fe1a54bce869f1756a4b9468d226d211b9c4
+    pristine_git_object: 10aefe3f948be7e170fd513a6b936d437aa48a7a
+  docs/models/shared/node.md:
+    id: ff15387c5ba0
+    last_write_checksum: sha1:8875872d60d0ab8ef7f5357b2f14c5b8682867f2
+    pristine_git_object: 85e911125e895f815486138fd26a0a69c014ad21
+  docs/models/shared/nodeinput.md:
+    id: 250b2640c0ce
+    last_write_checksum: sha1:f719c9bc411e7b530beb2cf741641dc186e6efe4
+    pristine_git_object: 959de4888301ad19acc4a9b34b742aa27993fc0d
+  docs/models/shared/outputs.md:
+    id: 8ff98be8105f
+    last_write_checksum: sha1:06ac7e71ab877799df98be3f04afee53b20a4103
+    pristine_git_object: ae452b1e9f551389b8531778d4f8f4c8504732cd
+  docs/models/shared/pageinfo.md:
+    id: 6b813af4bd40
+    last_write_checksum: sha1:7aec1292d26e5bafb15d17c32623112ae5ca8e7f
+    pristine_git_object: fcfccd3c706f1241c37c104cd284cc400a0c1e53
+  docs/models/shared/pricingcalculatorservices.md:
+    id: 42149c474c7a
+    last_write_checksum: sha1:0af74b7f4be4b0b361f4988c2d5b5bdcad096c24
+    pristine_git_object: b32162609a5dc00f55237da851956d5420d82c36
+  docs/models/shared/promptmoderationfailurereason.md:
+    id: 5061a0ce3927
+    last_write_checksum: sha1:d954a60c4eee3c426e4de330ad789fcfd8886e91
+    pristine_git_object: e4a930ac5e93dcae59fda3a35f92aa9f9d15893f
+  docs/models/shared/reasons.md:
+    id: f944600f0664
+    last_write_checksum: sha1:01d71393ae385bc4a2b9032ddce36c4454b50034
+    pristine_git_object: 04468aa04bb22da47dffd34577afaa99ebb77a98
+  docs/models/shared/sdgenerationschedulers.md:
+    id: 948a29617535
+    last_write_checksum: sha1:f7e8fdaf79f9d19dc234caba6e68b507e34b4966
+    pristine_git_object: 4606699fb68d174426179c0e7f12a7c6eff143bf
+  docs/models/shared/sdgenerationstyle.md:
+    id: 37329a656c59
+    last_write_checksum: sha1:69e6c94f11ccbac0a2f8c26a6caf64c6620b436e
+    pristine_git_object: 6dbe8407abd3cbd3227a362d1258b205c349c23d
+  docs/models/shared/sdversions.md:
+    id: 1da14c81e069
+    last_write_checksum: sha1:67151faeca53e03a08ecb3738aed2108b6dcfda9
+    pristine_git_object: 672cf926e9bdd11b15097407d65a88833fcc0595
+  docs/models/shared/security.md:
+    id: 3035c5c37727
+    last_write_checksum: sha1:745572e344516e941da7093c8bdf34061fa9e292
+    pristine_git_object: f218fa1efc4f957fa52215140d475e7b2758128a
+  docs/models/shared/settingname.md:
+    id: f7acb5303bf4
+    last_write_checksum: sha1:382c5fbd1a33414fc3b6d0859be4751ea8b8ae63
+    pristine_git_object: 6580fd61e746e9f81ffdc391094ec76ade31bf08
+  docs/models/shared/strength.md:
+    id: f7e396f283f4
+    last_write_checksum: sha1:caaf3906ec1657508cdb63ae22f836824a56ebdf
+    pristine_git_object: ec58567f5f63b2265b1dee6f6058050565ca9030
+  docs/models/shared/strengthtype.md:
+    id: ddf9d11190a3
+    last_write_checksum: sha1:40db9250b1168e32694e93b8cce7a18189ac72e4
+    pristine_git_object: 5a9d1283a510adfef736f8f2ffa7583b3adb8da8
+  docs/models/shared/textvariable.md:
+    id: 5cff8e931cae
+    last_write_checksum: sha1:922f05d5f69e04533c4b15f009ce89e2e2a22ee9
+    pristine_git_object: 096bdecd1116347ae5e94dfd65229ad20cd7912d
+  docs/models/shared/thumbnails.md:
+    id: aa21481f7212
+    last_write_checksum: sha1:6d6303d301f141c2fef4edd2ab2d7b34952b7c43
+    pristine_git_object: d3dd1acb41e8d5ca6ab3cc805d575cdce39ff3c3
+  docs/models/shared/type.md:
+    id: 0d8d18a9f10d
+    last_write_checksum: sha1:dd3a331196f653ee9dce707253587d4bb55d3fce
+    pristine_git_object: 3e8992f33b1dd6bdb1894482593491d1c330a44b
+  docs/models/shared/uimetadata.md:
+    id: 1a1515398526
+    last_write_checksum: sha1:c3a6447b92209771e002014117d36b66d6d499ba
+    pristine_git_object: bff1fc38744af02e953f5928cecf4c076dd6e3ba
+  docs/models/shared/unit.md:
+    id: 689fcb702678
+    last_write_checksum: sha1:1f97cb47239ccbdfa5ef02a9bd3dab92ba70031e
+    pristine_git_object: 9918b919829f9fb60dc29bf34171b7a5d07a08ff
+  docs/models/shared/universalupscalerstyle.md:
+    id: 64703774e6e9
+    last_write_checksum: sha1:cd8b819f00b7533af1764d85641edd962cb78cc8
+    pristine_git_object: 2c1ca515ef026dc409dea8e8f2271e2a578ed31b
+  docs/models/shared/universalupscalerultrastyle.md:
+    id: 125efad3822d
+    last_write_checksum: sha1:76953522880f19783e175de0762437c48b3cd830
+    pristine_git_object: 1c7b0c6ce0a0b6bd2e2899f76ca254d2a0d381df
+  docs/models/shared/userelementsinput.md:
+    id: 095d08ef6e26
+    last_write_checksum: sha1:eb72847debff8ac447c8cbd3642b32144f609ceb
+    pristine_git_object: 9ef1100dc93f06685e8fb491b9f42f246be9d326
+  docs/models/shared/value.md:
+    id: 124e920a7479
+    last_write_checksum: sha1:0fd82d36ecfbb325344b6e3fdec836d5f380b91c
+    pristine_git_object: 280dbea95c2238777d051a95d56617f8b5d93c16
+  docs/models/shared/variationtype.md:
+    id: 4554fb2c1aa7
+    last_write_checksum: sha1:7343f4a03b10ff1896907f58a1abd0ff8d0ff383
+    pristine_git_object: fe68789da87168633ac0f9ffcace586dc1247584
+  docs/models/utils/retryconfig.md:
+    id: 4343ac43161c
+    last_write_checksum: sha1:562c0f21e308ad10c27f85f75704c15592c6929d
+    pristine_git_object: 69dd549ec7f5f885101d08dd502e25748183aebf
+  docs/sdks/blueprints/README.md:
+    id: 43596dbb889b
+    last_write_checksum: sha1:33ede99c3048fd808539fa20b5c59ce5af414dfa
+    pristine_git_object: 39e5ee07ecec02aae4c3884f3945d5aa2bb68402
+  docs/sdks/dataset/README.md:
+    id: 500cff374f02
+    last_write_checksum: sha1:533c43a906708f3164a2ea6f0c35fc85e524d5cb
+    pristine_git_object: 7052f76c6e3b9ce54a4fbaa8caf6e5bf350f358f
+  docs/sdks/elements/README.md:
+    id: 0fc58d8bcd33
+    last_write_checksum: sha1:2d4334efe3499e0aa09b6c028c5a8b5d7d9cb3d4
+    pristine_git_object: cfb3d36faccb424ea1f396d751abc3bac88a8be1
+  docs/sdks/image/README.md:
+    id: 38c1b6d9e149
+    last_write_checksum: sha1:dacbac2aed3103c431fbf91a519c8944f080c4eb
+    pristine_git_object: 572c2b9061151804be619d116f63db8dbe46c189
+  docs/sdks/initimages/README.md:
+    id: d50293f4578c
+    last_write_checksum: sha1:d1dec9d4620b4bf2a57d613380fdda01de09fe52
+    pristine_git_object: d338c7f6ef5d4479f0ce33ecc4f278853606d79c
+  docs/sdks/models/README.md:
+    id: b35bdf4bc7ed
+    last_write_checksum: sha1:89d21183fa28534d7ad2e62a4aecc84bffb1dbe7
+    pristine_git_object: 6fec09deb37e975c6b5204ff46f0294194841587
+  docs/sdks/motion/README.md:
+    id: 22bfbae59b21
+    last_write_checksum: sha1:a6c701f789ab2452d69a12c38db39a3b29b06f31
+    pristine_git_object: 55a0eb684aa3fb11b1138c4eb46f128719924f20
+  docs/sdks/pricingcalculator/README.md:
+    id: 8cd7e7bc4fee
+    last_write_checksum: sha1:55350453daa42d9d2390a2f67589ac992bfab719
+    pristine_git_object: 2917f18549ecef7547a8b4fc668e1240b9fff4a0
+  docs/sdks/prompt/README.md:
+    id: 58101834a0c9
+    last_write_checksum: sha1:58177b6b6f86610f674404458829ad322d7fbff5
+    pristine_git_object: 2421492bccbe7d79fe73965c62c4680f47112773
+  docs/sdks/realtimecanvas/README.md:
+    id: fc1aad77933c
+    last_write_checksum: sha1:237bb60265ca6fe7fa56e153e9af6ab9dec569c0
+    pristine_git_object: aa5688bb84018be495cd89439970fe85e9837a66
+  docs/sdks/texture/README.md:
+    id: b92da8e9b53d
+    last_write_checksum: sha1:243ddb1d6136089972a34283c8161f8e6d2f07af
+    pristine_git_object: 9222352caf2ac43e67882d5cc1f61d356aeda440
+  docs/sdks/threedmodelassets/README.md:
+    id: 39d957ae7651
+    last_write_checksum: sha1:83f6052f1711b932ce12d24507b5d1dde05763eb
+    pristine_git_object: 73a891e8d87faad442306c18a41ff95f39e04fdf
+  docs/sdks/user/README.md:
+    id: 437dd7dc6e30
+    last_write_checksum: sha1:8e568bfb7b553611ff3a370ed36e16f748b076c9
+    pristine_git_object: c20cb73910209e8899905ef94bd846bcd3c5482c
+  docs/sdks/variation/README.md:
+    id: 7aa430a1dc8d
+    last_write_checksum: sha1:e72b2926c5d3bc46eda96e734ffe45e5050c227a
+    pristine_git_object: b233d921756fa24f24e79b803331b4f6230cbc69
+  poetry.toml:
+    id: a81ade82122a
+    last_write_checksum: sha1:2242305e29dc6921bdf5b200aea5d4bf67830230
+    pristine_git_object: cd3492ac9dc870fdcf23dbd94fd1d40cc753cc8e
+  py.typed:
+    id: 258c3ed47ae4
+    last_write_checksum: sha1:8efc425ffe830805ffcc0f3055871bdcdc542c60
+    pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
+  pylintrc:
+    id: 7ce8b9f946e6
+    last_write_checksum: sha1:0e10638ea7d22a917f716f609a4c05ca0cd18e91
+    pristine_git_object: ba6a998b82e6e5fce3f37f2c3a73b345395d952c
+  pyproject.toml:
+    id: 5d07e7d72637
+    last_write_checksum: sha1:5fe46c13de89e7bd8a6f5988eb4dd88745b50184
+    pristine_git_object: 71b8ee18e8a908ad2afbcdb9badb758aa15c0c1d
+  scripts/prepare_readme.py:
+    id: e0c5957a6035
+    last_write_checksum: sha1:ff1b921b167a166b622adb1b6c2386392d8b3b95
+    pristine_git_object: a15b9de0f62f8fd18af1731a2c4a0a68921f4f00
+  scripts/publish.sh:
+    id: fe273b08f514
+    last_write_checksum: sha1:b31bafc19c15ab5ea925fdf8d5d4adce2b115a63
+    pristine_git_object: 2a3ead70ccc6228cbae1c5c8a319b1399f3804ea
+  src/leonardo_ai_sdk/__init__.py:
+    id: 345b05b61be0
+    last_write_checksum: sha1:da077c0bdfcef64a4a5aea91a17292f72fa2b088
+    pristine_git_object: 833c68cd526fe34aab2b7e7c45f974f7f4b9e120
+  src/leonardo_ai_sdk/_hooks/__init__.py:
+    id: 1932f83d47c6
+    last_write_checksum: sha1:45a380490e968d8d95994dd97554ac60eeb6ae60
+    pristine_git_object: e763be4b171bbcf9c16caeaf381f8c92ce8d8e6e
+  src/leonardo_ai_sdk/_hooks/sdkhooks.py:
+    id: d874a7eeb46a
+    last_write_checksum: sha1:dd0a62d6eaf2718c69edbce8000ada4d6f271fd1
+    pristine_git_object: ea30ea9cba7bee9086982b1059d39d7a0afab04b
+  src/leonardo_ai_sdk/_hooks/types.py:
+    id: 014ef95934d0
+    last_write_checksum: sha1:12576867aa0e83784877594239f44f12a796888f
+    pristine_git_object: 557948ef601c69042c2bbb6e7b3f478352a7b6c5
+  src/leonardo_ai_sdk/_version.py:
+    id: c3aea14ac140
+    last_write_checksum: sha1:8da8610ca784424495bc050fd67e538ffff71f31
+    pristine_git_object: 4cf372901f154a407e4cd176e9719065945f68f1
+  src/leonardo_ai_sdk/basesdk.py:
+    id: 19c98acc9d1a
+    last_write_checksum: sha1:3454509613c8bff230a4dc3f8bd817f0d7792d1d
+    pristine_git_object: f7218a4fc5f278c6594107d14c2230812c5b0d16
+  src/leonardo_ai_sdk/blueprints.py:
+    id: c9f623365b1c
+    last_write_checksum: sha1:899ce56ff5bc82c61a3a9a3628e55e21d0c16507
+    pristine_git_object: d0a323a85d12c2e2b60d696ed0b7221c581666d0
+  src/leonardo_ai_sdk/dataset.py:
+    id: edb510b284be
+    last_write_checksum: sha1:62178ef26603905441abce01c6f71dc0b2d89a7c
+    pristine_git_object: 8c4aa417e22300ff8321c5a6462290542309dab4
+  src/leonardo_ai_sdk/elements.py:
+    id: 49aee7ce93c0
+    last_write_checksum: sha1:f46dc4c865c0252b536219ef603af2bcb895c149
+    pristine_git_object: 902c57dd6c08cd39df186ebfc8e43cf820d1ffd8
+  src/leonardo_ai_sdk/httpclient.py:
+    id: 036f31d2a484
+    last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
+    pristine_git_object: 89560b566073785535643e694c112bedbd3db13d
+  src/leonardo_ai_sdk/image.py:
+    id: e26b4fcf50a1
+    last_write_checksum: sha1:bf536ad10887592b6313976a778ebd9759df1da7
+    pristine_git_object: f6bd60823d9bb54459cd41bbc215de70fe657476
+  src/leonardo_ai_sdk/init_images.py:
+    id: 0b7a85ead201
+    last_write_checksum: sha1:4f4f323f1e89947f5a6ab027883ec3c4742a6965
+    pristine_git_object: f209897ef13483abf1dace56188db9d6f15cf36b
+  src/leonardo_ai_sdk/models/__init__.py:
+    id: d274593c4667
+    last_write_checksum: sha1:fd931d5c2d58b5f9189cc897e038d6d78e362dab
+    pristine_git_object: 726fc5eb391035492b4bea383d91cb7e23da04d3
+  src/leonardo_ai_sdk/models/errors/__init__.py:
+    id: a4f2aed4d1c8
+    last_write_checksum: sha1:3df9084302f9234900c910fb1a1443f4916ba0e2
+    pristine_git_object: 52b2e0c8b50f20417ea27199c48704e9aaf77c0f
+  src/leonardo_ai_sdk/models/errors/executeblueprint.py:
+    id: 22ecb6873d79
+    last_write_checksum: sha1:cb957ee7c1704752407cc880e35237ed2376a5e5
+    pristine_git_object: 632c8b07a1a166b19a4b5f356dcf4a82f0e6e881
+  src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py:
+    id: f030146781c9
+    last_write_checksum: sha1:c65bd10f0edbf6880985c334b78df36da06c7345
+    pristine_git_object: 92c003e2301d4d0bd4e2d3dd6c39d2b015348b1b
+  src/leonardo_ai_sdk/models/errors/no_response_error.py:
+    id: 57261a78cbbf
+    last_write_checksum: sha1:7f326424a7d5ae1bcd5c89a0d6b3dbda9138942f
+    pristine_git_object: 1deab64bc43e1e65bf3c412d326a4032ce342366
+  src/leonardo_ai_sdk/models/errors/responsevalidationerror.py:
+    id: 57074a689513
+    last_write_checksum: sha1:77ab9e913dd75e8074f5db632f184ad30d566877
+    pristine_git_object: 216ee80940cc1f1d126b29e8e8f26dd50f3a7c7f
+  src/leonardo_ai_sdk/models/errors/sdkerror.py:
+    id: 4b4c4255b3ce
+    last_write_checksum: sha1:bc303396aa8c0ecc2aedad7ffaa6f8a8b778b407
+    pristine_git_object: 9846506f0df113afeb9cf9351e9822671ef4796d
+  src/leonardo_ai_sdk/models/operations/__init__.py:
+    id: 5cbc6c99c6a3
+    last_write_checksum: sha1:5ba433bf8605fe9589739e6e2087064abdd7e34e
+    pristine_git_object: 5e152a35a50d8c73a1d2259c1b76c402fbe090c8
+  src/leonardo_ai_sdk/models/operations/createdataset.py:
+    id: 045e4ea50aac
+    last_write_checksum: sha1:a15928621d97731424fe0643858ff04b515e78a3
+    pristine_git_object: 324fe2457dad5b78c3665fdb288eecd8da1aee5c
+  src/leonardo_ai_sdk/models/operations/createelement.py:
+    id: 6080882c70ea
+    last_write_checksum: sha1:0fd8d30c24bdafb821bfe788e0ce9ed4fe0a9ce2
+    pristine_git_object: fb3eb720068deadf304596253877bdcaf9e865eb
+  src/leonardo_ai_sdk/models/operations/creategeneration.py:
+    id: d7634d006dcc
+    last_write_checksum: sha1:fb2f8734b876a3bf063ad06f0fa423ec3214aea3
+    pristine_git_object: d97ab708235eb7b352a0f030a518137f81ab5357
+  src/leonardo_ai_sdk/models/operations/createimagetovideogeneration.py:
+    id: bad8760d4612
+    last_write_checksum: sha1:43f88eb52af266fb8841de7ae40032b4323ab742
+    pristine_git_object: 1783b0bf92ed5e1aa22a769fabafc00da48760d2
+  src/leonardo_ai_sdk/models/operations/createlcmgeneration.py:
+    id: cf40d412beae
+    last_write_checksum: sha1:e8a43e30473d20c5002b078c5fda927dadd5a213
+    pristine_git_object: a0cb7085040d794c45131ca9b58e32122662b835
+  src/leonardo_ai_sdk/models/operations/createmodel.py:
+    id: 0fba98d300ae
+    last_write_checksum: sha1:f6be8b52f6a1def2fdb0f8f2be7e0e285b574eb3
+    pristine_git_object: 099193a6104512026ac09fc24191538b666c7962
+  src/leonardo_ai_sdk/models/operations/createsvdmotiongeneration.py:
+    id: aff8effa04d8
+    last_write_checksum: sha1:5d221e9ccae0397b0672eef1c81236e97aeb0983
+    pristine_git_object: 67dbaf1b2d9d2c99f60ada5fd40280d686a7359b
+  src/leonardo_ai_sdk/models/operations/createtexttovideogeneration.py:
+    id: 87af8bcccc8c
+    last_write_checksum: sha1:9db4860d702498d88392092a0da40ab76396dff7
+    pristine_git_object: cc67e2e743956190157419ab4e8f14e465777c79
+  src/leonardo_ai_sdk/models/operations/createtexturegeneration.py:
+    id: 07fa74e387b1
+    last_write_checksum: sha1:03663f430e772174d01fddd7f238bdffa72e0084
+    pristine_git_object: 8eb0c23d116aac0b2f7a37c73310b8ebf5f93b0f
+  src/leonardo_ai_sdk/models/operations/createuniversalupscalerjob.py:
+    id: 96cff1819251
+    last_write_checksum: sha1:1932e09eeff5a3ce8f41da667682d1b5d9e9465e
+    pristine_git_object: 1ac50b7a92af64b136bc597cea79f631a647c7c6
+  src/leonardo_ai_sdk/models/operations/createvariationnobg.py:
+    id: 7977213abd25
+    last_write_checksum: sha1:067845cfc0f0d5a3012a90ed60f5fe3681984e41
+    pristine_git_object: 4f5e42981f555826e0ae9d195cbb908ebfb98228
+  src/leonardo_ai_sdk/models/operations/createvariationunzoom.py:
+    id: 0e5d40ee0f9b
+    last_write_checksum: sha1:7f7f26fc677d6996e80da36a93fb1244a7e6362a
+    pristine_git_object: 966cf389259b98fc6ac1df10e195d265d12f3ca8
+  src/leonardo_ai_sdk/models/operations/createvariationupscale.py:
+    id: 8f1a06a70efb
+    last_write_checksum: sha1:80f14503d454c8f44b02358590781953042152f0
+    pristine_git_object: 971a0f5e6fac915952dd1f1714cad3fc3c8b82ca
+  src/leonardo_ai_sdk/models/operations/createvideoupscale.py:
+    id: 1697e1efba6a
+    last_write_checksum: sha1:9d9f7ec792d085a598078823a9c3c373d7562006
+    pristine_git_object: 5d838b36007abf2d1efd2292a2e15b5089483dcc
+  src/leonardo_ai_sdk/models/operations/delete3dmodelbyid.py:
+    id: 5ed233a373a8
+    last_write_checksum: sha1:13a8aafe7b751d46d2bb4d9ffe0825a16c617a78
+    pristine_git_object: 98ea6fdaec6466c43586f1a2a393f908456490de
+  src/leonardo_ai_sdk/models/operations/deletedatasetbyid.py:
+    id: d733071158a9
+    last_write_checksum: sha1:2eba9ae39e1c00a062b19d595d55bad6a8fa48eb
+    pristine_git_object: f1858c38b8fc8136ef60a6aa5f6f5c41c7fca006
+  src/leonardo_ai_sdk/models/operations/deleteelementbyid.py:
+    id: 4a93fa8b0fe4
+    last_write_checksum: sha1:5ca15db6fec288faeaede7f2acbb52ce84e16ca8
+    pristine_git_object: f6a2580fd695294272c07a3b85481490c0339c6b
+  src/leonardo_ai_sdk/models/operations/deletegenerationbyid.py:
+    id: 7fb75810e15b
+    last_write_checksum: sha1:05c5e9a4ac5bce95467aaed6def42776b8cc0be8
+    pristine_git_object: 003c790aa82bd6aff3969376dd0896a85880cc49
+  src/leonardo_ai_sdk/models/operations/deleteinitimagebyid.py:
+    id: 29cf0793c550
+    last_write_checksum: sha1:c02c9016834825add6396f12f6e0466d6f50cc97
+    pristine_git_object: a6d7e04ddc99ca61ce49421fc02d4b140236dabf
+  src/leonardo_ai_sdk/models/operations/deletemodelbyid.py:
+    id: 568a9ad3cb10
+    last_write_checksum: sha1:357c084eaa348107f5e7791372f7ad9f543c7bd6
+    pristine_git_object: 903f01b89c789a5ac4db18398a2b1c77b08414c1
+  src/leonardo_ai_sdk/models/operations/deletetexturegenerationbyid.py:
+    id: d08d6f60940a
+    last_write_checksum: sha1:101a3232429f1af1f9203b817d5b5c11a2ed9416
+    pristine_git_object: 04b8e14f8564576195a0b66856542aac39d0e552
+  src/leonardo_ai_sdk/models/operations/executeblueprint.py:
+    id: 025ab5480ffc
+    last_write_checksum: sha1:8d34be173a59a5b975f4f2d860a7881c52e15b24
+    pristine_git_object: 9ba83f95f44b9bba0e6ae50825a70dfa949af716
+  src/leonardo_ai_sdk/models/operations/get3dmodelbyid.py:
+    id: 8d0bd6634029
+    last_write_checksum: sha1:26a78b3cf3ddacc5b58478e2234fdd00be0b23ef
+    pristine_git_object: d515b38900411bfb3e288c773187d353986c7cae
+  src/leonardo_ai_sdk/models/operations/get3dmodelsbyuserid.py:
+    id: 8b4361078ce7
+    last_write_checksum: sha1:4ac5acb0e32154e3c50f4bacc5ae9d6bd8fd7811
+    pristine_git_object: e75418e966f05bf68146a0f04dddd69a9da48cf8
+  src/leonardo_ai_sdk/models/operations/getblueprintbyid.py:
+    id: 64f27c45e5c2
+    last_write_checksum: sha1:a73f27452f0ec8db3b7a87164208adad3c1794ab
+    pristine_git_object: df9138e3d073c6fd5e3fe1bf5285251945104b97
+  src/leonardo_ai_sdk/models/operations/getblueprintexecution.py:
+    id: c5f617712da7
+    last_write_checksum: sha1:6c776ac6a03685548b20f30a19953de41414b1fc
+    pristine_git_object: 3a9d92eedac2e80a42c6baa1e83e2cf456a81839
+  src/leonardo_ai_sdk/models/operations/getblueprintexecutiongenerations.py:
+    id: 070e195484d2
+    last_write_checksum: sha1:3e67430b4df0db4c6ba6b6e8f7bab670f5f12452
+    pristine_git_object: a21dca62e3749c06bb3eb89b7bc737519d7f9c86
+  src/leonardo_ai_sdk/models/operations/getblueprintversionsbyblueprintid.py:
+    id: 428652d5981f
+    last_write_checksum: sha1:2863e9ea0879bb3b6601a86cb9770a5d68cdee09
+    pristine_git_object: 4be73a171aa993ca2adef642bfc56ddc7a174de8
+  src/leonardo_ai_sdk/models/operations/getcustomelementsbyuserid.py:
+    id: cd171502e05d
+    last_write_checksum: sha1:560cca1db3266bb82fe2f1fa82640692f2fe8d9d
+    pristine_git_object: d68baf77b8e701e619f9644adfa95c5f2e91f9eb
+  src/leonardo_ai_sdk/models/operations/getcustommodelsbyuserid.py:
+    id: 11b7f7e165d8
+    last_write_checksum: sha1:38be3432d210d21a7ee2517af0d35507106d1332
+    pristine_git_object: 00060295ac7aedeb3b27a8e162b68ce5a99eb69a
+  src/leonardo_ai_sdk/models/operations/getdatasetbyid.py:
+    id: be684df5e965
+    last_write_checksum: sha1:670619a38e30eccb9093a50595d2d0d27b8e0571
+    pristine_git_object: 58eea998cae6cbeb7fdf1b16d967561379dff997
+  src/leonardo_ai_sdk/models/operations/getelementbyid.py:
+    id: 8688925bfe3d
+    last_write_checksum: sha1:9f53100a318114f64374dd3beb0d9f70bf8f03eb
+    pristine_git_object: bd64e86afa6315a30d14625d62a26463a0d251d6
+  src/leonardo_ai_sdk/models/operations/getgenerationbyid.py:
+    id: 12f2218a09da
+    last_write_checksum: sha1:63201f3486c5666ffadbd72686f6da1fd97cf00c
+    pristine_git_object: 54c09c14f23020ed3b8baeefe4d8fa8d986c57fc
+  src/leonardo_ai_sdk/models/operations/getgenerationsbyuserid.py:
+    id: f0ca03b7c386
+    last_write_checksum: sha1:4c4ab736f12137ac5a5fd40d2358591fa9e18d00
+    pristine_git_object: e80eb87ddf1a47dbcc18f7e41f3f0c795cbb7520
+  src/leonardo_ai_sdk/models/operations/getinitimagebyid.py:
+    id: ee53381a5c56
+    last_write_checksum: sha1:077f5ce13982a3ed55853b7c9c1fc8103ad0d733
+    pristine_git_object: 4ee4b3027865f07c2a22d7aa6e727ebc43500a03
+  src/leonardo_ai_sdk/models/operations/getmodelbyid.py:
+    id: deec0cff4063
+    last_write_checksum: sha1:69576287077252ee9448e1ef89b69e78c7cc12bf
+    pristine_git_object: b5fef15f39ac47b5f7f20237ab14ac0b903fd6f2
+  src/leonardo_ai_sdk/models/operations/getmotionvariationbyid.py:
+    id: bf56b03ca576
+    last_write_checksum: sha1:b65d393d43d03d2c427242f081500a8a62560b4f
+    pristine_git_object: e50d0e074a5f61db5f714635eea806df166aeb5c
+  src/leonardo_ai_sdk/models/operations/gettexturegenerationbyid.py:
+    id: 710254b9e1b5
+    last_write_checksum: sha1:d73ddfa9753c8ad12d103c4ac30623e09a38e7d0
+    pristine_git_object: c9e336abcde25749c437e053873fe12d8dea5fc0
+  src/leonardo_ai_sdk/models/operations/gettexturegenerationsbymodelid.py:
+    id: 781f313ed9f3
+    last_write_checksum: sha1:d6b24e87bc279fa0999c017907f23a2cf71486fe
+    pristine_git_object: ef05a863340add0bc58865400651db377db25c79
+  src/leonardo_ai_sdk/models/operations/getuserself.py:
+    id: cd4e689e06a1
+    last_write_checksum: sha1:80a7a925938e07bd782cd514165c759622c18c9f
+    pristine_git_object: 22ca87286b08bcf410ae542b002b417889562378
+  src/leonardo_ai_sdk/models/operations/getvariationbyid.py:
+    id: ddd2c1c648b5
+    last_write_checksum: sha1:69e1ee85d7847ea8a164ef260cb8fd9729782009
+    pristine_git_object: a9880c88718ba86c1bc8240637fb587d34343507
+  src/leonardo_ai_sdk/models/operations/listblueprints.py:
+    id: 6f728b563f8f
+    last_write_checksum: sha1:4919815612b5dd469ef5c49d4bf85c217c907545
+    pristine_git_object: 597ed2484668a73eb4e6e6f3a193bb110f08e14a
+  src/leonardo_ai_sdk/models/operations/listelements.py:
+    id: 2ba024ee0be5
+    last_write_checksum: sha1:dad29bafb623420367e5200148770812a3d95fd9
+    pristine_git_object: 75f0b999d6c1e12ee8f449e59b6cd0b8d18e8ded
+  src/leonardo_ai_sdk/models/operations/listplatformmodels.py:
+    id: dfa035b89293
+    last_write_checksum: sha1:df547e25717b0e88e2aefc7e13c8820b162d96be
+    pristine_git_object: 4e5893daa65252d4c778b1d411d984f0e3596227
+  src/leonardo_ai_sdk/models/operations/performalchemyupscalelcm.py:
+    id: d1e30d4f2195
+    last_write_checksum: sha1:db123b3808e40fda231939c0737df36f2b29647d
+    pristine_git_object: efbf07fcaee5a812ab988f15a49e1772e3279279
+  src/leonardo_ai_sdk/models/operations/performinpaintinglcm.py:
+    id: 0cc656539c57
+    last_write_checksum: sha1:0ede6d8ec91e19cdf429d5f31ea704c7dce52d3d
+    pristine_git_object: 8dd679078302f46248021f3379eb556412d370a8
+  src/leonardo_ai_sdk/models/operations/performinstantrefine.py:
+    id: 7ae418bd4c00
+    last_write_checksum: sha1:635f515a7b234a02f4341506a5de597b93f9e32c
+    pristine_git_object: 36858f59e8f88f708960e0ba5e74331a44424c70
+  src/leonardo_ai_sdk/models/operations/pricingcalculator.py:
+    id: df3cee04585f
+    last_write_checksum: sha1:ec0af308c426e744e5962641e2c1b761a0401071
+    pristine_git_object: 6c777f26293ae310ddc0d72e5493b3a89e926d07
+  src/leonardo_ai_sdk/models/operations/promptimprove.py:
+    id: 9616a6b8ffc6
+    last_write_checksum: sha1:611c8d54f548093286ffe0d1bb2f1e7594a16278
+    pristine_git_object: 48535ee656381b41565b8ab7a095b199863cba72
+  src/leonardo_ai_sdk/models/operations/promptrandom.py:
+    id: d24dcaab5fe9
+    last_write_checksum: sha1:327211149391aab4043c328c64293692bdceba01
+    pristine_git_object: bf0d6ce0948b39b2ee641cba6dfd8dac21ffd40d
+  src/leonardo_ai_sdk/models/operations/uploadcanvasinitimage.py:
+    id: 7aab72c6230b
+    last_write_checksum: sha1:71a22aa01728b6df55aae89af336e8aa07d9a99b
+    pristine_git_object: 64d2906f537678069120f6fe0ca2c53e26d68b0f
+  src/leonardo_ai_sdk/models/operations/uploaddatasetimage.py:
+    id: 97c241fc5971
+    last_write_checksum: sha1:ca8acddb721b9354588b870f146c789f63e49564
+    pristine_git_object: 8bb4f3de123163dba60b26946ce733eebffc7473
+  src/leonardo_ai_sdk/models/operations/uploaddatasetimagefromgen.py:
+    id: db8ab0e298f4
+    last_write_checksum: sha1:18e173d62d38afc79f54e486322d7096255a0499
+    pristine_git_object: 1521442cfe91a60283966e9bf31f59fb641e34cb
+  src/leonardo_ai_sdk/models/operations/uploadinitimage.py:
+    id: 7c79d202783b
+    last_write_checksum: sha1:45ce343dfa90a8af8a87783141c638db12e09dd6
+    pristine_git_object: c2c1fe34b76a57a332c9236cef7f9e8dde9fa86c
+  src/leonardo_ai_sdk/models/operations/uploadmodelasset.py:
+    id: 00eb51a6351b
+    last_write_checksum: sha1:c0ebba0f67c3a3dda4c0272eb98e0e04a5c5c7d7
+    pristine_git_object: 5622258a3204e1777ee2de1a13e5d6e836a8db45
+  src/leonardo_ai_sdk/models/shared/__init__.py:
+    id: de1ccc636ec7
+    last_write_checksum: sha1:f803531a5a7cdb9b4a702b35db56ca1ab396070c
+    pristine_git_object: c153452875e993bfa00489ed399648fc08c2fc64
+  src/leonardo_ai_sdk/models/shared/apierror.py:
+    id: c282cca58848
+    last_write_checksum: sha1:f1b9f512f044371427624b5ab89e5ebfbf09bcce
+    pristine_git_object: a6c026767b03a0b544f7c482bcbd5aa6dc0a71cd
+  src/leonardo_ai_sdk/models/shared/blueprint.py:
+    id: fe2003516768
+    last_write_checksum: sha1:ea29967d978af0927dc9494898f5541341893ef6
+    pristine_git_object: 1baa1e3149774aea925a1306c0e6e6b6c2dd067f
+  src/leonardo_ai_sdk/models/shared/blueprintexecution.py:
+    id: f6985ae5f39a
+    last_write_checksum: sha1:0673b12cc788db879216c8abca4300cbaf1dab5e
+    pristine_git_object: 4c3b7705628dddf1296c1cc73cf2125b8a72dc4b
+  src/leonardo_ai_sdk/models/shared/blueprintexecutiongeneration.py:
+    id: c50da18eefb0
+    last_write_checksum: sha1:758bb69256e8e80a096feb60f0fc9b25af8d0bdc
+    pristine_git_object: d7476b56eacb0d7b569414b8318e9a2fb4a82379
+  src/leonardo_ai_sdk/models/shared/blueprintexecutiongenerationedge.py:
+    id: ba0b245fe6be
+    last_write_checksum: sha1:95875a25ebee8eef2ab28c3eb69a439373cf207b
+    pristine_git_object: fdc7c9b367a7cbae2ec0e9088295947973aecb26
+  src/leonardo_ai_sdk/models/shared/blueprintexecutiongenerationsconnection.py:
+    id: 18444dccb604
+    last_write_checksum: sha1:d3fc1765c298523968ded291ba8214493f41f911
+    pristine_git_object: 78a44fd357f14fb1be6b120d1dbe4d76c7f4d7b2
+  src/leonardo_ai_sdk/models/shared/blueprintexecutiongenerationstatus.py:
+    id: b3dfeba14c49
+    last_write_checksum: sha1:4c0ec8eb5b08a85e544c852fd26966e8cfcc544e
+    pristine_git_object: 17f8b61de2fd07a93d732d586acb6e063e1eaa08
+  src/leonardo_ai_sdk/models/shared/blueprintexecutionstatus.py:
+    id: 3dac6128c5d1
+    last_write_checksum: sha1:929217ba301b22b1923e3421e9141688fe7c322d
+    pristine_git_object: 014b28c2c567444f6d2faed969710f376f433cc4
+  src/leonardo_ai_sdk/models/shared/blueprintversion.py:
+    id: dbc97999b9b1
+    last_write_checksum: sha1:3ec39c6f84bc0f46b0a3864ad7ad52d296fdeb96
+    pristine_git_object: 930ea69505df0a260cb0dea72ef4ea20b666a044
+  src/leonardo_ai_sdk/models/shared/canvasrequesttype.py:
+    id: 7b1e1c54f2db
+    last_write_checksum: sha1:6f7f6b41a44062563d8e2818d0a3ab4e4f7a0436
+    pristine_git_object: 14474812d62b65bc15775558a3279914a26bfd5d
+  src/leonardo_ai_sdk/models/shared/controlnet_input.py:
+    id: 51c6dcd1665d
+    last_write_checksum: sha1:aac09b609a0f74517a32e5c4c6ea1cf137d7ef85
+    pristine_git_object: 7c40f48d6bf884b1e915482703790ab9927e04bf
+  src/leonardo_ai_sdk/models/shared/controlnet_type.py:
+    id: 884db64f547c
+    last_write_checksum: sha1:f9b9b600f8f47a6c20e55ea54566dbd08e76c83d
+    pristine_git_object: 00a367cf1f298a6392ac1e9ff2799b57083f5e77
+  src/leonardo_ai_sdk/models/shared/cost.py:
+    id: 303a5a1ffdd6
+    last_write_checksum: sha1:a1ce06e1d8abd4b52f3b44318723bc571f469581
+    pristine_git_object: a148c3be1e0a88caefbe7743ab34896f8563308c
+  src/leonardo_ai_sdk/models/shared/custom_model_type.py:
+    id: a031cc0e1c9c
+    last_write_checksum: sha1:994822979f47bcfb183312ebd52de0d1bd8778d6
+    pristine_git_object: 8cd19f559db6adfb126fabbfc01eb194e50febbd
+  src/leonardo_ai_sdk/models/shared/element_input.py:
+    id: f5d5f7689eec
+    last_write_checksum: sha1:53dd1188d1842d00f83e6cbe31ba0fcfc9c7e548
+    pristine_git_object: 5a98da3419b9d8af14594ad23d4b09d3e6387e74
+  src/leonardo_ai_sdk/models/shared/job_status.py:
+    id: 829bb9e24b4e
+    last_write_checksum: sha1:91b4f316af8d54362d5bf5c78b5acacaa27bc748
+    pristine_git_object: f976b60ed0947419f59ded07d18098bd26a64f78
+  src/leonardo_ai_sdk/models/shared/lcm_generation_style.py:
+    id: efd05f1b89a6
+    last_write_checksum: sha1:03c372f112981a657c635bfdfd205325be58d12a
+    pristine_git_object: b865b9e6985c8309ed037dc236da6796ea59528b
+  src/leonardo_ai_sdk/models/shared/model_asset_texture_types.py:
+    id: 32b156735425
+    last_write_checksum: sha1:a96a03dc5a4ca4f6c4b968b54e987b1afb59b719
+    pristine_git_object: f667ffaa147d4ef4f5472e4965d9fcf79b7f922e
+  src/leonardo_ai_sdk/models/shared/motion_resolution.py:
+    id: b6350bc0d09c
+    last_write_checksum: sha1:85a3cc7f3219c3177bd1bd828e5320845d022a33
+    pristine_git_object: c9388ce71b66e18de4e60b5cd4d46ceb8ddfba50
+  src/leonardo_ai_sdk/models/shared/motion_variation_type.py:
+    id: 65ee1a2312c6
+    last_write_checksum: sha1:a5d1117bc2a562619a4473353ca2bfc09b72f5a6
+    pristine_git_object: 20fe85438c59dbe9a7baabd5ae72fa83904a2033
+  src/leonardo_ai_sdk/models/shared/nodeinput.py:
+    id: 63caf1cc2131
+    last_write_checksum: sha1:81208b24982ff51739da8e018d3115fab647bf36
+    pristine_git_object: 48296ecbef04f09e74e5a154155347507fe0fca0
+  src/leonardo_ai_sdk/models/shared/pageinfo.py:
+    id: c62d8327af41
+    last_write_checksum: sha1:fa46d59b9061a3a79b8e1b78e8ef983050629096
+    pristine_git_object: 6cddc5b6e6124ed84955ce189d1a473df1bb8540
+  src/leonardo_ai_sdk/models/shared/pricingcalculatorservices.py:
+    id: aadd90f2317e
+    last_write_checksum: sha1:e6f10df4ff02f8a241cf38c9ca64f2cc6abacddd
+    pristine_git_object: 5369d9261b0ce140f0c2b30cafa16083b84934ca
+  src/leonardo_ai_sdk/models/shared/promptmoderationfailurereason.py:
+    id: cd1a21383071
+    last_write_checksum: sha1:9e6e24b75f79bb2ba3ce771483d1d86f5e5a0fd2
+    pristine_git_object: aceb6e65d2bdbc5fa3da03db6d3865af352497d8
+  src/leonardo_ai_sdk/models/shared/sd_generation_schedulers.py:
+    id: 34877b8aab76
+    last_write_checksum: sha1:12ef20e4dbca95df0ab739b5a269412b69153c70
+    pristine_git_object: aea392ff432fd5cffb582cff9c1ae78b5022895f
+  src/leonardo_ai_sdk/models/shared/sd_generation_style.py:
+    id: ece3cfe78835
+    last_write_checksum: sha1:e6a2d3a925e39d0d65fdd86e523a3e5f78fbaa0f
+    pristine_git_object: 27fe7d67ba7b5a1f8277cc19d9f5c1facaf39037
+  src/leonardo_ai_sdk/models/shared/sd_versions.py:
+    id: 566163947ef3
+    last_write_checksum: sha1:14590297c98c2fe78ae4fd1f086bf4690315581a
+    pristine_git_object: a6634be445d1db929cd60529460132724f6b4bea
+  src/leonardo_ai_sdk/models/shared/security.py:
+    id: 51222d9ece56
+    last_write_checksum: sha1:332d60e46c87a7ea771498ac4572606386eabfe8
+    pristine_git_object: 902ed1cf6e6b1715a788dfa02f06e7cb57b5e5df
+  src/leonardo_ai_sdk/models/shared/strength.py:
+    id: 16c5a0c4f262
+    last_write_checksum: sha1:51242c214e65eeda43090e6c6e8bd5584b5bc200
+    pristine_git_object: efe82e35760d6df12d92bb708732af9dfe7c6b3d
+  src/leonardo_ai_sdk/models/shared/textvariable.py:
+    id: 70040cbff7b4
+    last_write_checksum: sha1:e470cdc3916d265377cc0090c9e4c923a1dd8cac
+    pristine_git_object: 6b75d2d3b7d6f033027fcbe239b1dde0f7f29655
+  src/leonardo_ai_sdk/models/shared/universal_upscaler_style.py:
+    id: 8bca2c2763ae
+    last_write_checksum: sha1:ceda1775aa6cbb55415caa76ddd980233fabd9ce
+    pristine_git_object: ce005a555bb694b95a6f50d2324d45ed916b90f6
+  src/leonardo_ai_sdk/models/shared/universal_upscaler_ultra_style.py:
+    id: 2d728c1dfb3b
+    last_write_checksum: sha1:f897342be256e134cc8ffc7d3bcfc5b48a2893d4
+    pristine_git_object: d0b8a7aabd592c54823a50bfd8d5e96dd7ce7f11
+  src/leonardo_ai_sdk/models/shared/user_elements_input.py:
+    id: ae4df090c9bd
+    last_write_checksum: sha1:a5b833169fe5e9bffbd57a51c7c36a442ea2bf8d
+    pristine_git_object: 5175f571412ddfa474dc03c1f90c99bb72353576
+  src/leonardo_ai_sdk/models/shared/variation_type.py:
+    id: 0d9e8c6d3c96
+    last_write_checksum: sha1:a6965e99c5bcd225a3c26c3850260e34ff91a4a2
+    pristine_git_object: 09200f0544f8d065838374b19b1be2e3a6a34e31
+  src/leonardo_ai_sdk/models_.py:
+    id: 9f96042872f1
+    last_write_checksum: sha1:a808e8c7133ba2ed52b805a27020e9b807e95c0c
+    pristine_git_object: ee9fd2d60c2d0a90a6b8af6ff64f5793f953b2c8
+  src/leonardo_ai_sdk/motion.py:
+    id: 31e3b3b519e0
+    last_write_checksum: sha1:a47f747e00bd8d6088bced05fa6f5dc01675d574
+    pristine_git_object: 4bf04d88d67714b09d7f20408e2a4f82f0650c15
+  src/leonardo_ai_sdk/pricing_calculator.py:
+    id: c09afc8c1bfe
+    last_write_checksum: sha1:5bdeb7effc66340f659f8c53c0587f87c18ed6a7
+    pristine_git_object: 64fa6e0585ad54f734d453dad2559fb71b98620c
+  src/leonardo_ai_sdk/prompt.py:
+    id: 7dbbc90f3db8
+    last_write_checksum: sha1:12d87a8c5b62dccf5813148f88c655de34457efc
+    pristine_git_object: de2fabc429acff3cf96efc65f84e909213ee25c4
+  src/leonardo_ai_sdk/py.typed:
+    id: 43a62723a6e2
+    last_write_checksum: sha1:8efc425ffe830805ffcc0f3055871bdcdc542c60
+    pristine_git_object: 3e38f1a929f7d6b1d6de74604aa87e3d8f010544
+  src/leonardo_ai_sdk/realtime_canvas.py:
+    id: 802fb070314c
+    last_write_checksum: sha1:460d9a1f18fce34c63886ce7d66a9d608486ebd5
+    pristine_git_object: c079049c99ec2422c99aa0c9b030bab1ffc766c4
+  src/leonardo_ai_sdk/sdk.py:
+    id: 0c5ecd584447
+    last_write_checksum: sha1:e89bc69281f53cee30a1d03ccddb956975591dc3
+    pristine_git_object: 347f981a0356c37c7601651c94f55f25f69bb099
+  src/leonardo_ai_sdk/sdkconfiguration.py:
+    id: 05169c3c0475
+    last_write_checksum: sha1:c100605a62667ac0968f648acb8b894af7db30da
+    pristine_git_object: 6c5e7971002d973646706857194a8d485a7bd9fb
+  src/leonardo_ai_sdk/texture.py:
+    id: 058228c3e64d
+    last_write_checksum: sha1:ec450125ebb37b1981f70d5e1424b8119fd34200
+    pristine_git_object: 150716487d6baf76391285138b41ed2caed47b3d
+  src/leonardo_ai_sdk/threed_model_assets.py:
+    id: 3db8bbc7ae65
+    last_write_checksum: sha1:ab8ad909cb44cc9f5a8a614a0b363c989825eb2b
+    pristine_git_object: 0a6b61604e4f44c7c6fac263e647c7e839e1cd01
+  src/leonardo_ai_sdk/types/__init__.py:
+    id: 16845b7057a8
+    last_write_checksum: sha1:140ebdd01a46f92ffc710c52c958c4eba3cf68ed
+    pristine_git_object: fc76fe0c5505e29859b5d2bb707d48fd27661b8c
+  src/leonardo_ai_sdk/types/basemodel.py:
+    id: 70f03cddbcd3
+    last_write_checksum: sha1:10d84aedeb9d35edfdadf2c3020caa1d24d8b584
+    pristine_git_object: a9a640a1a7048736383f96c67c6290c86bf536ee
+  src/leonardo_ai_sdk/user.py:
+    id: e64131f023cd
+    last_write_checksum: sha1:5f6280bcaeaeeb820383be7c36155d9d8cfe1ecc
+    pristine_git_object: 76d41b38fcd25602bcff7fba47cc623caddd1cf3
+  src/leonardo_ai_sdk/utils/__init__.py:
+    id: dcba1dea311a
+    last_write_checksum: sha1:a1f6ae620fb6a3ccc30e99b427e49a0c8be463af
+    pristine_git_object: 15394a08a7e30033d319e44dd5734664ddb587e5
+  src/leonardo_ai_sdk/utils/annotations.py:
+    id: af86b21e8717
+    last_write_checksum: sha1:a4824ad65f730303e4e1e3ec1febf87b4eb46dbc
+    pristine_git_object: 12e0aa4f1151bb52474cc02e88397329b90703f6
+  src/leonardo_ai_sdk/utils/datetimes.py:
+    id: 17c769e0934f
+    last_write_checksum: sha1:c721e4123000e7dc61ec52b28a739439d9e17341
+    pristine_git_object: a6c52cd61bbe2d459046c940ce5e8c469f2f0664
+  src/leonardo_ai_sdk/utils/enums.py:
+    id: 412d22e640f9
+    last_write_checksum: sha1:bc8c3c1285ae09ba8a094ee5c3d9c7f41fa1284d
+    pristine_git_object: 3324e1bc2668c54c4d5f5a1a845675319757a828
+  src/leonardo_ai_sdk/utils/eventstreaming.py:
+    id: 031bef878e00
+    last_write_checksum: sha1:bababae5d54b7efc360db701daa49e18a92c2f3b
+    pristine_git_object: 0969899bfc491e5e408d05643525f347ea95e4fc
+  src/leonardo_ai_sdk/utils/forms.py:
+    id: b299101f1f14
+    last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
+    pristine_git_object: f961e76beaf0a8b1fe0dda44754a74eebd3608e7
+  src/leonardo_ai_sdk/utils/headers.py:
+    id: c65234d55209
+    last_write_checksum: sha1:7c6df233ee006332b566a8afa9ce9a245941d935
+    pristine_git_object: 37864cbbbc40d1a47112bbfdd3ba79568fc8818a
+  src/leonardo_ai_sdk/utils/logger.py:
+    id: f27ee92eddb3
+    last_write_checksum: sha1:f3fdb154a3f09b8cc43d74c7e9c02f899f8086e4
+    pristine_git_object: b661aff65d38b77d035149699aea09b2785d2fc6
+  src/leonardo_ai_sdk/utils/metadata.py:
+    id: 030b4710dc9a
+    last_write_checksum: sha1:c6a560bd0c63ab158582f34dadb69433ea73b3d4
+    pristine_git_object: 173b3e5ce658675c2f504222a56b3daaaa68107d
+  src/leonardo_ai_sdk/utils/queryparams.py:
+    id: 9a387d3e0f1e
+    last_write_checksum: sha1:b94c3f314fd3da0d1d215afc2731f48748e2aa59
+    pristine_git_object: c04e0db82b68eca041f2cb2614d748fbac80fd41
+  src/leonardo_ai_sdk/utils/requestbodies.py:
+    id: c003f58fea4a
+    last_write_checksum: sha1:41e2d2d2d3ecc394c8122ca4d4b85e1c3e03f054
+    pristine_git_object: 1de32b6d26f46590232f398fdba6ce0072f1659c
+  src/leonardo_ai_sdk/utils/retries.py:
+    id: cda72ee21f8c
+    last_write_checksum: sha1:5b97ac4f59357d70c2529975d50364c88bcad607
+    pristine_git_object: 88a91b10cd2076b4a2c6cff2ac6bfaa5e3c5ad13
+  src/leonardo_ai_sdk/utils/security.py:
+    id: fc9558e3abcb
+    last_write_checksum: sha1:a17130ace2c0db6394f38dd941ad2b700cc755c8
+    pristine_git_object: 295a3f40031dbb40073ad227fd4a355660f97ab2
+  src/leonardo_ai_sdk/utils/serializers.py:
+    id: cb9ed480897f
+    last_write_checksum: sha1:ce1d8d7f500a9ccba0aeca5057cee9c271f4dfd7
+    pristine_git_object: 14321eb479de81d0d9580ec8291e0ff91bf29e57
+  src/leonardo_ai_sdk/utils/unmarshal_json_response.py:
+    id: ff30a1d1db54
+    last_write_checksum: sha1:d59ac7c24ee25e5525eb2a3367adad63bde0b57d
+    pristine_git_object: 0634379ffaae46f409bbe908847f5db257470e9f
+  src/leonardo_ai_sdk/utils/url.py:
+    id: 65d4c7216b59
+    last_write_checksum: sha1:6479961baa90432ca25626f8e40a7bbc32e73b41
+    pristine_git_object: c78ccbae426ce6d385709d97ce0b1c2813ea2418
+  src/leonardo_ai_sdk/utils/values.py:
+    id: 049556198ec8
+    last_write_checksum: sha1:acaa178a7c41ddd000f58cc691e4632d925b2553
+    pristine_git_object: dae01a44384ac3bc13ae07453a053bf6c898ebe3
+  src/leonardo_ai_sdk/variation.py:
+    id: ef24451372f2
+    last_write_checksum: sha1:990b3632ef2d08679d162dc91e5d39401fe22e32
+    pristine_git_object: 1891ec819c601ed31c3feac18d45cd5d8de0582c
+examples:
+  executeBlueprint:
+    speakeasy-default-execute-blueprint:
+      requestBody:
+        application/json: {"blueprintVersionId": "550e8400-e29b-41d4-a716-446655440000", "input": {"collectionIds": [], "nodeInputs": [], "public": false}}
+      responses:
+        "200":
+          application/json: []
+        "400":
+          application/json: {"error": "Invalid input type: expected 'string' for field 'blueprintVersionId'"}
+    success:
+      requestBody:
+        application/json: {"blueprintVersionId": "550e8400-e29b-41d4-a716-446655440000", "input": {"collectionIds": [], "nodeInputs": [], "public": false}}
+      responses:
+        "200":
+          application/json: {"executeBlueprint": {"akUUID": "550e8400-e29b-41d4-a716-446655440000"}}
+    error:
+      requestBody:
+        application/json: {"blueprintVersionId": "550e8400-e29b-41d4-a716-446655440000", "input": {"collectionIds": [], "nodeInputs": [], "public": false}}
+      responses:
+        "200":
+          application/json: {"executeBlueprint": {"akUUID": "550e8400-e29b-41d4-a716-446655440000"}}
+  getBlueprintById:
+    success:
+      parameters:
+        path:
+          id: "151f5c6d-c840-46cd-84ea-f25ac4521a39"
+      responses:
+        "200":
+          application/json: {"blueprint": {"akUUID": "c846413e-92ba-4302-84f8-47c667d4761f", "createdAt": "2025-10-29T21:31:47.999Z", "description": "Relight an image with warm, golden tones of late afternoon sunlight for a soft and radiant glow.", "name": "Golden Hour Relight", "official": true, "teamId": null, "thumbnails": [{"name": "thumbnailUrl", "url": "https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg"}], "updatedAt": "2025-12-19T02:34:44.740Z"}}
+    badRequest:
+      parameters:
+        path:
+          id: "8f161ed5-dc84-4f5b-8ef5-4f3e5821df56"
+      responses:
+        "200":
+          application/json: [{"message": "<value>"}]
+    notFound:
+      parameters:
+        path:
+          id: "d5f01775-fb53-4c5c-8d08-df840b5a6c71"
+      responses:
+        "200":
+          application/json: [{"message": "<value>"}]
+  getBlueprintExecution:
+    success:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"blueprintExecution": {"akUUID": "cdcc440a-e480-4411-83cb-437d20267a53", "createdAt": "2025-11-05T04:51:04.137Z", "inputs": [{"nodeId": "9ac3b1e2-4d7f-4f10-8b2f-9e5a1c2d3e4f", "settingName": "imageUrl", "value": "https://cdn.leonardo.ai/users/example/image.png"}, {"nodeId": "0b5c7344-ccc2-4ee8-9003-8ad3f1a76127", "settingName": "textVariables", "value": [{"name": "setting1", "value": "on a bus"}]}], "public": false, "status": "COMPLETED"}}
+    badRequest:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"blueprintExecution": {"akUUID": "<id>", "createdAt": "1709877940420", "inputs": [], "public": false, "status": "PENDING"}}
+    notFound:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: [{"message": "<value>"}]
+  getBlueprintExecutionGenerations:
+    success:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"blueprintExecutionGenerations": {"edges": [{"cursor": "YXJyYXljb25uZWN0aW9uOjA=", "node": {"akUUID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "generationId": "1f0bba44-923a-69b0-b519-62a6710d46a9", "status": "COMPLETED"}}, {"cursor": "YXJyYXljb25uZWN0aW9uOjE=", "node": {"akUUID": "b2c3d4e5-f6a7-8901-bcde-f12345678901", "failedReason": {"affectedOutputCount": 1, "message": "Content policy violation: Content involving minors combined with NSFW content is strictly prohibited. Please modify your prompt and try again.", "type": "PROMPT_MODERATION_BLOCKED"}, "generationId": "1f0b933e-b512-6640-8305-4835ab8cebfd", "status": "FAILED"}}], "pageInfo": {"endCursor": "YXJyYXljb25uZWN0aW9uOjE5", "hasNextPage": true, "hasPreviousPage": false, "startCursor": "YXJyYXljb25uZWN0aW9uOjA="}}}
+    promptModerationFailure:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"blueprintExecutionGenerations": {"edges": [{"cursor": "YXJyYXljb25uZWN0aW9uOjA=", "node": {"akUUID": "c3d4e5f6-a7b8-9012-cdef-123456789012", "failedReason": {"affectedOutputCount": 4, "message": "Content policy violation: Content involving minors combined with NSFW content is strictly prohibited. Please modify your prompt and try again.", "type": "PROMPT_MODERATION_BLOCKED"}, "generationId": "1f0b933e-b512-6640-8305-4835ab8cebfd", "status": "FAILED"}}], "pageInfo": {"endCursor": "YXJyYXljb25uZWN0aW9uOjA=", "hasNextPage": false, "hasPreviousPage": false, "startCursor": "YXJyYXljb25uZWN0aW9uOjA="}}}
+    notAccessible:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"blueprintExecutionGenerations": {"edges": [], "pageInfo": {"endCursor": "<value>", "hasNextPage": false, "hasPreviousPage": false, "startCursor": "<value>"}}}
+  getBlueprintVersionsByBlueprintId:
+    success:
+      parameters:
+        path:
+          id: "b18920da-63c6-48a9-8fec-f3b887c8d851"
+      responses:
+        "200":
+          application/json: {"blueprintVersions": {"edges": [{"cursor": "eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==", "node": {"akUUID": "956e9564-19f7-4968-b56d-05c2c567726f", "cost": 160, "createdAt": "2025-11-27T05:13:21.896Z", "executability": {"isExecutable": true, "reasons": [{"models": "gemini-2.5-flash-image"}]}, "uiMetadataSchemaVersion": "21", "updatedAt": "2025-11-27T05:13:21.896Z"}}], "pageInfo": {"endCursor": "eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==", "hasNextPage": false, "hasPreviousPage": false, "startCursor": "eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ=="}, "totalCount": 2}}
+    badRequest:
+      parameters:
+        path:
+          id: "a6daa51b-6406-4e13-93f8-b7c8344fad6c"
+      responses:
+        "200":
+          application/json: [{"message": "<value>"}]
+    notFound:
+      parameters:
+        path:
+          id: "7b44812d-6ac6-40b5-ad08-7c47a3f9807c"
+      responses:
+        "200":
+          application/json: []
+  listBlueprints:
+    speakeasy-default-list-blueprints:
+      requestBody:
+        application/json: {"categories": ["social-media"], "first": 10, "platforms": ["API", "Web"]}
+      responses:
+        "200":
+          application/json: {"blueprints": {"edges": [{"node": {"akUUID": "c846413e-92ba-4302-84f8-47c667d4761f", "createdAt": "2025-10-29T21:31:47.999Z", "description": "Relight an image with warm, golden tones of late afternoon sunlight for a soft and radiant glow.", "name": "Golden Hour Relight", "official": true, "teamId": null, "thumbnails": [{"name": "thumbnailUrl", "url": "https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg"}], "updatedAt": "2025-12-19T02:34:44.740Z"}}]}}
+    success:
+      requestBody:
+        application/json: {"categories": ["social-media"], "first": 10, "platforms": ["API", "Web"]}
+      responses:
+        "200":
+          application/json: {"blueprints": {"edges": [{"cursor": "eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==", "node": {"akUUID": "b3ec7ecf-fc63-4efc-8745-fdcfd059f03a", "createdAt": "2026-01-07T03:08:30.971Z", "description": "Create an editorial photo of the dish with its ingredients around it and their names printed as physical labels.", "name": "Detailed Recipe with Tags", "official": true, "teamId": null, "thumbnails": [{"name": "thumbnailUrl", "url": "https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-7357ab.webp"}, {"name": "thumbnailUrlBanner", "url": "https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-1e754b.webp"}, {"name": "thumbnailUrlLandscape", "url": "https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-d53597.webp"}, {"name": "thumbnailUrlExtremePortrait", "url": "https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-1d8a28.webp"}], "updatedAt": "2026-01-13T01:01:43.989Z"}}], "pageInfo": {"endCursor": "eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==", "hasNextPage": false, "hasPreviousPage": false, "startCursor": "eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ=="}, "totalCount": 1}}
+    error:
+      requestBody:
+        application/json: {"categories": ["social-media"], "first": 10, "platforms": ["API", "Web"]}
+      responses:
+        "200":
+          application/json: {"blueprints": {"edges": [{"node": {"akUUID": "c846413e-92ba-4302-84f8-47c667d4761f", "createdAt": "2025-10-29T21:31:47.999Z", "description": "Relight an image with warm, golden tones of late afternoon sunlight for a soft and radiant glow.", "name": "Golden Hour Relight", "official": true, "teamId": null, "thumbnails": [{"name": "thumbnailUrl", "url": "https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg"}], "updatedAt": "2025-12-19T02:34:44.740Z"}}]}}
+  deleteInitImageById:
+    speakeasy-default-delete-init-image-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getInitImageById:
+    speakeasy-default-get-init-image-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  uploadCanvasInitImage:
+    speakeasy-default-upload-canvas-init-image:
+      requestBody:
+        application/json: {"initExtension": "<value>", "maskExtension": "<value>"}
+      responses:
+        "200":
+          application/json: {}
+  uploadInitImage:
+    speakeasy-default-upload-init-image:
+      requestBody:
+        application/json: {"extension": "gif"}
+      responses:
+        "200":
+          application/json: {}
+  createDataset:
+    speakeasy-default-create-dataset:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {}
+  deleteDatasetById:
+    speakeasy-default-delete-dataset-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getDatasetById:
+    speakeasy-default-get-dataset-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  uploadDatasetImage:
+    speakeasy-default-upload-dataset-image:
+      parameters:
+        path:
+          datasetId: "<id>"
+      requestBody:
+        application/json: {"extension": "shtml"}
+      responses:
+        "200":
+          application/json: {}
+  uploadDatasetImageFromGen:
+    speakeasy-default-upload-dataset-image-from-gen:
+      parameters:
+        path:
+          datasetId: "<id>"
+      requestBody:
+        application/json: {"generatedImageId": "<id>"}
+      responses:
+        "200":
+          application/json: {}
+  createElement:
+    speakeasy-default-create-element:
+      requestBody:
+        application/json: {"datasetId": "", "description": "", "instance_prompt": "", "learning_rate": 3344.47, "lora_focus": "<value>", "name": "placeholder", "num_train_epochs": 543724, "resolution": 1024, "sd_version": "FLUX_DEV", "train_text_encoder": true}
+      responses:
+        "200":
+          application/json: {}
+  deleteElementById:
+    speakeasy-default-delete-element-by-id:
+      parameters:
+        path:
+          id: 709546
+      responses:
+        "200":
+          application/json: {}
+  getCustomElementsByUserId:
+    speakeasy-default-get-custom-elements-by-user-id:
+      parameters:
+        path:
+          userId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getElementById:
+    speakeasy-default-get-element-by-id:
+      parameters:
+        path:
+          id: 320312
+      responses:
+        "200":
+          application/json: {}
+  listElements:
+    speakeasy-default-list-elements:
+      responses:
+        "200":
+          application/json: {}
+  createGeneration:
+    speakeasy-default-create-generation:
+      requestBody:
+        application/json: {"alchemy": true, "contrast": 3.5, "height": 768, "modelId": "b24e16ff-06e3-43eb-8d33-4416c2d75876", "num_images": 4, "presetStyle": "DYNAMIC", "prompt": "A majestic cat in the snow", "width": 1024}
+      responses:
+        "200":
+          application/json: {}
+  deleteGenerationById:
+    speakeasy-default-delete-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getGenerationById:
+    speakeasy-default-get-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getGenerationsByUserId:
+    speakeasy-default-get-generations-by-user-id:
+      parameters:
+        path:
+          userId: "<id>"
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: {}
+  createImageToVideoGeneration:
+    speakeasy-default-create-image-to-video-generation:
+      responses:
+        "200":
+          application/json: {}
+  createSVDMotionGeneration:
+    speakeasy-default-create-SVD-motion-generation:
+      responses:
+        "200":
+          application/json: {}
+  createTextToVideoGeneration:
+    speakeasy-default-create-text-to-video-generation:
+      responses:
+        "200":
+          application/json: {}
+  createVideoUpscale:
+    speakeasy-default-create-video-upscale:
+      responses:
+        "200":
+          application/json: {}
+  createLCMGeneration:
+    speakeasy-default-create-LCM-generation:
+      responses:
+        "200":
+          application/json: {}
+  performAlchemyUpscaleLCM:
+    speakeasy-default-perform-alchemy-upscale-LCM:
+      responses:
+        "200":
+          application/json: {}
+  performInpaintingLCM:
+    speakeasy-default-perform-inpainting-LCM:
+      responses:
+        "200":
+          application/json: {}
+  performInstantRefine:
+    speakeasy-default-perform-instant-refine:
+      responses:
+        "200":
+          application/json: {}
+  createTextureGeneration:
+    speakeasy-default-create-texture-generation:
+      responses:
+        "200":
+          application/json: {}
+  deleteTextureGenerationById:
+    speakeasy-default-delete-texture-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getTextureGenerationById:
+    speakeasy-default-get-texture-generation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: {}
+  getTextureGenerationsByModelId:
+    speakeasy-default-get-texture-generations-by-model-id:
+      parameters:
+        path:
+          modelId: "<id>"
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: {}
+  getUserSelf:
+    speakeasy-default-get-user-self:
+      responses:
+        "200":
+          application/json: {}
+  createModel:
+    speakeasy-default-create-model:
+      requestBody:
+        application/json: {"datasetId": "<id>", "description": "", "instance_prompt": "<value>", "modelType": "GENERAL", "name": "<value>", "nsfw": false, "resolution": 512, "strength": "MEDIUM"}
+      responses:
+        "200":
+          application/json: {}
+  deleteModelById:
+    speakeasy-default-delete-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getCustomModelsByUserId:
+    speakeasy-default-get-custom-models-by-user-id:
+      parameters:
+        path:
+          userId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getModelById:
+    speakeasy-default-get-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listPlatformModels:
+    speakeasy-default-list-platform-models:
+      responses:
+        "200":
+          application/json: {}
+  delete3DModelById:
+    speakeasy-default-delete3-D-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  get3DModelById:
+    speakeasy-default-get3-D-model-by-id:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: {}
+  get3DModelsByUserId:
+    speakeasy-default-get3-D-models-by-user-id:
+      parameters:
+        path:
+          userId: "<id>"
+        query:
+          offset: 0
+          limit: 10
+      responses:
+        "200":
+          application/json: {}
+  uploadModelAsset:
+    speakeasy-default-upload-model-asset:
+      responses:
+        "200":
+          application/json: {}
+  CreateUniversalUpscalerJob:
+    speakeasy-default-create-universal-upscaler-job:
+      requestBody:
+        application/json: {"creativityStrength": 5, "upscaleMultiplier": 1.5, "upscalerStyle": "GENERAL"}
+      responses:
+        "200":
+          application/json: {}
+  createVariationNoBG:
+    speakeasy-default-create-variation-no-BG:
+      requestBody:
+        application/json: {"id": "<id>"}
+      responses:
+        "200":
+          application/json: {}
+  createVariationUnzoom:
+    speakeasy-default-create-variation-unzoom:
+      responses:
+        "200":
+          application/json: {}
+  createVariationUpscale:
+    speakeasy-default-create-variation-upscale:
+      responses:
+        "200":
+          application/json: {}
+  getMotionVariationById:
+    speakeasy-default-get-motion-variation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getVariationById:
+    speakeasy-default-get-variation-by-id:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  pricingCalculator:
+    speakeasy-default-pricing-calculator:
+      responses:
+        "200":
+          application/json: {}
+  promptImprove:
+    speakeasy-default-prompt-improve:
+      requestBody:
+        application/json: {"isVideo": true, "prompt": "<value>"}
+      responses:
+        "200":
+          application/json: {}
+  promptRandom:
+    speakeasy-default-prompt-random:
+      responses:
+        "200":
+          application/json: {}
+examplesVersion: 1.0.2
+generatedTests: {}
+releaseNotes: "## Python SDK Changes:\n* `leonardo_ai_sdk.elements.create_element()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.sd_training_job.cost` **Added**\n* `leonardo_ai_sdk.pricing_calculator.pricing_calculator()`:  `request` **Changed** (Breaking ⚠️)\n* `leonardo_ai_sdk.models.get_model_by_id()`:  `response.custom_models_by_pk.sd_version.enum(kino_2_0)` **Added** (Breaking ⚠️)\n* `leonardo_ai_sdk.models.get_custom_models_by_user_id()`:  `response.custom_models[].sd_version.enum(kino_2_0)` **Added** (Breaking ⚠️)\n* `leonardo_ai_sdk.image.get_generations_by_user_id()`:  `response.generations[].generation_elements[].lora.base_model.enum(kino_2_0)` **Added** (Breaking ⚠️)\n* `leonardo_ai_sdk.image.get_generation_by_id()`:  `response.generations_by_pk.generation_elements[].lora.base_model.enum(kino_2_0)` **Added** (Breaking ⚠️)\n* `leonardo_ai_sdk.image.create_generation()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.sd_generation_job.cost` **Added**\n* `leonardo_ai_sdk.elements.list_elements()`:  `response.loras[].base_model.enum(kino_2_0)` **Added** (Breaking ⚠️)\n* `leonardo_ai_sdk.motion.create_text_to_video_generation()`: **Added**\n* `leonardo_ai_sdk.motion.create_svd_motion_generation()`:  `response.motion_svd_generation_job.cost` **Added**\n* `leonardo_ai_sdk.motion.create_video_upscale()`: **Added**\n* `leonardo_ai_sdk.blueprints.execute_blueprint()`: **Added**\n* `leonardo_ai_sdk.motion.create_image_to_video_generation()`: **Added**\n* `leonardo_ai_sdk.blueprints.list_blueprints()`: **Added**\n* `leonardo_ai_sdk.blueprints.get_blueprint_versions_by_blueprint_id()`: **Added**\n* `leonardo_ai_sdk.realtime_canvas.create_lcm_generation()`:  `response.lcm_generation_job.cost` **Added**\n* `leonardo_ai_sdk.realtime_canvas.perform_alchemy_upscale_lcm()`:  `response.lcm_generation_job.cost` **Added**\n* `leonardo_ai_sdk.realtime_canvas.perform_inpainting_lcm()`:  `response.lcm_generation_job.cost` **Added**\n* `leonardo_ai_sdk.realtime_canvas.perform_instant_refine()`:  `response.lcm_generation_job.cost` **Added**\n* `leonardo_ai_sdk.variation.get_motion_variation_by_id()`: **Added**\n* `leonardo_ai_sdk.texture.create_texture_generation()`:  `response.texture_generation_job.cost` **Added**\n* `leonardo_ai_sdk.models.create_model()`:  `response.sd_training_job.cost` **Added**\n* `leonardo_ai_sdk.blueprints.get_blueprint_execution_generations()`: **Added**\n* `leonardo_ai_sdk.blueprints.get_blueprint_execution()`: **Added**\n* `leonardo_ai_sdk.blueprints.get_blueprint_by_id()`: **Added**\n* `leonardo_ai_sdk.prompt.prompt_improve()`: \n  *  `request.is_video` **Added**\n  *  `response.prompt_generation.cost` **Added**\n* `leonardo_ai_sdk.prompt.prompt_random()`:  `response.prompt_generation.cost` **Added**\n* `leonardo_ai_sdk.variation.create_universal_upscaler_job()`:  `response.universal_upscaler.cost` **Added**\n* `leonardo_ai_sdk.variation.create_variation_no_bg()`:  `response.sd_nobg_job.cost` **Added**\n* `leonardo_ai_sdk.variation.create_variation_unzoom()`:  `response.sd_unzoom_job.cost` **Added**\n* `leonardo_ai_sdk.variation.create_variation_upscale()`:  `response.sd_upscale_job.cost` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -396,334 +2825,3 @@ generatedFiles:
   - src/leonardo_ai_sdk/utils/url.py
   - src/leonardo_ai_sdk/utils/values.py
   - src/leonardo_ai_sdk/variation.py
-examples:
-  deleteInitImageById:
-    speakeasy-default-delete-init-image-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getInitImageById:
-    speakeasy-default-get-init-image-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  uploadCanvasInitImage:
-    speakeasy-default-upload-canvas-init-image:
-      requestBody:
-        application/json: {"initExtension": "<value>", "maskExtension": "<value>"}
-      responses:
-        "200":
-          application/json: {}
-  uploadInitImage:
-    speakeasy-default-upload-init-image:
-      requestBody:
-        application/json: {"extension": "png"}
-      responses:
-        "200":
-          application/json: {}
-  createDataset:
-    speakeasy-default-create-dataset:
-      requestBody:
-        application/json: {"name": "<value>"}
-      responses:
-        "200":
-          application/json: {}
-  deleteDatasetById:
-    speakeasy-default-delete-dataset-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getDatasetById:
-    speakeasy-default-get-dataset-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  uploadDatasetImage:
-    speakeasy-default-upload-dataset-image:
-      parameters:
-        path:
-          datasetId: "<id>"
-      requestBody:
-        application/json: {"extension": "mp4v"}
-      responses:
-        "200":
-          application/json: {}
-  uploadDatasetImageFromGen:
-    speakeasy-default-upload-dataset-image-from-gen:
-      parameters:
-        path:
-          datasetId: "<id>"
-      requestBody:
-        application/json: {"generatedImageId": "<id>"}
-      responses:
-        "200":
-          application/json: {}
-  createElement:
-    speakeasy-default-create-element:
-      requestBody:
-        application/json: {"datasetId": "", "description": "", "instance_prompt": "a character", "learning_rate": 0.000001, "lora_focus": "General", "name": "placeholder", "num_train_epochs": 100, "resolution": 1024, "sd_version": "SDXL_0_9", "train_text_encoder": true}
-      responses:
-        "200":
-          application/json: {}
-  deleteElementById:
-    speakeasy-default-delete-element-by-id:
-      parameters:
-        path:
-          id: 39024
-      responses:
-        "200":
-          application/json: {}
-  getCustomElementsByUserId:
-    speakeasy-default-get-custom-elements-by-user-id:
-      parameters:
-        path:
-          userId: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getElementById:
-    speakeasy-default-get-element-by-id:
-      parameters:
-        path:
-          id: 665696
-      responses:
-        "200":
-          application/json: {}
-  listElements:
-    speakeasy-default-list-elements:
-      responses:
-        "200":
-          application/json: {}
-  createGeneration:
-    speakeasy-default-create-generation:
-      requestBody:
-        application/json: {"alchemy": true, "height": 768, "modelId": "b24e16ff-06e3-43eb-8d33-4416c2d75876", "num_images": 4, "presetStyle": "DYNAMIC", "prompt": "A majestic cat in the snow", "width": 1024}
-      responses:
-        "200":
-          application/json: {}
-  deleteGenerationById:
-    speakeasy-default-delete-generation-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getGenerationById:
-    speakeasy-default-get-generation-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getGenerationsByUserId:
-    speakeasy-default-get-generations-by-user-id:
-      parameters:
-        path:
-          userId: "<id>"
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: {}
-  createLCMGeneration:
-    speakeasy-default-create-LCM-generation:
-      responses:
-        "200":
-          application/json: {}
-  performAlchemyUpscaleLCM:
-    speakeasy-default-perform-alchemy-upscale-LCM:
-      responses:
-        "200":
-          application/json: {}
-  performInpaintingLCM:
-    speakeasy-default-perform-inpainting-LCM:
-      responses:
-        "200":
-          application/json: {}
-  performInstantRefine:
-    speakeasy-default-perform-instant-refine:
-      responses:
-        "200":
-          application/json: {}
-  createSVDMotionGeneration:
-    speakeasy-default-create-SVD-motion-generation:
-      responses:
-        "200":
-          application/json: {}
-  createTextureGeneration:
-    speakeasy-default-create-texture-generation:
-      responses:
-        "200":
-          application/json: {}
-  deleteTextureGenerationById:
-    speakeasy-default-delete-texture-generation-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getTextureGenerationById:
-    speakeasy-default-get-texture-generation-by-id:
-      parameters:
-        path:
-          id: "<id>"
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: {}
-  getTextureGenerationsByModelId:
-    speakeasy-default-get-texture-generations-by-model-id:
-      parameters:
-        path:
-          modelId: "<id>"
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: {}
-  getUserSelf:
-    speakeasy-default-get-user-self:
-      responses:
-        "200":
-          application/json: {}
-  createModel:
-    speakeasy-default-create-model:
-      requestBody:
-        application/json: {"datasetId": "<id>", "description": "", "instance_prompt": "<value>", "modelType": "GENERAL", "name": "<value>", "nsfw": false, "resolution": 512, "strength": "MEDIUM"}
-      responses:
-        "200":
-          application/json: {}
-  deleteModelById:
-    speakeasy-default-delete-model-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getCustomModelsByUserId:
-    speakeasy-default-get-custom-models-by-user-id:
-      parameters:
-        path:
-          userId: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  getModelById:
-    speakeasy-default-get-model-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  listPlatformModels:
-    speakeasy-default-list-platform-models:
-      responses:
-        "200":
-          application/json: {}
-  delete3DModelById:
-    speakeasy-default-delete3-D-model-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-  get3DModelById:
-    speakeasy-default-get3-D-model-by-id:
-      parameters:
-        path:
-          id: "<id>"
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: {}
-  get3DModelsByUserId:
-    speakeasy-default-get3-D-models-by-user-id:
-      parameters:
-        path:
-          userId: "<id>"
-        query:
-          offset: 0
-          limit: 10
-      responses:
-        "200":
-          application/json: {}
-  uploadModelAsset:
-    speakeasy-default-upload-model-asset:
-      responses:
-        "200":
-          application/json: {}
-  pricingCalculator:
-    speakeasy-default-pricing-calculator:
-      responses:
-        "200":
-          application/json: {}
-  promptImprove:
-    speakeasy-default-prompt-improve:
-      requestBody:
-        application/json: {"prompt": "<value>"}
-      responses:
-        "200":
-          application/json: {}
-  promptRandom:
-    speakeasy-default-prompt-random:
-      responses:
-        "200":
-          application/json: {}
-  CreateUniversalUpscalerJob:
-    speakeasy-default-create-universal-upscaler-job:
-      requestBody:
-        application/json: {"creativityStrength": 5, "upscaleMultiplier": 1.5, "upscalerStyle": "GENERAL"}
-      responses:
-        "200":
-          application/json: {}
-  createVariationNoBG:
-    speakeasy-default-create-variation-no-BG:
-      requestBody:
-        application/json: {"id": "<id>"}
-      responses:
-        "200":
-          application/json: {}
-  createVariationUnzoom:
-    speakeasy-default-create-variation-unzoom:
-      responses:
-        "200":
-          application/json: {}
-  createVariationUpscale:
-    speakeasy-default-create-variation-upscale:
-      responses:
-        "200":
-          application/json: {}
-  getVariationById:
-    speakeasy-default-get-variation-by-id:
-      parameters:
-        path:
-          id: "<id>"
-      responses:
-        "200":
-          application/json: {}
-examplesVersion: 1.0.0
-generatedTests: {}

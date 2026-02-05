@@ -1,0 +1,15 @@
+# GeneratedImageVariationMotion
+
+columns and relationships of "generated_image_variation_motion"
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `created_at`                                                                       | *Optional[str]*                                                                    | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `id`                                                                               | *OptionalNullable[str]*                                                            | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `motion_transform_type`                                                            | [Optional[shared.MotionVariationType]](../../models/shared/motionvariationtype.md) | :heavy_minus_sign:                                                                 | The type of motion variation.                                                      |
+| `resolution`                                                                       | [Optional[shared.MotionResolution]](../../models/shared/motionresolution.md)       | :heavy_minus_sign:                                                                 | The resolution of the upscaled video. RESOLUTION_720 is the only option for now.   |
+| `status`                                                                           | [Optional[shared.JobStatus]](../../models/shared/jobstatus.md)                     | :heavy_minus_sign:                                                                 | The status of the current task.                                                    |
+| `url`                                                                              | *OptionalNullable[str]*                                                            | :heavy_minus_sign:                                                                 | N/A                                                                                |
