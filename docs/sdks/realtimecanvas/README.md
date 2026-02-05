@@ -1,5 +1,4 @@
 # RealtimeCanvas
-(*realtime_canvas*)
 
 ## Overview
 
@@ -16,8 +15,10 @@ This endpoint will generate a LCM image generation.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createLCMGeneration" method="post" path="/generations-lcm" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -55,8 +56,10 @@ This endpoint will perform Alchemy Upscale on a LCM image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="performAlchemyUpscaleLCM" method="post" path="/lcm-upscale" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -94,8 +97,10 @@ This endpoint will perform a inpainting on a LCM image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="performInpaintingLCM" method="post" path="/lcm-inpainting" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -133,8 +138,10 @@ This endpoint will perform instant refine on a LCM image
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="performInstantRefine" method="post" path="/lcm-instant-refine" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

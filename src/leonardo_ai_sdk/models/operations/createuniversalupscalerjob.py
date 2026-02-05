@@ -3,6 +3,7 @@
 from __future__ import annotations
 import httpx
 from leonardo_ai_sdk.models.shared import (
+    cost as shared_cost,
     universal_upscaler_style as shared_universal_upscaler_style,
     universal_upscaler_ultra_style as shared_universal_upscaler_ultra_style,
 )
@@ -103,98 +104,101 @@ class CreateUniversalUpscalerJobRequestBody(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "creativityStrength",
-            "detailContrast",
-            "generatedImageId",
-            "initImageId",
-            "prompt",
-            "similarity",
-            "ultraUpscaleStyle",
-            "upscaleMultiplier",
-            "upscalerStyle",
-            "variationId",
-        ]
-        nullable_fields = [
-            "creativityStrength",
-            "detailContrast",
-            "generatedImageId",
-            "initImageId",
-            "prompt",
-            "similarity",
-            "ultraUpscaleStyle",
-            "upscaleMultiplier",
-            "upscalerStyle",
-            "variationId",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "creativityStrength",
+                "detailContrast",
+                "generatedImageId",
+                "initImageId",
+                "prompt",
+                "similarity",
+                "ultraUpscaleStyle",
+                "upscaleMultiplier",
+                "upscalerStyle",
+                "variationId",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "creativityStrength",
+                "detailContrast",
+                "generatedImageId",
+                "initImageId",
+                "prompt",
+                "similarity",
+                "ultraUpscaleStyle",
+                "upscaleMultiplier",
+                "upscalerStyle",
+                "variationId",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
 
 class UniversalUpscalerOutputTypedDict(TypedDict):
     api_credit_cost: NotRequired[Nullable[int]]
-    r"""API Credits Cost for Universal Upscaler Variation. Available for Production API Users."""
+    r"""API Credits Cost for Universal Upscaler Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+    cost: NotRequired[Nullable[shared_cost.CostTypedDict]]
+    r"""The cost of the operation."""
     id: NotRequired[Nullable[str]]
 
 
 class UniversalUpscalerOutput(BaseModel):
     api_credit_cost: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="apiCreditCost")
+        OptionalNullable[int],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="apiCreditCost",
+        ),
     ] = UNSET
-    r"""API Credits Cost for Universal Upscaler Variation. Available for Production API Users."""
+    r"""API Credits Cost for Universal Upscaler Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+
+    cost: OptionalNullable[shared_cost.Cost] = UNSET
+    r"""The cost of the operation."""
 
     id: OptionalNullable[str] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["apiCreditCost", "id"]
-        nullable_fields = ["apiCreditCost", "id"]
-        null_default_fields = []
-
+        optional_fields = set(["apiCreditCost", "cost", "id"])
+        nullable_fields = set(["apiCreditCost", "cost", "id"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -211,6 +215,22 @@ class CreateUniversalUpscalerJobResponseBody(BaseModel):
     universal_upscaler: Annotated[
         Optional[UniversalUpscalerOutput], pydantic.Field(alias="universalUpscaler")
     ] = None
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["universalUpscaler"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class CreateUniversalUpscalerJobResponseTypedDict(TypedDict):
@@ -236,3 +256,19 @@ class CreateUniversalUpscalerJobResponse(BaseModel):
 
     object: Optional[CreateUniversalUpscalerJobResponseBody] = None
     r"""Responses for POST /variations/universal-upscaler"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

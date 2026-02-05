@@ -6,21 +6,41 @@ generation:
   sdkClassName: LeonardoAiSDK
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   fixes:
-    nameResolutionDec2023: false
+    nameResolutionFeb2025: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+    securityFeb2025: false
+    sharedErrorComponentsApr2025: false
+    sharedNestedComponentsJan2026: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
+  schemas:
+    allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
+  versioningStrategy: automatic
+  persistentEdits: {}
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
 python:
-  version: 6.5.1
+  version: 7.0.0
   additionalDependencies:
     dev: {}
     main: {}
+  allowedRedefinedBuiltins:
+    - id
+    - object
+  asyncMode: both
   authors:
     - Leonardo-Ai
+  baseErrorName: LeonardoAiSDKError
   clientServerStatusCodesAsErrors: true
+  constFieldCasing: upper
   defaultErrorName: SDKError
   description: Leonardo AI Python Client SDK
   enableCustomCodeRegions: false
@@ -38,11 +58,21 @@ python:
       operations: models/operations
       shared: models/shared
       webhooks: models/webhooks
+  inferUnionDiscriminators: true
   inputModelSuffix: input
+  license: ""
   maxMethodParams: 4
   methodArguments: require-security-and-request
+  moduleName: ""
+  multipartArrayFormat: legacy
   outputModelSuffix: output
+  packageManager: poetry
   packageName: Leonardo-Ai-SDK
+  preApplyUnionDiscriminators: false
   projectUrls: {}
+  pytestFilterWarnings: []
+  pytestTimeout: 0
   responseFormat: envelope
+  sseFlatResponse: false
   templateVersion: v2
+  useAsyncHooks: false

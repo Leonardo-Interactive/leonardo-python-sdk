@@ -93,44 +93,41 @@ class GetCustomModelsByUserIDCustomModels(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "createdAt",
-            "description",
-            "id",
-            "instancePrompt",
-            "modelHeight",
-            "modelWidth",
-            "name",
-            "public",
-            "sdVersion",
-            "status",
-            "type",
-            "updatedAt",
-        ]
-        nullable_fields = ["id", "instancePrompt"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "createdAt",
+                "description",
+                "id",
+                "instancePrompt",
+                "modelHeight",
+                "modelWidth",
+                "name",
+                "public",
+                "sdVersion",
+                "status",
+                "type",
+                "updatedAt",
+            ]
+        )
+        nullable_fields = set(["id", "instancePrompt"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -139,42 +136,39 @@ class GetCustomModelsByUserIDResponseBodyTypedDict(TypedDict):
     r"""Responses for GET /models/user/{userId}"""
 
     custom_models: NotRequired[
-        Nullable[List[GetCustomModelsByUserIDCustomModelsTypedDict]]
+        Nullable[List[Nullable[GetCustomModelsByUserIDCustomModelsTypedDict]]]
     ]
 
 
 class GetCustomModelsByUserIDResponseBody(BaseModel):
     r"""Responses for GET /models/user/{userId}"""
 
-    custom_models: OptionalNullable[List[GetCustomModelsByUserIDCustomModels]] = UNSET
+    custom_models: OptionalNullable[
+        List[Nullable[GetCustomModelsByUserIDCustomModels]]
+    ] = UNSET
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["custom_models"]
-        nullable_fields = ["custom_models"]
-        null_default_fields = []
-
+        optional_fields = set(["custom_models"])
+        nullable_fields = set(["custom_models"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -202,3 +196,19 @@ class GetCustomModelsByUserIDResponse(BaseModel):
 
     object: Optional[GetCustomModelsByUserIDResponseBody] = None
     r"""Responses for GET /models/user/{userId}"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

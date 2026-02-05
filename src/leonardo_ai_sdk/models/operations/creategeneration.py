@@ -7,6 +7,7 @@ from leonardo_ai_sdk.models.shared import (
     canvasrequesttype as shared_canvasrequesttype,
     controlnet_input as shared_controlnet_input,
     controlnet_type as shared_controlnet_type,
+    cost as shared_cost,
     element_input as shared_element_input,
     sd_generation_schedulers as shared_sd_generation_schedulers,
     sd_generation_style as shared_sd_generation_style,
@@ -48,6 +49,8 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
         Nullable[shared_canvasrequesttype.CanvasRequestType]
     ]
     r"""The type of request for the Canvas Editor."""
+    contrast: NotRequired[Nullable[float]]
+    r"""Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher."""
     contrast_ratio: NotRequired[Nullable[float]]
     r"""Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive."""
     control_net: NotRequired[Nullable[bool]]
@@ -66,7 +69,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     r"""Enable to use the Expanded Domain feature of Alchemy."""
     fantasy_avatar: NotRequired[Nullable[bool]]
     r"""Enable to use the Fantasy Avatar feature."""
-    guidance_scale: NotRequired[Nullable[int]]
+    guidance_scale: NotRequired[Nullable[float]]
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
     height: NotRequired[Nullable[int]]
     r"""The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features."""
@@ -75,7 +78,7 @@ class CreateGenerationRequestBodyTypedDict(TypedDict):
     high_resolution: NotRequired[Nullable[bool]]
     r"""Enable to use the High Resolution feature of Prompt Magic."""
     image_prompt_weight: NotRequired[Nullable[float]]
-    image_prompts: NotRequired[Nullable[List[str]]]
+    image_prompts: NotRequired[Nullable[List[Nullable[str]]]]
     init_generation_image_id: NotRequired[Nullable[str]]
     r"""The ID of an existing image to use in image2image."""
     init_image_id: NotRequired[Nullable[str]]
@@ -162,6 +165,9 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
     r"""The type of request for the Canvas Editor."""
 
+    contrast: OptionalNullable[float] = UNSET
+    r"""Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher."""
+
     contrast_ratio: Annotated[
         OptionalNullable[float], pydantic.Field(alias="contrastRatio")
     ] = UNSET
@@ -209,7 +215,7 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
     r"""Enable to use the Fantasy Avatar feature."""
 
-    guidance_scale: OptionalNullable[int] = UNSET
+    guidance_scale: OptionalNullable[float] = UNSET
     r"""How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."""
 
     height: OptionalNullable[int] = 768
@@ -230,7 +236,7 @@ class CreateGenerationRequestBody(BaseModel):
     ] = UNSET
 
     image_prompts: Annotated[
-        OptionalNullable[List[str]], pydantic.Field(alias="imagePrompts")
+        OptionalNullable[List[Nullable[str]]], pydantic.Field(alias="imagePrompts")
     ] = UNSET
 
     init_generation_image_id: OptionalNullable[str] = UNSET
@@ -347,170 +353,175 @@ class CreateGenerationRequestBody(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "alchemy",
-            "canvasInitId",
-            "canvasMaskId",
-            "canvasRequest",
-            "canvasRequestType",
-            "contrastRatio",
-            "controlNet",
-            "controlNetType",
-            "controlnets",
-            "elements",
-            "enhancePrompt",
-            "enhancePromptInstruction",
-            "expandedDomain",
-            "fantasyAvatar",
-            "guidance_scale",
-            "height",
-            "highContrast",
-            "highResolution",
-            "imagePromptWeight",
-            "imagePrompts",
-            "init_generation_image_id",
-            "init_image_id",
-            "init_strength",
-            "modelId",
-            "negative_prompt",
-            "num_images",
-            "num_inference_steps",
-            "photoReal",
-            "photoRealStrength",
-            "photoRealVersion",
-            "presetStyle",
-            "prompt",
-            "promptMagic",
-            "promptMagicStrength",
-            "promptMagicVersion",
-            "public",
-            "scheduler",
-            "sd_version",
-            "seed",
-            "tiling",
-            "transparency",
-            "ultra",
-            "unzoom",
-            "unzoomAmount",
-            "upscaleRatio",
-            "userElements",
-            "weighting",
-            "width",
-        ]
-        nullable_fields = [
-            "alchemy",
-            "canvasInitId",
-            "canvasMaskId",
-            "canvasRequest",
-            "canvasRequestType",
-            "contrastRatio",
-            "controlNet",
-            "controlnets",
-            "elements",
-            "enhancePrompt",
-            "enhancePromptInstruction",
-            "expandedDomain",
-            "fantasyAvatar",
-            "guidance_scale",
-            "height",
-            "highContrast",
-            "highResolution",
-            "imagePromptWeight",
-            "imagePrompts",
-            "init_generation_image_id",
-            "init_image_id",
-            "init_strength",
-            "modelId",
-            "negative_prompt",
-            "num_images",
-            "num_inference_steps",
-            "photoReal",
-            "photoRealStrength",
-            "photoRealVersion",
-            "presetStyle",
-            "promptMagic",
-            "promptMagicStrength",
-            "promptMagicVersion",
-            "public",
-            "seed",
-            "tiling",
-            "transparency",
-            "ultra",
-            "unzoom",
-            "unzoomAmount",
-            "upscaleRatio",
-            "userElements",
-            "weighting",
-            "width",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "alchemy",
+                "canvasInitId",
+                "canvasMaskId",
+                "canvasRequest",
+                "canvasRequestType",
+                "contrast",
+                "contrastRatio",
+                "controlNet",
+                "controlNetType",
+                "controlnets",
+                "elements",
+                "enhancePrompt",
+                "enhancePromptInstruction",
+                "expandedDomain",
+                "fantasyAvatar",
+                "guidance_scale",
+                "height",
+                "highContrast",
+                "highResolution",
+                "imagePromptWeight",
+                "imagePrompts",
+                "init_generation_image_id",
+                "init_image_id",
+                "init_strength",
+                "modelId",
+                "negative_prompt",
+                "num_images",
+                "num_inference_steps",
+                "photoReal",
+                "photoRealStrength",
+                "photoRealVersion",
+                "presetStyle",
+                "prompt",
+                "promptMagic",
+                "promptMagicStrength",
+                "promptMagicVersion",
+                "public",
+                "scheduler",
+                "sd_version",
+                "seed",
+                "tiling",
+                "transparency",
+                "ultra",
+                "unzoom",
+                "unzoomAmount",
+                "upscaleRatio",
+                "userElements",
+                "weighting",
+                "width",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "alchemy",
+                "canvasInitId",
+                "canvasMaskId",
+                "canvasRequest",
+                "canvasRequestType",
+                "contrast",
+                "contrastRatio",
+                "controlNet",
+                "controlnets",
+                "elements",
+                "enhancePrompt",
+                "enhancePromptInstruction",
+                "expandedDomain",
+                "fantasyAvatar",
+                "guidance_scale",
+                "height",
+                "highContrast",
+                "highResolution",
+                "imagePromptWeight",
+                "imagePrompts",
+                "init_generation_image_id",
+                "init_image_id",
+                "init_strength",
+                "modelId",
+                "negative_prompt",
+                "num_images",
+                "num_inference_steps",
+                "photoReal",
+                "photoRealStrength",
+                "photoRealVersion",
+                "presetStyle",
+                "promptMagic",
+                "promptMagicStrength",
+                "promptMagicVersion",
+                "public",
+                "seed",
+                "tiling",
+                "transparency",
+                "ultra",
+                "unzoom",
+                "unzoomAmount",
+                "upscaleRatio",
+                "userElements",
+                "weighting",
+                "width",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
 
 class SDGenerationOutputTypedDict(TypedDict):
     api_credit_cost: NotRequired[Nullable[int]]
-    r"""API Credits Cost for Image Generation. Available for Production API Users."""
+    r"""API Credits Cost for Image Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+    cost: NotRequired[Nullable[shared_cost.CostTypedDict]]
+    r"""The cost of the operation."""
     generation_id: NotRequired[str]
 
 
 class SDGenerationOutput(BaseModel):
     api_credit_cost: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="apiCreditCost")
+        OptionalNullable[int],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="apiCreditCost",
+        ),
     ] = UNSET
-    r"""API Credits Cost for Image Generation. Available for Production API Users."""
+    r"""API Credits Cost for Image Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+
+    cost: OptionalNullable[shared_cost.Cost] = UNSET
+    r"""The cost of the operation."""
 
     generation_id: Annotated[Optional[str], pydantic.Field(alias="generationId")] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["apiCreditCost", "generationId"]
-        nullable_fields = ["apiCreditCost"]
-        null_default_fields = []
-
+        optional_fields = set(["apiCreditCost", "cost", "generationId"])
+        nullable_fields = set(["apiCreditCost", "cost"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -530,31 +541,26 @@ class CreateGenerationResponseBody(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sdGenerationJob"]
-        nullable_fields = ["sdGenerationJob"]
-        null_default_fields = []
-
+        optional_fields = set(["sdGenerationJob"])
+        nullable_fields = set(["sdGenerationJob"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -582,3 +588,19 @@ class CreateGenerationResponse(BaseModel):
 
     object: Optional[CreateGenerationResponseBody] = None
     r"""Responses for POST /generations"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

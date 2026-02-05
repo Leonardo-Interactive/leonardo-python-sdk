@@ -1,0 +1,12 @@
+# BlueprintVersion
+
+A Blueprint Version object
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  | Example                                                                                      |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `edges`                                                                                      | List[[shared.Edges](../../models/shared/edges.md)]                                           | :heavy_minus_sign:                                                                           | N/A                                                                                          |                                                                                              |
+| `page_info`                                                                                  | [Optional[shared.BlueprintVersionPageInfo]](../../models/shared/blueprintversionpageinfo.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |                                                                                              |
+| `total_count`                                                                                | *Optional[int]*                                                                              | :heavy_minus_sign:                                                                           | N/A                                                                                          | 2                                                                                            |

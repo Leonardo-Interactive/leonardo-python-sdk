@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 import httpx
+from leonardo_ai_sdk.models.shared import cost as shared_cost
 from leonardo_ai_sdk.types import (
     BaseModel,
     Nullable,
@@ -17,7 +18,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class SdVersions(str, Enum):
-    r"""The base version of stable diffusion to use if not using a custom model."""
+    r"""The base version to use if not using a custom model."""
 
     SDXL_0_9 = "SDXL_0_9"
     SDXL_1_0 = "SDXL_1_0"
@@ -26,29 +27,30 @@ class SdVersions(str, Enum):
     VISION_XL = "VISION_XL"
     KINO_XL = "KINO_XL"
     ALBEDO_XL = "ALBEDO_XL"
+    FLUX_DEV = "FLUX_DEV"
 
 
 class CreateElementRequestBodyTypedDict(TypedDict):
     r"""Query parameters to be provided in the request body as a JSON object."""
 
+    learning_rate: float
+    r"""The speed at which the model learns during training.<br><br><table><tr><th>Model Type</th><th>Lora Focus</th><th>Min</th><th>Max</th><th>Default</th></tr><tr><td>Default</td><td>General | Style | Character | Object</td><td>0.00000001</td><td>0.00001</td><td>0.000001</td></tr><tr><td rowspan='3'>FLUX_DEV</td><td>Style</td><td>0.000001</td><td>0.00003</td><td>0.00001</td></tr><tr><td>Object</td><td>0.00001</td><td>0.001</td><td>0.0004</td></tr><tr><td>Character</td><td>0.00001</td><td>0.001</td><td>0.0005</td></tr><tr><td>General</td><td colspan='3'>NA</td></tr></table>"""
+    lora_focus: str
+    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'. FLUX_DEV doesn't support General category."""
+    num_train_epochs: int
+    r"""The number of times the entire training dataset is passed through the element.<br><br><table><tr><th>Model Type</th><th>Lora Focus</th><th>Min</th><th>Max</th><th>Default</th></tr><tr><td>Default</td><td>General | Style | Character | Object</td><td>1</td><td>250</td><td>100</td></tr><tr><td rowspan='3'>FLUX_DEV</td><td>Style</td><td>30</td><td>120</td><td>60</td></tr><tr><td>Object</td><td>120</td><td>220</td><td>140</td></tr><tr><td>Character</td><td>100</td><td>200</td><td>135</td></tr><tr><td>General</td><td colspan='3'>NA</td></tr></table>"""
     dataset_id: NotRequired[str]
     r"""The ID of the dataset to train the element on."""
     description: NotRequired[Nullable[str]]
     r"""The description of the element."""
-    instance_prompt: NotRequired[str]
-    r"""The instance prompt to use during training.Try “a” by a noun. E.g. a castle"""
-    learning_rate: NotRequired[float]
-    r"""The speed of element learns."""
-    lora_focus: NotRequired[str]
-    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'."""
+    instance_prompt: NotRequired[Nullable[str]]
+    r"""Use a word that is closely related to what you're training that isn't too common. For example, instead of 'dog,' try something unique like 'jackthedog' or 'magicdonut'. Required for all non-FLUX_DEV models and FLUX_DEV Character model training."""
     name: NotRequired[str]
     r"""The name of the element."""
-    num_train_epochs: NotRequired[int]
-    r"""The number of times the entire training dataset is passed through the element."""
     resolution: NotRequired[Nullable[int]]
     r"""The resolution for training. Must be 1024."""
     sd_version: NotRequired[SdVersions]
-    r"""The base version of stable diffusion to use if not using a custom model."""
+    r"""The base version to use if not using a custom model."""
     train_text_encoder: NotRequired[bool]
     r"""Whether or not encode the train text."""
 
@@ -56,119 +58,117 @@ class CreateElementRequestBodyTypedDict(TypedDict):
 class CreateElementRequestBody(BaseModel):
     r"""Query parameters to be provided in the request body as a JSON object."""
 
+    learning_rate: float
+    r"""The speed at which the model learns during training.<br><br><table><tr><th>Model Type</th><th>Lora Focus</th><th>Min</th><th>Max</th><th>Default</th></tr><tr><td>Default</td><td>General | Style | Character | Object</td><td>0.00000001</td><td>0.00001</td><td>0.000001</td></tr><tr><td rowspan='3'>FLUX_DEV</td><td>Style</td><td>0.000001</td><td>0.00003</td><td>0.00001</td></tr><tr><td>Object</td><td>0.00001</td><td>0.001</td><td>0.0004</td></tr><tr><td>Character</td><td>0.00001</td><td>0.001</td><td>0.0005</td></tr><tr><td>General</td><td colspan='3'>NA</td></tr></table>"""
+
+    lora_focus: str
+    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'. FLUX_DEV doesn't support General category."""
+
+    num_train_epochs: int
+    r"""The number of times the entire training dataset is passed through the element.<br><br><table><tr><th>Model Type</th><th>Lora Focus</th><th>Min</th><th>Max</th><th>Default</th></tr><tr><td>Default</td><td>General | Style | Character | Object</td><td>1</td><td>250</td><td>100</td></tr><tr><td rowspan='3'>FLUX_DEV</td><td>Style</td><td>30</td><td>120</td><td>60</td></tr><tr><td>Object</td><td>120</td><td>220</td><td>140</td></tr><tr><td>Character</td><td>100</td><td>200</td><td>135</td></tr><tr><td>General</td><td colspan='3'>NA</td></tr></table>"""
+
     dataset_id: Annotated[Optional[str], pydantic.Field(alias="datasetId")] = ""
     r"""The ID of the dataset to train the element on."""
 
     description: OptionalNullable[str] = ""
     r"""The description of the element."""
 
-    instance_prompt: Optional[str] = "a character"
-    r"""The instance prompt to use during training.Try “a” by a noun. E.g. a castle"""
-
-    learning_rate: Optional[float] = 0.000001
-    r"""The speed of element learns."""
-
-    lora_focus: Optional[str] = "General"
-    r"""The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'."""
+    instance_prompt: OptionalNullable[str] = ""
+    r"""Use a word that is closely related to what you're training that isn't too common. For example, instead of 'dog,' try something unique like 'jackthedog' or 'magicdonut'. Required for all non-FLUX_DEV models and FLUX_DEV Character model training."""
 
     name: Optional[str] = "placeholder"
     r"""The name of the element."""
 
-    num_train_epochs: Optional[int] = 100
-    r"""The number of times the entire training dataset is passed through the element."""
-
     resolution: OptionalNullable[int] = 1024
     r"""The resolution for training. Must be 1024."""
 
-    sd_version: Optional[SdVersions] = SdVersions.SDXL_0_9
-    r"""The base version of stable diffusion to use if not using a custom model."""
+    sd_version: Optional[SdVersions] = SdVersions.FLUX_DEV
+    r"""The base version to use if not using a custom model."""
 
     train_text_encoder: Optional[bool] = True
     r"""Whether or not encode the train text."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "datasetId",
-            "description",
-            "instance_prompt",
-            "learning_rate",
-            "lora_focus",
-            "name",
-            "num_train_epochs",
-            "resolution",
-            "sd_version",
-            "train_text_encoder",
-        ]
-        nullable_fields = ["description", "resolution"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "datasetId",
+                "description",
+                "instance_prompt",
+                "name",
+                "resolution",
+                "sd_version",
+                "train_text_encoder",
+            ]
+        )
+        nullable_fields = set(["description", "instance_prompt", "resolution"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
 
 class SDTrainingOutputTypedDict(TypedDict):
     api_credit_cost: NotRequired[Nullable[int]]
-    r"""API Credits Cost for Model Training. Available for Production API Users."""
+    r"""API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+    cost: NotRequired[Nullable[shared_cost.CostTypedDict]]
+    r"""The cost of the operation."""
     user_lora_id: NotRequired[int]
 
 
 class SDTrainingOutput(BaseModel):
     api_credit_cost: Annotated[
-        OptionalNullable[int], pydantic.Field(alias="apiCreditCost")
+        OptionalNullable[int],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="apiCreditCost",
+        ),
     ] = UNSET
-    r"""API Credits Cost for Model Training. Available for Production API Users."""
+    r"""API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+
+    cost: OptionalNullable[shared_cost.Cost] = UNSET
+    r"""The cost of the operation."""
 
     user_lora_id: Annotated[Optional[int], pydantic.Field(alias="userLoraId")] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["apiCreditCost", "userLoraId"]
-        nullable_fields = ["apiCreditCost"]
-        null_default_fields = []
-
+        optional_fields = set(["apiCreditCost", "cost", "userLoraId"])
+        nullable_fields = set(["apiCreditCost", "cost"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -188,31 +188,26 @@ class CreateElementResponseBody(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sdTrainingJob"]
-        nullable_fields = ["sdTrainingJob"]
-        null_default_fields = []
-
+        optional_fields = set(["sdTrainingJob"])
+        nullable_fields = set(["sdTrainingJob"])
         serialized = handler(self)
-
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -240,3 +235,19 @@ class CreateElementResponse(BaseModel):
 
     object: Optional[CreateElementResponseBody] = None
     r"""Responses for POST /elements."""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

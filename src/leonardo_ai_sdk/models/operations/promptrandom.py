@@ -2,25 +2,69 @@
 
 from __future__ import annotations
 import httpx
-from leonardo_ai_sdk.types import BaseModel
+from leonardo_ai_sdk.models.shared import cost as shared_cost
+from leonardo_ai_sdk.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+)
 import pydantic
+from pydantic import model_serializer
 from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class PromptRandomPromptGenerationOutputTypedDict(TypedDict):
     api_credit_cost: NotRequired[int]
-    r"""API Credits Cost for Random Prompt Generation. Available for Production API Users."""
+    r"""API Credits Cost for Random Prompt Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+    cost: NotRequired[Nullable[shared_cost.CostTypedDict]]
+    r"""The cost of the operation."""
     prompt: NotRequired[str]
     r"""The random prompt generated."""
 
 
 class PromptRandomPromptGenerationOutput(BaseModel):
-    api_credit_cost: Annotated[Optional[int], pydantic.Field(alias="apiCreditCost")] = 4
-    r"""API Credits Cost for Random Prompt Generation. Available for Production API Users."""
+    api_credit_cost: Annotated[
+        Optional[int],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="apiCreditCost",
+        ),
+    ] = 4
+    r"""API Credits Cost for Random Prompt Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead."""
+
+    cost: OptionalNullable[shared_cost.Cost] = UNSET
+    r"""The cost of the operation."""
 
     prompt: Optional[str] = "The random prompt generated."
     r"""The random prompt generated."""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["apiCreditCost", "cost", "prompt"])
+        nullable_fields = set(["cost"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
+
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
+
+        return m
 
 
 class PromptRandomResponseBodyTypedDict(TypedDict):
@@ -36,6 +80,22 @@ class PromptRandomResponseBody(BaseModel):
         Optional[PromptRandomPromptGenerationOutput],
         pydantic.Field(alias="promptGeneration"),
     ] = None
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["promptGeneration"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class PromptRandomResponseTypedDict(TypedDict):
@@ -61,3 +121,19 @@ class PromptRandomResponse(BaseModel):
 
     object: Optional[PromptRandomResponseBody] = None
     r"""Responses for POST /prompt/random"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["object"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

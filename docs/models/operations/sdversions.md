@@ -1,6 +1,6 @@
 # SdVersions
 
-The base version of stable diffusion to use if not using a custom model.
+The base version to use if not using a custom model.
 
 
 ## Values
@@ -14,3 +14,4 @@ The base version of stable diffusion to use if not using a custom model.
 | `VISION_XL`             | VISION_XL               |
 | `KINO_XL`               | KINO_XL                 |
 | `ALBEDO_XL`             | ALBEDO_XL               |
+| `FLUX_DEV`              | FLUX_DEV                |

@@ -1,5 +1,4 @@
 # Texture
-(*texture*)
 
 ## Overview
 
@@ -16,8 +15,10 @@ This endpoint will generate a texture generation.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="createTextureGeneration" method="post" path="/generations-texture" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -55,8 +56,10 @@ This endpoint deletes the specific texture generation.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="deleteTextureGenerationById" method="delete" path="/generations-texture/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -95,14 +98,16 @@ This endpoint gets the specific texture generation.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getTextureGenerationById" method="get" path="/generations-texture/{id}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.texture.get_texture_generation_by_id(id="<id>")
+    res = las_client.texture.get_texture_generation_by_id(id="<id>", limit=10, offset=0)
 
     assert res.object is not None
 
@@ -137,14 +142,16 @@ This endpoint gets the specific texture generations by the 3d model id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="getTextureGenerationsByModelId" method="get" path="/generations-texture/model/{modelId}" -->
 ```python
 from leonardo_ai_sdk import LeonardoAiSDK
+
 
 with LeonardoAiSDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as las_client:
 
-    res = las_client.texture.get_texture_generations_by_model_id(model_id="<id>")
+    res = las_client.texture.get_texture_generations_by_model_id(model_id="<id>", limit=10, offset=0)
 
     assert res.object is not None
 

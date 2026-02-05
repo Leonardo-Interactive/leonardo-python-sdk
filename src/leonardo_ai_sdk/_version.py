@@ -3,10 +3,10 @@
 import importlib.metadata
 
 __title__: str = "Leonardo-Ai-SDK"
-__version__: str = "6.5.1"
+__version__: str = "7.0.0"
 __openapi_doc_version__: str = "v1.0.0"
-__gen_version__: str = "2.506.0"
-__user_agent__: str = "speakeasy-sdk/python 6.5.1 2.506.0 v1.0.0 Leonardo-Ai-SDK"
+__gen_version__: str = "2.806.4"
+__user_agent__: str = "speakeasy-sdk/python 7.0.0 2.806.4 v1.0.0 Leonardo-Ai-SDK"
 
 try:
     if __package__ is not None:

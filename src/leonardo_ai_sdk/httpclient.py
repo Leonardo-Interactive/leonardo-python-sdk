@@ -2,7 +2,6 @@
 
 # pyright: reportReturnType = false
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
 from typing_extensions import Protocol, runtime_checkable
 import httpx
 from typing import Any, Optional, Union
@@ -94,7 +93,9 @@ class ClientOwner(Protocol):
 def close_clients(
     owner: ClientOwner,
     sync_client: Union[HttpClient, None],
+    sync_client_supplied: bool,
     async_client: Union[AsyncHttpClient, None],
+    async_client_supplied: bool,
 ) -> None:
     """
     A finalizer function that is meant to be used with weakref.finalize to close
@@ -106,29 +107,19 @@ def close_clients(
     # to them from the owning SDK instance and they can be reaped.
     owner.client = None
     owner.async_client = None
-
-    if sync_client is not None:
+    if sync_client is not None and not sync_client_supplied:
         try:
             sync_client.close()
         except Exception:
             pass
 
-    if async_client is not None:
-        is_async = False
+    if async_client is not None and not async_client_supplied:
         try:
-            asyncio.get_running_loop()
-            is_async = True
+            loop = asyncio.get_running_loop()
+            asyncio.run_coroutine_threadsafe(async_client.aclose(), loop)
         except RuntimeError:
-            pass
-
-        try:
-            # If this function is called in an async loop then start another
-            # loop in a separate thread to close the async http client.
-            if is_async:
-                with ThreadPoolExecutor(max_workers=1) as executor:
-                    future = executor.submit(asyncio.run, async_client.aclose())
-                    future.result()
-            else:
+            try:
                 asyncio.run(async_client.aclose())
-        except Exception:
-            pass
+            except RuntimeError:
+                # best effort
+                pass
