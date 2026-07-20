@@ -75,9 +75,11 @@ class InitImages(BaseSDK):
                 operation_id="deleteInitImageById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -164,9 +166,11 @@ class InitImages(BaseSDK):
                 operation_id="deleteInitImageById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -253,9 +257,11 @@ class InitImages(BaseSDK):
                 operation_id="getInitImageById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -342,9 +348,11 @@ class InitImages(BaseSDK):
                 operation_id="getInitImageById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -443,9 +451,11 @@ class InitImages(BaseSDK):
                 operation_id="uploadCanvasInitImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -544,9 +554,11 @@ class InitImages(BaseSDK):
                 operation_id="uploadCanvasInitImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -639,9 +651,11 @@ class InitImages(BaseSDK):
                 operation_id="uploadInitImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -734,9 +748,11 @@ class InitImages(BaseSDK):
                 operation_id="uploadInitImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Init Images"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

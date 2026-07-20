@@ -81,9 +81,11 @@ class Prompt(BaseSDK):
                 operation_id="promptImprove",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Prompt"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -176,9 +178,11 @@ class Prompt(BaseSDK):
                 operation_id="promptImprove",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Prompt"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -258,9 +262,11 @@ class Prompt(BaseSDK):
                 operation_id="promptRandom",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Prompt"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -340,9 +346,11 @@ class Prompt(BaseSDK):
                 operation_id="promptRandom",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Prompt"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

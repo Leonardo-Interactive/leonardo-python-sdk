@@ -21,19 +21,19 @@ if TYPE_CHECKING:
     from leonardo_ai_sdk.elements import Elements
     from leonardo_ai_sdk.image import Image
     from leonardo_ai_sdk.init_images import InitImages
+    from leonardo_ai_sdk.media import Media
     from leonardo_ai_sdk.models_ import Models
     from leonardo_ai_sdk.motion import Motion
     from leonardo_ai_sdk.pricing_calculator import PricingCalculator
     from leonardo_ai_sdk.prompt import Prompt
     from leonardo_ai_sdk.realtime_canvas import RealtimeCanvas
-    from leonardo_ai_sdk.texture import Texture
     from leonardo_ai_sdk.threed_model_assets import ThreeDModelAssets
     from leonardo_ai_sdk.user import User
     from leonardo_ai_sdk.variation import Variation
 
 
 class LeonardoAiSDK(BaseSDK):
-    r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification."""
+    r"""Rest Endpoints: Leonardo.Ai API OpenAPI specification (v1.0)."""
 
     blueprints: "Blueprints"
     init_images: "InitImages"
@@ -42,8 +42,8 @@ class LeonardoAiSDK(BaseSDK):
     image: "Image"
     motion: "Motion"
     realtime_canvas: "RealtimeCanvas"
-    texture: "Texture"
     user: "User"
+    media: "Media"
     models: "Models"
     three_d_model_assets: "ThreeDModelAssets"
     variation: "Variation"
@@ -57,8 +57,8 @@ class LeonardoAiSDK(BaseSDK):
         "image": ("leonardo_ai_sdk.image", "Image"),
         "motion": ("leonardo_ai_sdk.motion", "Motion"),
         "realtime_canvas": ("leonardo_ai_sdk.realtime_canvas", "RealtimeCanvas"),
-        "texture": ("leonardo_ai_sdk.texture", "Texture"),
         "user": ("leonardo_ai_sdk.user", "User"),
+        "media": ("leonardo_ai_sdk.media", "Media"),
         "models": ("leonardo_ai_sdk.models_", "Models"),
         "three_d_model_assets": (
             "leonardo_ai_sdk.threed_model_assets",
@@ -76,8 +76,8 @@ class LeonardoAiSDK(BaseSDK):
         self,
         bearer_auth: Union[str, Callable[[], str]],
         server_idx: Optional[int] = None,
-        server_url: Optional[str] = None,
         url_params: Optional[Dict[str, str]] = None,
+        server_url: Optional[str] = None,
         client: Optional[HttpClient] = None,
         async_client: Optional[AsyncHttpClient] = None,
         retry_config: OptionalNullable[RetryConfig] = UNSET,
@@ -117,7 +117,9 @@ class LeonardoAiSDK(BaseSDK):
         ), "The provided async_client must implement the AsyncHttpClient protocol."
 
         security: Any = None
-        if callable(bearer_auth):
+        if bearer_auth is None:
+            security = None
+        elif callable(bearer_auth):
             # pylint: disable=unnecessary-lambda-assignment
             security = lambda: shared.Security(bearer_auth=bearer_auth())
         else:

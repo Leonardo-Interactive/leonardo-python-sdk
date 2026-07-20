@@ -67,7 +67,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -92,9 +92,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="delete3DModelById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -173,7 +175,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -198,9 +200,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="delete3DModelById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -285,7 +289,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -310,9 +314,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="get3DModelById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -397,7 +403,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -422,9 +428,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="get3DModelById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -509,7 +517,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -534,9 +542,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="get3DModelsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -621,7 +631,7 @@ class ThreeDModelAssets(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.request_body,
+                request.request_body if request is not None else None,
                 False,
                 True,
                 "json",
@@ -646,9 +656,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="get3DModelsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -749,9 +761,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="uploadModelAsset",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -852,9 +866,11 @@ class ThreeDModelAssets(BaseSDK):
                 operation_id="uploadModelAsset",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["3D Model Assets"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

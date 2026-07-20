@@ -2,6 +2,14 @@
 
 The category the most accurately reflects the model.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import CustomModelType
+
+value = CustomModelType.GENERAL
+```
+
 
 ## Values
 

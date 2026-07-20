@@ -2,6 +2,14 @@
 
 The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import UniversalUpscalerStyle
+
+value = UniversalUpscalerStyle.GENERAL
+```
+
 
 ## Values
 

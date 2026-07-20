@@ -2,6 +2,14 @@
 
 The model to use for the video generation. Defaults to MOTION2 if not specified.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.operations import CreateTextToVideoGenerationString
+
+value = CreateTextToVideoGenerationString.MOTION2
+```
+
 
 ## Values
 

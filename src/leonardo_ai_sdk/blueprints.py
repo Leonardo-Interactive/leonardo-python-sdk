@@ -81,9 +81,11 @@ class Blueprints(BaseSDK):
                 operation_id="executeBlueprint",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -183,9 +185,11 @@ class Blueprints(BaseSDK):
                 operation_id="executeBlueprint",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["400", "4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -279,9 +283,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -368,9 +374,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -457,9 +465,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintExecution",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -546,9 +556,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintExecution",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -640,9 +652,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintExecutionGenerations",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -735,9 +749,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintExecutionGenerations",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -825,9 +841,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintVersionsByBlueprintId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -915,9 +933,11 @@ class Blueprints(BaseSDK):
                 operation_id="getBlueprintVersionsByBlueprintId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1019,9 +1039,11 @@ class Blueprints(BaseSDK):
                 operation_id="listBlueprints",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1122,9 +1144,11 @@ class Blueprints(BaseSDK):
                 operation_id="listBlueprints",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Blueprints"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

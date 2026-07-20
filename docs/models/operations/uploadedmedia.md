@@ -1,6 +1,4 @@
-# ModelAssetTextureGenerations
-
-columns and relationships of "model_asset_texture_generations"
+# UploadedMedia
 
 
 ## Fields

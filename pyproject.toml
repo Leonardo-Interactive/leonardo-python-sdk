@@ -1,7 +1,7 @@
 
 [project]
 name = "Leonardo-Ai-SDK"
-version = "7.0.0"
+version = "7.1.0"
 description = "Leonardo AI Python Client SDK"
 authors = [{ name = "Leonardo-Ai" },]
 readme = "README-PYPI.md"
@@ -9,7 +9,7 @@ requires-python = ">=3.10"
 dependencies = [
     "httpcore >=1.0.9",
     "httpx >=0.28.1",
-    "pydantic >=2.11.2",
+    "pydantic >=2.11.2,<2.13",
 ]
 
 [tool.poetry]

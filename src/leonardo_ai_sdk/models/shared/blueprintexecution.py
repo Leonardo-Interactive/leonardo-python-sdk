@@ -35,3 +35,9 @@ class BlueprintExecution(BaseModel):
 
     status: BlueprintExecutionStatus
     r"""The status of a Blueprint Execution."""
+
+
+try:
+    BlueprintExecution.model_rebuild()
+except NameError:
+    pass

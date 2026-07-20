@@ -2,6 +2,14 @@
 
 The services to be chosen for calculating the API credit cost.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import PricingCalculatorServices
+
+value = PricingCalculatorServices.IMAGE_GENERATION
+```
+
 
 ## Values
 

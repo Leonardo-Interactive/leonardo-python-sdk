@@ -89,9 +89,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="createLCMGeneration",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -192,9 +194,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="createLCMGeneration",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -297,9 +301,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performAlchemyUpscaleLCM",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -402,9 +408,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performAlchemyUpscaleLCM",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -505,9 +513,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performInpaintingLCM",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -608,9 +618,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performInpaintingLCM",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -711,9 +723,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performInstantRefine",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -814,9 +828,11 @@ class RealtimeCanvas(BaseSDK):
                 operation_id="performInstantRefine",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Realtime Canvas"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

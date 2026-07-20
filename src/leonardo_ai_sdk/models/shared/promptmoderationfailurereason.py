@@ -35,3 +35,9 @@ class PromptModerationFailureReason(BaseModel):
 
     type: Type
     r"""The type of failure - PROMPT_MODERATION_BLOCKED indicates the prompt was blocked by content moderation"""
+
+
+try:
+    PromptModerationFailureReason.model_rebuild()
+except NameError:
+    pass

@@ -2,6 +2,14 @@
 
 The style to generate LCM images with.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import LcmGenerationStyle
+
+value = LcmGenerationStyle.ANIME
+```
+
 
 ## Values
 
