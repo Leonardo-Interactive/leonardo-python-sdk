@@ -29,3 +29,9 @@ class BlueprintExecutionGenerationsConnection(BaseModel):
 
     page_info: Annotated[PageInfo, pydantic.Field(alias="pageInfo")]
     r"""Pagination information following the Relay cursor pagination spec"""
+
+
+try:
+    BlueprintExecutionGenerationsConnection.model_rebuild()
+except NameError:
+    pass

@@ -2,6 +2,14 @@
 
 The resolution of the output video. Acceptable values vary based on model
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.operations import CreateTextToVideoGenerationMotionString
+
+value = CreateTextToVideoGenerationMotionString.RESOLUTION_480
+```
+
 
 ## Values
 

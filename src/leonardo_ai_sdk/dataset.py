@@ -81,9 +81,11 @@ class Dataset(BaseSDK):
                 operation_id="createDataset",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -176,9 +178,11 @@ class Dataset(BaseSDK):
                 operation_id="createDataset",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -265,9 +269,11 @@ class Dataset(BaseSDK):
                 operation_id="deleteDatasetById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -354,9 +360,11 @@ class Dataset(BaseSDK):
                 operation_id="deleteDatasetById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -443,9 +451,11 @@ class Dataset(BaseSDK):
                 operation_id="getDatasetById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -532,9 +542,11 @@ class Dataset(BaseSDK):
                 operation_id="getDatasetById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -636,9 +648,11 @@ class Dataset(BaseSDK):
                 operation_id="uploadDatasetImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -740,9 +754,11 @@ class Dataset(BaseSDK):
                 operation_id="uploadDatasetImage",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -844,9 +860,11 @@ class Dataset(BaseSDK):
                 operation_id="uploadDatasetImageFromGen",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -948,9 +966,11 @@ class Dataset(BaseSDK):
                 operation_id="uploadDatasetImageFromGen",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Dataset"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

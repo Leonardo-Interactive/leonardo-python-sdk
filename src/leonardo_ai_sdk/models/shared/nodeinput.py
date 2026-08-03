@@ -77,3 +77,9 @@ class NodeInput(BaseModel):
     - `imageUrl`: string (the image URL)
     - `textVariables`: array of TextVariable objects
     """
+
+
+try:
+    NodeInput.model_rebuild()
+except NameError:
+    pass

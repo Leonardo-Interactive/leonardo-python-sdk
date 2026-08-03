@@ -50,7 +50,7 @@ class PricingCalculatorPricingCalculatorObject(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -262,7 +262,7 @@ class PricingCalculatorPricingCalculatorRequestObject(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
                 and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
@@ -318,7 +318,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyObject(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
                 and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
@@ -379,7 +379,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsObject(
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
                 and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
@@ -433,7 +433,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsMOTIONVID
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -465,7 +465,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsTEXTUREGE
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -499,7 +499,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSAL
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -545,7 +545,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSAL
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -585,7 +585,7 @@ class PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsVeo3MOTIO
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -765,7 +765,7 @@ class PricingCalculatorObject(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
                 and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
@@ -806,7 +806,7 @@ class PricingCalculatorRequestBody(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -832,7 +832,7 @@ class CalculateProductionAPIServiceCost(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
@@ -866,7 +866,7 @@ class PricingCalculatorResponseBody(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
                 and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
@@ -915,10 +915,44 @@ class PricingCalculatorResponse(BaseModel):
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:
                     m[k] = val
 
         return m
+
+
+try:
+    PricingCalculatorPricingCalculatorObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorPricingCalculatorRequestObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorPricingCalculatorRequestRequestBodyObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorPricingCalculatorRequestRequestBodyServiceParamsUNIVERSALUPSCALERULTRAObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorObject.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorRequestBody.model_rebuild()
+except NameError:
+    pass
+try:
+    PricingCalculatorResponseBody.model_rebuild()
+except NameError:
+    pass

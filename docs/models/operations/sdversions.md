@@ -2,6 +2,14 @@
 
 The base version to use if not using a custom model.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.operations import SdVersions
+
+value = SdVersions.SDXL_0_9
+```
+
 
 ## Values
 

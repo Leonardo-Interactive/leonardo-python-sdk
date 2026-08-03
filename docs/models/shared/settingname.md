@@ -5,6 +5,14 @@ The type of setting to replace:
 - `imageUrl`: Image URL input (value is a URL string)
 - `textVariables`: Text with placeholder variables (value is an array of TextVariable)
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import SettingName
+
+value = SettingName.TEXT
+```
+
 
 ## Values
 

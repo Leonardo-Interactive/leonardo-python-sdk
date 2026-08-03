@@ -5,7 +5,7 @@
 <!-- Start Summary [summary] -->
 ## Summary
 
-Rest Endpoints: Leonardo.Ai API OpenAPI specification.
+Rest Endpoints: Leonardo.Ai API OpenAPI specification (v1.0).
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -268,6 +268,12 @@ asyncio.run(main())
 * [upload_canvas_init_image](docs/sdks/initimages/README.md#upload_canvas_init_image) - Upload Canvas Editor init and mask image
 * [upload_init_image](docs/sdks/initimages/README.md#upload_init_image) - Upload init image
 
+### [Media](docs/sdks/media/README.md)
+
+* [delete_uploaded_media_by_id](docs/sdks/media/README.md#delete_uploaded_media_by_id) - Delete uploaded media
+* [get_uploaded_media_by_id](docs/sdks/media/README.md#get_uploaded_media_by_id) - Get uploaded media
+* [upload_media](docs/sdks/media/README.md#upload_media) - Upload media
+
 ### [Models](docs/sdks/models/README.md)
 
 * [create_model](docs/sdks/models/README.md#create_model) - Train a Custom Model
@@ -279,9 +285,7 @@ asyncio.run(main())
 ### [Motion](docs/sdks/motion/README.md)
 
 * [create_image_to_video_generation](docs/sdks/motion/README.md#create_image_to_video_generation) - Create a video generation from an image
-* [create_svd_motion_generation](docs/sdks/motion/README.md#create_svd_motion_generation) - Create SVD Motion Generation
 * [create_text_to_video_generation](docs/sdks/motion/README.md#create_text_to_video_generation) - Create a video generation from a text prompt
-* [create_video_upscale](docs/sdks/motion/README.md#create_video_upscale) - Upscale a generated video
 
 ### [PricingCalculator](docs/sdks/pricingcalculator/README.md)
 
@@ -298,13 +302,6 @@ asyncio.run(main())
 * [perform_alchemy_upscale_lcm](docs/sdks/realtimecanvas/README.md#perform_alchemy_upscale_lcm) - Perform Alchemy Upscale on a LCM image
 * [perform_inpainting_lcm](docs/sdks/realtimecanvas/README.md#perform_inpainting_lcm) - Perform inpainting on a LCM image
 * [perform_instant_refine](docs/sdks/realtimecanvas/README.md#perform_instant_refine) - Perform instant refine on a LCM image
-
-### [Texture](docs/sdks/texture/README.md)
-
-* [create_texture_generation](docs/sdks/texture/README.md#create_texture_generation) - Create Texture Generation
-* [delete_texture_generation_by_id](docs/sdks/texture/README.md#delete_texture_generation_by_id) - Delete Texture Generation by ID
-* [get_texture_generation_by_id](docs/sdks/texture/README.md#get_texture_generation_by_id) - Get Texture Generation by ID
-* [get_texture_generations_by_model_id](docs/sdks/texture/README.md#get_texture_generations_by_model_id) - Get texture generations by 3D Model ID
 
 ### [User](docs/sdks/user/README.md)
 
@@ -535,7 +532,7 @@ with LeonardoAiSDK(
 
 
 **Inherit from [`LeonardoAiSDKError`](./src/leonardo_ai_sdk/models/errors/leonardoaisdkerror.py)**:
-* [`ExecuteBlueprintResponseBody`](./src/leonardo_ai_sdk/models/errors/executeblueprintresponsebody.py): Bad Request - Invalid input type or missing required GraphQL field. Status code `400`. Applicable to 1 of 55 methods.*
+* [`ExecuteBlueprintResponseBody`](./src/leonardo_ai_sdk/models/errors/executeblueprintresponsebody.py): Bad Request - Invalid input type or missing required GraphQL field. Status code `400`. Applicable to 1 of 52 methods.*
 * [`ResponseValidationError`](./src/leonardo_ai_sdk/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>

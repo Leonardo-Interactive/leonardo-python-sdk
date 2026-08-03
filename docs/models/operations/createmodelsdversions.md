@@ -2,6 +2,14 @@
 
 The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.operations import CreateModelSdVersions
+
+value = CreateModelSdVersions.V1_5
+```
+
 
 ## Values
 

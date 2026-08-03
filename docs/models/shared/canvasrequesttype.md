@@ -2,6 +2,14 @@
 
 The type of request for the Canvas Editor.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import CanvasRequestType
+
+value = CanvasRequestType.INPAINT
+```
+
 
 ## Values
 

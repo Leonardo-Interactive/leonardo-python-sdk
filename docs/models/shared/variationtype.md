@@ -2,6 +2,14 @@
 
 The type of variation.
 
+## Example Usage
+
+```python
+from leonardo_ai_sdk.models.shared import VariationType
+
+value = VariationType.OUTPAINT
+```
+
 
 ## Values
 

@@ -81,9 +81,11 @@ class Elements(BaseSDK):
                 operation_id="createElement",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -176,9 +178,11 @@ class Elements(BaseSDK):
                 operation_id="createElement",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -265,9 +269,11 @@ class Elements(BaseSDK):
                 operation_id="deleteElementById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -354,9 +360,11 @@ class Elements(BaseSDK):
                 operation_id="deleteElementById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -443,9 +451,11 @@ class Elements(BaseSDK):
                 operation_id="getCustomElementsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -532,9 +542,11 @@ class Elements(BaseSDK):
                 operation_id="getCustomElementsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -621,9 +633,11 @@ class Elements(BaseSDK):
                 operation_id="getElementById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -710,9 +724,11 @@ class Elements(BaseSDK):
                 operation_id="getElementById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -792,9 +808,11 @@ class Elements(BaseSDK):
                 operation_id="listElements",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -874,9 +892,11 @@ class Elements(BaseSDK):
                 operation_id="listElements",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Elements"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

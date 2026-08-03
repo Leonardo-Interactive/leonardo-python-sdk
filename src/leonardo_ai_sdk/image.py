@@ -81,9 +81,11 @@ class Image(BaseSDK):
                 operation_id="createGeneration",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -176,9 +178,11 @@ class Image(BaseSDK):
                 operation_id="createGeneration",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -265,9 +269,11 @@ class Image(BaseSDK):
                 operation_id="deleteGenerationById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -354,9 +360,11 @@ class Image(BaseSDK):
                 operation_id="deleteGenerationById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -443,9 +451,11 @@ class Image(BaseSDK):
                 operation_id="getGenerationById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -532,9 +542,11 @@ class Image(BaseSDK):
                 operation_id="getGenerationById",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -627,9 +639,11 @@ class Image(BaseSDK):
                 operation_id="getGenerationsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -722,9 +736,11 @@ class Image(BaseSDK):
                 operation_id="getGenerationsByUserId",
                 oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
+                tags=["Image"],
+                extensions=None,
             ),
             request=req,
-            error_status_codes=["4XX", "5XX"],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
